@@ -6,6 +6,15 @@ Similar to [Laravel's Artisan](https://laravel.com/docs/5.6/artisan), *journeyma
 **Isn't this the same thing as `vue-cli`?**  
 No, not quite. Although journeyman provdes some similar features, it doesn't primarily serve to bootstrap the development pipeline but rather to aid a developer during development work. It doesn't care at all what module bundler or linter you use.
 
+> **Active development:** Journeyman is being developed currently. The process will be as follows:
+> - [ ] Outline most of the API in this README file, identify design problems beforehand  
+> - [ ] Write tests for the base console application, build the application from there (TDD style)
+> - [ ] Write tests for the actual Vue code generation, implement API features from there
+> - [ ] Write tests for the [plugin structure](#plugins), implement it from there
+> - [ ] Refactoring, Optimization, real-world test cases
+> - [ ] ???
+> - [ ] PROFIT
+
 ## Installation
 Journeyman should be installed as a global npm module, like so:
 
@@ -95,7 +104,7 @@ TODO HERE
 Journeyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a `.journeyman` file or directly in the `package.json` below the key `journeyman` which is the preferred way (avoids yet *another* dot file in your project).  
 In general, it comes with a set of sensible defaults:
 
-### Paths
+### `paths`
 To set the output paths generated code should be written to, you can set one or more of the following path settings. Each of them will overwrite the default.
 
 | key          |           default |                                            description |
@@ -110,3 +119,8 @@ To set the output paths generated code should be written to, you can set one or 
 | `config`     |        `./config` | Path where the build configuration lives               |
 | `public`     |        `./public` | Path where the build is written to                     |
 | `static`     |        `./static` | Path where static assets live                          |
+
+### `preferred_spelling`
+This setting controls how journeyman generates component names and inserts them, for example. This also applies to file names on the file system. There are two options available:
+ - `camel`: Names are generated in **CamelCase**.
+ - `kebab`: Names are generated in **kebab-case**.

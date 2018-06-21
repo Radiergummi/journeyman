@@ -26,9 +26,8 @@ Journeyman assumes your project is set up a certain way by default. This is impo
 The below filesysytem tree is the structure journeyman expects:
 
 ```
-.
+.                      <--- Working directory journ is executed in
 ├── build/
-├── cache/
 ├── config/
 ├── public/
 ├── src/
@@ -47,7 +46,7 @@ The below filesysytem tree is the structure journeyman expects:
 The `make` command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use `journ list make` to view a list of available boots to strap (heh).
 
 #### `journ make component`
-Allows to bootstrap components.  
+Allows to bootstrap components. The component name passed as the third parameter can be either a filesystem path (`/foo/bar/MyNewComponent.vue`), a kebab-case (`my-new-component`) or a CamelCase (`MyNewComponent`) name. In each case, the name will be parsed and the file will be generated with the correct format ([Config: `preferred_spelling`](#preferred-spelling)) at the right location ([Config: `paths.components`](#paths))
 Generated components are described in detail later on.  
 
 ```sh
@@ -75,11 +74,9 @@ Cloned components will have all properties from the source component but with a 
 
 #### `journ make mixin`
 
+TODO HERE
 
 ### `journ config`
-Journeyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a `.journeyman` file or directly in the `package.json` below the key `journeyman` which is the preferred way (avoids yet *another* dot file in your project).  
-In general, it comes with a set of sensible defaults.
-
 Use the following command to read the configuration:
 
 ```sh
@@ -91,3 +88,25 @@ Use the following command to set a configuration variable:
 ```sh
 journ config set <key> <value>
 ```
+
+TODO HERE
+
+## Configuration
+Journeyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a `.journeyman` file or directly in the `package.json` below the key `journeyman` which is the preferred way (avoids yet *another* dot file in your project).  
+In general, it comes with a set of sensible defaults:
+
+### Paths
+To set the output paths generated code should be written to, you can set one or more of the following path settings. Each of them will overwrite the default.
+
+| key          |           default |                                            description |
+|:-------------|------------------:|:-------------------------------------------------------|
+| `assets`     |     `./src/assets`| Path where all assets live                             |
+| `components` | `./src/components`| Path where all components (`.vue` files) live          |
+| `mixins`     |    `./src/mixins` | Path where all mixins (`.js` files) live               |
+| `modules`    |   `./src/modules` | Path where all modules (`.js` files, helpers) live     |
+| `router`     |    `./src/router` | Path to the main router file                           |
+| `styles`     |    `./src/styles` | Path where all stylesheets (`.css`/`.scss` files) live |
+| `build`      |         `./build` | Path where the build modules live                      |
+| `config`     |        `./config` | Path where the build configuration lives               |
+| `public`     |        `./public` | Path where the build is written to                     |
+| `static`     |        `./static` | Path where static assets live                          |

@@ -22,11 +22,43 @@ journ list
 ```
 
 ### `journ make`
-The `make` command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use `journ list make` to view a list of available boots to strap (heh).  
+The `make` command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use `journ list make` to view a list of available boots to strap (heh). Generated components are described in detail later on.  
 
 ```sh
 # Bootstrap a new, empty component
 journ make component MyNewComponent
 
-# 
+# You can use shorthands, too
+journ m c MyNewComponent
+```
+
+Journeyman also supports extends and mixins as well as cloning:
+
+```sh
+# New component extending another
+journ make component MyOtherComponent --extends MyNewComponent
+
+# New component using one or more mixins
+journ make component MyOtherComponent --with oneMixin --with anotherMixin
+
+# New component based on another
+journ make component MyOtherComponent --from MyNewComponent
+```
+
+Cloned components will have all properties from the source component but with a new name.
+
+### `journ config`
+Journeyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a `.journeyman` file or directly in the `package.json` below the key `journeyman` which is the preferred way (avoids yet *another* dot file in your project).  
+In general, it comes with a set of sensible defaults.
+
+Use the following command to read the configuration:
+
+```sh
+journ config get [<value>]
+```
+
+Use the following command to set a configuration variable:
+
+```sh
+journ config set <key> <value>
 ```

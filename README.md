@@ -131,8 +131,8 @@ Plugins are special npm packages that must fulfill a few requirements:
 
  - **Their package name starts with `journeyman-plugin-`:**  
    This serves to keep the npm namespace clean and make plugins more obvious. I can't stand packages like `body-parser` that are secretly `express.js` plugins.
- - **They include a `journeyman-plugin.json` meta file in the package root directory:**  
-   This file provides plugin metadata. The available files are outlined in [plugin metadata fields](#plugin-metadata-fields)
+ - **Their `package.json` file includes a `journeyman-plugin` key:**  
+   This key provides plugin metadata. The available fields are outlined in [Plugin metadata fields](#plugin-metadata-fields)
  - **They export a class (*not an instance!*) from their main module that extends the base plugin:**  
    Journeyman provides a base class at [`src/plugins/Plugin`](./src/plugins/Plugin.js) that all plugins need to inherit from. It provides several methods Journeyman uses to initialize the plugin and work with it's input and output. This frees implementations from caring about API compatibility and implementation details.
 
@@ -280,8 +280,13 @@ class FooCommand extends Command {
 
 That's a whole slew of new stuff, so be sure to check out the [Command documentation](#commands).
 
+## Providing new commands for journeymans existing subcommands
+That's all fine and dandy, but what if you'd like to provide a new `make <something>`? For these cases, you can extend the special `MakePlugin` class instead of `Plugin`. All commands provided in these will be appended to the `make` subcommand. Beneath `MakePlugin`, there's also `LinkPlugin`, `ServePlugin` and `BuildPlugin` to extend the respective verbs.
+
+> More extend-plugins will be added as the development continues.
+
 ### Plugin metadata fields
-The `journeyman-plugin.json` file provides a way to specify metadata in a streamlined way. The following properties are recognized:
+The following `package.json` properties of the `journeyman-plugin` key are recognized:
 
 | Name       | Type     | Description | Required |
 |:-----------|----------|:------------|---------:|
@@ -289,6 +294,3 @@ The `journeyman-plugin.json` file provides a way to specify metadata in a stream
 | `defaults` | `Object` | Any default configuration you might need for your plugin. Defaults to an empty hash. | No |
 
 > More properties will be added as the development continues.
-
-### Available properties and methods
-The plugin base class provides several API endpoints you can use to interact with the application, the console and the project itself. 

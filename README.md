@@ -34,8 +34,8 @@ journ list
 Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the [configuration section](#configuration)), the default structure is the best practice all `vue-cli` templates follow, for example.  
 The below filesysytem tree is the structure journeyman expects:
 
-```
-.                      <--- Working directory journ is executed in
+<pre>
+.                      <strong><--- Working directory journ is executed in</strong>
 ├── build/
 ├── config/
 ├── public/
@@ -49,7 +49,7 @@ The below filesysytem tree is the structure journeyman expects:
 ├── static/
 ├── test/
 └── package.json
-```
+</pre>
 
 ### `journ make`
 The `make` command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use `journ list make` to view a list of available boots to strap (heh).

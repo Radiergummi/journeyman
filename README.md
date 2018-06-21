@@ -1,7 +1,7 @@
 # journeyman
-Journeyman is an opinionated CLI tool for Vue.js projects to generate code and automate common tasks.
+> Journeyman is an opinionated CLI tool for Vue.js projects to generate code and automate common tasks.
 
-Similar to [Laravel's Artisan](https://laravel.com/docs/5.6/artisan), *journeyman* aims to reduce repetitive programming tasks and make working on Vue.js applications a faster and more pleasant expierence, while adhering to Vue.js code style standards and best practices.
+Similar to [Laravel's Artisan](https://laravel.com/docs/5.6/artisan), *journeyman* aims to reduce repetitive programming tasks and make working on Vue.js applications a faster and more pleasant experience, while adhering to Vue.js code style standards and best practices.
 
 **Isn't this the same thing as `vue-cli`?**  
 No, not quite. Although journeyman provdes some similar features, it doesn't primarily serve to bootstrap the development pipeline but rather to aid a developer during development work. It doesn't care at all what module bundler or linter you use.

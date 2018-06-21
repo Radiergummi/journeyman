@@ -1,5 +1,5 @@
 # journeyman
-Journeyman is a CLI tool for Vue.js projects to generate code and automate common tasks.
+Journeyman is an opinionated CLI tool for Vue.js projects to generate code and automate common tasks.
 
 Similar to [Laravel's Artisan](https://laravel.com/docs/5.6/artisan), *journeyman* aims to reduce repetitive programming tasks and make working on Vue.js applications a faster and more pleasant expierence, while adhering to Vue.js code style standards and best practices.
 
@@ -21,8 +21,34 @@ Journeyman can be invoked on the command line using the `journ` command. Using t
 journ list
 ```
 
+### Expected filesystem structure
+Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the [configuration section](#configuration)), the default structure is the best practice all `vue-cli` templates follow, for example.  
+The below filesysytem tree is the structure journeyman expects:
+
+```
+.
+├── build/
+├── cache/
+├── config/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── mixins/
+│   ├── modules/
+│   ├── router/
+│   └── styles/
+├── static/
+├── test/
+└── package.json
+```
+
 ### `journ make`
-The `make` command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use `journ list make` to view a list of available boots to strap (heh). Generated components are described in detail later on.  
+The `make` command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use `journ list make` to view a list of available boots to strap (heh).
+
+#### `journ make component`
+Allows to bootstrap components.  
+Generated components are described in detail later on.  
 
 ```sh
 # Bootstrap a new, empty component
@@ -46,6 +72,9 @@ journ make component MyOtherComponent --from MyNewComponent
 ```
 
 Cloned components will have all properties from the source component but with a new name.
+
+#### `journ make mixin`
+
 
 ### `journ config`
 Journeyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a `.journeyman` file or directly in the `package.json` below the key `journeyman` which is the preferred way (avoids yet *another* dot file in your project).  

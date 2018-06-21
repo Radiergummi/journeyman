@@ -83,22 +83,66 @@ Cloned components will have all properties from the source component but with a 
 
 #### `journ make mixin`
 
-TODO HERE
+Allows to bootstrap mixins.  
+> TODO HERE
+
+#### `journ make route`
+
+> TODO HERE
+
+#### `journ make module`
+
+> TODO HERE
+
+#### `journ make style`
+
+> TODO HERE
+
+### `journ extract`
+The `extract` command allows extraction of code into mixins, styles into stylesheets and large templates into individual components.
+
+> TODO HERE
+
+### `journ inline`
+The exact opposite of the `extract` command, `inline` allows to inline external code into your components.
+
+> TODO HERE
+
+### `journ lint`
+The `lint` command performs a Vue.js coding style check on your code-base. This allows you to verify all your components adhere to the same style rules. In contrary to `eslint` for example, This will not check your JS code (there are a lot of perfectly fine tools for this job), but rather verify all your code is streamlined and follows best practices.  
+There are a bunch of linting rules available in [the configuration](#linting-rules).
+
+Additionally, if configured so, `lint` will check your JSDoc comments to make sure they a) exist, b) are complete and c) are correct. It will also look for repetitions throughout your components which are probably opportunities for mixins.
 
 ### `journ config`
+The `config` command allows to read and write configuration values.
+
+#### `journ config get`
 Use the following command to read the configuration:
 
 ```sh
 journ config get [<value>]
 ```
 
-Use the following command to set a configuration variable:
+#### `journ config set`
+Use the following command to set a configuration value:
 
 ```sh
 journ config set <key> <value>
 ```
 
-TODO HERE
+#### `journ config init`
+Use the following command to write the default configuration values to your `package.json` or `.journeyman` file. This way, you've got all available configuration values at hand to modify them to your liking:
+
+```sh
+journ config init [--package,-p] [--dotfile,-d]
+```
+
+Using the `--package` or `--dotfile` parameter, you can optionally specify the target: `package.json` or `.journeyman`.  
+The default is `--package`.
+
+
+> TODO HERE
 
 ## Configuration
 Journeyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a `.journeyman` file or directly in the `package.json` below the key `journeyman` which is the preferred way (avoids yet *another* dot file in your project).  

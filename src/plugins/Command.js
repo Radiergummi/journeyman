@@ -1,5 +1,13 @@
 'use strict';
 
+/*
+ * global module,
+ * require
+ */
+
+const Plugin = require('./Plugin');
+const InvalidInstantiationError = require('../Errors/InvalidInstantiationError');
+
 class Command {
 
   /**
@@ -15,6 +23,10 @@ class Command {
    * @param {Plugin} plugin
    */
   constructor(plugin) {
+    if (!(plugin instanceof Plugin)) {
+      throw new InvalidInstantiationError(this, plugin);
+    }
+    
     this.$plugin = plugin;
   }
   

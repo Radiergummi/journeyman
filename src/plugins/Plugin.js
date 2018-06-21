@@ -71,7 +71,7 @@ class Plugin {
     
     // We were not able to find a matching command - seems like something gone wrong
     if (typeof handler === 'undefined') {
-      throw new UnknownCommandError(this);
+      throw new UnknownCommandError(this, command);
     }
     
     // We've found a handler, so let's try to execute it. The call is wrapped to 
@@ -79,7 +79,7 @@ class Plugin {
     try {
       output = await handler.call(this, context);
     } catch (error) {
-      throw new CommandExecutionError(this, error);
+      throw new CommandExecutionError(this, handler, error);
     }
     
     return output;

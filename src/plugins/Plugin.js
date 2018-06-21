@@ -1,5 +1,13 @@
 'use strict';
 
+/*
+ * global module,
+ * require
+ */
+
+const UnknownCommandError = require('../Errors/UnknownCommandError');
+const CommandExecutionError = require('../Errors/CommandExecutionError');
+
 class Plugin {
 
   /**

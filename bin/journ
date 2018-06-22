@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+const JourneyMan = require( '../lib/JourneyMan' );
+
+const journeyMan = new JourneyMan( process, process.env.JOURNEYMAN_CONFIG_PATH );
+
+console.log( journeyMan );

@@ -8,6 +8,7 @@
     },
     "dependencies": {
         "command-line-args": "^5.0.2",
+        "global-npm": "^0.3.0",
         "minimist": "^1.2.0"
     },
     "devDependencies": {},
@@ -32,16 +33,7 @@
     "journeyman": {
         "preferred_spelling": "kebab",
         "paths": {
-            "assets": "./src/assets",
-            "components": "./src/components",
-            "mixins": "./src/mixins",
-            "modules": "./src/modules",
-            "router": "./src/router",
-            "styles": "./src/styles",
-            "build": "./build",
-            "config": "./config",
-            "public": "./public",
-            "static": "./static"
+            "plugins": "./foo"
         }
     }
 }

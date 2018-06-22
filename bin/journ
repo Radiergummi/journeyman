@@ -4,4 +4,7 @@ const JourneyMan = require( '../lib/JourneyMan' );
 
 const journeyMan = new JourneyMan( process, process.env.JOURNEYMAN_CONFIG_PATH );
 
-console.log( journeyMan );
+journeyMan
+  .init()
+  .then( () => console.log( journeyMan ) )
+  .catch( error => console.error( error ) );

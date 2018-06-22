@@ -24,7 +24,7 @@ npm install --global @radiergummi/journeyman
 **Please note: Journeyman isn't actually available yet, so this package isn't published right now.**
 
 ## Usage
-Journeyman can be invoked on the command line using the `journ` command. Using the `list` command, you can view a list of all available subcommands that will be detailed in the following sections:
+Journeyman can be invoked on the command line using the `journ` command. Using the `list` command, you can view a list of all available sub-commands that will be detailed in the following sections:
 
 ```sh
 journ list
@@ -32,10 +32,10 @@ journ list
 
 ### Expected filesystem structure
 Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the [configuration section](#configuration)), the default structure is the best practice all `vue-cli` templates follow, for example.  
-The below filesysytem tree is the structure journeyman expects:
+The below filesystem tree is the structure journeyman expects:
 
 <pre>
-.                      <strong><--- Working directory journ is executed in</strong>
+.                    <strong><--- Working directory journ is executed in</strong>
 ├── build/
 ├── config/
 ├── public/
@@ -178,15 +178,12 @@ Plugins are special npm packages that must fulfill a few requirements:
  - **Their `package.json` file includes a `journeyman-plugin` key:**  
    This key provides plugin metadata. The available fields are outlined in [Plugin metadata fields](#plugin-metadata-fields)
  - **They export a class (*not an instance!*) from their main module that extends the base plugin:**  
-   Journeyman provides a base class at [`src/plugins/Plugin`](./src/plugins/Plugin.js) that all plugins need to inherit from. It provides several methods Journeyman uses to initialize the plugin and work with it's input and output. This frees implementations from caring about API compatibility and implementation details.
+   Journeyman provides a base class at [`lib/plugins/Plugin`](./lib/Plugins/Plugin.js) that all plugins need to inherit from. It provides several methods Journeyman uses to initialize the plugin and work with it's input and output. This frees implementations from caring about API compatibility and implementation details.
 
 Basically, a plugin provides a new subcommand to journeyman that all its methods are grouped below. A simple plugin might look like this:
 
 ```js
-const Plugin = require('journeyman/plugins/Plugin');
-
-// or:
-// const { Plugin } = require('journeyman');
+const { Plugin } = require('journeyman');
 
 class EchoPlugin extends Plugin {
 
@@ -222,7 +219,7 @@ class EchoPlugin extends Plugin {
 If your plugin only serves a single purpose -- eg. it doesn't need multiple sub-commands -- you can use one-shot plugins. The only difference to ordinary plugins is that they include the special `__invoke` method: If a plugin provides it, journeyman assumes the plugin doesn't need a namespace and only has a single, public command, callable as `journ <plugin name> --params`. If journeyman finds the \_\_invoke method  inside your plugin, it will disregard any other public methods. As ordinary command methods, `__invoke` receives the application instance as its only parameter.
 
 ```js
-const Plugin = require('journeyman/plugins/Plugin');
+const { Plugin } = require('journeyman');
 
 class FooPlugin extends Plugin {
   static get name() {
@@ -245,17 +242,17 @@ class FooPlugin extends Plugin {
 
 | Name                             | Type                                | Description                             |
 |:---------------------------------|-------------------------------------|:----------------------------------------|
-| `journeyman`                     | [`JourneyMan`](./src/JourneyMan.js) | The current `JourneyMan` instance.      |
+| `journeyman`                     | [`JourneyMan`](./lib/JourneyMan.js) | The current `JourneyMan` instance.      |
 | `env`                            | `Map<k: String, v: String>`         | Holds all system environment variables. |
-| `input`                          | [`Input`](./src/cli/Input.js)       | Holds the command line input object.    |
-| `output`                         | [`Output`](./src/cli/Output.js)     | Holds the command line output object.   |
-| `plugins`                        | `Array<Plugin>`                     | Holds the list of available plugins. Alias to [`journeyman.plugins`](./src/JourneyMan.js). |
+| `input`                          | [`Input`](./lib/Console/Input.js)       | Holds the command line input object.    |
+| `output`                         | [`Output`](./lib/Console/Output.js)     | Holds the command line output object.   |
+| `plugins`                        | `Array<Plugin>`                     | Holds the list of available plugins. Alias to [`journeyman.plugins`](./lib/JourneyMan.js). |
 | `call(command: String): Promise` | `function`                          | Allows to call other commands by their full command input string. |
 
 > More properties and methods will be added as the development continues.
 
 ### Advanced plugins
-Single-class and one-shot plugins will be fine for most purposes. But what if you've got actual *work* to do? Fear not, for there's a third structural option: Instead of providing the individual commands as methods on your plugin, you can also provide a list of [`Command`](./src/plugins/Command) instances.  
+Single-class and one-shot plugins will be fine for most purposes. But what if you've got actual *work* to do? Fear not, for there's a third structural option: Instead of providing the individual commands as methods on your plugin, you can also provide a list of [`Command`](./lib/Console/Command.js) instances.  
 This provides you with a belly of additional goodies, like automatic help generation, fine-grained parameter and option handling as well as neatly organized code.
 
 A plugin using Command instances might look like this:
@@ -320,11 +317,12 @@ class FooCommand extends Command {
   __invoke(app) {
     return Promise.resolve();
   }
+}
 ```
 
 That's a whole slew of new stuff, so be sure to check out the [Command documentation](#commands).
 
-## Providing new commands for journeymans existing subcommands
+## Providing new commands for journeyman's existing sub-commands
 That's all fine and dandy, but what if you'd like to provide a new `make <something>`? For these cases, you can extend the special `MakePlugin` class instead of `Plugin`. All commands provided in these will be appended to the `make` subcommand. Beneath `MakePlugin`, there's also `LinkPlugin`, `ServePlugin` and `BuildPlugin` to extend the respective verbs.
 
 > More extend-plugins will be added as the development continues.

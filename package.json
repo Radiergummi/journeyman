@@ -1,0 +1,47 @@
+{
+    "name": "journeyman",
+    "version": "0.0.1",
+    "description": "Journeyman is an opinionated CLI tool for Vue.js projects to generate code and automate common tasks.",
+    "main": "lib/JourneyMan.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "dependencies": {
+        "command-line-args": "^5.0.2",
+        "minimist": "^1.2.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Radiergummi/journeyman.git"
+    },
+    "keywords": [
+        "vue",
+        "helper",
+        "cli"
+    ],
+    "author": "Moritz Friedrich <m@9dev.de>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Radiergummi/journeyman/issues"
+    },
+    "homepage": "https://github.com/Radiergummi/journeyman#readme",
+    "journeyman": {
+        "preferred_spelling": "kebab",
+        "paths": {
+            "assets": "./src/assets",
+            "components": "./src/components",
+            "mixins": "./src/mixins",
+            "modules": "./src/modules",
+            "router": "./src/router",
+            "styles": "./src/styles",
+            "build": "./build",
+            "config": "./config",
+            "public": "./public",
+            "static": "./static"
+        }
+    }
+}

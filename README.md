@@ -23,6 +23,8 @@ npm install --global @radiergummi/journeyman
 ```
 **Please note: Journeyman isn't actually available yet, so this package isn't published right now.**
 
+> Journeyman requires Node.js >= 7 to run.
+
 ## Usage
 Journeyman can be invoked on the command line using the `journ` command. Using the `list` command, you can view a list of all available sub-commands that will be detailed in the following sections:
 

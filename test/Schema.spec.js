@@ -413,7 +413,9 @@ describe( 'Schema', () => {
       } );
 
       it( 'should bail on invalid arbitrary prototype fields', () => {
-        expect( () => schemaD.validateField( 'instance', new URL( 'https://a.b' ) ) )
+        class X {}
+
+        expect( () => schemaD.validateField( 'instance', new X() ) )
           .to.throw( ConfigValidationTypeError );
       } );
     } );

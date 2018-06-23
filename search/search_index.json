@@ -147,7 +147,7 @@
         }, 
         {
             "location": "/api/Command/", 
-            "text": "lib/Console/Command.js\n\n\nConsole Command\n\n\nCommands represent complete, CLI-callable commands.\n\n\n\n\n\nnew Command(plugin: \nPlugin\n)\n\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nlib/Console/Command.js\n\n\nHolds the name of the command.\n\n\n\n\n$name\n\n\n\n\nInstance Members\n\n\n\n\ngetName()\n\n\nlib/Console/Command.js\n\n\nRetrieves the command name\n\n\n\n\ngetName(): \nstring\n\n\n\nReturns\n\n\nstring\n\n\n\n\n\n\n__configure()\n\n\nlib/Console/Command.js\n\n\nConfigures the command.\n\n\n\n\n__configure(): void\n\n\n\nReturns\n\n\nvoid\n\n\n\n\n\n\n__invoke(context)\n\n\nlib/Console/Command.js\n\n\nExecutes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can \nawait\n non-Promise returning functions too.\n\n\n\n\n__invoke(context: any): (\nPromise\n(\nString\n | \nNumber\n)> | any)\n\n\n\nParameters\n\n\ncontext\n \n\n\n\n\nReturns\n\n\n(\nPromise\n(\nString\n | \nNumber\n)\n | any)\n\n\n\n\n\n\ngetHelp(input, output)\n\n\nlib/Console/Command.js\n\n\nRetrieves the help text\n\n\n\n\ngetHelp(input: any, output: any)\n\n\n\nParameters\n\n\ninput\n \n\n\n\n\noutput\n \n\n\n\n\n\n\n\n\naddArgument(name, argumentType = CommandArgument.types.value_required, description = '', fallback = null)\n\n\nlib/Console/Command.js\n\n\nAdds a new argument to the command\n\n\n\n\naddArgument(name: \nstring\n, argumentType: \nstring\n?, description: \nstring\n?, fallback: any?)\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nargument name\n\n\n\n\nargumentType\n (\nstring\n? = CommandArgument.types.value_required)\n\n\n\n\nargument type. must use one of the static types (@see CommandArgument#types)\n\n\n\n\ndescription\n (\nstring\n? = \n)\n\n\n\n\nargument description for the help text\n\n\n\n\nfallback\n (any? = null)\n\n\n\n\nfallback value if missing. Can only be used for optional arguments\n\n\n\n\n\n\n\n\naddOption(longName, shortName, optionType, description, valueLabel)\n\n\nlib/Console/Command.js\n\n\nAdds a new option to the command\n\n\n\n\naddOption(longName: \nstring\n, shortName: \nstring\n, optionType: \nstring\n, description: \nstring\n, valueLabel: \nstring\n)\n\n\n\nParameters\n\n\nlongName\n (\nstring\n)\n\n\n\n\nshortName\n (\nstring\n = longName.substr(0,1))\n\n\n\n\noptionType\n (\nstring\n = CommandOption.types.value_none)\n\n\n\n\ndescription\n (\nstring\n = \n)\n\n\n\n\nvalueLabel\n (\nstring\n = \n)\n\n\n\n\n\n\n\n\nhasOption(name)\n\n\nlib/Console/Command.js\n\n\nChecks whether the command has an option\n\n\n\n\nhasOption(name: \nstring\n): \nboolean\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nlong name of the option\n\n\n\n\nReturns\n\n\nboolean", 
+            "text": "lib/Console/Command.js\n\n\nConsole Command\n\n\nCommands represent complete, CLI-callable commands.\n\n\n\n\n\nnew Command(plugin: \nPlugin\n)\n\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nlib/Console/Command.js\n\n\nHolds the name of the command.\n\n\n\n\n$name\n\n\n\n\nInstance Members\n\n\n\n\ngetName()\n\n\nlib/Console/Command.js\n\n\nRetrieves the command name\n\n\n\n\ngetName(): \nstring\n\n\n\nReturns\n\n\nstring\n\n\n\n\n\n\n__configure()\n\n\nlib/Console/Command.js\n\n\nConfigures the command.\n\n\n\n\n__configure(): void\n\n\n\nReturns\n\n\nvoid\n\n\n\n\n\n\n__invoke(context)\n\n\nlib/Console/Command.js\n\n\nExecutes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can \nawait\n non-Promise returning functions too.\n\n\n\n\n__invoke(context): (\nPromise\n(\nString\n | \nNumber\n)> | any)\n\n\n\nParameters\n\n\ncontext\n \n\n\n\n\nReturns\n\n\n(\nPromise\n(\nString\n | \nNumber\n)\n | any)\n\n\n\n\n\n\ngetHelp(input, output)\n\n\nlib/Console/Command.js\n\n\nRetrieves the help text\n\n\n\n\ngetHelp(input, output)\n\n\n\nParameters\n\n\ninput\n \n\n\n\n\noutput\n \n\n\n\n\n\n\n\n\naddArgument(name, argumentType = CommandArgument.types.value_required, description = '', fallback = null)\n\n\nlib/Console/Command.js\n\n\nAdds a new argument to the command\n\n\n\n\naddArgument(name: \nstring\n, argumentType: \nstring\n?, description: \nstring\n?, fallback: any?)\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nargument name\n\n\n\n\nargumentType\n (\nstring\n? = CommandArgument.types.value_required)\n\n\n\n\nargument type. must use one of the static types (@see CommandArgument#types)\n\n\n\n\ndescription\n (\nstring\n? = \n)\n\n\n\n\nargument description for the help text\n\n\n\n\nfallback\n (any? = null)\n\n\n\n\nfallback value if missing. Can only be used for optional arguments\n\n\n\n\n\n\n\n\naddOption(longName, shortName, optionType, description, valueLabel)\n\n\nlib/Console/Command.js\n\n\nAdds a new option to the command\n\n\n\n\naddOption(longName: \nstring\n, shortName: \nstring\n, optionType: \nstring\n, description: \nstring\n, valueLabel: \nstring\n)\n\n\n\nParameters\n\n\nlongName\n (\nstring\n)\n\n\n\n\nshortName\n (\nstring\n = longName.substr(0,1))\n\n\n\n\noptionType\n (\nstring\n = CommandOption.types.value_none)\n\n\n\n\ndescription\n (\nstring\n = \n)\n\n\n\n\nvalueLabel\n (\nstring\n = \n)\n\n\n\n\n\n\n\n\nhasOption(name)\n\n\nlib/Console/Command.js\n\n\nChecks whether the command has an option\n\n\n\n\nhasOption(name: \nstring\n): \nboolean\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nlong name of the option\n\n\n\n\nReturns\n\n\nboolean", 
             "title": "Command"
         }, 
         {
@@ -177,7 +177,7 @@
         }, 
         {
             "location": "/api/Command/#returns_1", 
-            "text": "void    __invoke(context)  lib/Console/Command.js  Executes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can  await  non-Promise returning functions too.   __invoke(context: any): ( Promise ( String  |  Number )> | any)", 
+            "text": "void    __invoke(context)  lib/Console/Command.js  Executes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can  await  non-Promise returning functions too.   __invoke(context): ( Promise ( String  |  Number )> | any)", 
             "title": "Returns"
         }, 
         {
@@ -187,7 +187,7 @@
         }, 
         {
             "location": "/api/Command/#returns_2", 
-            "text": "( Promise ( String  |  Number )  | any)    getHelp(input, output)  lib/Console/Command.js  Retrieves the help text   getHelp(input: any, output: any)", 
+            "text": "( Promise ( String  |  Number )  | any)    getHelp(input, output)  lib/Console/Command.js  Retrieves the help text   getHelp(input, output)", 
             "title": "Returns"
         }, 
         {
@@ -236,78 +236,208 @@
             "title": "Returns"
         }, 
         {
-            "location": "/api/ConfigValidationError/", 
-            "text": "lib/Errors/ConfigValidationError.js\n\n\nConfiguration validation error\n\n\nThis error should be used if an unknown type has been passed to the validation. The Schema class can\nonly validate objects.\n\n\n\n\n\nnew ConfigValidationError(validator: any, config: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\nvalidator\n \n\n\n\n\nconfig", 
-            "title": "ConfigValidationError"
+            "location": "/api/Errors/", 
+            "text": "Groups all custom errors used throughout Journeyman\n\n\nMembers\n\n\n\n\nCommandExecutionError(plugin, handler, error)\n\n\nlib/Errors/CommandExecutionError.js\n\n\nCommand execution error\n\n\nThis error should be used if a command throws during execution. It indicates the command\nentered some kind of failed state.\n\n\n\n\n\nnew CommandExecutionError(plugin: \nPlugin\n, handler: (\nCommand\n | \nfunction\n), error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nPlugin instance\n\n\n\n\nhandler\n ((\nCommand\n | \nfunction\n))\n\n\n\n\nHandler that failed while handling the command\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nConfigUpdateError(path, error)\n\n\nlib/Errors/ConfigUpdateError.js\n\n\nConfiguration update error\n\n\nThis error should be used if an error occurred during writing the configuration to file.\nIt indicates the configuration file could not be persisted to disk.\n\n\n\n\n\nnew ConfigUpdateError(path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the configuration file\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nConfigValidationError(schema, config)\n\n\nlib/Errors/ConfigValidationError.js\n\n\nConfiguration validation error\n\n\nThis error should be used if an unknown type has been passed to the validation. The Schema class can\nonly validate objects.\n\n\n\n\n\nnew ConfigValidationError(schema: \nSchema\n, config: any)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nconfig\n (any)\n\n\n\n\nThe configuration data declared as an object but is none\n\n\n\n\n\n\n\n\nConfigValidationInvalidFieldError(schema, field, value)\n\n\nlib/Errors/ConfigValidationInvalidFieldError.js\n\n\nConfiguration validation invalid field error\n\n\nThis error should be used if an unknown field has been passed. It indicates the field is missing\nfrom the schema and therefore can't be validated.\n\n\n\n\n\nnew ConfigValidationInvalidFieldError(schema: \nSchema\n, field: \nString\n, value: any)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\nvalue\n (any)\n\n\n\n\nValue that failed validation\n\n\n\n\n\n\n\n\nConfigValidationMissingFieldError(schema, config, field)\n\n\nlib/Errors/ConfigValidationMissingFieldError.js\n\n\nConfiguration validation missing field error\n\n\nThis error should be used if a required schema field is missing. It indicates a certain field must\nbe used but isn't there.\n\n\n\n\n\nnew ConfigValidationMissingFieldError(schema: \nSchema\n, config: \nObject\n, field: \nString\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nconfig\n (\nObject\n)\n\n\n\n\nConfiguration data which failed validation\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\n\n\n\n\nConfigValidationTypeError(schema, field, value, rule)\n\n\nlib/Errors/ConfigValidationTypeError.js\n\n\nConfiguration validation type error\n\n\nThis error should be used if the schema validation of a field's type fails. It indicates the field\nexists but is of the wrong type.\n\n\n\n\n\nnew ConfigValidationTypeError(schema: \nSchema\n, field: \nString\n, value: any, rule)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\nvalue\n (any)\n\n\n\n\nValue that failed validation\n\n\n\n\nrule\n \n\n\n\n\n\n\n\n\nConfigValidationValidatorError(schema, field, value, rule)\n\n\nlib/Errors/ConfigValidationValidatorError.js\n\n\nConfiguration validation validator error\n\n\nThis error should be used if a field validator throws or returns \nfalse\n. It indicates the field\neither could not be validated (the result was \nfalse\n) or did throw an Error during validation.\n\n\n\n\n\nnew ConfigValidationValidatorError(schema: \nSchema\n, field: \nString\n, value: any, rule)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\nvalue\n (any)\n\n\n\n\nValue that failed validation\n\n\n\n\nrule\n \n\n\n\n\n\n\n\n\nInvalidConfigFileError(path, error)\n\n\nlib/Errors/InvalidConfigFileError.js\n\n\nInvalid configuration file error\n\n\nThis error should be used if the configuration file cannot be read or parsed. Due to the use\nof \nrequire( configFile )\n inside the configuration constructor, this will implicitly be\nthe case if the file path does not exist or points to something apart of \n.js\n or \n.json\n files.\n\n\n\n\n\nnew InvalidConfigFileError(path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the invalid configuration file\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nInvalidInstantiationError(command, plugin)\n\n\nlib/Errors/InvalidInstantiationError.js\n\n\nInvalid instantiation error error\n\n\nThis error should be used if a command is being instantiated with anything but a valid\nPlugin instance. It indicates a command has been constructed manually somewhere which\nis considered unsafe.\n\n\n\n\n\nnew InvalidInstantiationError(command: \nCommand\n, plugin: \nPlugin\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\ncommand\n (\nCommand\n)\n\n\n\n\nInstance of the command that caused the error\n\n\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nWhatever has been passed as a plugin but is none\n\n\n\n\n\n\n\n\nInvalidPluginError(loader, plugin)\n\n\nlib/Errors/InvalidPluginError.js\n\n\nInvalid plugin error\n\n\nThis error should be used if a bad module is encountered by the plugin loader. It\nindicates a module declares itself as a journeyman plugin but doesn't work according to\nthe plugin specification.\n\n\n\n\n\nnew InvalidPluginError(loader: \nLoader\n, plugin: \nPlugin\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nloader\n (\nLoader\n)\n\n\n\n\nInstance of the plugin loader\n\n\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nInstance of the invalid Plugin\n\n\n\n\n\n\n\n\nPluginDiscoveryError(loader, path, error)\n\n\nlib/Errors/PluginDiscoveryError.js\n\n\nPlugin discovery error\n\n\nThis error should be used if the plugin discovery failed. It indicates there is a problem\npreventing the plugin loader from discovering plugins, likely at the filesystem level.\n\n\n\n\n\nnew PluginDiscoveryError(loader: \nLoader\n, path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nloader\n (\nLoader\n)\n\n\n\n\nInstance of the plugin loader\n\n\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the directory that caused the error\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nPluginLoadError(loader, path, error)\n\n\nlib/Errors/PluginLoadError.js\n\n\nPlugin load error\n\n\nThis error should be used if a plugin can't be loaded. It indicates there is a problem when\ncalling \nrequire( pluginPath )\n to load the module.\n\n\n\n\n\nnew PluginLoadError(loader: \nLoader\n, path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nloader\n (\nLoader\n)\n\n\n\n\nInstance of the plugin loader\n\n\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the plugin that caused the error\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nUnknownCommandError(plugin, command)\n\n\nlib/Errors/UnknownCommandError.js\n\n\nUnknown command error\n\n\nThis error should be used if a call for a plugin command cannot be resolved to a command. It\nindicates the plugin sub-command is valid (the plugin exists and is loaded) but there is no\nhandler to handle the specific command called.\n\n\n\n\n\nnew UnknownCommandError(plugin: \nPlugin\n, command: \nString\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nInstance of the plugin the error was thrown in\n\n\n\n\ncommand\n (\nString\n)\n\n\n\n\nCommand requested", 
+            "title": "Errors"
         }, 
         {
-            "location": "/api/ConfigValidationError/#configuration-validation-error", 
-            "text": "This error should be used if an unknown type has been passed to the validation. The Schema class can\nonly validate objects.   \nnew ConfigValidationError(validator: any, config: any)  \nExtends Error", 
+            "location": "/api/Errors/#members", 
+            "text": "CommandExecutionError(plugin, handler, error)  lib/Errors/CommandExecutionError.js", 
+            "title": "Members"
+        }, 
+        {
+            "location": "/api/Errors/#command-execution-error", 
+            "text": "This error should be used if a command throws during execution. It indicates the command\nentered some kind of failed state.   \nnew CommandExecutionError(plugin:  Plugin , handler: ( Command  |  function ), error:  Error )", 
+            "title": "Command execution error"
+        }, 
+        {
+            "location": "/api/Errors/#extends", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters", 
+            "text": "plugin  ( Plugin )   Plugin instance   handler  (( Command  |  function ))   Handler that failed while handling the command   error  ( Error )   Error that was thrown     ConfigUpdateError(path, error)  lib/Errors/ConfigUpdateError.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#configuration-update-error", 
+            "text": "This error should be used if an error occurred during writing the configuration to file.\nIt indicates the configuration file could not be persisted to disk.   \nnew ConfigUpdateError(path:  String , error:  Error )", 
+            "title": "Configuration update error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_1", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_1", 
+            "text": "path  ( String )   Path to the configuration file   error  ( Error )   Error that was thrown     ConfigValidationError(schema, config)  lib/Errors/ConfigValidationError.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#configuration-validation-error", 
+            "text": "This error should be used if an unknown type has been passed to the validation. The Schema class can\nonly validate objects.   \nnew ConfigValidationError(schema:  Schema , config: any)", 
             "title": "Configuration validation error"
         }, 
         {
-            "location": "/api/ConfigValidationError/#parameters", 
-            "text": "validator     config", 
+            "location": "/api/Errors/#extends_2", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_2", 
+            "text": "schema  ( Schema )   Schema instance   config  (any)   The configuration data declared as an object but is none     ConfigValidationInvalidFieldError(schema, field, value)  lib/Errors/ConfigValidationInvalidFieldError.js", 
             "title": "Parameters"
         }, 
         {
-            "location": "/api/ConfigValidationInvalidFieldError/", 
-            "text": "lib/Errors/ConfigValidationInvalidFieldError.js\n\n\nConfiguration validation invalid field error\n\n\nThis error should be used if an unknown field has been passed. It indicates the field is missing\nfrom the schema and therefore can't be validated.\n\n\n\n\n\nnew ConfigValidationInvalidFieldError(validator: any, field: any, value: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\nvalidator\n \n\n\n\n\nfield\n \n\n\n\n\nvalue", 
-            "title": "ConfigValidationInvalidFieldError"
-        }, 
-        {
-            "location": "/api/ConfigValidationInvalidFieldError/#configuration-validation-invalid-field-error", 
-            "text": "This error should be used if an unknown field has been passed. It indicates the field is missing\nfrom the schema and therefore can't be validated.   \nnew ConfigValidationInvalidFieldError(validator: any, field: any, value: any)  \nExtends Error", 
+            "location": "/api/Errors/#configuration-validation-invalid-field-error", 
+            "text": "This error should be used if an unknown field has been passed. It indicates the field is missing\nfrom the schema and therefore can't be validated.   \nnew ConfigValidationInvalidFieldError(schema:  Schema , field:  String , value: any)", 
             "title": "Configuration validation invalid field error"
         }, 
         {
-            "location": "/api/ConfigValidationInvalidFieldError/#parameters", 
-            "text": "validator     field     value", 
+            "location": "/api/Errors/#extends_3", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_3", 
+            "text": "schema  ( Schema )   Schema instance   field  ( String )   Field that failed validation   value  (any)   Value that failed validation     ConfigValidationMissingFieldError(schema, config, field)  lib/Errors/ConfigValidationMissingFieldError.js", 
             "title": "Parameters"
         }, 
         {
-            "location": "/api/ConfigValidationMissingFieldError/", 
-            "text": "lib/Errors/ConfigValidationMissingFieldError.js\n\n\nConfiguration validation missing field error\n\n\nThis error should be used if a required schema field is missing. It indicates a certain field must\nbe used but isn't there.\n\n\n\n\n\nnew ConfigValidationMissingFieldError(validator: any, config: any, field: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\nvalidator\n \n\n\n\n\nconfig\n \n\n\n\n\nfield", 
-            "title": "ConfigValidationMissingFieldError"
-        }, 
-        {
-            "location": "/api/ConfigValidationMissingFieldError/#configuration-validation-missing-field-error", 
-            "text": "This error should be used if a required schema field is missing. It indicates a certain field must\nbe used but isn't there.   \nnew ConfigValidationMissingFieldError(validator: any, config: any, field: any)  \nExtends Error", 
+            "location": "/api/Errors/#configuration-validation-missing-field-error", 
+            "text": "This error should be used if a required schema field is missing. It indicates a certain field must\nbe used but isn't there.   \nnew ConfigValidationMissingFieldError(schema:  Schema , config:  Object , field:  String )", 
             "title": "Configuration validation missing field error"
         }, 
         {
-            "location": "/api/ConfigValidationMissingFieldError/#parameters", 
-            "text": "validator     config     field", 
+            "location": "/api/Errors/#extends_4", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_4", 
+            "text": "schema  ( Schema )   Schema instance   config  ( Object )   Configuration data which failed validation   field  ( String )   Field that failed validation     ConfigValidationTypeError(schema, field, value, rule)  lib/Errors/ConfigValidationTypeError.js", 
             "title": "Parameters"
         }, 
         {
-            "location": "/api/ConfigValidationTypeError/", 
-            "text": "lib/Errors/ConfigValidationTypeError.js\n\n\nConfiguration validation type error\n\n\nThis error should be used if the schema validation of a field's type fails. It indicates the field\nexists but is of the wrong type.\n\n\n\n\n\nnew ConfigValidationTypeError(validator: any, field: any, value: any, rule: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\nvalidator\n \n\n\n\n\nfield\n \n\n\n\n\nvalue\n \n\n\n\n\nrule", 
-            "title": "ConfigValidationTypeError"
-        }, 
-        {
-            "location": "/api/ConfigValidationTypeError/#configuration-validation-type-error", 
-            "text": "This error should be used if the schema validation of a field's type fails. It indicates the field\nexists but is of the wrong type.   \nnew ConfigValidationTypeError(validator: any, field: any, value: any, rule: any)  \nExtends Error", 
+            "location": "/api/Errors/#configuration-validation-type-error", 
+            "text": "This error should be used if the schema validation of a field's type fails. It indicates the field\nexists but is of the wrong type.   \nnew ConfigValidationTypeError(schema:  Schema , field:  String , value: any, rule)", 
             "title": "Configuration validation type error"
         }, 
         {
-            "location": "/api/ConfigValidationTypeError/#parameters", 
-            "text": "validator     field     value     rule", 
+            "location": "/api/Errors/#extends_5", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_5", 
+            "text": "schema  ( Schema )   Schema instance   field  ( String )   Field that failed validation   value  (any)   Value that failed validation   rule       ConfigValidationValidatorError(schema, field, value, rule)  lib/Errors/ConfigValidationValidatorError.js", 
             "title": "Parameters"
         }, 
         {
-            "location": "/api/ConfigValidationValidatorError/", 
-            "text": "lib/Errors/ConfigValidationValidatorError.js\n\n\nConfiguration validation validator error\n\n\nThis error should be used if a field validator throws or returns \nfalse\n. It indicates the field\neither could not be validated (the result was \nfalse\n) or did throw an Error during validation.\n\n\n\n\n\nnew ConfigValidationValidatorError(validator: any, field: any, value: any, meta: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\nvalidator\n \n\n\n\n\nfield\n \n\n\n\n\nvalue\n \n\n\n\n\nmeta", 
-            "title": "ConfigValidationValidatorError"
-        }, 
-        {
-            "location": "/api/ConfigValidationValidatorError/#configuration-validation-validator-error", 
-            "text": "This error should be used if a field validator throws or returns  false . It indicates the field\neither could not be validated (the result was  false ) or did throw an Error during validation.   \nnew ConfigValidationValidatorError(validator: any, field: any, value: any, meta: any)  \nExtends Error", 
+            "location": "/api/Errors/#configuration-validation-validator-error", 
+            "text": "This error should be used if a field validator throws or returns  false . It indicates the field\neither could not be validated (the result was  false ) or did throw an Error during validation.   \nnew ConfigValidationValidatorError(schema:  Schema , field:  String , value: any, rule)", 
             "title": "Configuration validation validator error"
         }, 
         {
-            "location": "/api/ConfigValidationValidatorError/#parameters", 
-            "text": "validator     field     value     meta", 
+            "location": "/api/Errors/#extends_6", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_6", 
+            "text": "schema  ( Schema )   Schema instance   field  ( String )   Field that failed validation   value  (any)   Value that failed validation   rule       InvalidConfigFileError(path, error)  lib/Errors/InvalidConfigFileError.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#invalid-configuration-file-error", 
+            "text": "This error should be used if the configuration file cannot be read or parsed. Due to the use\nof  require( configFile )  inside the configuration constructor, this will implicitly be\nthe case if the file path does not exist or points to something apart of  .js  or  .json  files.   \nnew InvalidConfigFileError(path:  String , error:  Error )", 
+            "title": "Invalid configuration file error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_7", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_7", 
+            "text": "path  ( String )   Path to the invalid configuration file   error  ( Error )   Error that was thrown     InvalidInstantiationError(command, plugin)  lib/Errors/InvalidInstantiationError.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#invalid-instantiation-error-error", 
+            "text": "This error should be used if a command is being instantiated with anything but a valid\nPlugin instance. It indicates a command has been constructed manually somewhere which\nis considered unsafe.   \nnew InvalidInstantiationError(command:  Command , plugin:  Plugin )", 
+            "title": "Invalid instantiation error error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_8", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_8", 
+            "text": "command  ( Command )   Instance of the command that caused the error   plugin  ( Plugin )   Whatever has been passed as a plugin but is none     InvalidPluginError(loader, plugin)  lib/Errors/InvalidPluginError.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#invalid-plugin-error", 
+            "text": "This error should be used if a bad module is encountered by the plugin loader. It\nindicates a module declares itself as a journeyman plugin but doesn't work according to\nthe plugin specification.   \nnew InvalidPluginError(loader:  Loader , plugin:  Plugin )", 
+            "title": "Invalid plugin error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_9", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_9", 
+            "text": "loader  ( Loader )   Instance of the plugin loader   plugin  ( Plugin )   Instance of the invalid Plugin     PluginDiscoveryError(loader, path, error)  lib/Errors/PluginDiscoveryError.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#plugin-discovery-error", 
+            "text": "This error should be used if the plugin discovery failed. It indicates there is a problem\npreventing the plugin loader from discovering plugins, likely at the filesystem level.   \nnew PluginDiscoveryError(loader:  Loader , path:  String , error:  Error )", 
+            "title": "Plugin discovery error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_10", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_10", 
+            "text": "loader  ( Loader )   Instance of the plugin loader   path  ( String )   Path to the directory that caused the error   error  ( Error )   Error that was thrown     PluginLoadError(loader, path, error)  lib/Errors/PluginLoadError.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#plugin-load-error", 
+            "text": "This error should be used if a plugin can't be loaded. It indicates there is a problem when\ncalling  require( pluginPath )  to load the module.   \nnew PluginLoadError(loader:  Loader , path:  String , error:  Error )", 
+            "title": "Plugin load error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_11", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_11", 
+            "text": "loader  ( Loader )   Instance of the plugin loader   path  ( String )   Path to the plugin that caused the error   error  ( Error )   Error that was thrown     UnknownCommandError(plugin, command)  lib/Errors/UnknownCommandError.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#unknown-command-error", 
+            "text": "This error should be used if a call for a plugin command cannot be resolved to a command. It\nindicates the plugin sub-command is valid (the plugin exists and is loaded) but there is no\nhandler to handle the specific command called.   \nnew UnknownCommandError(plugin:  Plugin , command:  String )", 
+            "title": "Unknown command error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_12", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_12", 
+            "text": "plugin  ( Plugin )   Instance of the plugin the error was thrown in   command  ( String )   Command requested", 
             "title": "Parameters"
         }, 
         {
@@ -361,23 +491,8 @@
             "title": "Returns"
         }, 
         {
-            "location": "/api/InvalidConfigFileError/", 
-            "text": "lib/Errors/InvalidConfigFileError.js\n\n\nInvalid configuration file error\n\n\nThis error should be used if the configuration file cannot be read or parsed. Due to the use\nof \nrequire( configFile )\n inside the configuration constructor, this will implicitly be\nthe case if the file path does not exist or points to something apart of \n.js\n or \n.json\n files.\n\n\n\n\n\nnew InvalidConfigFileError(path: any, error: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\npath\n \n\n\n\n\nerror", 
-            "title": "InvalidConfigFileError"
-        }, 
-        {
-            "location": "/api/InvalidConfigFileError/#invalid-configuration-file-error", 
-            "text": "This error should be used if the configuration file cannot be read or parsed. Due to the use\nof  require( configFile )  inside the configuration constructor, this will implicitly be\nthe case if the file path does not exist or points to something apart of  .js  or  .json  files.   \nnew InvalidConfigFileError(path: any, error: any)  \nExtends Error", 
-            "title": "Invalid configuration file error"
-        }, 
-        {
-            "location": "/api/InvalidConfigFileError/#parameters", 
-            "text": "path     error", 
-            "title": "Parameters"
-        }, 
-        {
             "location": "/api/JourneyMan/", 
-            "text": "lib/JourneyMan.js\n\n\nWelcome to JourneyMan!\nThis is the main class used by the CLI, but it's easy to use it programmatically.\n\n\n\n\n\nnew JourneyMan(proc: \nObject\n, configFilePath: \nString\n)\n\n\n\nParameters\n\n\nproc\n (\nObject\n)\n\n\n\n\nProcess object. While in node, \n\n\n\n\nprocess\n\n\nis a global, we want\n                                 JourneyMan to stay as portable as possible. Therefore, process\n                                 is a freely shimable dependency here.\n\n\nconfigFilePath\n (\nString\n = proc.cwd())\n\n\n\n\nPath to the configuration file. Defaults to the package.json\n\n\n\n\nStatic Members\n\n\n\n\nnew Plugin()\n\n\nlib/JourneyMan.js\n\n\nStatic getter for the plugin class\n\n\n\n\n\nnew Plugin(): \nPlugin\n\n\n\nReturns\n\n\nPlugin\n\n\n\n\n\n\nnew Command()\n\n\nlib/JourneyMan.js\n\n\nStatic getter for the command class\n\n\n\n\n\nnew Command(): \nCommand\n\n\n\nReturns\n\n\nCommand\n\n\n\n\nInstance Members\n\n\n\n\ninput\n\n\nlib/JourneyMan.js\n\n\nHolds the command line input\n\n\n\n\ninput\n\n\nType:\n\nInput", 
+            "text": "lib/JourneyMan.js\n\n\nWelcome to JourneyMan!\nThis is the main class used by the CLI, but it's easy to use it programmatically.\n\n\n\n\n\nnew JourneyMan(proc: \nObject\n, configFilePath: \nString\n)\n\n\n\nParameters\n\n\nproc\n (\nObject\n)\n\n\n\n\nProcess object. While in node, \n\n\n\n\nprocess\n\n\nis a global, we want\n                                 JourneyMan to stay as portable as possible. Therefore, process\n                                 is a freely shimable dependency here.\n\n\nconfigFilePath\n (\nString\n = proc.cwd())\n\n\n\n\nPath to the configuration file. Defaults to the package.json\n\n\n\n\nStatic Members\n\n\n\n\nnew Plugin()\n\n\nlib/JourneyMan.js\n\n\nStatic getter for the plugin class\n\n\n\n\n\nnew Plugin(): \nPlugin\n\n\n\nReturns\n\n\nPlugin\n\n\n\n\n\n\nnew Command()\n\n\nlib/JourneyMan.js\n\n\nStatic getter for the command class\n\n\n\n\n\nnew Command(): \nCommand\n\n\n\nReturns\n\n\nCommand\n\n\n\n\nInstance Members\n\n\n\n\ninput\n\n\nlib/JourneyMan.js\n\n\nHolds the command line input\n\n\n\n\ninput", 
             "title": "JourneyMan"
         }, 
         {
@@ -402,8 +517,48 @@
         }, 
         {
             "location": "/api/JourneyMan/#instance-members", 
-            "text": "input  lib/JourneyMan.js  Holds the command line input   input  Type: Input", 
+            "text": "input  lib/JourneyMan.js  Holds the command line input   input", 
             "title": "Instance Members"
+        }, 
+        {
+            "location": "/api/Loader/", 
+            "text": "lib/Plugins/Loader.js\n\n\nPlugin loader\n\n\nThe plugin loader iterates over any directories that might contain plugins for journeyman.\n\nThe loader itself, however, doesn't keep a static directory list but rather relies on calls to\nthe \ndiscover()\n method that accepts either single directories as strings or an array of paths.\n\n\nWhen called, the method reads the path's content and checks each entry against a set of rules\nin the static \nrules\n property. If the path passes the rules, the directory is regarded as being\na Journeyman plugin and it will be loaded in the application.\nBy default, both the global node_modules directory and one in the current working directory are\nincluded in the discovery - yes, this contradicts the statement on hardcoded paths, however this\nis standard behavior not up for changes. Additionally, the loader relies on an instance of the\nglobal \nnpm\n module being passed to it's constructor which both paths are inferred from.\n\n\n\n\n\nnew Loader(npm: \nObject\n)\n\n\n\nParameters\n\n\nnpm\n (\nObject\n)\n\n\n\n\nStatic Members\n\n\n\n\nrules\n\n\nlib/Plugins/Loader.js\n\n\nHolds plugin validation rules\n\n\n\n\nrules\n\n\nReturns\n\n\n{name: (function (\nString\n): \nBoolean\n), isPlugin: (function (\nObject\n): \nboolean\n)}\n\n\n\n\nInstance Members\n\n\n\n\ndiscover(searchPaths)\n\n\nlib/Plugins/Loader.js\n\n\nDiscovers plugins in one or more specific search paths\n\n\n\n\ndiscover(searchPaths: (\nArray\n | \nString\n)): \nPromise\nArray\n>\n\n\n\nParameters\n\n\nsearchPaths\n ((\nArray\n | \nString\n) = [])\n\n\n\n\nReturns\n\n\nPromise\nArray", 
+            "title": "Loader"
+        }, 
+        {
+            "location": "/api/Loader/#plugin-loader", 
+            "text": "The plugin loader iterates over any directories that might contain plugins for journeyman. \nThe loader itself, however, doesn't keep a static directory list but rather relies on calls to\nthe  discover()  method that accepts either single directories as strings or an array of paths.  When called, the method reads the path's content and checks each entry against a set of rules\nin the static  rules  property. If the path passes the rules, the directory is regarded as being\na Journeyman plugin and it will be loaded in the application.\nBy default, both the global node_modules directory and one in the current working directory are\nincluded in the discovery - yes, this contradicts the statement on hardcoded paths, however this\nis standard behavior not up for changes. Additionally, the loader relies on an instance of the\nglobal  npm  module being passed to it's constructor which both paths are inferred from.   \nnew Loader(npm:  Object )", 
+            "title": "Plugin loader"
+        }, 
+        {
+            "location": "/api/Loader/#parameters", 
+            "text": "npm  ( Object )", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Loader/#static-members", 
+            "text": "rules  lib/Plugins/Loader.js  Holds plugin validation rules   rules", 
+            "title": "Static Members"
+        }, 
+        {
+            "location": "/api/Loader/#returns", 
+            "text": "{name: (function ( String ):  Boolean ), isPlugin: (function ( Object ):  boolean )}", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Loader/#instance-members", 
+            "text": "discover(searchPaths)  lib/Plugins/Loader.js  Discovers plugins in one or more specific search paths   discover(searchPaths: ( Array  |  String )):  Promise Array >", 
+            "title": "Instance Members"
+        }, 
+        {
+            "location": "/api/Loader/#parameters_1", 
+            "text": "searchPaths  (( Array  |  String ) = [])", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Loader/#returns_1", 
+            "text": "Promise Array", 
+            "title": "Returns"
         }, 
         {
             "location": "/api/Plugin/", 
@@ -452,7 +607,7 @@
         }, 
         {
             "location": "/api/Schema/", 
-            "text": "lib/Config/Schema.js\n\n\nConfiguration Schema\n\n\nThe Schema class provides a dynamic validator for object schemas. By passing a set of rules, the\nschema can validate an entire object or single fields against these rules. This enables both\nprop checking as well as type checking.\nRule sets must be an object structured like this:\n\n\nconst\n \nrules\n \n=\n \n{\n\n\n  \n// All keys must be named like the fields to validate, so this rule for example would match\n\n  \n// a field called \nfieldName\n.\n\n  \nfieldName\n:\n \n{\n \n// All rules for \nfieldName\n will be contained within this object.\n\n\n    \n// The mandatory type rule allows to check the field against a type constructor\n\n    \ntype\n:\n \nString\n,\n \n// Or any other valid constructor like Boolean, Array, Number, etc.\n\n                  \n// You can also pass an arbitrary prototype the field will be checked\n\n                  \n// against using instanceof.\n\n\n    \n// Whether the field is required (eg. must be present).\n\n    \nrequired\n:\n \nfalse\n,\n \n// Or true - no default required in that case.\n\n\n    \n// If required is set to false, pass a default value here.\n\n    \ndefault\n:\n \nfoo\n,\n \n// Defaults will be returned if the field is undefined.\n\n\n    \n// Validators allow for custom field validations. They will only run if the type check\n\n    \n// matches, so remember to take care of both.\n\n    \n// Validator callbacks must be synchronous functions that return a boolean.\n\n    \nvalidator\n(\nvalue\n)\n \n{\n\n      \nreturn\n \n[\n \nfoo\n,\n \nbar\n,\n \nbaz\n \n].\nincludes\n(\n \nvalue\n \n);\n\n    \n}\n\n  \n}\n\n\n}\n\n\n\n\n\nAfter setting up the rules, you can use two validation methods:\n\n\n\n\n\n\nschema.validate( myDataObject: Object ): Object\n\n    Validates each property of the object, that is: It runs \nvalidateField\n on each of them. If\n    the object is invalid, one of the checks will throw (so remember to try-catch), if it is\n    valid, it will return the passed object with any eventually missing fields monkey-patched to\n    their defaults, if their rules provide one.\n\n\n\n\n\n\nschema.validateField( key: String, value: Any ): Any\n\n    Validates a single field by rule name. The \nkey\n parameter will be used to check the \nvalue\n\n    against the appropriate rule. If the value is invalid, one of the checks will throw (when\n    using the \nvalidate\n method, this is what bubbles up), if it is valid, the value will be\n    returned. If there was no value and the field was optional, the default will be returned if\n    it is available.\n\n\n\n\n\n\n\n\n\nnew Schema(rules: \nObject\n)\n\n\n\nParameters\n\n\nrules\n (\nObject\n)\n\n\n\n\nA set of rules to create the schema for.\n\n\n\n\nInstance Members\n\n\n\n\nrules\n\n\nlib/Config/Schema.js\n\n\nHolds the rules the schema describes.\n\n\n\n\nrules\n\n\nReturns\n\n\nObject\n\n\n\n\n\n\ntoJSON()\n\n\nlib/Config/Schema.js\n\n\nCreates an empty, default schema holding all defaults.\n\n\n\n\ntoJSON(): \nObject\n\n\n\nReturns\n\n\nObject\n\n\n\n\n\n\nvalidate(obj?)\n\n\nlib/Config/Schema.js\n\n\nValidates a given object against the schema. This works by running each field through\n\nvalidateField\n individually. If a field is missing but defined in the schema,\n\n\n\n\nvalidate(obj: \nObject\n?): \nObject\n\n\n\nParameters\n\n\nobj\n (\nObject\n?)\n\n\n\n\nObject to validate\n\n\n\n\nReturns\n\n\nObject\n\n\nThrows\n\n\n\n\n\n\nConfigValidationError\n: If an invalid (non-object) parameter has been passed\n\n\n\n\n\n\nConfigValidationMissingFieldError\n: If a required field is missing\n\n\n\n\n\n\nConfigValidationInvalidFieldError\n: If a field is unknown\n\n\n\n\n\n\nConfigValidationTypeError\n: If a values type doesn't match the requirements\n\n\n\n\n\n\nConfigValidationValidatorError\n: If a field validator can't validate a field\n\n\n\n\n\n\n\n\n\n\nvalidateField(field, value)\n\n\nlib/Config/Schema.js\n\n\nValidates a single field.\nThe validation process is split into several checks, ordered by probability of them occurring.\nEach check will throw a specific error if it fails.\n\n\n\n\nCheck if a rule for the field is available\n\n\n\n\nCheck if the type matches the rule. This is a bit of work since there is a specific\n    check for each type:\n\n\n\n\nString\n - checked using \ntypeof\n\n\nNumber\n - checked using \nisNaN\n and a \nnull\n check\n\n\nBoolean\n - checked using \ntypeof\n\n\nArray\n - checked using \nArray.isArray\n\n\nSymbol\n - checked using \ntypeof\n\n\nObject\n -  checked using \ntypeof\n, then \nArray.isArray\n and a \nnull\n check.\n    The object will then be merged with the rule's default, if any.\n\n\nAnything else\n - checked using \ninstanceof\n\n\n\n\n\n\n\n\nCheck if the validator callback (if any) can validate the field (returns \ntrue\n)\n\n\n\n\n\n\nIf all these checks pass, the value will be returned.\n\n\n\n\nvalidateField(field: \nString\n, value: any): any\n\n\n\nParameters\n\n\nfield\n (\nString\n)\n\n\n\n\nName of the field to validate\n\n\n\n\nvalue\n (any)\n\n\n\n\nField value\n\n\n\n\nReturns\n\n\nany\n\n\nThrows\n\n\n\n\n\n\nConfigValidationInvalidFieldError\n: If the field is unknown\n\n\n\n\n\n\nConfigValidationTypeError\n: If the values type doesn't match the requirements\n\n\n\n\n\n\nConfigValidationValidatorError\n: If the field validator can't validate the field", 
+            "text": "lib/Config/Schema.js\n\n\nConfiguration Schema\n\n\nThe Schema class provides a dynamic validator for object schemas. By passing a set of rules, the\nschema can validate an entire object or single fields against these rules. This enables both\nprop checking as well as type checking.\nRule sets must be an object structured like this:\n\n\nconst\n \nrules\n \n=\n \n{\n\n\n  \n// All keys must be named like the fields to validate, so this rule for example would match\n\n  \n// a field called \nfieldName\n.\n\n  \nfieldName\n:\n \n{\n \n// All rules for \nfieldName\n will be contained within this object.\n\n\n    \n// The mandatory type rule allows to check the field against a type constructor\n\n    \ntype\n:\n \nString\n,\n \n// Or any other valid constructor like Boolean, Array, Number, etc.\n\n                  \n// You can also pass an arbitrary prototype the field will be checked\n\n                  \n// against using instanceof.\n\n\n    \n// Whether the field is required (eg. must be present).\n\n    \nrequired\n:\n \nfalse\n,\n \n// Or true - no default required in that case.\n\n\n    \n// If required is set to false, pass a default value here.\n\n    \ndefault\n:\n \nfoo\n,\n \n// Defaults will be returned if the field is undefined.\n\n\n    \n// Validators allow for custom field validations. They will only run if the type check\n\n    \n// matches, so remember to take care of both.\n\n    \n// Validator callbacks must be synchronous functions that return a boolean.\n\n    \nvalidator\n(\nvalue\n)\n \n{\n\n      \nreturn\n \n[\n \nfoo\n,\n \nbar\n,\n \nbaz\n \n].\nincludes\n(\n \nvalue\n \n);\n\n    \n}\n\n  \n}\n\n\n}\n\n\n\n\n\nAfter setting up the rules, you can use two validation methods:\n\n\n\n\n\n\nschema.validate( myDataObject: Object ): Object\n\n    Validates each property of the object, that is: It runs \nvalidateField\n on each of them. If\n    the object is invalid, one of the checks will throw (so remember to try-catch), if it is\n    valid, it will return the passed object with any eventually missing fields monkey-patched to\n    their defaults, if their rules provide one.\n\n\n\n\n\n\nschema.validateField( key: String, value: Any ): Any\n\n    Validates a single field by rule name. The \nkey\n parameter will be used to check the \nvalue\n\n    against the appropriate rule. If the value is invalid, one of the checks will throw (when\n    using the \nvalidate\n method, this is what bubbles up), if it is valid, the value will be\n    returned. If there was no value and the field was optional, the default will be returned if\n    it is available.\n\n\n\n\n\n\n\n\n\nnew Schema(rules: \nObject\n)\n\n\n\nParameters\n\n\nrules\n (\nObject\n)\n\n\n\n\nA set of rules to create the schema for.\n\n\n\n\nInstance Members\n\n\n\n\nrules\n\n\nlib/Config/Schema.js\n\n\nHolds the rules the schema describes.\n\n\n\n\nrules\n\n\nReturns\n\n\nObject\n\n\n\n\n\n\ntoJSON()\n\n\nlib/Config/Schema.js\n\n\nCreates an empty, default schema holding all defaults.\n\n\n\n\ntoJSON(): \nObject\n\n\n\nReturns\n\n\nObject\n\n\n\n\n\n\nvalidate(obj?)\n\n\nlib/Config/Schema.js\n\n\nValidates a given object against the schema. This works by running each field through\n\nvalidateField\n individually. If a field is missing but defined in the schema,\n\n\n\n\nvalidate(obj: \nObject\n?): \nObject\n\n\n\nParameters\n\n\nobj\n (\nObject\n?)\n\n\n\n\nObject to validate\n\n\n\n\nReturns\n\n\nObject\n\n\nThrows\n\n\n\n\n\n\nConfigValidationError: If an invalid (non-object) parameter has been passed\n\n\n\n\n\n\nConfigValidationMissingFieldError: If a required field is missing\n\n\n\n\n\n\nConfigValidationInvalidFieldError: If a field is unknown\n\n\n\n\n\n\nConfigValidationTypeError: If a values type doesn't match the requirements\n\n\n\n\n\n\nConfigValidationValidatorError: If a field validator can't validate a field\n\n\n\n\n\n\n\n\n\n\nvalidateField(field, value)\n\n\nlib/Config/Schema.js\n\n\nValidates a single field.\nThe validation process is split into several checks, ordered by probability of them occurring.\nEach check will throw a specific error if it fails.\n\n\n\n\nCheck if a rule for the field is available\n\n\n\n\nCheck if the type matches the rule. This is a bit of work since there is a specific\n    check for each type:\n\n\n\n\nString\n - checked using \ntypeof\n\n\nNumber\n - checked using \nisNaN\n and a \nnull\n check\n\n\nBoolean\n - checked using \ntypeof\n\n\nArray\n - checked using \nArray.isArray\n\n\nSymbol\n - checked using \ntypeof\n\n\nObject\n -  checked using \ntypeof\n, then \nArray.isArray\n and a \nnull\n check.\n    The object will then be merged with the rule's default, if any.\n\n\nAnything else\n - checked using \ninstanceof\n\n\n\n\n\n\n\n\nCheck if the validator callback (if any) can validate the field (returns \ntrue\n)\n\n\n\n\n\n\nIf all these checks pass, the value will be returned.\n\n\n\n\nvalidateField(field: \nString\n, value: any): any\n\n\n\nParameters\n\n\nfield\n (\nString\n)\n\n\n\n\nName of the field to validate\n\n\n\n\nvalue\n (any)\n\n\n\n\nField value\n\n\n\n\nReturns\n\n\nany\n\n\nThrows\n\n\n\n\n\n\nConfigValidationInvalidFieldError: If the field is unknown\n\n\n\n\n\n\nConfigValidationTypeError: If the values type doesn't match the requirements\n\n\n\n\n\n\nConfigValidationValidatorError: If the field validator can't validate the field", 
             "title": "Schema"
         }, 
         {
@@ -492,7 +647,7 @@
         }, 
         {
             "location": "/api/Schema/#throws", 
-            "text": "ConfigValidationError : If an invalid (non-object) parameter has been passed    ConfigValidationMissingFieldError : If a required field is missing    ConfigValidationInvalidFieldError : If a field is unknown    ConfigValidationTypeError : If a values type doesn't match the requirements    ConfigValidationValidatorError : If a field validator can't validate a field      validateField(field, value)  lib/Config/Schema.js  Validates a single field.\nThe validation process is split into several checks, ordered by probability of them occurring.\nEach check will throw a specific error if it fails.   Check if a rule for the field is available   Check if the type matches the rule. This is a bit of work since there is a specific\n    check for each type:   String  - checked using  typeof  Number  - checked using  isNaN  and a  null  check  Boolean  - checked using  typeof  Array  - checked using  Array.isArray  Symbol  - checked using  typeof  Object  -  checked using  typeof , then  Array.isArray  and a  null  check.\n    The object will then be merged with the rule's default, if any.  Anything else  - checked using  instanceof     Check if the validator callback (if any) can validate the field (returns  true )    If all these checks pass, the value will be returned.   validateField(field:  String , value: any): any", 
+            "text": "ConfigValidationError: If an invalid (non-object) parameter has been passed    ConfigValidationMissingFieldError: If a required field is missing    ConfigValidationInvalidFieldError: If a field is unknown    ConfigValidationTypeError: If a values type doesn't match the requirements    ConfigValidationValidatorError: If a field validator can't validate a field      validateField(field, value)  lib/Config/Schema.js  Validates a single field.\nThe validation process is split into several checks, ordered by probability of them occurring.\nEach check will throw a specific error if it fails.   Check if a rule for the field is available   Check if the type matches the rule. This is a bit of work since there is a specific\n    check for each type:   String  - checked using  typeof  Number  - checked using  isNaN  and a  null  check  Boolean  - checked using  typeof  Array  - checked using  Array.isArray  Symbol  - checked using  typeof  Object  -  checked using  typeof , then  Array.isArray  and a  null  check.\n    The object will then be merged with the rule's default, if any.  Anything else  - checked using  instanceof     Check if the validator callback (if any) can validate the field (returns  true )    If all these checks pass, the value will be returned.   validateField(field:  String , value: any): any", 
             "title": "Throws"
         }, 
         {
@@ -507,7 +662,7 @@
         }, 
         {
             "location": "/api/Schema/#throws_1", 
-            "text": "ConfigValidationInvalidFieldError : If the field is unknown    ConfigValidationTypeError : If the values type doesn't match the requirements    ConfigValidationValidatorError : If the field validator can't validate the field", 
+            "text": "ConfigValidationInvalidFieldError: If the field is unknown    ConfigValidationTypeError: If the values type doesn't match the requirements    ConfigValidationValidatorError: If the field validator can't validate the field", 
             "title": "Throws"
         }
     ]

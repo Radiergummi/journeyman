@@ -26,27 +26,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://radiergummi.github.io/journeyman/api/ConfigValidationError/</loc>
-     <lastmod>2018-06-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://radiergummi.github.io/journeyman/api/ConfigValidationInvalidFieldError/</loc>
-     <lastmod>2018-06-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://radiergummi.github.io/journeyman/api/ConfigValidationMissingFieldError/</loc>
-     <lastmod>2018-06-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://radiergummi.github.io/journeyman/api/ConfigValidationTypeError/</loc>
-     <lastmod>2018-06-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://radiergummi.github.io/journeyman/api/ConfigValidationValidatorError/</loc>
+     <loc>https://radiergummi.github.io/journeyman/api/Errors/</loc>
      <lastmod>2018-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -56,12 +36,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://radiergummi.github.io/journeyman/api/InvalidConfigFileError/</loc>
+     <loc>https://radiergummi.github.io/journeyman/api/JourneyMan/</loc>
      <lastmod>2018-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://radiergummi.github.io/journeyman/api/JourneyMan/</loc>
+     <loc>https://radiergummi.github.io/journeyman/api/Loader/</loc>
      <lastmod>2018-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>

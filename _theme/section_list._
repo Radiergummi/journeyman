@@ -1,0 +1,11 @@
+<% members.forEach(function(member) { %>
+<details class="info">
+<summary><%= shortSignature(member) %></summary>
+<%= renderSection({
+      section: member,
+      renderSection: renderSection,
+      renderParamProperty: renderParamProperty,
+      nested: true
+    }) %>
+</details>
+<% }) %>

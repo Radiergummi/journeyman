@@ -1,0 +1,115 @@
+<% if (typeof nested === 'undefined' || (section.context && section.context.github)) { %>
+<% if (section.context && section.context.github) { %>[<%= section.context.github.path %>](<%= section.context.github.url %>)<% } %>
+<% } %>
+
+<%= md(section.description) %>
+
+-------------
+
+<%= signature(section) %>
+
+<% if (section.type) { %>
+Type:
+<%= formatType(section.type) %>
+
+<% } %>
+<% if (section.augments.length) { %>
+<p>
+Extends
+<% if (section.augments) { %>
+<%= section.augments.map(tag => autolink(tag.name)).join(', ') %>
+<% } %>
+</p>
+<% } %>
+
+<% if (section.deprecated) { %>**Deprecated:** <%= md(section.deprecated, true) %><% } %>
+<% if (section.version) { %>**Version:** <%- section.version %><% } %>
+<% if (section.license) { %>**License:** <%- section.license %><% } %>
+<% if (section.author) { %>**Author:** <%- section.author %><% } %>
+<% if (section.copyright) { %>**Copyright:** <%= md(section.copyright, true) %><% } %>
+<% if (section.since) { %>**Since:** <%- section.since %><% } %>
+
+<% if (section.params.length) { %>
+#### Parameters
+
+<% section.params.forEach(function(param) { %>
+<code>**<%- param.name%>** <% if (param.type) { %>(<%= formatType(param.type) %><% if (param.default) { %> = <%- param.default %><% } %>)<% } %></code>
+> <%= md(param.description, true) %>
+
+<% if (param.properties && param.properties.length) { %>
+| Name | Description |
+|:-----|:------------|
+<% param.properties.forEach(function(property) { %>
+<%= renderParamProperty({ property: property, renderParamProperty: renderParamProperty }) %>
+<% }) %>
+<% } %>
+<% }) %>
+<% } %>
+
+<% if (section.properties.length) { %>
+#### Properties
+
+  <% section.properties.forEach(function(property) { %>
+    **`<%- property.name%>`** (`<%= formatType(property.type) %>`)
+    <% if (property.default) { %>
+      (default `<%- property.default %>`)
+    <% } %>
+    <% if (property.description) { %>: <%= md(property.description, true) %><% } %>
+
+    <% if (property.properties && property.properties.length) { %>
+      <% property.properties.forEach(function(property) { %>
+         - `<%- property.name %>` <%= formatType(property.type) %>
+        <% if (property.default) { %>
+          (default `<%- property.default %>`)
+        <% } %>
+        <%= md(property.description) %></li>
+      <% }) %>
+    <% } %>
+  <% }) %>
+<% } %>
+
+<% if (section.returns.length) { %>
+<% section.returns.forEach(ret => { %>
+### Returns
+
+<code><%= formatType(ret.type) %></code>
+<% if (ret.description && ret.description.length > 1) { %>:
+<%= md(ret.description, true) %>
+<% }%>
+<% }) %>
+<% } %>
+
+<% if (section.throws.length) { %>
+### Throws
+
+<% section.throws.forEach(function(throws) { %>
+ - <%= formatType(throws.type) %>: <%= md(throws.description, true) %>
+<% }); %>
+<% } %>
+
+<% if (section.examples.length) { %>
+### Example
+
+<% section.examples.forEach(function(example) { %>
+<% if (example.caption) { %><%= md(example.caption) %><% } %>
+<%= highlight(example.description) %>
+<% }) %>
+<% } %>
+
+<% if (section.members.static && section.members.static.length) { %>
+### Static Members
+
+<%= renderSectionList({ members: section.members.static, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Static Member' }) %>
+<% } %>
+
+<% if (section.members.instance && section.members.instance.length) { %>
+### Instance Members
+
+<%= renderSectionList({ members: section.members.instance, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Instance Member' }) %>
+<% } %>
+
+<% if (section.members.events && section.members.events.length) { %>
+### Events
+
+<%= renderSectionList({ members: section.members.events, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Event' }) %>
+<% } %>

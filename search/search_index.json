@@ -1,0 +1,504 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Journeyman\n\n\n\n\nJourneyman is an opinionated CLI tool for Vue.js projects to generate code and automate common tasks.\n\n\n\n\nSimilar to \nLaravel's Artisan\n, \njourneyman\n aims to reduce repetitive programming tasks and make working on Vue.js applications a faster and more pleasant experience, while adhering to Vue.js code style standards and best practices.\n\n\nIsn't this the same thing as \nvue-cli\n?\n\nNo, not quite. Although journeyman provdes some similar features, it doesn't primarily serve to bootstrap the development pipeline but rather to aid a developer during development work. It doesn't care at all what module bundler or linter you use.\n\n\n\n\nActive development:\n Journeyman is being developed currently. The process will be as follows:\n- [ ] Outline most of the API in this README file, identify design problems beforehand\n\n- [ ] Write tests for the base console application, build the application from there (TDD style)\n- [ ] Write tests for the actual Vue code generation, implement API features from there\n- [ ] Write tests for the \nplugin structure\n, implement it from there\n- [ ] Refactoring, Optimization, real-world test cases\n- [ ] ???\n- [ ] PROFIT\n\n\n\n\nInstallation\n\n\nJourneyman should be installed as a global npm module, like so:\n\n\nnpm install --global @radiergummi/journeyman\n\n\n\n\n\nPlease note: Journeyman isn't actually available yet, so this package isn't published right now.\n\n\n\n\nJourneyman requires Node.js \n= 8 to run.\n\n\n\n\nUsage\n\n\nJourneyman can be invoked on the command line using the \njourn\n command. Using the \nlist\n command, you can view a list of all available sub-commands that will be detailed in the following sections:\n\n\njourn list\n\n\n\n\n\nExpected filesystem structure\n\n\nJourneyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the \nconfiguration section\n), the default structure is the best practice all \nvue-cli\n templates follow, for example.\n\nThe below filesystem tree is the structure journeyman expects:\n\n\n\n.                    \n<\n--- Working directory journ is executed in\n\n\u251c\u2500\u2500 build/\n\u251c\u2500\u2500 config/\n\u251c\u2500\u2500 public/\n\u251c\u2500\u2500 src/\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 assets/\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 components/\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 mixins/\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 modules/\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 router/\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 styles/\n\u251c\u2500\u2500 static/\n\u251c\u2500\u2500 test/\n\u2514\u2500\u2500 package.json\n\n\n\n\njourn make\n\n\nThe \nmake\n command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use \njourn list make\n to view a list of available boots to strap (heh).\n\n\njourn make component\n\n\nAllows to bootstrap components. The component name passed as the third parameter can be either a filesystem path (\n/foo/bar/MyNewComponent.vue\n), a kebab-case (\nmy-new-component\n) or a CamelCase (\nMyNewComponent\n) name. In each case, the name will be parsed and the file will be generated with the correct format (\nConfig: \npreferred_spelling\n) at the right location (\nConfig: \npaths.components\n)\nGenerated components are described in detail later on.  \n\n\n# Bootstrap a new, empty component\n\njourn make component MyNewComponent\n\n\n# You can use shorthands, too\n\njourn m c MyNewComponent\n\n\n\n\n\nJourneyman also supports extends and mixins as well as cloning:\n\n\n# New component extending another\n\njourn make component MyOtherComponent --extends MyNewComponent\n\n\n# New component using one or more mixins\n\njourn make component MyOtherComponent --with oneMixin --with anotherMixin\n\n\n# New component based on another\n\njourn make component MyOtherComponent --from MyNewComponent\n\n\n\n\n\nCloned components will have all properties from the source component but with a new name.\n\n\njourn make mixin\n\n\nAllows to bootstrap mixins.  \n\n\n\n\nTODO HERE\n\n\n\n\njourn make route\n\n\n\n\nTODO HERE\n\n\n\n\njourn make module\n\n\n\n\nTODO HERE\n\n\n\n\njourn make style\n\n\n\n\nTODO HERE\n\n\n\n\njourn extract\n\n\nThe \nextract\n command allows extraction of code into mixins, styles into stylesheets and large templates into individual components.\n\n\n\n\nTODO HERE\n\n\n\n\njourn inline\n\n\nThe exact opposite of the \nextract\n command, \ninline\n allows to inline external code into your components.\n\n\n\n\nTODO HERE\n\n\n\n\njourn lint\n\n\nThe \nlint\n command performs a Vue.js coding style check on your code-base. This allows you to verify all your components adhere to the same style rules. In contrary to \neslint\n for example, This will not check your JS code (there are a lot of perfectly fine tools for this job), but rather verify all your code is streamlined and follows best practices.\n\nThere are a bunch of linting rules available in \nthe configuration\n.\n\n\nAdditionally, if configured so, \nlint\n will check your JSDoc comments to make sure they a) exist, b) are complete and c) are correct. It will also look for repetitions throughout your components which are probably opportunities for mixins.\n\n\njourn config\n\n\nThe \nconfig\n command allows to read and write configuration values.\n\n\njourn config get\n\n\nUse the following command to read the configuration:\n\n\njourn config get \n[\nvalue\n]\n\n\n\n\n\n\njourn config set\n\n\nUse the following command to set a configuration value:\n\n\njourn config \nset\n \nkey\n \nvalue\n\n\n\n\n\n\njourn config init\n\n\nUse the following command to write the default configuration values to your \npackage.json\n or \n.journeyman\n file. This way, you've got all available configuration values at hand to modify them to your liking:\n\n\njourn config init \n[\n--package,-p\n]\n \n[\n--dotfile,-d\n]\n\n\n\n\n\n\nUsing the \n--package\n or \n--dotfile\n parameter, you can optionally specify the target: \npackage.json\n or \n.journeyman\n.\n\nThe default is \n--package\n.\n\n\n\n\nTODO HERE\n\n\n\n\nConfiguration\n\n\nJourneyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a \n.journeyman\n file or directly in the \npackage.json\n below the key \njourneyman\n which is the preferred way (avoids yet \nanother\n dot file in your project).\n\nIn general, it comes with a set of sensible defaults:\n\n\npaths\n\n\nTo set the output paths generated code should be written to, you can set one or more of the following path settings. Each of them will overwrite the default.\n\n\n\n\n\n\n\n\nKey\n\n\nDefault\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nassets\n\n\n./src/assets\n\n\nPath where all assets live\n\n\n\n\n\n\ncomponents\n\n\n./src/components\n\n\nPath where all components (\n.vue\n files) live\n\n\n\n\n\n\nmixins\n\n\n./src/mixins\n\n\nPath where all mixins (\n.js\n files) live\n\n\n\n\n\n\nmodules\n\n\n./src/modules\n\n\nPath where all modules (\n.js\n files, helpers) live\n\n\n\n\n\n\nrouter\n\n\n./src/router\n\n\nPath to the main router file\n\n\n\n\n\n\nstyles\n\n\n./src/styles\n\n\nPath where all stylesheets (\n.css\n/\n.scss\n files) live\n\n\n\n\n\n\nbuild\n\n\n./build\n\n\nPath where the build modules live\n\n\n\n\n\n\nconfig\n\n\n./config\n\n\nPath where the build configuration lives\n\n\n\n\n\n\npublic\n\n\n./public\n\n\nPath where the build is written to\n\n\n\n\n\n\nstatic\n\n\n./static\n\n\nPath where static assets live\n\n\n\n\n\n\n\n\npreferred_spelling\n\n\nThis setting controls how journeyman generates component names and inserts them, for example. This also applies to file names on the file system. There are two options available:\n - \ncamel\n: Names are generated in \nCamelCase\n.\n - \nkebab\n: Names are generated in \nkebab-case\n.\n\n\nPlugins\n\n\nJourneyman provides a few ways to add new functionality, that is: To add new, first-class citizen, commands to \njourn\n. In fact, \nall\n integrated commands are actually plugins.\n\nPlugins are special npm packages that must fulfill a few requirements:\n\n\n\n\nTheir package name starts with \njourneyman-plugin-\n:\n\n   This serves to keep the npm namespace clean and make plugins more obvious. I can't stand packages like \nbody-parser\n that are secretly \nexpress.js\n plugins.\n\n\nTheir \npackage.json\n file includes a \njourneyman-plugin\n key:\n\n   This key provides plugin metadata. The available fields are outlined in \nPlugin metadata fields\n\n\nThey export a class (\nnot an instance!\n) from their main module that extends the base plugin:\n\n   Journeyman provides a base class at \nlib/plugins/Plugin\n that all plugins need to inherit from. It provides several methods Journeyman uses to initialize the plugin and work with it's input and output. This frees implementations from caring about API compatibility and implementation details.\n\n\n\n\nBasically, a plugin provides a new subcommand to journeyman that all its methods are grouped below. A simple plugin might look like this:\n\n\nconst\n \n{\n \nPlugin\n \n}\n \n=\n \nrequire\n(\njourneyman\n);\n\n\n\nclass\n \nEchoPlugin\n \nextends\n \nPlugin\n \n{\n\n\n  \n/**\n\n\n   * The static property \nname\n is used as the subcommand namespace for your plugin\n\n\n   */\n\n  \nstatic\n \nget\n \nname\n()\n \n{\n\n    \nreturn\n \necho\n;\n\n  \n}\n\n\n  \n/**\n\n\n   * This is a private method (as far as JS supports it, at least...). It will *not* be visible \n\n\n   * nor accessible from the command line due to the single underscore prefix.\n\n\n   */\n\n  \n_prepareOutput\n(\nstr\n)\n \n{\n\n    \nreturn\n \necho \n \n+\n \nstr\n;\n\n  \n}\n\n\n  \n/**\n\n\n   * This is a public method (no leading underscore). It will be used as a publicly visible command below your\n\n\n   * plugin namespace:\n\n\n   * journ echo foo\n\n\n   */\n\n  \nfoo\n(\napp\n)\n \n{\n\n    \nconst\n \noutput\n \n=\n \nthis\n.\n_prepareOutput\n(\napp\n.\ninput\n.\nargs\n);\n\n\n    \nreturn\n \nPromise\n.\nresolve\n(\noutput\n);\n\n  \n}\n\n\n}\n\n\n\n\n\n\nOne-Shot plugins\n\n\nIf your plugin only serves a single purpose -- eg. it doesn't need multiple sub-commands -- you can use one-shot plugins. The only difference to ordinary plugins is that they include the special \n__invoke\n method: If a plugin provides it, journeyman assumes the plugin doesn't need a namespace and only has a single, public command, callable as \njourn \nplugin name\n --params\n. If journeyman finds the __invoke method  inside your plugin, it will disregard any other public methods. As ordinary command methods, \n__invoke\n receives the application instance as its only parameter.\n\n\nconst\n \n{\n \nPlugin\n \n}\n \n=\n \nrequire\n(\njourneyman\n);\n\n\n\nclass\n \nFooPlugin\n \nextends\n \nPlugin\n \n{\n\n  \nstatic\n \nget\n \nname\n()\n \n{\n\n    \nreturn\n \nfoo\n;\n\n  \n}\n\n\n  \n/**\n\n\n   * This is a special one: For single-shot plugins, you can use the __invoke method. \n\n\n   */\n\n  \n__invoke\n(\napp\n)\n \n{\n\n    \nconst\n \noutput\n \n=\n \nthis\n.\n_prepareOutput\n(\napp\n.\ninput\n.\nargs\n);\n\n\n    \nreturn\n \nPromise\n.\nresolve\n(\noutput\n);\n\n  \n}\n\n\n}\n\n\n\n\n\n\nThe \napp\n parameter to your command methods\n\n\napp\n is an object with several well-defined properties revolving around the command execution lifecycle. It contains everything the command will need to carry out its purpose:\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\njourneyman\n\n\nJourneyMan\n\n\nThe current \nJourneyMan\n instance.\n\n\n\n\n\n\nenv\n\n\nMap\nk: String, v: String\n\n\nHolds all system environment variables.\n\n\n\n\n\n\ninput\n\n\nInput\n\n\nHolds the command line input object.\n\n\n\n\n\n\noutput\n\n\nOutput\n\n\nHolds the command line output object.\n\n\n\n\n\n\nplugins\n\n\nArray\nPlugin\n\n\nHolds the list of available plugins. Alias to \njourneyman.plugins\n.\n\n\n\n\n\n\ncall(command: String): Promise\n\n\nfunction\n\n\nAllows to call other commands by their full command input string.\n\n\n\n\n\n\n\n\n\n\nMore properties and methods will be added as the development continues.\n\n\n\n\nAdvanced plugins\n\n\nSingle-class and one-shot plugins will be fine for most purposes. But what if you've got actual \nwork\n to do? Fear not, for there's a third structural option: Instead of providing the individual commands as methods on your plugin, you can also provide a list of \nCommand\n instances.\n\nThis provides you with a belly of additional goodies, like automatic help generation, fine-grained parameter and option handling as well as neatly organized code.\n\n\nA plugin using Command instances might look like this:\n\n\nconst\n \n{\n \nPlugin\n \n}\n \n=\n \nrequire\n(\njourneyman\n);\n\n\nconst\n \nFooCommand\n \n=\n \nrequire\n(\n./commands/FooCommand\n);\n\n\nconst\n \nBarCommand\n \n=\n \nrequire\n(\n./commands/BarCommand\n);\n\n\n\nclass\n \nMyAdvancedPlugin\n \nextends\n \nPlugin\n \n{\n\n  \nstatic\n \nget\n \nname\n()\n \n{\n\n    \nreturn\n \nadvanced\n;\n\n  \n}\n\n\n  \n/**\n\n\n   * This overrides the default of an empty array\n\n\n   */\n\n  \nstatic\n \nget\n \ncommands\n()\n \n{\n\n    \nreturn\n \n[\n\n      \nFooCommand\n,\n\n      \nBarCommand\n\n    \n];\n\n  \n}\n\n\n  \n/**\n\n\n   * Of course, you\nre still free to define additional commands using methods\n\n\n   */\n\n  \nbaz\n(\napp\n)\n \n{\n\n    \n// ...\n\n  \n}\n\n\n}\n \n\n\n\n\n\nA command class for our plugin, say \nFooCommand\n, should be constructed like this:\n\n\nconst\n \n{\n \nCommand\n \n}\n \n=\n \nrequire\n(\njourneyman\n);\n\n\n\nclass\n \nFooCommand\n \nextends\n \nCommand\n \n{\n\n\n  \n/**\n\n\n   * Since we don\nt have a method name at our disposal, we can set it here. If omitted, \n\n\n   * the name will be inferred from the class name ( Class.name.replace(\nCommand\n, \n).toLowerCase() )\n\n\n   */\n\n  \nstatic\n \nget\n \nname\n()\n \n{\n\n    \nreturn\n \nfoo\n;\n\n  \n}\n\n\n  \n/**\n\n\n   * The __configure() method is called on initialization and allows to configure the command (duh)\n\n\n   */\n\n  \n__configure\n()\n \n{\n\n\n    \n// a little Symfony-y\n\n    \nthis\n.\nsetDescription\n(\nCreates a new foo\n);\n\n    \nthis\n.\naddParameter\n(\nname\n,\n \nn\n,\n \nHow to name your foo\n,\n \nCommand\n.\nPARAM_TYPE_STRING\n);\n\n  \n}\n\n\n  \n/**\n\n\n   * The behaviour is the same as with plugin method commands here\n\n\n   */\n\n  \n__invoke\n(\napp\n)\n \n{\n\n    \nreturn\n \nPromise\n.\nresolve\n();\n\n  \n}\n\n\n}\n\n\n\n\n\n\nThat's a whole slew of new stuff, so be sure to check out the \nCommand documentation\n.\n\n\nProviding new commands for journeyman's existing sub-commands\n\n\nThat's all fine and dandy, but what if you'd like to provide a new \nmake \nsomething\n? For these cases, you can extend the special \nMakePlugin\n class instead of \nPlugin\n. All commands provided in these will be appended to the \nmake\n subcommand. Beneath \nMakePlugin\n, there's also \nLinkPlugin\n, \nServePlugin\n and \nBuildPlugin\n to extend the respective verbs.\n\n\n\n\nMore extend-plugins will be added as the development continues.\n\n\n\n\nPlugin metadata fields\n\n\nThe following \npackage.json\n properties of the \njourneyman-plugin\n key are recognized:\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nname\n\n\nString\n\n\nThe plugins human-readable name. This will be used in the plugin list, for example. Defaults to the package name.\n\n\nNo\n\n\n\n\n\n\ndefaults\n\n\nObject\n\n\nAny default configuration you might need for your plugin. Defaults to an empty hash.\n\n\nNo\n\n\n\n\n\n\n\n\n\n\nMore properties will be added as the development continues.", 
+            "title": "Journeyman"
+        }, 
+        {
+            "location": "/#journeyman", 
+            "text": "Journeyman is an opinionated CLI tool for Vue.js projects to generate code and automate common tasks.   Similar to  Laravel's Artisan ,  journeyman  aims to reduce repetitive programming tasks and make working on Vue.js applications a faster and more pleasant experience, while adhering to Vue.js code style standards and best practices.  Isn't this the same thing as  vue-cli ? \nNo, not quite. Although journeyman provdes some similar features, it doesn't primarily serve to bootstrap the development pipeline but rather to aid a developer during development work. It doesn't care at all what module bundler or linter you use.   Active development:  Journeyman is being developed currently. The process will be as follows:\n- [ ] Outline most of the API in this README file, identify design problems beforehand \n- [ ] Write tests for the base console application, build the application from there (TDD style)\n- [ ] Write tests for the actual Vue code generation, implement API features from there\n- [ ] Write tests for the  plugin structure , implement it from there\n- [ ] Refactoring, Optimization, real-world test cases\n- [ ] ???\n- [ ] PROFIT", 
+            "title": "Journeyman"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "Journeyman should be installed as a global npm module, like so:  npm install --global @radiergummi/journeyman  Please note: Journeyman isn't actually available yet, so this package isn't published right now.   Journeyman requires Node.js  = 8 to run.", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#usage", 
+            "text": "Journeyman can be invoked on the command line using the  journ  command. Using the  list  command, you can view a list of all available sub-commands that will be detailed in the following sections:  journ list", 
+            "title": "Usage"
+        }, 
+        {
+            "location": "/#expected-filesystem-structure", 
+            "text": "Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the  configuration section ), the default structure is the best practice all  vue-cli  templates follow, for example. \nThe below filesystem tree is the structure journeyman expects:  \n.                     < --- Working directory journ is executed in \n\u251c\u2500\u2500 build/\n\u251c\u2500\u2500 config/\n\u251c\u2500\u2500 public/\n\u251c\u2500\u2500 src/\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 assets/\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 components/\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 mixins/\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 modules/\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 router/\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 styles/\n\u251c\u2500\u2500 static/\n\u251c\u2500\u2500 test/\n\u2514\u2500\u2500 package.json", 
+            "title": "Expected filesystem structure"
+        }, 
+        {
+            "location": "/#journ-make", 
+            "text": "The  make  command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use  journ list make  to view a list of available boots to strap (heh).", 
+            "title": "journ make"
+        }, 
+        {
+            "location": "/#journ-make-component", 
+            "text": "Allows to bootstrap components. The component name passed as the third parameter can be either a filesystem path ( /foo/bar/MyNewComponent.vue ), a kebab-case ( my-new-component ) or a CamelCase ( MyNewComponent ) name. In each case, the name will be parsed and the file will be generated with the correct format ( Config:  preferred_spelling ) at the right location ( Config:  paths.components )\nGenerated components are described in detail later on.    # Bootstrap a new, empty component \njourn make component MyNewComponent # You can use shorthands, too \njourn m c MyNewComponent  Journeyman also supports extends and mixins as well as cloning:  # New component extending another \njourn make component MyOtherComponent --extends MyNewComponent # New component using one or more mixins \njourn make component MyOtherComponent --with oneMixin --with anotherMixin # New component based on another \njourn make component MyOtherComponent --from MyNewComponent  Cloned components will have all properties from the source component but with a new name.", 
+            "title": "journ make component"
+        }, 
+        {
+            "location": "/#journ-make-mixin", 
+            "text": "Allows to bootstrap mixins.     TODO HERE", 
+            "title": "journ make mixin"
+        }, 
+        {
+            "location": "/#journ-make-route", 
+            "text": "TODO HERE", 
+            "title": "journ make route"
+        }, 
+        {
+            "location": "/#journ-make-module", 
+            "text": "TODO HERE", 
+            "title": "journ make module"
+        }, 
+        {
+            "location": "/#journ-make-style", 
+            "text": "TODO HERE", 
+            "title": "journ make style"
+        }, 
+        {
+            "location": "/#journ-extract", 
+            "text": "The  extract  command allows extraction of code into mixins, styles into stylesheets and large templates into individual components.   TODO HERE", 
+            "title": "journ extract"
+        }, 
+        {
+            "location": "/#journ-inline", 
+            "text": "The exact opposite of the  extract  command,  inline  allows to inline external code into your components.   TODO HERE", 
+            "title": "journ inline"
+        }, 
+        {
+            "location": "/#journ-lint", 
+            "text": "The  lint  command performs a Vue.js coding style check on your code-base. This allows you to verify all your components adhere to the same style rules. In contrary to  eslint  for example, This will not check your JS code (there are a lot of perfectly fine tools for this job), but rather verify all your code is streamlined and follows best practices. \nThere are a bunch of linting rules available in  the configuration .  Additionally, if configured so,  lint  will check your JSDoc comments to make sure they a) exist, b) are complete and c) are correct. It will also look for repetitions throughout your components which are probably opportunities for mixins.", 
+            "title": "journ lint"
+        }, 
+        {
+            "location": "/#journ-config", 
+            "text": "The  config  command allows to read and write configuration values.", 
+            "title": "journ config"
+        }, 
+        {
+            "location": "/#journ-config-get", 
+            "text": "Use the following command to read the configuration:  journ config get  [ value ]", 
+            "title": "journ config get"
+        }, 
+        {
+            "location": "/#journ-config-set", 
+            "text": "Use the following command to set a configuration value:  journ config  set   key   value", 
+            "title": "journ config set"
+        }, 
+        {
+            "location": "/#journ-config-init", 
+            "text": "Use the following command to write the default configuration values to your  package.json  or  .journeyman  file. This way, you've got all available configuration values at hand to modify them to your liking:  journ config init  [ --package,-p ]   [ --dotfile,-d ]   Using the  --package  or  --dotfile  parameter, you can optionally specify the target:  package.json  or  .journeyman . \nThe default is  --package .   TODO HERE", 
+            "title": "journ config init"
+        }, 
+        {
+            "location": "/#configuration", 
+            "text": "Journeyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a  .journeyman  file or directly in the  package.json  below the key  journeyman  which is the preferred way (avoids yet  another  dot file in your project). \nIn general, it comes with a set of sensible defaults:", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/#paths", 
+            "text": "To set the output paths generated code should be written to, you can set one or more of the following path settings. Each of them will overwrite the default.     Key  Default  Description      assets  ./src/assets  Path where all assets live    components  ./src/components  Path where all components ( .vue  files) live    mixins  ./src/mixins  Path where all mixins ( .js  files) live    modules  ./src/modules  Path where all modules ( .js  files, helpers) live    router  ./src/router  Path to the main router file    styles  ./src/styles  Path where all stylesheets ( .css / .scss  files) live    build  ./build  Path where the build modules live    config  ./config  Path where the build configuration lives    public  ./public  Path where the build is written to    static  ./static  Path where static assets live", 
+            "title": "paths"
+        }, 
+        {
+            "location": "/#preferred_spelling", 
+            "text": "This setting controls how journeyman generates component names and inserts them, for example. This also applies to file names on the file system. There are two options available:\n -  camel : Names are generated in  CamelCase .\n -  kebab : Names are generated in  kebab-case .", 
+            "title": "preferred_spelling"
+        }, 
+        {
+            "location": "/#plugins", 
+            "text": "Journeyman provides a few ways to add new functionality, that is: To add new, first-class citizen, commands to  journ . In fact,  all  integrated commands are actually plugins. \nPlugins are special npm packages that must fulfill a few requirements:   Their package name starts with  journeyman-plugin- : \n   This serves to keep the npm namespace clean and make plugins more obvious. I can't stand packages like  body-parser  that are secretly  express.js  plugins.  Their  package.json  file includes a  journeyman-plugin  key: \n   This key provides plugin metadata. The available fields are outlined in  Plugin metadata fields  They export a class ( not an instance! ) from their main module that extends the base plugin: \n   Journeyman provides a base class at  lib/plugins/Plugin  that all plugins need to inherit from. It provides several methods Journeyman uses to initialize the plugin and work with it's input and output. This frees implementations from caring about API compatibility and implementation details.   Basically, a plugin provides a new subcommand to journeyman that all its methods are grouped below. A simple plugin might look like this:  const   {   Plugin   }   =   require ( journeyman );  class   EchoPlugin   extends   Plugin   { \n\n   /**     * The static property  name  is used as the subcommand namespace for your plugin     */ \n   static   get   name ()   { \n     return   echo ; \n   } \n\n   /**     * This is a private method (as far as JS supports it, at least...). It will *not* be visible      * nor accessible from the command line due to the single underscore prefix.     */ \n   _prepareOutput ( str )   { \n     return   echo    +   str ; \n   } \n\n   /**     * This is a public method (no leading underscore). It will be used as a publicly visible command below your     * plugin namespace:     * journ echo foo     */ \n   foo ( app )   { \n     const   output   =   this . _prepareOutput ( app . input . args ); \n\n     return   Promise . resolve ( output ); \n   }  }", 
+            "title": "Plugins"
+        }, 
+        {
+            "location": "/#one-shot-plugins", 
+            "text": "If your plugin only serves a single purpose -- eg. it doesn't need multiple sub-commands -- you can use one-shot plugins. The only difference to ordinary plugins is that they include the special  __invoke  method: If a plugin provides it, journeyman assumes the plugin doesn't need a namespace and only has a single, public command, callable as  journ  plugin name  --params . If journeyman finds the __invoke method  inside your plugin, it will disregard any other public methods. As ordinary command methods,  __invoke  receives the application instance as its only parameter.  const   {   Plugin   }   =   require ( journeyman );  class   FooPlugin   extends   Plugin   { \n   static   get   name ()   { \n     return   foo ; \n   } \n\n   /**     * This is a special one: For single-shot plugins, you can use the __invoke method.      */ \n   __invoke ( app )   { \n     const   output   =   this . _prepareOutput ( app . input . args ); \n\n     return   Promise . resolve ( output ); \n   }  }", 
+            "title": "One-Shot plugins"
+        }, 
+        {
+            "location": "/#the-app-parameter-to-your-command-methods", 
+            "text": "app  is an object with several well-defined properties revolving around the command execution lifecycle. It contains everything the command will need to carry out its purpose:     Name  Type  Description      journeyman  JourneyMan  The current  JourneyMan  instance.    env  Map k: String, v: String  Holds all system environment variables.    input  Input  Holds the command line input object.    output  Output  Holds the command line output object.    plugins  Array Plugin  Holds the list of available plugins. Alias to  journeyman.plugins .    call(command: String): Promise  function  Allows to call other commands by their full command input string.      More properties and methods will be added as the development continues.", 
+            "title": "The app parameter to your command methods"
+        }, 
+        {
+            "location": "/#advanced-plugins", 
+            "text": "Single-class and one-shot plugins will be fine for most purposes. But what if you've got actual  work  to do? Fear not, for there's a third structural option: Instead of providing the individual commands as methods on your plugin, you can also provide a list of  Command  instances. \nThis provides you with a belly of additional goodies, like automatic help generation, fine-grained parameter and option handling as well as neatly organized code.  A plugin using Command instances might look like this:  const   {   Plugin   }   =   require ( journeyman );  const   FooCommand   =   require ( ./commands/FooCommand );  const   BarCommand   =   require ( ./commands/BarCommand );  class   MyAdvancedPlugin   extends   Plugin   { \n   static   get   name ()   { \n     return   advanced ; \n   } \n\n   /**     * This overrides the default of an empty array     */ \n   static   get   commands ()   { \n     return   [ \n       FooCommand , \n       BarCommand \n     ]; \n   } \n\n   /**     * Of course, you re still free to define additional commands using methods     */ \n   baz ( app )   { \n     // ... \n   }  }    A command class for our plugin, say  FooCommand , should be constructed like this:  const   {   Command   }   =   require ( journeyman );  class   FooCommand   extends   Command   { \n\n   /**     * Since we don t have a method name at our disposal, we can set it here. If omitted,      * the name will be inferred from the class name ( Class.name.replace( Command ,  ).toLowerCase() )     */ \n   static   get   name ()   { \n     return   foo ; \n   } \n\n   /**     * The __configure() method is called on initialization and allows to configure the command (duh)     */ \n   __configure ()   { \n\n     // a little Symfony-y \n     this . setDescription ( Creates a new foo ); \n     this . addParameter ( name ,   n ,   How to name your foo ,   Command . PARAM_TYPE_STRING ); \n   } \n\n   /**     * The behaviour is the same as with plugin method commands here     */ \n   __invoke ( app )   { \n     return   Promise . resolve (); \n   }  }   That's a whole slew of new stuff, so be sure to check out the  Command documentation .", 
+            "title": "Advanced plugins"
+        }, 
+        {
+            "location": "/#providing-new-commands-for-journeymans-existing-sub-commands", 
+            "text": "That's all fine and dandy, but what if you'd like to provide a new  make  something ? For these cases, you can extend the special  MakePlugin  class instead of  Plugin . All commands provided in these will be appended to the  make  subcommand. Beneath  MakePlugin , there's also  LinkPlugin ,  ServePlugin  and  BuildPlugin  to extend the respective verbs.   More extend-plugins will be added as the development continues.", 
+            "title": "Providing new commands for journeyman's existing sub-commands"
+        }, 
+        {
+            "location": "/#plugin-metadata-fields", 
+            "text": "The following  package.json  properties of the  journeyman-plugin  key are recognized:     Name  Type  Description  Required      name  String  The plugins human-readable name. This will be used in the plugin list, for example. Defaults to the package name.  No    defaults  Object  Any default configuration you might need for your plugin. Defaults to an empty hash.  No      More properties will be added as the development continues.", 
+            "title": "Plugin metadata fields"
+        }, 
+        {
+            "location": "/api/Command/", 
+            "text": "lib/Console/Command.js\n\n\nConsole Command\n\n\nCommands represent complete, CLI-callable commands.\n\n\n\n\n\nnew Command(plugin: \nPlugin\n)\n\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nlib/Console/Command.js\n\n\nHolds the name of the command.\n\n\n\n\n$name\n\n\n\n\nInstance Members\n\n\n\n\ngetName()\n\n\nlib/Console/Command.js\n\n\nRetrieves the command name\n\n\n\n\ngetName(): \nstring\n\n\n\nReturns\n\n\nstring\n\n\n\n\n\n\n__configure()\n\n\nlib/Console/Command.js\n\n\nConfigures the command.\n\n\n\n\n__configure(): void\n\n\n\nReturns\n\n\nvoid\n\n\n\n\n\n\n__invoke(context)\n\n\nlib/Console/Command.js\n\n\nExecutes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can \nawait\n non-Promise returning functions too.\n\n\n\n\n__invoke(context: any): (\nPromise\n(\nString\n | \nNumber\n)> | any)\n\n\n\nParameters\n\n\ncontext\n \n\n\n\n\nReturns\n\n\n(\nPromise\n(\nString\n | \nNumber\n)\n | any)\n\n\n\n\n\n\ngetHelp(input, output)\n\n\nlib/Console/Command.js\n\n\nRetrieves the help text\n\n\n\n\ngetHelp(input: any, output: any)\n\n\n\nParameters\n\n\ninput\n \n\n\n\n\noutput\n \n\n\n\n\n\n\n\n\naddArgument(name, argumentType = CommandArgument.types.value_required, description = '', fallback = null)\n\n\nlib/Console/Command.js\n\n\nAdds a new argument to the command\n\n\n\n\naddArgument(name: \nstring\n, argumentType: \nstring\n?, description: \nstring\n?, fallback: any?)\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nargument name\n\n\n\n\nargumentType\n (\nstring\n? = CommandArgument.types.value_required)\n\n\n\n\nargument type. must use one of the static types (@see CommandArgument#types)\n\n\n\n\ndescription\n (\nstring\n? = \n)\n\n\n\n\nargument description for the help text\n\n\n\n\nfallback\n (any? = null)\n\n\n\n\nfallback value if missing. Can only be used for optional arguments\n\n\n\n\n\n\n\n\naddOption(longName, shortName, optionType, description, valueLabel)\n\n\nlib/Console/Command.js\n\n\nAdds a new option to the command\n\n\n\n\naddOption(longName: \nstring\n, shortName: \nstring\n, optionType: \nstring\n, description: \nstring\n, valueLabel: \nstring\n)\n\n\n\nParameters\n\n\nlongName\n (\nstring\n)\n\n\n\n\nshortName\n (\nstring\n = longName.substr(0,1))\n\n\n\n\noptionType\n (\nstring\n = CommandOption.types.value_none)\n\n\n\n\ndescription\n (\nstring\n = \n)\n\n\n\n\nvalueLabel\n (\nstring\n = \n)\n\n\n\n\n\n\n\n\nhasOption(name)\n\n\nlib/Console/Command.js\n\n\nChecks whether the command has an option\n\n\n\n\nhasOption(name: \nstring\n): \nboolean\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nlong name of the option\n\n\n\n\nReturns\n\n\nboolean", 
+            "title": "Command"
+        }, 
+        {
+            "location": "/api/Command/#console-command", 
+            "text": "Commands represent complete, CLI-callable commands.   \nnew Command(plugin:  Plugin )", 
+            "title": "Console Command"
+        }, 
+        {
+            "location": "/api/Command/#parameters", 
+            "text": "plugin  ( Plugin )", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Command/#static-members", 
+            "text": "$name  lib/Console/Command.js  Holds the name of the command.   $name", 
+            "title": "Static Members"
+        }, 
+        {
+            "location": "/api/Command/#instance-members", 
+            "text": "getName()  lib/Console/Command.js  Retrieves the command name   getName():  string", 
+            "title": "Instance Members"
+        }, 
+        {
+            "location": "/api/Command/#returns", 
+            "text": "string    __configure()  lib/Console/Command.js  Configures the command.   __configure(): void", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Command/#returns_1", 
+            "text": "void    __invoke(context)  lib/Console/Command.js  Executes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can  await  non-Promise returning functions too.   __invoke(context: any): ( Promise ( String  |  Number )> | any)", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Command/#parameters_1", 
+            "text": "context", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Command/#returns_2", 
+            "text": "( Promise ( String  |  Number )  | any)    getHelp(input, output)  lib/Console/Command.js  Retrieves the help text   getHelp(input: any, output: any)", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Command/#parameters_2", 
+            "text": "input     output       addArgument(name, argumentType = CommandArgument.types.value_required, description = '', fallback = null)  lib/Console/Command.js  Adds a new argument to the command   addArgument(name:  string , argumentType:  string ?, description:  string ?, fallback: any?)", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Command/#parameters_3", 
+            "text": "name  ( string )   argument name   argumentType  ( string ? = CommandArgument.types.value_required)   argument type. must use one of the static types (@see CommandArgument#types)   description  ( string ? =  )   argument description for the help text   fallback  (any? = null)   fallback value if missing. Can only be used for optional arguments     addOption(longName, shortName, optionType, description, valueLabel)  lib/Console/Command.js  Adds a new option to the command   addOption(longName:  string , shortName:  string , optionType:  string , description:  string , valueLabel:  string )", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Command/#parameters_4", 
+            "text": "longName  ( string )   shortName  ( string  = longName.substr(0,1))   optionType  ( string  = CommandOption.types.value_none)   description  ( string  =  )   valueLabel  ( string  =  )     hasOption(name)  lib/Console/Command.js  Checks whether the command has an option   hasOption(name:  string ):  boolean", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Command/#parameters_5", 
+            "text": "name  ( string )   long name of the option", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Command/#returns_3", 
+            "text": "boolean", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Config/", 
+            "text": "lib/Config/Config.js\n\n\nConfiguration storage class\nConfig presents a wrapper around a physical JSON file. It parses the file on\nconstruction and sets any properties on itself, accessed via getters and setters.\nIf a key is modified, the change will be written to disk asynchronously.\nConfiguration data is validated against the Schema.\n\n\n\n\n\nnew Config(path: \nString\n, configKey: \nString\n?, schema: \nObject\n?)\n\n\n\nParameters\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the file to use\n\n\n\n\nconfigKey\n (\nString\n? = null)\n\n\n\n\nOptional sub-key in the file\n\n\n\n\nschema\n (\nObject\n? = {})\n\n\n\n\nSchema to validate the config with\n\n\n\n\nInstance Members\n\n\n\n\ninitialize()\n\n\nlib/Config/Config.js\n\n\nPopulates the config file with all default values.\n\n\n\n\ninitialize(): \nPromise\nvoid>\n\n\n\nReturns\n\n\nPromise\nvoid", 
+            "title": "Config"
+        }, 
+        {
+            "location": "/api/Config/#parameters", 
+            "text": "path  ( String )   Path to the file to use   configKey  ( String ? = null)   Optional sub-key in the file   schema  ( Object ? = {})   Schema to validate the config with", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Config/#instance-members", 
+            "text": "initialize()  lib/Config/Config.js  Populates the config file with all default values.   initialize():  Promise void>", 
+            "title": "Instance Members"
+        }, 
+        {
+            "location": "/api/Config/#returns", 
+            "text": "Promise void", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/ConfigValidationError/", 
+            "text": "lib/Errors/ConfigValidationError.js\n\n\nConfiguration validation error\n\n\nThis error should be used if an unknown type has been passed to the validation. The Schema class can\nonly validate objects.\n\n\n\n\n\nnew ConfigValidationError(validator: any, config: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\nvalidator\n \n\n\n\n\nconfig", 
+            "title": "ConfigValidationError"
+        }, 
+        {
+            "location": "/api/ConfigValidationError/#configuration-validation-error", 
+            "text": "This error should be used if an unknown type has been passed to the validation. The Schema class can\nonly validate objects.   \nnew ConfigValidationError(validator: any, config: any)  \nExtends Error", 
+            "title": "Configuration validation error"
+        }, 
+        {
+            "location": "/api/ConfigValidationError/#parameters", 
+            "text": "validator     config", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/ConfigValidationInvalidFieldError/", 
+            "text": "lib/Errors/ConfigValidationInvalidFieldError.js\n\n\nConfiguration validation invalid field error\n\n\nThis error should be used if an unknown field has been passed. It indicates the field is missing\nfrom the schema and therefore can't be validated.\n\n\n\n\n\nnew ConfigValidationInvalidFieldError(validator: any, field: any, value: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\nvalidator\n \n\n\n\n\nfield\n \n\n\n\n\nvalue", 
+            "title": "ConfigValidationInvalidFieldError"
+        }, 
+        {
+            "location": "/api/ConfigValidationInvalidFieldError/#configuration-validation-invalid-field-error", 
+            "text": "This error should be used if an unknown field has been passed. It indicates the field is missing\nfrom the schema and therefore can't be validated.   \nnew ConfigValidationInvalidFieldError(validator: any, field: any, value: any)  \nExtends Error", 
+            "title": "Configuration validation invalid field error"
+        }, 
+        {
+            "location": "/api/ConfigValidationInvalidFieldError/#parameters", 
+            "text": "validator     field     value", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/ConfigValidationMissingFieldError/", 
+            "text": "lib/Errors/ConfigValidationMissingFieldError.js\n\n\nConfiguration validation missing field error\n\n\nThis error should be used if a required schema field is missing. It indicates a certain field must\nbe used but isn't there.\n\n\n\n\n\nnew ConfigValidationMissingFieldError(validator: any, config: any, field: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\nvalidator\n \n\n\n\n\nconfig\n \n\n\n\n\nfield", 
+            "title": "ConfigValidationMissingFieldError"
+        }, 
+        {
+            "location": "/api/ConfigValidationMissingFieldError/#configuration-validation-missing-field-error", 
+            "text": "This error should be used if a required schema field is missing. It indicates a certain field must\nbe used but isn't there.   \nnew ConfigValidationMissingFieldError(validator: any, config: any, field: any)  \nExtends Error", 
+            "title": "Configuration validation missing field error"
+        }, 
+        {
+            "location": "/api/ConfigValidationMissingFieldError/#parameters", 
+            "text": "validator     config     field", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/ConfigValidationTypeError/", 
+            "text": "lib/Errors/ConfigValidationTypeError.js\n\n\nConfiguration validation type error\n\n\nThis error should be used if the schema validation of a field's type fails. It indicates the field\nexists but is of the wrong type.\n\n\n\n\n\nnew ConfigValidationTypeError(validator: any, field: any, value: any, rule: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\nvalidator\n \n\n\n\n\nfield\n \n\n\n\n\nvalue\n \n\n\n\n\nrule", 
+            "title": "ConfigValidationTypeError"
+        }, 
+        {
+            "location": "/api/ConfigValidationTypeError/#configuration-validation-type-error", 
+            "text": "This error should be used if the schema validation of a field's type fails. It indicates the field\nexists but is of the wrong type.   \nnew ConfigValidationTypeError(validator: any, field: any, value: any, rule: any)  \nExtends Error", 
+            "title": "Configuration validation type error"
+        }, 
+        {
+            "location": "/api/ConfigValidationTypeError/#parameters", 
+            "text": "validator     field     value     rule", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/ConfigValidationValidatorError/", 
+            "text": "lib/Errors/ConfigValidationValidatorError.js\n\n\nConfiguration validation validator error\n\n\nThis error should be used if a field validator throws or returns \nfalse\n. It indicates the field\neither could not be validated (the result was \nfalse\n) or did throw an Error during validation.\n\n\n\n\n\nnew ConfigValidationValidatorError(validator: any, field: any, value: any, meta: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\nvalidator\n \n\n\n\n\nfield\n \n\n\n\n\nvalue\n \n\n\n\n\nmeta", 
+            "title": "ConfigValidationValidatorError"
+        }, 
+        {
+            "location": "/api/ConfigValidationValidatorError/#configuration-validation-validator-error", 
+            "text": "This error should be used if a field validator throws or returns  false . It indicates the field\neither could not be validated (the result was  false ) or did throw an Error during validation.   \nnew ConfigValidationValidatorError(validator: any, field: any, value: any, meta: any)  \nExtends Error", 
+            "title": "Configuration validation validator error"
+        }, 
+        {
+            "location": "/api/ConfigValidationValidatorError/#parameters", 
+            "text": "validator     field     value     meta", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Input/", 
+            "text": "lib/Console/Input.js\n\n\nRepresents the command input for the application\n\n\n\n\n\nnew Input(args: \nString\n)\n\n\n\nParameters\n\n\nargs\n (\nString\n)\n\n\n\n\nConsole arguments\n\n\n\n\nInstance Members\n\n\n\n\nhasArguments()\n\n\nlib/Console/Input.js\n\n\nChecks whether any arguments have been passed\n\n\n\n\nhasArguments(): \nboolean\n\n\n\nReturns\n\n\nboolean\n\n\n\n\n\n\ngetArgument(position = 0)\n\n\nlib/Console/Input.js\n\n\nRetrieves an input argument by position\n\n\n\n\ngetArgument(position: \nNumber\n?): any\n\n\n\nParameters\n\n\nposition\n (\nNumber\n? = 0)\n\n\n\n\nPosition of the argument. Defaults to 0\n\n\n\n\nReturns\n\n\nany\n\n\n\n\n\n\nhasOption(name)\n\n\nlib/Console/Input.js\n\n\nChecks whether a specific option has been passed.\n\n\n\n\nhasOption(name: \nString\n): \nBoolean\n\n\n\nParameters\n\n\nname\n (\nString\n)\n\n\n\n\nName of the option to check for\n\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\ngetOption(name, fallback = null)\n\n\nlib/Console/Input.js\n\n\nRetrieves an input option\n\n\n\n\ngetOption(name: \nString\n, fallback: any?): any\n\n\n\nParameters\n\n\nname\n (\nString\n)\n\n\n\n\nOption name\n\n\n\n\nfallback\n (any? = null)\n\n\n\n\nOptional fallback value if the requested option is missing\n\n\n\n\nReturns\n\n\nany", 
+            "title": "Input"
+        }, 
+        {
+            "location": "/api/Input/#parameters", 
+            "text": "args  ( String )   Console arguments", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Input/#instance-members", 
+            "text": "hasArguments()  lib/Console/Input.js  Checks whether any arguments have been passed   hasArguments():  boolean", 
+            "title": "Instance Members"
+        }, 
+        {
+            "location": "/api/Input/#returns", 
+            "text": "boolean    getArgument(position = 0)  lib/Console/Input.js  Retrieves an input argument by position   getArgument(position:  Number ?): any", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Input/#parameters_1", 
+            "text": "position  ( Number ? = 0)   Position of the argument. Defaults to 0", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Input/#returns_1", 
+            "text": "any    hasOption(name)  lib/Console/Input.js  Checks whether a specific option has been passed.   hasOption(name:  String ):  Boolean", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Input/#parameters_2", 
+            "text": "name  ( String )   Name of the option to check for", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Input/#returns_2", 
+            "text": "Boolean    getOption(name, fallback = null)  lib/Console/Input.js  Retrieves an input option   getOption(name:  String , fallback: any?): any", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Input/#parameters_3", 
+            "text": "name  ( String )   Option name   fallback  (any? = null)   Optional fallback value if the requested option is missing", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Input/#returns_3", 
+            "text": "any", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/InvalidConfigFileError/", 
+            "text": "lib/Errors/InvalidConfigFileError.js\n\n\nInvalid configuration file error\n\n\nThis error should be used if the configuration file cannot be read or parsed. Due to the use\nof \nrequire( configFile )\n inside the configuration constructor, this will implicitly be\nthe case if the file path does not exist or points to something apart of \n.js\n or \n.json\n files.\n\n\n\n\n\nnew InvalidConfigFileError(path: any, error: any)\n\n\n\n\nExtends\n\n\nError\n\n\n\n\n\n\nParameters\n\n\npath\n \n\n\n\n\nerror", 
+            "title": "InvalidConfigFileError"
+        }, 
+        {
+            "location": "/api/InvalidConfigFileError/#invalid-configuration-file-error", 
+            "text": "This error should be used if the configuration file cannot be read or parsed. Due to the use\nof  require( configFile )  inside the configuration constructor, this will implicitly be\nthe case if the file path does not exist or points to something apart of  .js  or  .json  files.   \nnew InvalidConfigFileError(path: any, error: any)  \nExtends Error", 
+            "title": "Invalid configuration file error"
+        }, 
+        {
+            "location": "/api/InvalidConfigFileError/#parameters", 
+            "text": "path     error", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/JourneyMan/", 
+            "text": "lib/JourneyMan.js\n\n\nWelcome to JourneyMan!\nThis is the main class used by the CLI, but it's easy to use it programmatically.\n\n\n\n\n\nnew JourneyMan(proc: \nObject\n, configFilePath: \nString\n)\n\n\n\nParameters\n\n\nproc\n (\nObject\n)\n\n\n\n\nProcess object. While in node, \n\n\n\n\nprocess\n\n\nis a global, we want\n                                 JourneyMan to stay as portable as possible. Therefore, process\n                                 is a freely shimable dependency here.\n\n\nconfigFilePath\n (\nString\n = proc.cwd())\n\n\n\n\nPath to the configuration file. Defaults to the package.json\n\n\n\n\nStatic Members\n\n\n\n\nnew Plugin()\n\n\nlib/JourneyMan.js\n\n\nStatic getter for the plugin class\n\n\n\n\n\nnew Plugin(): \nPlugin\n\n\n\nReturns\n\n\nPlugin\n\n\n\n\n\n\nnew Command()\n\n\nlib/JourneyMan.js\n\n\nStatic getter for the command class\n\n\n\n\n\nnew Command(): \nCommand\n\n\n\nReturns\n\n\nCommand\n\n\n\n\nInstance Members\n\n\n\n\ninput\n\n\nlib/JourneyMan.js\n\n\nHolds the command line input\n\n\n\n\ninput\n\n\nType:\n\nInput", 
+            "title": "JourneyMan"
+        }, 
+        {
+            "location": "/api/JourneyMan/#parameters", 
+            "text": "proc  ( Object )   Process object. While in node,    process  is a global, we want\n                                 JourneyMan to stay as portable as possible. Therefore, process\n                                 is a freely shimable dependency here.  configFilePath  ( String  = proc.cwd())   Path to the configuration file. Defaults to the package.json", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/JourneyMan/#static-members", 
+            "text": "new Plugin()  lib/JourneyMan.js  Static getter for the plugin class   \nnew Plugin():  Plugin", 
+            "title": "Static Members"
+        }, 
+        {
+            "location": "/api/JourneyMan/#returns", 
+            "text": "Plugin    new Command()  lib/JourneyMan.js  Static getter for the command class   \nnew Command():  Command", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/JourneyMan/#returns_1", 
+            "text": "Command", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/JourneyMan/#instance-members", 
+            "text": "input  lib/JourneyMan.js  Holds the command line input   input  Type: Input", 
+            "title": "Instance Members"
+        }, 
+        {
+            "location": "/api/Plugin/", 
+            "text": "lib/Plugins/Plugin.js\n\n\n\n\n\nnew Plugin()\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nlib/Plugins/Plugin.js\n\n\nHolds the plugin's subcommand name.\n\n\n\n\n$name\n\n\nReturns\n\n\nString\n\n\n\n\n\n\ncommands\n\n\nlib/Plugins/Plugin.js\n\n\nHolds all Command instances the plugin uses.\n\n\n\n\ncommands\n\n\nReturns\n\n\nArray\nCommand\n\n\n\n\n\n\n$mount(journeyman)\n\n\nlib/Plugins/Plugin.js\n\n\nMounts the journeyman instance on the current plugin\n\n\n\n\n$mount(journeyman: \nJourneyMan\n): void\n\n\n\nParameters\n\n\njourneyman\n (\nJourneyMan\n)\n\n\n\n\nReturns\n\n\nvoid\n\n\n\n\nInstance Members\n\n\n\n\n$run(command, context)\n\n\nlib/Plugins/Plugin.js\n\n\nRuns a command on this plugin. Journeyman has figured out that this plugin is\nrequired to carry out the command, so let's find a handler and try to execute it.\n\n\n\n\n$run(command: \nString\n, context: \nObject\n): \nPromise\nString\n>\n\n\n\nParameters\n\n\ncommand\n (\nString\n)\n\n\n\n\nName of the command requested to run\n\n\n\n\ncontext\n (\nObject\n)\n\n\n\n\nApplication context for the command handler\n\n\n\n\nReturns\n\n\nPromise\nString", 
+            "title": "Plugin"
+        }, 
+        {
+            "location": "/api/Plugin/#static-members", 
+            "text": "$name  lib/Plugins/Plugin.js  Holds the plugin's subcommand name.   $name", 
+            "title": "Static Members"
+        }, 
+        {
+            "location": "/api/Plugin/#returns", 
+            "text": "String    commands  lib/Plugins/Plugin.js  Holds all Command instances the plugin uses.   commands", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Plugin/#returns_1", 
+            "text": "Array Command    $mount(journeyman)  lib/Plugins/Plugin.js  Mounts the journeyman instance on the current plugin   $mount(journeyman:  JourneyMan ): void", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Plugin/#parameters", 
+            "text": "journeyman  ( JourneyMan )", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Plugin/#returns_2", 
+            "text": "void", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Plugin/#instance-members", 
+            "text": "$run(command, context)  lib/Plugins/Plugin.js  Runs a command on this plugin. Journeyman has figured out that this plugin is\nrequired to carry out the command, so let's find a handler and try to execute it.   $run(command:  String , context:  Object ):  Promise String >", 
+            "title": "Instance Members"
+        }, 
+        {
+            "location": "/api/Plugin/#parameters_1", 
+            "text": "command  ( String )   Name of the command requested to run   context  ( Object )   Application context for the command handler", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Plugin/#returns_3", 
+            "text": "Promise String", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Schema/", 
+            "text": "lib/Config/Schema.js\n\n\nConfiguration Schema\n\n\nThe Schema class provides a dynamic validator for object schemas. By passing a set of rules, the\nschema can validate an entire object or single fields against these rules. This enables both\nprop checking as well as type checking.\nRule sets must be an object structured like this:\n\n\nconst\n \nrules\n \n=\n \n{\n\n\n  \n// All keys must be named like the fields to validate, so this rule for example would match\n\n  \n// a field called \nfieldName\n.\n\n  \nfieldName\n:\n \n{\n \n// All rules for \nfieldName\n will be contained within this object.\n\n\n    \n// The mandatory type rule allows to check the field against a type constructor\n\n    \ntype\n:\n \nString\n,\n \n// Or any other valid constructor like Boolean, Array, Number, etc.\n\n                  \n// You can also pass an arbitrary prototype the field will be checked\n\n                  \n// against using instanceof.\n\n\n    \n// Whether the field is required (eg. must be present).\n\n    \nrequired\n:\n \nfalse\n,\n \n// Or true - no default required in that case.\n\n\n    \n// If required is set to false, pass a default value here.\n\n    \ndefault\n:\n \nfoo\n,\n \n// Defaults will be returned if the field is undefined.\n\n\n    \n// Validators allow for custom field validations. They will only run if the type check\n\n    \n// matches, so remember to take care of both.\n\n    \n// Validator callbacks must be synchronous functions that return a boolean.\n\n    \nvalidator\n(\nvalue\n)\n \n{\n\n      \nreturn\n \n[\n \nfoo\n,\n \nbar\n,\n \nbaz\n \n].\nincludes\n(\n \nvalue\n \n);\n\n    \n}\n\n  \n}\n\n\n}\n\n\n\n\n\n\nAfter setting up the rules, you can use two validation methods:\n\n\n\n\n\n\nschema.validate( myDataObject: Object ): Object\n\n    Validates each property of the object, that is: It runs \nvalidateField\n on each of them. If\n    the object is invalid, one of the checks will throw (so remember to try-catch), if it is\n    valid, it will return the passed object with any eventually missing fields monkey-patched to\n    their defaults, if their rules provide one.\n\n\n\n\n\n\nschema.validateField( key: String, value: Any ): Any\n\n    Validates a single field by rule name. The \nkey\n parameter will be used to check the \nvalue\n\n    against the appropriate rule. If the value is invalid, one of the checks will throw (when\n    using the \nvalidate\n method, this is what bubbles up), if it is valid, the value will be\n    returned. If there was no value and the field was optional, the default will be returned if\n    it is available.\n\n\n\n\n\n\n\n\n\nnew Schema(rules: \nObject\n)\n\n\n\nParameters\n\n\nrules\n (\nObject\n)\n\n\n\n\nA set of rules to create the schema for.\n\n\n\n\nInstance Members\n\n\n\n\nrules\n\n\nlib/Config/Schema.js\n\n\nHolds the rules the schema describes.\n\n\n\n\nrules\n\n\nReturns\n\n\nObject\n\n\n\n\n\n\ntoJSON()\n\n\nlib/Config/Schema.js\n\n\nCreates an empty, default schema holding all defaults.\n\n\n\n\ntoJSON(): \nObject\n\n\n\nReturns\n\n\nObject\n\n\n\n\n\n\nvalidate(obj?)\n\n\nlib/Config/Schema.js\n\n\nValidates a given object against the schema. This works by running each field through\n\nvalidateField\n individually. If a field is missing but defined in the schema,\n\n\n\n\nvalidate(obj: \nObject\n?): \nObject\n\n\n\nParameters\n\n\nobj\n (\nObject\n?)\n\n\n\n\nObject to validate\n\n\n\n\nReturns\n\n\nObject\n\n\nThrows\n\n\n\n\n\n\nConfigValidationError\n: If an invalid (non-object) parameter has been passed\n\n\n\n\n\n\nConfigValidationMissingFieldError\n: If a required field is missing\n\n\n\n\n\n\nConfigValidationInvalidFieldError\n: If a field is unknown\n\n\n\n\n\n\nConfigValidationTypeError\n: If a values type doesn't match the requirements\n\n\n\n\n\n\nConfigValidationValidatorError\n: If a field validator can't validate a field\n\n\n\n\n\n\n\n\n\n\nvalidateField(field, value)\n\n\nlib/Config/Schema.js\n\n\nValidates a single field.\nThe validation process is split into several checks, ordered by probability of them occurring.\nEach check will throw a specific error if it fails.\n\n\n\n\nCheck if a rule for the field is available\n\n\n\n\nCheck if the type matches the rule. This is a bit of work since there is a specific\n    check for each type:\n\n\n\n\nString\n - checked using \ntypeof\n\n\nNumber\n - checked using \nisNaN\n and a \nnull\n check\n\n\nBoolean\n - checked using \ntypeof\n\n\nArray\n - checked using \nArray.isArray\n\n\nSymbol\n - checked using \ntypeof\n\n\nObject\n -  checked using \ntypeof\n, then \nArray.isArray\n and a \nnull\n check.\n    The object will then be merged with the rule's default, if any.\n\n\nAnything else\n - checked using \ninstanceof\n\n\n\n\n\n\n\n\nCheck if the validator callback (if any) can validate the field (returns \ntrue\n)\n\n\n\n\n\n\nIf all these checks pass, the value will be returned.\n\n\n\n\nvalidateField(field: \nString\n, value: any): any\n\n\n\nParameters\n\n\nfield\n (\nString\n)\n\n\n\n\nName of the field to validate\n\n\n\n\nvalue\n (any)\n\n\n\n\nField value\n\n\n\n\nReturns\n\n\nany\n\n\nThrows\n\n\n\n\n\n\nConfigValidationInvalidFieldError\n: If the field is unknown\n\n\n\n\n\n\nConfigValidationTypeError\n: If the values type doesn't match the requirements\n\n\n\n\n\n\nConfigValidationValidatorError\n: If the field validator can't validate the field", 
+            "title": "Schema"
+        }, 
+        {
+            "location": "/api/Schema/#configuration-schema", 
+            "text": "The Schema class provides a dynamic validator for object schemas. By passing a set of rules, the\nschema can validate an entire object or single fields against these rules. This enables both\nprop checking as well as type checking.\nRule sets must be an object structured like this:  const   rules   =   { \n\n   // All keys must be named like the fields to validate, so this rule for example would match \n   // a field called  fieldName . \n   fieldName :   {   // All rules for  fieldName  will be contained within this object. \n\n     // The mandatory type rule allows to check the field against a type constructor \n     type :   String ,   // Or any other valid constructor like Boolean, Array, Number, etc. \n                   // You can also pass an arbitrary prototype the field will be checked \n                   // against using instanceof. \n\n     // Whether the field is required (eg. must be present). \n     required :   false ,   // Or true - no default required in that case. \n\n     // If required is set to false, pass a default value here. \n     default :   foo ,   // Defaults will be returned if the field is undefined. \n\n     // Validators allow for custom field validations. They will only run if the type check \n     // matches, so remember to take care of both. \n     // Validator callbacks must be synchronous functions that return a boolean. \n     validator ( value )   { \n       return   [   foo ,   bar ,   baz   ]. includes (   value   ); \n     } \n   }  }   After setting up the rules, you can use two validation methods:    schema.validate( myDataObject: Object ): Object \n    Validates each property of the object, that is: It runs  validateField  on each of them. If\n    the object is invalid, one of the checks will throw (so remember to try-catch), if it is\n    valid, it will return the passed object with any eventually missing fields monkey-patched to\n    their defaults, if their rules provide one.    schema.validateField( key: String, value: Any ): Any \n    Validates a single field by rule name. The  key  parameter will be used to check the  value \n    against the appropriate rule. If the value is invalid, one of the checks will throw (when\n    using the  validate  method, this is what bubbles up), if it is valid, the value will be\n    returned. If there was no value and the field was optional, the default will be returned if\n    it is available.     \nnew Schema(rules:  Object )", 
+            "title": "Configuration Schema"
+        }, 
+        {
+            "location": "/api/Schema/#parameters", 
+            "text": "rules  ( Object )   A set of rules to create the schema for.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Schema/#instance-members", 
+            "text": "rules  lib/Config/Schema.js  Holds the rules the schema describes.   rules", 
+            "title": "Instance Members"
+        }, 
+        {
+            "location": "/api/Schema/#returns", 
+            "text": "Object    toJSON()  lib/Config/Schema.js  Creates an empty, default schema holding all defaults.   toJSON():  Object", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Schema/#returns_1", 
+            "text": "Object    validate(obj?)  lib/Config/Schema.js  Validates a given object against the schema. This works by running each field through validateField  individually. If a field is missing but defined in the schema,   validate(obj:  Object ?):  Object", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Schema/#parameters_1", 
+            "text": "obj  ( Object ?)   Object to validate", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Schema/#returns_2", 
+            "text": "Object", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Schema/#throws", 
+            "text": "ConfigValidationError : If an invalid (non-object) parameter has been passed    ConfigValidationMissingFieldError : If a required field is missing    ConfigValidationInvalidFieldError : If a field is unknown    ConfigValidationTypeError : If a values type doesn't match the requirements    ConfigValidationValidatorError : If a field validator can't validate a field      validateField(field, value)  lib/Config/Schema.js  Validates a single field.\nThe validation process is split into several checks, ordered by probability of them occurring.\nEach check will throw a specific error if it fails.   Check if a rule for the field is available   Check if the type matches the rule. This is a bit of work since there is a specific\n    check for each type:   String  - checked using  typeof  Number  - checked using  isNaN  and a  null  check  Boolean  - checked using  typeof  Array  - checked using  Array.isArray  Symbol  - checked using  typeof  Object  -  checked using  typeof , then  Array.isArray  and a  null  check.\n    The object will then be merged with the rule's default, if any.  Anything else  - checked using  instanceof     Check if the validator callback (if any) can validate the field (returns  true )    If all these checks pass, the value will be returned.   validateField(field:  String , value: any): any", 
+            "title": "Throws"
+        }, 
+        {
+            "location": "/api/Schema/#parameters_2", 
+            "text": "field  ( String )   Name of the field to validate   value  (any)   Field value", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Schema/#returns_3", 
+            "text": "any", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Schema/#throws_1", 
+            "text": "ConfigValidationInvalidFieldError : If the field is unknown    ConfigValidationTypeError : If the values type doesn't match the requirements    ConfigValidationValidatorError : If the field validator can't validate the field", 
+            "title": "Throws"
+        }
+    ]
+}

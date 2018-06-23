@@ -1,3966 +1,1439 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset='utf-8' />
-  <title>journeyman 0.0.1 | Documentation</title>
-  <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
-  <link href='assets/style.css' type='text/css' rel='stylesheet' />
-  <link href='assets/github.css' type='text/css' rel='stylesheet' />
-  <link href='assets/split.css' type='text/css' rel='stylesheet' />
-</head>
-<body class='documentation m0'>
-    <div class='flex'>
-      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
-        <div class='py1 px2'>
-          <h3 class='mb0 no-anchor'>journeyman</h3>
-          <div class='mb1'><code>0.0.1</code></div>
-          <input
-            placeholder='Filter'
-            id='filter-input'
-            class='col12 block input'
-            type='text' />
-          <div id='toc'>
-            <ul class='list-reset h5 py1-ul'>
-              
-                
-                <li><a
-                  href='#config'
-                  class=" toggle-sibling">
-                  Config
-                  <span class='icon'>▸</span>
-                </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  
-                    <ul class='list-reset py1-ul pl1'>
-                      <li class='h5'><span>Instance members</span></li>
-                      
-                      <li><a
-                        href='#configinitialize'
-                        class='regular pre-open'>
-                        #initialize
-                      </a></li>
-                      
-                      <li><a
-                        href='#configcustom'
-                        class='regular pre-open'>
-                        #custom
-                      </a></li>
-                      
-                    </ul>
-                  
-                  
-                  
-                </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#schema'
-                  class=" toggle-sibling">
-                  Schema
-                  <span class='icon'>▸</span>
-                </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  
-                    <ul class='list-reset py1-ul pl1'>
-                      <li class='h5'><span>Instance members</span></li>
-                      
-                      <li><a
-                        href='#schemarules'
-                        class='regular pre-open'>
-                        #rules
-                      </a></li>
-                      
-                      <li><a
-                        href='#schematojson'
-                        class='regular pre-open'>
-                        #toJSON
-                      </a></li>
-                      
-                      <li><a
-                        href='#schemavalidate'
-                        class='regular pre-open'>
-                        #validate
-                      </a></li>
-                      
-                      <li><a
-                        href='#schemavalidatefield'
-                        class='regular pre-open'>
-                        #validateField
-                      </a></li>
-                      
-                    </ul>
-                  
-                  
-                  
-                </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#constructor'
-                  class="">
-                  constructor
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#getname'
-                  class="">
-                  getName
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#__configure'
-                  class="">
-                  __configure
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#__invoke'
-                  class="">
-                  __invoke
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#gethelp'
-                  class="">
-                  getHelp
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#addargument'
-                  class="">
-                  addArgument
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#addoption'
-                  class="">
-                  addOption
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#hasoption'
-                  class="">
-                  hasOption
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#name'
-                  class="">
-                  $name
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#option'
-                  class="">
-                  option
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#constructor'
-                  class="">
-                  constructor
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#help'
-                  class="">
-                  help
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#types'
-                  class="">
-                  types
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#constructor'
-                  class="">
-                  constructor
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#help'
-                  class="">
-                  help
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#isflag'
-                  class="">
-                  isFlag
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#types'
-                  class="">
-                  types
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#constructor'
-                  class="">
-                  constructor
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#hasarguments'
-                  class="">
-                  hasArguments
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#getargument'
-                  class="">
-                  getArgument
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#hasoption'
-                  class="">
-                  hasOption
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#getoption'
-                  class="">
-                  getOption
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#configvalidationerror'
-                  class="">
-                  ConfigValidationError
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#configvalidationinvalidfielderror'
-                  class="">
-                  ConfigValidationInvalidFieldError
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#configvalidationmissingfielderror'
-                  class="">
-                  ConfigValidationMissingFieldError
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#configvalidationtypeerror'
-                  class="">
-                  ConfigValidationTypeError
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#configvalidationvalidatorerror'
-                  class="">
-                  ConfigValidationValidatorError
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#invalidconfigfileerror'
-                  class="">
-                  InvalidConfigFileError
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#constructor'
-                  class="">
-                  constructor
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#discover'
-                  class="">
-                  discover
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#rules'
-                  class="">
-                  rules
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#name'
-                  class="">
-                  name
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#isplugin'
-                  class="">
-                  isPlugin
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#plugin'
-                  class=" toggle-sibling">
-                  Plugin
-                  <span class='icon'>▸</span>
-                </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
-                    
-                      <li><a
-                        href='#pluginname'
-                        class='regular pre-open'>
-                        .$name
-                      </a></li>
-                    
-                      <li><a
-                        href='#plugincommands'
-                        class='regular pre-open'>
-                        .commands
-                      </a></li>
-                    
-                      <li><a
-                        href='#pluginmount'
-                        class='regular pre-open'>
-                        .$mount
-                      </a></li>
-                    
-                    </ul>
-                  
-                  
-                    <ul class='list-reset py1-ul pl1'>
-                      <li class='h5'><span>Instance members</span></li>
-                      
-                      <li><a
-                        href='#pluginrun'
-                        class='regular pre-open'>
-                        #$run
-                      </a></li>
-                      
-                    </ul>
-                  
-                  
-                  
-                </div>
-                
-                </li>
-              
-            </ul>
-          </div>
-          <div class='mt1 h6 quiet'>
-            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
-          </div>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Journeyman is an opinionated CLI tool for Vue.js projects to generate code and automate common tasks.">
+      
+      
+        <link rel="canonical" href="https://radiergummi.github.io/journeyman/">
+      
+      
+        <meta name="author" content="Moritz Friedrich">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="./assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
+    
+    
+      
+        <title>Journeyman</title>
+      
+    
+    
+      <link rel="stylesheet" href="./assets/stylesheets/application.ba0fd1a6.css">
+      
+        <link rel="stylesheet" href="./assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#03a9f4">
+      
+    
+    
+      <script src="./assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="./assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="light-blue" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#journeyman" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://radiergummi.github.io/journeyman" title="Journeyman" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              Journeyman
+            
+          
         </div>
       </div>
-      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+      <div class="md-flex__cell md-flex__cell--shrink">
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
 
   
-  <div class='clearfix'>
+
+
+  <a href="https://github.com/radiergummi/journeyman/" title="Go to repository" class="md-source" data-md-source="github">
     
-    <h3 class='fl m0' id='config'>
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      radiergummi/journeyman
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="." title="Journeyman" class="md-tabs__link md-tabs__link--active">
+        Journeyman
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="api/Command/" title="Api" class="md-tabs__link">
+          Api
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Journeyman
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/radiergummi/journeyman/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      radiergummi/journeyman
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Journeyman
+      </label>
+    
+    <a href="." title="Journeyman" class="md-nav__link md-nav__link--active">
+      Journeyman
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-filesystem-structure" title="Expected filesystem structure" class="md-nav__link">
+    Expected filesystem structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-make" title="journ make" class="md-nav__link">
+    journ make
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#journ-make-component" title="journ make component" class="md-nav__link">
+    journ make component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-make-mixin" title="journ make mixin" class="md-nav__link">
+    journ make mixin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-make-route" title="journ make route" class="md-nav__link">
+    journ make route
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-make-module" title="journ make module" class="md-nav__link">
+    journ make module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-make-style" title="journ make style" class="md-nav__link">
+    journ make style
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-extract" title="journ extract" class="md-nav__link">
+    journ extract
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-inline" title="journ inline" class="md-nav__link">
+    journ inline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-lint" title="journ lint" class="md-nav__link">
+    journ lint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-config" title="journ config" class="md-nav__link">
+    journ config
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#journ-config-get" title="journ config get" class="md-nav__link">
+    journ config get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-config-set" title="journ config set" class="md-nav__link">
+    journ config set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-config-init" title="journ config init" class="md-nav__link">
+    journ config init
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paths" title="paths" class="md-nav__link">
+    paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preferred_spelling" title="preferred_spelling" class="md-nav__link">
+    preferred_spelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins" title="Plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-shot-plugins" title="One-Shot plugins" class="md-nav__link">
+    One-Shot plugins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-app-parameter-to-your-command-methods" title="The app parameter to your command methods" class="md-nav__link">
+    The app parameter to your command methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-plugins" title="Advanced plugins" class="md-nav__link">
+    Advanced plugins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#providing-new-commands-for-journeymans-existing-sub-commands" title="Providing new commands for journeyman's existing sub-commands" class="md-nav__link">
+    Providing new commands for journeyman's existing sub-commands
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugin-metadata-fields" title="Plugin metadata fields" class="md-nav__link">
+    Plugin metadata fields
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Api
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Api
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="api/Command/" title="Command" class="md-nav__link">
+      Command
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="api/Config/" title="Config" class="md-nav__link">
       Config
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Config/Config.js#L17-L153'>
-      <span>lib/Config/Config.js</span>
-      </a>
-    
-  </div>
-  
+    </a>
+  </li>
 
-  <p>Configuration storage class
-Config presents a wrapper around a physical JSON file. It parses the file on
-construction and sets any properties on itself, accessed via getters and setters.
-If a key is modified, the change will be written to disk asynchronously.
-Configuration data is validated against the Schema.</p>
-
-
-  <div class='pre p1 fill-light mt0'>new Config(path: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, configKey: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>?, schema: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>path</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
-	    Path to the file to use
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>configKey</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>?
-            = <code>null</code>)</code>
-	    Optional sub-key in the file
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>schema</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?
-            = <code>{}</code>)</code>
-	    Schema to validate the config with
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='configinitialize'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>initialize()</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Config/Config.js#L133-L135'>
-      <span>lib/Config/Config.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Populates the config file with all default values.</p>
-
-
-  <div class='pre p1 fill-light mt0'>initialize(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;void></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;void></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='configcustom'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>custom()</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Config/Config.js#L142-L152'>
-      <span>lib/Config/Config.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Custom inspect handler to hide private (irrelevant) fields</p>
-
-
-  <div class='pre p1 fill-light mt0'>custom(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
-
-  
-
-  
-</section>
-
-          
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='schema'>
-      Schema
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Config/Schema.js#L60-L256'>
-      <span>lib/Config/Schema.js</span>
-      </a>
-    
-  </div>
-  
-
-  <h4>Configuration Schema</h4>
-<p>The Schema class provides a dynamic validator for object schemas. By passing a set of rules, the
-schema can validate an entire object or single fields against these rules. This enables both
-prop checking as well as type checking.
-Rule sets must be an object structured like this:</p>
-<pre class='hljs'><span class="hljs-keyword">const</span> rules = {
-
-  <span class="hljs-comment">// All keys must be named like the fields to validate, so this rule for example would match</span>
-  <span class="hljs-comment">// a field called "fieldName".</span>
-  fieldName: { <span class="hljs-comment">// All rules for "fieldName" will be contained within this object.</span>
-
-    <span class="hljs-comment">// The mandatory type rule allows to check the field against a type constructor</span>
-    type: <span class="hljs-built_in">String</span>, <span class="hljs-comment">// Or any other valid constructor like Boolean, Array, Number, etc.</span>
-                  <span class="hljs-comment">// You can also pass an arbitrary prototype the field will be checked</span>
-                  <span class="hljs-comment">// against using instanceof.</span>
-
-    <span class="hljs-comment">// Whether the field is required (eg. must be present).</span>
-    required: <span class="hljs-literal">false</span>, <span class="hljs-comment">// Or true - no default required in that case.</span>
-
-    <span class="hljs-comment">// If required is set to false, pass a default value here.</span>
-    <span class="hljs-keyword">default</span>: <span class="hljs-string">'foo'</span>, <span class="hljs-comment">// Defaults will be returned if the field is undefined.</span>
-
-    <span class="hljs-comment">// Validators allow for custom field validations. They will only run if the type check</span>
-    <span class="hljs-comment">// matches, so remember to take care of both.</span>
-    <span class="hljs-comment">// Validator callbacks must be synchronous functions that return a boolean.</span>
-    validator(value) {
-      <span class="hljs-keyword">return</span> [ <span class="hljs-string">'foo'</span>, <span class="hljs-string">'bar'</span>, <span class="hljs-string">'baz'</span> ].includes( value );
-    }
-  }
-}</pre>
-<p>After setting up the rules, you can use two validation methods:</p>
-<ol>
-<li>
-<p><strong><code>schema.validate( myDataObject: Object ): Object</code></strong>
-Validates each property of the object, that is: It runs <code>validateField</code> on each of them. If
-the object is invalid, one of the checks will throw (so remember to try-catch), if it is
-valid, it will return the passed object with any eventually missing fields monkey-patched to
-their defaults, if their rules provide one.</p>
-</li>
-<li>
-<p><strong><code>schema.validateField( key: String, value: Any ): Any</code></strong>
-Validates a single field by rule name. The <code>key</code> parameter will be used to check the <code>value</code>
-against the appropriate rule. If the value is invalid, one of the checks will throw (when
-using the <code>validate</code> method, this is what bubbles up), if it is valid, the value will be
-returned. If there was no value and the field was optional, the default will be returned if
-it is available.</p>
-</li>
-</ol>
-
-
-  <div class='pre p1 fill-light mt0'>new Schema(rules: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>rules</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='schemarules'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>rules</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Config/Schema.js#L74-L74'>
-      <span>lib/Config/Schema.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Holds the rules the schema describes.</p>
-
-
-  <div class='pre p1 fill-light mt0'>rules</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='schematojson'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>toJSON()</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Config/Schema.js#L82-L90'>
-      <span>lib/Config/Schema.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Creates an empty, default schema holding all defaults.</p>
-
-
-  <div class='pre p1 fill-light mt0'>toJSON(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='schemavalidate'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>validate(obj?)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Config/Schema.js#L105-L138'>
-      <span>lib/Config/Schema.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Validates a given object against the schema. This works by running each field through
-<code>validateField</code> individually. If a field is missing but defined in the schema,</p>
-
-
-  <div class='pre p1 fill-light mt0'>validate(obj: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>obj</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?)</code>
-	    Object to validate
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
-        Validated and merged config
-
-      
-    
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Throws</div>
-    <ul>
-      
-        <li><a href="#configvalidationerror">ConfigValidationError</a>: If an invalid (non-object) parameter has been passed
-</li>
-      
-        <li><a href="#configvalidationmissingfielderror">ConfigValidationMissingFieldError</a>: If a required field is missing
-</li>
-      
-        <li><a href="#configvalidationinvalidfielderror">ConfigValidationInvalidFieldError</a>: If a field is unknown
-</li>
-      
-        <li><a href="#configvalidationtypeerror">ConfigValidationTypeError</a>: If a values type doesn't match the requirements
-</li>
-      
-        <li><a href="#configvalidationvalidatorerror">ConfigValidationValidatorError</a>: If a field validator can't validate a field
-</li>
-      
-    </ul>
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='schemavalidatefield'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>validateField(field, value)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Config/Schema.js#L169-L245'>
-      <span>lib/Config/Schema.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Validates a single field.
-The validation process is split into several checks, ordered by probability of them occurring.
-Each check will throw a specific error if it fails.</p>
-<ol>
-<li>
-<p>Check if a rule for the field is available</p>
-</li>
-<li>
-<p>Check if the type matches the rule. This is a bit of work since there is a specific
-check for each type:</p>
-<ol>
-<li><strong><code>String</code></strong> - checked using <code>typeof</code></li>
-<li><strong><code>Number</code></strong> - checked using <code>isNaN</code> and a <code>null</code> check</li>
-<li><strong><code>Boolean</code></strong> - checked using <code>typeof</code></li>
-<li><strong><code>Array</code></strong> - checked using <code>Array.isArray</code></li>
-<li><strong><code>Symbol</code></strong> - checked using <code>typeof</code></li>
-<li><strong><code>Object</code></strong> -  checked using <code>typeof</code>, then <code>Array.isArray</code> and a <code>null</code> check.
-The object will then be merged with the rule's default, if any.</li>
-<li><strong>Anything else</strong> - checked using <code>instanceof</code></li>
-</ol>
-</li>
-<li>
-<p>Check if the validator callback (if any) can validate the field (returns <code>true</code>)</p>
-</li>
-</ol>
-<p>If all these checks pass, the value will be returned.</p>
-
-
-  <div class='pre p1 fill-light mt0'>validateField(field: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, value: any): any</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>field</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
-	    Name of the field to validate
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>value</span> <code class='quiet'>(any)</code>
-	    Field value
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        Field value, pass-through
-
-      
-    
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Throws</div>
-    <ul>
-      
-        <li><a href="#configvalidationinvalidfielderror">ConfigValidationInvalidFieldError</a>: If the field is unknown
-</li>
-      
-        <li><a href="#configvalidationtypeerror">ConfigValidationTypeError</a>: If the values type doesn't match the requirements
-</li>
-      
-        <li><a href="#configvalidationvalidatorerror">ConfigValidationValidatorError</a>: If the field validator can't validate the field
-</li>
-      
-    </ul>
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='constructor'>
-      constructor
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Command.js#L27-L75'>
-      <span>lib/Console/Command.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Creates a new command instance.</p>
-
-
-  <div class='pre p1 fill-light mt0'>constructor(plugin: <a href="#plugin">Plugin</a>)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>plugin</span> <code class='quiet'>(<a href="#plugin">Plugin</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='getname'>
-      getName
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Command.js#L82-L84'>
-      <span>lib/Console/Command.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Retrieves the command name</p>
-
-
-  <div class='pre p1 fill-light mt0'>getName(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='__configure'>
-      __configure
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Command.js#L146-L147'>
-      <span>lib/Console/Command.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Configures the command.</p>
-
-
-  <div class='pre p1 fill-light mt0'>__configure(): void</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>void</code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='__invoke'>
-      __invoke
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Command.js#L156-L158'>
-      <span>lib/Console/Command.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Executes the command. All commands should return a Promise, even though it isn't strictly
-necessary since you can <code>await</code> non-Promise returning functions too.</p>
-
-
-  <div class='pre p1 fill-light mt0'>__invoke(context: any): (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)> | any)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>context</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)> | any)</code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='gethelp'>
-      getHelp
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Command.js#L165-L176'>
-      <span>lib/Console/Command.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Retrieves the help text</p>
-
-
-  <div class='pre p1 fill-light mt0'>getHelp(input: any, output: any)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>input</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>output</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='addargument'>
-      addArgument
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Command.js#L186-L198'>
-      <span>lib/Console/Command.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Adds a new argument to the command</p>
-
-
-  <div class='pre p1 fill-light mt0'>addArgument(name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, argumentType: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, description: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, fallback: any?)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    argument name
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>argumentType</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
-            = <code>CommandArgument.types.value_required</code>)</code>
-	    argument type. must use one of the static types (@see CommandArgument#types)
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>description</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
-            = <code>&#39;&#39;</code>)</code>
-	    argument description for the help text
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>fallback</span> <code class='quiet'>(any?
-            = <code>null</code>)</code>
-	    fallback value if missing. Can only be used for optional arguments
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='addoption'>
-      addOption
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Command.js#L209-L236'>
-      <span>lib/Console/Command.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Adds a new option to the command</p>
-
-
-  <div class='pre p1 fill-light mt0'>addOption(longName: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, shortName: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, optionType: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, description: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, valueLabel: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>longName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>shortName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>longName.substr(0,1)</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>optionType</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>CommandOption.types.value_none</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>description</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>&#39;&#39;</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>valueLabel</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>&#39;&#39;</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='hasoption'>
-      hasOption
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Command.js#L244-L246'>
-      <span>lib/Console/Command.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Checks whether the command has an option</p>
-
-
-  <div class='pre p1 fill-light mt0'>hasOption(name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    long name of the option
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='name'>
-      $name
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Command.js#L18-L20'>
-      <span>lib/Console/Command.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Holds the name of the command.</p>
-
-
-  <div class='pre p1 fill-light mt0'>$name</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='option'>
-      option
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Command.js#L226-L226'>
-      <span>lib/Console/Command.js</span>
-      </a>
-    
-  </div>
-  
-
-  
-
-  <div class='pre p1 fill-light mt0'>option</div>
-  
-    <p>
-      Type:
-      CommandOption
-    </p>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='constructor'>
-      constructor
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Commands/CommandArgument.js#L26-L36'>
-      <span>lib/Console/Commands/CommandArgument.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Creates a new argument. All arguments but the name are optional.</p>
-
-
-  <div class='pre p1 fill-light mt0'>constructor(name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, type: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, description: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, fallback: any?)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    argument name
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
-            = <code>this.constructor.types.value_optional</code>)</code>
-	    argument type. must use one of the static types (@see CommandArgument#types)
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>description</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
-            = <code>&#39;&#39;</code>)</code>
-	    argument description for the help text
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>fallback</span> <code class='quiet'>(any?
-            = <code>null</code>)</code>
-	    fallback value if missing. Can only be used for optional arguments
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='help'>
-      help
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Commands/CommandArgument.js#L43-L45'>
-      <span>lib/Console/Commands/CommandArgument.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Retrieves the argument syntax help string</p>
-
-
-  <div class='pre p1 fill-light mt0'>help</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='types'>
-      types
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Commands/CommandArgument.js#L10-L16'>
-      <span>lib/Console/Commands/CommandArgument.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Holds the available argument types</p>
-
-
-  <div class='pre p1 fill-light mt0'>types</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>{value_required: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, value_optional: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, value_array: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>}</code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='constructor'>
-      constructor
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Commands/CommandOption.js#L42-L54'>
-      <span>lib/Console/Commands/CommandOption.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Creates a new option. All arguments but the long name are optional.</p>
-
-
-  <div class='pre p1 fill-light mt0'>constructor(longName: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, shortName: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | null)?, type: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, description: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?, valueLabel: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>longName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    option name to be used as "--long-name"
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>shortName</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | null)?
-            = <code>longName.substr(0,1)</code>)</code>
-	    short name to be used as "-s". will be automatically generated if omitted.
-to disable the short name, pass null
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>type</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
-            = <code>this.constructor.types.value_none</code>)</code>
-	    option type. must use one of the static types (@see CommandOption#types)
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>description</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
-            = <code>&#39;&#39;</code>)</code>
-	    option description for the help text
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>valueLabel</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
-            = <code>longName</code>)</code>
-	    label for the command value used in the help text, if available
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='help'>
-      help
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Commands/CommandOption.js#L61-L64'>
-      <span>lib/Console/Commands/CommandOption.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Retrieves the option syntax help string</p>
-
-
-  <div class='pre p1 fill-light mt0'>help</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='isflag'>
-      isFlag
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Commands/CommandOption.js#L71-L73'>
-      <span>lib/Console/Commands/CommandOption.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Whether this is a flag option (without a value)</p>
-
-
-  <div class='pre p1 fill-light mt0'>isFlag</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='types'>
-      types
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Commands/CommandOption.js#L10-L16'>
-      <span>lib/Console/Commands/CommandOption.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Holds the available option types</p>
-
-
-  <div class='pre p1 fill-light mt0'>types</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>{value_none: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, value_required: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, value_optional: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>}</code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='constructor'>
-      constructor
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Input.js#L14-L40'>
-      <span>lib/Console/Input.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Creates a new input instance</p>
-
-
-  <div class='pre p1 fill-light mt0'>constructor(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>args</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
-	    Console arguments
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='hasarguments'>
-      hasArguments
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Input.js#L174-L176'>
-      <span>lib/Console/Input.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Checks whether any arguments have been passed</p>
-
-
-  <div class='pre p1 fill-light mt0'>hasArguments(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='getargument'>
-      getArgument
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Input.js#L184-L186'>
-      <span>lib/Console/Input.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Retrieves an input argument by position</p>
-
-
-  <div class='pre p1 fill-light mt0'>getArgument(position: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?): any</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>position</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?
-            = <code>0</code>)</code>
-	    Position of the argument. Defaults to 0
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        Argument value
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='hasoption'>
-      hasOption
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Input.js#L194-L196'>
-      <span>lib/Console/Input.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Checks whether a specific option has been passed</p>
-
-
-  <div class='pre p1 fill-light mt0'>hasOption(name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
-	    Name of the option to check for
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        Whether the option has been passed
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='getoption'>
-      getOption
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Console/Input.js#L205-L207'>
-      <span>lib/Console/Input.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Retrieves an input option</p>
-
-
-  <div class='pre p1 fill-light mt0'>getOption(name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, fallback: any?): any</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
-	    Option name
-
-          </div>
           
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>fallback</span> <code class='quiet'>(any?
-            = <code>null</code>)</code>
-	    Optional fallback value if the requested option is missing
-
-          </div>
           
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>any</code>:
-        Option value, fallback if missing, null if no fallback
 
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
 
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='configvalidationerror'>
+  <li class="md-nav__item">
+    <a href="api/ConfigValidationError/" title="ConfigValidationError" class="md-nav__link">
       ConfigValidationError
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Errors/ConfigValidationError.js#L8-L22'>
-      <span>lib/Errors/ConfigValidationError.js</span>
-      </a>
-    
-  </div>
-  
+    </a>
+  </li>
 
-  <h4>Configuration validation error</h4>
-<p>This error should be used if an unknown type has been passed to the validation. The Schema class can
-only validate objects.</p>
-
-
-  <div class='pre p1 fill-light mt0'>new ConfigValidationError(validator: any, config: any)</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>validator</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>config</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          
+          
 
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='configvalidationinvalidfielderror'>
+
+  <li class="md-nav__item">
+    <a href="api/ConfigValidationInvalidFieldError/" title="ConfigValidationInvalidFieldError" class="md-nav__link">
       ConfigValidationInvalidFieldError
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Errors/ConfigValidationInvalidFieldError.js#L8-L22'>
-      <span>lib/Errors/ConfigValidationInvalidFieldError.js</span>
-      </a>
-    
-  </div>
-  
+    </a>
+  </li>
 
-  <h4>Configuration validation invalid field error</h4>
-<p>This error should be used if an unknown field has been passed. It indicates the field is missing
-from the schema and therefore can't be validated.</p>
-
-
-  <div class='pre p1 fill-light mt0'>new ConfigValidationInvalidFieldError(validator: any, field: any, value: any)</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>validator</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>field</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>value</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          
+          
 
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='configvalidationmissingfielderror'>
+
+  <li class="md-nav__item">
+    <a href="api/ConfigValidationMissingFieldError/" title="ConfigValidationMissingFieldError" class="md-nav__link">
       ConfigValidationMissingFieldError
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Errors/ConfigValidationMissingFieldError.js#L8-L22'>
-      <span>lib/Errors/ConfigValidationMissingFieldError.js</span>
-      </a>
-    
-  </div>
-  
+    </a>
+  </li>
 
-  <h4>Configuration validation missing field error</h4>
-<p>This error should be used if a required schema field is missing. It indicates a certain field must
-be used but isn't there.</p>
-
-
-  <div class='pre p1 fill-light mt0'>new ConfigValidationMissingFieldError(validator: any, config: any, field: any)</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>validator</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>config</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>field</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          
+          
 
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='configvalidationtypeerror'>
+
+  <li class="md-nav__item">
+    <a href="api/ConfigValidationTypeError/" title="ConfigValidationTypeError" class="md-nav__link">
       ConfigValidationTypeError
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Errors/ConfigValidationTypeError.js#L8-L24'>
-      <span>lib/Errors/ConfigValidationTypeError.js</span>
-      </a>
-    
-  </div>
-  
+    </a>
+  </li>
 
-  <h4>Configuration validation type error</h4>
-<p>This error should be used if the schema validation of a field's type fails. It indicates the field
-exists but is of the wrong type.</p>
-
-
-  <div class='pre p1 fill-light mt0'>new ConfigValidationTypeError(validator: any, field: any, value: any, rule: any)</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>validator</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>field</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>value</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>rule</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          
+          
 
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='configvalidationvalidatorerror'>
+
+  <li class="md-nav__item">
+    <a href="api/ConfigValidationValidatorError/" title="ConfigValidationValidatorError" class="md-nav__link">
       ConfigValidationValidatorError
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Errors/ConfigValidationValidatorError.js#L8-L22'>
-      <span>lib/Errors/ConfigValidationValidatorError.js</span>
-      </a>
-    
-  </div>
-  
+    </a>
+  </li>
 
-  <h4>Configuration validation validator error</h4>
-<p>This error should be used if a field validator throws or returns <code>false</code>. It indicates the field
-either could not be validated (the result was <code>false</code>) or did throw an Error during validation.</p>
-
-
-  <div class='pre p1 fill-light mt0'>new ConfigValidationValidatorError(validator: any, field: any, value: any, meta: any)</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>validator</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>field</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>value</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>meta</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
+          
+          
 
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='invalidconfigfileerror'>
+
+  <li class="md-nav__item">
+    <a href="api/Input/" title="Input" class="md-nav__link">
+      Input
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="api/InvalidConfigFileError/" title="InvalidConfigFileError" class="md-nav__link">
       InvalidConfigFileError
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Errors/InvalidConfigFileError.js#L9-L23'>
-      <span>lib/Errors/InvalidConfigFileError.js</span>
-      </a>
-    
-  </div>
-  
+    </a>
+  </li>
 
-  <h4>Invalid configuration file error</h4>
-<p>This error should be used if the configuration file cannot be read or parsed. Due to the use
-of <code>require( configFile )</code> inside the configuration constructor, this will implicitly be
-the case if the file path does not exist or points to something apart of <code>.js</code> or <code>.json</code> files.</p>
-
-
-  <div class='pre p1 fill-light mt0'>new InvalidConfigFileError(path: any, error: any)</div>
-  
-  
-    <p>
-      Extends
-      
-        <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>path</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>error</span> <code class='quiet'>(any)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='constructor'>
-      constructor
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Plugins/Loader.js#L46-L52'>
-      <span>lib/Plugins/Loader.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Creates a new loader</p>
-
-
-  <div class='pre p1 fill-light mt0'>constructor(npm: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>npm</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    
-          </div>
           
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
           
+
+
+  <li class="md-nav__item">
+    <a href="api/JourneyMan/" title="JourneyMan" class="md-nav__link">
+      JourneyMan
+    </a>
+  </li>
+
         
           
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='discover'>
-      discover
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Plugins/Loader.js#L60-L80'>
-      <span>lib/Plugins/Loader.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Discovers plugins in one or more specific search paths</p>
-
-
-  <div class='pre p1 fill-light mt0'>discover(searchPaths: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>searchPaths</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)
-            = <code>[]</code>)</code>
-	    
-          </div>
           
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
           
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='rules'>
-      rules
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Plugins/Loader.js#L20-L39'>
-      <span>lib/Plugins/Loader.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Holds plugin validation rules</p>
 
 
-  <div class='pre p1 fill-light mt0'>rules</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>{name: (function (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>), isPlugin: (function (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)}</code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='name'>
-      name
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Plugins/Loader.js#L29-L29'>
-      <span>lib/Plugins/Loader.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Checks whether the module name matches a journeyman plugin</p>
-
-
-  <div class='pre p1 fill-light mt0'>name(module: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>module</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='isplugin'>
-      isPlugin
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Plugins/Loader.js#L37-L37'>
-      <span>lib/Plugins/Loader.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Checks whether the module is an instance of the plugin base class</p>
-
-
-  <div class='pre p1 fill-light mt0'>isPlugin(plugin: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>plugin</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='plugin'>
+  <li class="md-nav__item">
+    <a href="api/Plugin/" title="Plugin" class="md-nav__link">
       Plugin
-    </h3>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Plugins/Plugin.js#L14-L100'>
-      <span>lib/Plugins/Plugin.js</span>
-      </a>
-    
-  </div>
-  
+    </a>
+  </li>
 
-  
-
-  <div class='pre p1 fill-light mt0'>new Plugin()</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Static Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='pluginname'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>$name</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Plugins/Plugin.js#L21-L23'>
-      <span>lib/Plugins/Plugin.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Holds the plugin's subcommand name.</p>
-
-
-  <div class='pre p1 fill-light mt0'>$name</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>:
         
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='plugincommands'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>commands</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Plugins/Plugin.js#L30-L32'>
-      <span>lib/Plugins/Plugin.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Holds all Command instances the plugin uses.</p>
+          
+          
+          
 
 
-  <div class='pre p1 fill-light mt0'>commands</div>
-  
-  
+  <li class="md-nav__item">
+    <a href="api/Schema/" title="Schema" class="md-nav__link">
+      Schema
+    </a>
+  </li>
 
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;Command></code>:
         
+      </ul>
+    </nav>
+  </li>
 
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
       
-    
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
   
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='pluginmount'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>$mount(journeyman)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Plugins/Plugin.js#L40-L42'>
-      <span>lib/Plugins/Plugin.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Mounts the journeyman instance on the current plugin</p>
-
-
-  <div class='pre p1 fill-light mt0'>$mount(journeyman: JourneyMan): void</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
+</li>
       
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>journeyman</span> <code class='quiet'>(JourneyMan)</code>
-	    
+        <li class="md-nav__item">
+  <a href="#usage" title="Usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-filesystem-structure" title="Expected filesystem structure" class="md-nav__link">
+    Expected filesystem structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-make" title="journ make" class="md-nav__link">
+    journ make
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#journ-make-component" title="journ make component" class="md-nav__link">
+    journ make component
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-make-mixin" title="journ make mixin" class="md-nav__link">
+    journ make mixin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-make-route" title="journ make route" class="md-nav__link">
+    journ make route
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-make-module" title="journ make module" class="md-nav__link">
+    journ make module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-make-style" title="journ make style" class="md-nav__link">
+    journ make style
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-extract" title="journ extract" class="md-nav__link">
+    journ extract
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-inline" title="journ inline" class="md-nav__link">
+    journ inline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-lint" title="journ lint" class="md-nav__link">
+    journ lint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-config" title="journ config" class="md-nav__link">
+    journ config
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#journ-config-get" title="journ config get" class="md-nav__link">
+    journ config get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-config-set" title="journ config set" class="md-nav__link">
+    journ config set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#journ-config-init" title="journ config init" class="md-nav__link">
+    journ config init
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paths" title="paths" class="md-nav__link">
+    paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preferred_spelling" title="preferred_spelling" class="md-nav__link">
+    preferred_spelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plugins" title="Plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-shot-plugins" title="One-Shot plugins" class="md-nav__link">
+    One-Shot plugins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-app-parameter-to-your-command-methods" title="The app parameter to your command methods" class="md-nav__link">
+    The app parameter to your command methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-plugins" title="Advanced plugins" class="md-nav__link">
+    Advanced plugins
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#providing-new-commands-for-journeymans-existing-sub-commands" title="Providing new commands for journeyman's existing sub-commands" class="md-nav__link">
+    Providing new commands for journeyman's existing sub-commands
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugin-metadata-fields" title="Plugin metadata fields" class="md-nav__link">
+    Plugin metadata fields
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/radiergummi/journeyman/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="journeyman">Journeyman<a class="headerlink" href="#journeyman" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Journeyman is an opinionated CLI tool for Vue.js projects to generate code and automate common tasks.</p>
+</blockquote>
+<p>Similar to <a href="https://laravel.com/docs/5.6/artisan">Laravel's Artisan</a>, <em>journeyman</em> aims to reduce repetitive programming tasks and make working on Vue.js applications a faster and more pleasant experience, while adhering to Vue.js code style standards and best practices.</p>
+<p><strong>Isn't this the same thing as <code>vue-cli</code>?</strong><br />
+No, not quite. Although journeyman provdes some similar features, it doesn't primarily serve to bootstrap the development pipeline but rather to aid a developer during development work. It doesn't care at all what module bundler or linter you use.</p>
+<blockquote>
+<p><strong>Active development:</strong> Journeyman is being developed currently. The process will be as follows:
+- [ ] Outline most of the API in this README file, identify design problems beforehand<br />
+- [ ] Write tests for the base console application, build the application from there (TDD style)
+- [ ] Write tests for the actual Vue code generation, implement API features from there
+- [ ] Write tests for the <a href="#plugins">plugin structure</a>, implement it from there
+- [ ] Refactoring, Optimization, real-world test cases
+- [ ] ???
+- [ ] PROFIT</p>
+</blockquote>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Journeyman should be installed as a global npm module, like so:</p>
+<div class="codehilite"><pre><span></span>npm install --global @radiergummi/journeyman
+</pre></div>
+
+
+<p><strong>Please note: Journeyman isn't actually available yet, so this package isn't published right now.</strong></p>
+<blockquote>
+<p>Journeyman requires Node.js &gt;= 8 to run.</p>
+</blockquote>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>Journeyman can be invoked on the command line using the <code>journ</code> command. Using the <code>list</code> command, you can view a list of all available sub-commands that will be detailed in the following sections:</p>
+<div class="codehilite"><pre><span></span>journ list
+</pre></div>
+
+
+<h3 id="expected-filesystem-structure">Expected filesystem structure<a class="headerlink" href="#expected-filesystem-structure" title="Permanent link">&para;</a></h3>
+<p>Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the <a href="#configuration">configuration section</a>), the default structure is the best practice all <code>vue-cli</code> templates follow, for example.<br />
+The below filesystem tree is the structure journeyman expects:</p>
+<pre>
+.                    <strong><--- Working directory journ is executed in</strong>
+├── build/
+├── config/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── mixins/
+│   ├── modules/
+│   ├── router/
+│   └── styles/
+├── static/
+├── test/
+└── package.json
+</pre>
+
+<h3 id="journ-make"><code>journ make</code><a class="headerlink" href="#journ-make" title="Permanent link">&para;</a></h3>
+<p>The <code>make</code> command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use <code>journ list make</code> to view a list of available boots to strap (heh).</p>
+<h4 id="journ-make-component"><code>journ make component</code><a class="headerlink" href="#journ-make-component" title="Permanent link">&para;</a></h4>
+<p>Allows to bootstrap components. The component name passed as the third parameter can be either a filesystem path (<code>/foo/bar/MyNewComponent.vue</code>), a kebab-case (<code>my-new-component</code>) or a CamelCase (<code>MyNewComponent</code>) name. In each case, the name will be parsed and the file will be generated with the correct format (<a href="#preferred-spelling">Config: <code>preferred_spelling</code></a>) at the right location (<a href="#paths">Config: <code>paths.components</code></a>)
+Generated components are described in detail later on.  </p>
+<div class="codehilite"><pre><span></span><span class="c1"># Bootstrap a new, empty component</span>
+journ make component MyNewComponent
+
+<span class="c1"># You can use shorthands, too</span>
+journ m c MyNewComponent
+</pre></div>
+
+
+<p>Journeyman also supports extends and mixins as well as cloning:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># New component extending another</span>
+journ make component MyOtherComponent --extends MyNewComponent
+
+<span class="c1"># New component using one or more mixins</span>
+journ make component MyOtherComponent --with oneMixin --with anotherMixin
+
+<span class="c1"># New component based on another</span>
+journ make component MyOtherComponent --from MyNewComponent
+</pre></div>
+
+
+<p>Cloned components will have all properties from the source component but with a new name.</p>
+<h4 id="journ-make-mixin"><code>journ make mixin</code><a class="headerlink" href="#journ-make-mixin" title="Permanent link">&para;</a></h4>
+<p>Allows to bootstrap mixins.  </p>
+<blockquote>
+<p>TODO HERE</p>
+</blockquote>
+<h4 id="journ-make-route"><code>journ make route</code><a class="headerlink" href="#journ-make-route" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>TODO HERE</p>
+</blockquote>
+<h4 id="journ-make-module"><code>journ make module</code><a class="headerlink" href="#journ-make-module" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>TODO HERE</p>
+</blockquote>
+<h4 id="journ-make-style"><code>journ make style</code><a class="headerlink" href="#journ-make-style" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>TODO HERE</p>
+</blockquote>
+<h3 id="journ-extract"><code>journ extract</code><a class="headerlink" href="#journ-extract" title="Permanent link">&para;</a></h3>
+<p>The <code>extract</code> command allows extraction of code into mixins, styles into stylesheets and large templates into individual components.</p>
+<blockquote>
+<p>TODO HERE</p>
+</blockquote>
+<h3 id="journ-inline"><code>journ inline</code><a class="headerlink" href="#journ-inline" title="Permanent link">&para;</a></h3>
+<p>The exact opposite of the <code>extract</code> command, <code>inline</code> allows to inline external code into your components.</p>
+<blockquote>
+<p>TODO HERE</p>
+</blockquote>
+<h3 id="journ-lint"><code>journ lint</code><a class="headerlink" href="#journ-lint" title="Permanent link">&para;</a></h3>
+<p>The <code>lint</code> command performs a Vue.js coding style check on your code-base. This allows you to verify all your components adhere to the same style rules. In contrary to <code>eslint</code> for example, This will not check your JS code (there are a lot of perfectly fine tools for this job), but rather verify all your code is streamlined and follows best practices.<br />
+There are a bunch of linting rules available in <a href="#linting-rules">the configuration</a>.</p>
+<p>Additionally, if configured so, <code>lint</code> will check your JSDoc comments to make sure they a) exist, b) are complete and c) are correct. It will also look for repetitions throughout your components which are probably opportunities for mixins.</p>
+<h3 id="journ-config"><code>journ config</code><a class="headerlink" href="#journ-config" title="Permanent link">&para;</a></h3>
+<p>The <code>config</code> command allows to read and write configuration values.</p>
+<h4 id="journ-config-get"><code>journ config get</code><a class="headerlink" href="#journ-config-get" title="Permanent link">&para;</a></h4>
+<p>Use the following command to read the configuration:</p>
+<div class="codehilite"><pre><span></span>journ config get <span class="o">[</span>&lt;value&gt;<span class="o">]</span>
+</pre></div>
+
+
+<h4 id="journ-config-set"><code>journ config set</code><a class="headerlink" href="#journ-config-set" title="Permanent link">&para;</a></h4>
+<p>Use the following command to set a configuration value:</p>
+<div class="codehilite"><pre><span></span>journ config <span class="nb">set</span> &lt;key&gt; &lt;value&gt;
+</pre></div>
+
+
+<h4 id="journ-config-init"><code>journ config init</code><a class="headerlink" href="#journ-config-init" title="Permanent link">&para;</a></h4>
+<p>Use the following command to write the default configuration values to your <code>package.json</code> or <code>.journeyman</code> file. This way, you've got all available configuration values at hand to modify them to your liking:</p>
+<div class="codehilite"><pre><span></span>journ config init <span class="o">[</span>--package,-p<span class="o">]</span> <span class="o">[</span>--dotfile,-d<span class="o">]</span>
+</pre></div>
+
+
+<p>Using the <code>--package</code> or <code>--dotfile</code> parameter, you can optionally specify the target: <code>package.json</code> or <code>.journeyman</code>.<br />
+The default is <code>--package</code>.</p>
+<blockquote>
+<p>TODO HERE</p>
+</blockquote>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>Journeyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a <code>.journeyman</code> file or directly in the <code>package.json</code> below the key <code>journeyman</code> which is the preferred way (avoids yet <em>another</em> dot file in your project).<br />
+In general, it comes with a set of sensible defaults:</p>
+<h3 id="paths"><code>paths</code><a class="headerlink" href="#paths" title="Permanent link">&para;</a></h3>
+<p>To set the output paths generated code should be written to, you can set one or more of the following path settings. Each of them will overwrite the default.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Key</th>
+<th align="right">Default</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>assets</code></td>
+<td align="right"><code>./src/assets</code></td>
+<td align="left">Path where all assets live</td>
+</tr>
+<tr>
+<td align="left"><code>components</code></td>
+<td align="right"><code>./src/components</code></td>
+<td align="left">Path where all components (<code>.vue</code> files) live</td>
+</tr>
+<tr>
+<td align="left"><code>mixins</code></td>
+<td align="right"><code>./src/mixins</code></td>
+<td align="left">Path where all mixins (<code>.js</code> files) live</td>
+</tr>
+<tr>
+<td align="left"><code>modules</code></td>
+<td align="right"><code>./src/modules</code></td>
+<td align="left">Path where all modules (<code>.js</code> files, helpers) live</td>
+</tr>
+<tr>
+<td align="left"><code>router</code></td>
+<td align="right"><code>./src/router</code></td>
+<td align="left">Path to the main router file</td>
+</tr>
+<tr>
+<td align="left"><code>styles</code></td>
+<td align="right"><code>./src/styles</code></td>
+<td align="left">Path where all stylesheets (<code>.css</code>/<code>.scss</code> files) live</td>
+</tr>
+<tr>
+<td align="left"><code>build</code></td>
+<td align="right"><code>./build</code></td>
+<td align="left">Path where the build modules live</td>
+</tr>
+<tr>
+<td align="left"><code>config</code></td>
+<td align="right"><code>./config</code></td>
+<td align="left">Path where the build configuration lives</td>
+</tr>
+<tr>
+<td align="left"><code>public</code></td>
+<td align="right"><code>./public</code></td>
+<td align="left">Path where the build is written to</td>
+</tr>
+<tr>
+<td align="left"><code>static</code></td>
+<td align="right"><code>./static</code></td>
+<td align="left">Path where static assets live</td>
+</tr>
+</tbody>
+</table>
+<h3 id="preferred_spelling"><code>preferred_spelling</code><a class="headerlink" href="#preferred_spelling" title="Permanent link">&para;</a></h3>
+<p>This setting controls how journeyman generates component names and inserts them, for example. This also applies to file names on the file system. There are two options available:
+ - <code>camel</code>: Names are generated in <strong>CamelCase</strong>.
+ - <code>kebab</code>: Names are generated in <strong>kebab-case</strong>.</p>
+<h2 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h2>
+<p>Journeyman provides a few ways to add new functionality, that is: To add new, first-class citizen, commands to <code>journ</code>. In fact, <em>all</em> integrated commands are actually plugins.<br />
+Plugins are special npm packages that must fulfill a few requirements:</p>
+<ul>
+<li><strong>Their package name starts with <code>journeyman-plugin-</code>:</strong><br />
+   This serves to keep the npm namespace clean and make plugins more obvious. I can't stand packages like <code>body-parser</code> that are secretly <code>express.js</code> plugins.</li>
+<li><strong>Their <code>package.json</code> file includes a <code>journeyman-plugin</code> key:</strong><br />
+   This key provides plugin metadata. The available fields are outlined in <a href="#plugin-metadata-fields">Plugin metadata fields</a></li>
+<li><strong>They export a class (<em>not an instance!</em>) from their main module that extends the base plugin:</strong><br />
+   Journeyman provides a base class at <a href="./lib/Plugins/Plugin.js"><code>lib/plugins/Plugin</code></a> that all plugins need to inherit from. It provides several methods Journeyman uses to initialize the plugin and work with it's input and output. This frees implementations from caring about API compatibility and implementation details.</li>
+</ul>
+<p>Basically, a plugin provides a new subcommand to journeyman that all its methods are grouped below. A simple plugin might look like this:</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Plugin</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;journeyman&#39;</span><span class="p">);</span>
+
+<span class="kr">class</span> <span class="nx">EchoPlugin</span> <span class="kr">extends</span> <span class="nx">Plugin</span> <span class="p">{</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * The static property &quot;name&quot; is used as the subcommand namespace for your plugin</span>
+<span class="cm">   */</span>
+  <span class="kr">static</span> <span class="nx">get</span> <span class="nx">name</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;echo&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * This is a private method (as far as JS supports it, at least...). It will *not* be visible </span>
+<span class="cm">   * nor accessible from the command line due to the single underscore prefix.</span>
+<span class="cm">   */</span>
+  <span class="nx">_prepareOutput</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;echo &#39;</span> <span class="o">+</span> <span class="nx">str</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * This is a public method (no leading underscore). It will be used as a publicly visible command below your</span>
+<span class="cm">   * plugin namespace:</span>
+<span class="cm">   * journ echo foo</span>
+<span class="cm">   */</span>
+  <span class="nx">foo</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_prepareOutput</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">args</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="one-shot-plugins">One-Shot plugins<a class="headerlink" href="#one-shot-plugins" title="Permanent link">&para;</a></h3>
+<p>If your plugin only serves a single purpose -- eg. it doesn't need multiple sub-commands -- you can use one-shot plugins. The only difference to ordinary plugins is that they include the special <code>__invoke</code> method: If a plugin provides it, journeyman assumes the plugin doesn't need a namespace and only has a single, public command, callable as <code>journ &lt;plugin name&gt; --params</code>. If journeyman finds the __invoke method  inside your plugin, it will disregard any other public methods. As ordinary command methods, <code>__invoke</code> receives the application instance as its only parameter.</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Plugin</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;journeyman&#39;</span><span class="p">);</span>
+
+<span class="kr">class</span> <span class="nx">FooPlugin</span> <span class="kr">extends</span> <span class="nx">Plugin</span> <span class="p">{</span>
+  <span class="kr">static</span> <span class="nx">get</span> <span class="nx">name</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * This is a special one: For single-shot plugins, you can use the __invoke method. </span>
+<span class="cm">   */</span>
+  <span class="nx">__invoke</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">output</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_prepareOutput</span><span class="p">(</span><span class="nx">app</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">args</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="the-app-parameter-to-your-command-methods">The <code>app</code> parameter to your command methods<a class="headerlink" href="#the-app-parameter-to-your-command-methods" title="Permanent link">&para;</a></h3>
+<p><code>app</code> is an object with several well-defined properties revolving around the command execution lifecycle. It contains everything the command will need to carry out its purpose:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th>Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>journeyman</code></td>
+<td><a href="./lib/JourneyMan.js"><code>JourneyMan</code></a></td>
+<td align="left">The current <code>JourneyMan</code> instance.</td>
+</tr>
+<tr>
+<td align="left"><code>env</code></td>
+<td><code>Map&lt;k: String, v: String&gt;</code></td>
+<td align="left">Holds all system environment variables.</td>
+</tr>
+<tr>
+<td align="left"><code>input</code></td>
+<td><a href="./lib/Console/Input.js"><code>Input</code></a></td>
+<td align="left">Holds the command line input object.</td>
+</tr>
+<tr>
+<td align="left"><code>output</code></td>
+<td><a href="./lib/Console/Output.js"><code>Output</code></a></td>
+<td align="left">Holds the command line output object.</td>
+</tr>
+<tr>
+<td align="left"><code>plugins</code></td>
+<td><code>Array&lt;Plugin&gt;</code></td>
+<td align="left">Holds the list of available plugins. Alias to <a href="./lib/JourneyMan.js"><code>journeyman.plugins</code></a>.</td>
+</tr>
+<tr>
+<td align="left"><code>call(command: String): Promise</code></td>
+<td><code>function</code></td>
+<td align="left">Allows to call other commands by their full command input string.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>More properties and methods will be added as the development continues.</p>
+</blockquote>
+<h3 id="advanced-plugins">Advanced plugins<a class="headerlink" href="#advanced-plugins" title="Permanent link">&para;</a></h3>
+<p>Single-class and one-shot plugins will be fine for most purposes. But what if you've got actual <em>work</em> to do? Fear not, for there's a third structural option: Instead of providing the individual commands as methods on your plugin, you can also provide a list of <a href="./lib/Console/Command.js"><code>Command</code></a> instances.<br />
+This provides you with a belly of additional goodies, like automatic help generation, fine-grained parameter and option handling as well as neatly organized code.</p>
+<p>A plugin using Command instances might look like this:</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Plugin</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;journeyman&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">FooCommand</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./commands/FooCommand&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">BarCommand</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./commands/BarCommand&#39;</span><span class="p">);</span>
+
+<span class="kr">class</span> <span class="nx">MyAdvancedPlugin</span> <span class="kr">extends</span> <span class="nx">Plugin</span> <span class="p">{</span>
+  <span class="kr">static</span> <span class="nx">get</span> <span class="nx">name</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;advanced&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * This overrides the default of an empty array</span>
+<span class="cm">   */</span>
+  <span class="kr">static</span> <span class="nx">get</span> <span class="nx">commands</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span>
+      <span class="nx">FooCommand</span><span class="p">,</span>
+      <span class="nx">BarCommand</span>
+    <span class="p">];</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * Of course, you&#39;re still free to define additional commands using methods</span>
+<span class="cm">   */</span>
+  <span class="nx">baz</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">}</span> 
+</pre></div>
+
+
+<p>A command class for our plugin, say <code>FooCommand</code>, should be constructed like this:</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Command</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;journeyman&#39;</span><span class="p">);</span>
+
+<span class="kr">class</span> <span class="nx">FooCommand</span> <span class="kr">extends</span> <span class="nx">Command</span> <span class="p">{</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * Since we don&#39;t have a method name at our disposal, we can set it here. If omitted, </span>
+<span class="cm">   * the name will be inferred from the class name ( Class.name.replace(&#39;Command&#39;, &#39;&#39;).toLowerCase() )</span>
+<span class="cm">   */</span>
+  <span class="kr">static</span> <span class="nx">get</span> <span class="nx">name</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * The __configure() method is called on initialization and allows to configure the command (duh)</span>
+<span class="cm">   */</span>
+  <span class="nx">__configure</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// a little Symfony-y</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setDescription</span><span class="p">(</span><span class="s1">&#39;Creates a new foo&#39;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addParameter</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;How to name your foo&#39;</span><span class="p">,</span> <span class="nx">Command</span><span class="p">.</span><span class="nx">PARAM_TYPE_STRING</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="cm">/**</span>
+<span class="cm">   * The behaviour is the same as with plugin method commands here</span>
+<span class="cm">   */</span>
+  <span class="nx">__invoke</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>That's a whole slew of new stuff, so be sure to check out the <a href="#commands">Command documentation</a>.</p>
+<h2 id="providing-new-commands-for-journeymans-existing-sub-commands">Providing new commands for journeyman's existing sub-commands<a class="headerlink" href="#providing-new-commands-for-journeymans-existing-sub-commands" title="Permanent link">&para;</a></h2>
+<p>That's all fine and dandy, but what if you'd like to provide a new <code>make &lt;something&gt;</code>? For these cases, you can extend the special <code>MakePlugin</code> class instead of <code>Plugin</code>. All commands provided in these will be appended to the <code>make</code> subcommand. Beneath <code>MakePlugin</code>, there's also <code>LinkPlugin</code>, <code>ServePlugin</code> and <code>BuildPlugin</code> to extend the respective verbs.</p>
+<blockquote>
+<p>More extend-plugins will be added as the development continues.</p>
+</blockquote>
+<h3 id="plugin-metadata-fields">Plugin metadata fields<a class="headerlink" href="#plugin-metadata-fields" title="Permanent link">&para;</a></h3>
+<p>The following <code>package.json</code> properties of the <code>journeyman-plugin</code> key are recognized:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th>Type</th>
+<th align="left">Description</th>
+<th align="right">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>name</code></td>
+<td><code>String</code></td>
+<td align="left">The plugins human-readable name. This will be used in the plugin list, for example. Defaults to the package name.</td>
+<td align="right">No</td>
+</tr>
+<tr>
+<td align="left"><code>defaults</code></td>
+<td><code>Object</code></td>
+<td align="left">Any default configuration you might need for your plugin. Defaults to an empty hash.</td>
+<td align="right">No</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>More properties will be added as the development continues.</p>
+</blockquote>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
           </div>
-          
         </div>
+      </main>
       
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>void</code>:
         
-
-      
-    
+<footer class="md-footer">
   
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="api/Command/" title="Command" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Command
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
   
-</div>
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Instance Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='pluginrun'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>$run(command, context)</span>
-        </div>
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Moritz Friedrich
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
       </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome.css">
     
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/Radiergummi/journeyman/blob/af3f10155be7f0610e044a063aff466a8307e286/lib/Plugins/Plugin.js#L52-L99'>
-      <span>lib/Plugins/Plugin.js</span>
-      </a>
+      <a href="https://github.com/radiergummi" class="md-footer-social__link fa fa-github"></a>
     
   </div>
-  
 
-  <p>Runs a command on this plugin. Journeyman has figured out that this plugin is
-required to carry out the command, so let's find a handler and try to execute it.</p>
-
-
-  <div class='pre p1 fill-light mt0'>$run(command: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, context: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>command</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code>
-	    Name of the command requested to run
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>context</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    Application context for the command handler
-
-          </div>
-          
-        </div>
       
     </div>
-  
-
-  
-
-  
+  </div>
+</footer>
+      
+    </div>
     
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>></code>:
-        A promise holding the output text
-
+      <script src="./assets/javascripts/application.a59e2a89.js"></script>
+      
+      <script>app.initialize({version:"0.17.4",url:{base:"."}})</script>
       
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
-
-  
-
-  
-</section>
-
-          
-        
-      </div>
-    </div>
-  <script src='assets/anchor.js'></script>
-  <script src='assets/split.js'></script>
-  <script src='assets/site.js'></script>
-</body>
+    
+      
+    
+  </body>
 </html>

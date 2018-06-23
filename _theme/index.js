@@ -20,14 +20,17 @@ module.exports = function ( comments, config ) {
   const sharedImports = {
     imports: {
       shortSignature:     markdownFormatters.shortSignature,
-      shortNamespaceMemberSignature: markdownFormatters.shortNamespaceMemberSignature,
+      staticSignature:    markdownFormatters.staticSignature,
       signature:          markdownFormatters.signature,
       md:                 markdownFormatters.md,
       parameter:          markdownFormatters.parameter,
       formatType:         markdownFormatters.type,
       autolink:           markdownFormatters.autolink,
       highlight:          markdownFormatters.highlight,
-      protectedHighlight: markdownFormatters.protectedHighlight
+      protectedHighlight: markdownFormatters.protectedHighlight,
+      noBreaks ( str ) {
+        return str.replace( /\n/g, '' );
+      }
     }
   };
 

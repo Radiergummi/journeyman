@@ -574,7 +574,7 @@
                 
                   <h1>JourneyMan</h1>
                 
-                <p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/JourneyMan.js#L23-L78">lib/JourneyMan.js</a></p>
+                <p><a href="https://github.com/Radiergummi/journeyman/blob/1d15a5e063281523e3edf7c598748fd27e94988c/lib/JourneyMan.js#L23-L78">lib/JourneyMan.js</a></p>
 <p>Welcome to JourneyMan!
 This is the main class used by the CLI, but it's easy to use it programmatically.</p>
 <hr />
@@ -584,20 +584,16 @@ new JourneyMan(proc: <a href="https://developer.mozilla.org/docs/Web/JavaScript/
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <p><code><strong>proc</strong> (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code></p>
 <blockquote>
-<p>Process object. While in node, </p>
+<p>Process object. While in node, <code class="codehilite">process</code> is a global, we want                                 JourneyMan to stay as portable as possible. Therefore, process                                 is a freely shimable dependency here.</p>
 </blockquote>
-<p><code class="codehilite">process</code></p>
-<p>is a global, we want
-                                 JourneyMan to stay as portable as possible. Therefore, process
-                                 is a freely shimable dependency here.</p>
 <p><code><strong>configFilePath</strong> (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> = proc.cwd())</code></p>
 <blockquote>
 <p>Path to the configuration file. Defaults to the package.json</p>
 </blockquote>
 <h3 id="static-members">Static Members<a class="headerlink" href="#static-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
-<summary>new Plugin()</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/JourneyMan.js#L30-L32">lib/JourneyMan.js</a></p>
+<summary>Plugin()</summary></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/1d15a5e063281523e3edf7c598748fd27e94988c/lib/JourneyMan.js#L30-L32">lib/JourneyMan.js</a></p>
 <p>Static getter for the plugin class</p>
 <hr />
 <div class="codehilite"><pre>
@@ -607,8 +603,8 @@ new Plugin(): <a href="/journeyman/api/Plugin">Plugin</a></pre></div>
 <p><code><a href="/journeyman/api/Plugin">Plugin</a></code></p>
 <p></details></p>
 <p><details class="info">
-<summary>new Command()</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/JourneyMan.js#L39-L41">lib/JourneyMan.js</a></p>
+<summary>Command()</summary></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/1d15a5e063281523e3edf7c598748fd27e94988c/lib/JourneyMan.js#L39-L41">lib/JourneyMan.js</a></p>
 <p>Static getter for the command class</p>
 <hr />
 <div class="codehilite"><pre>
@@ -620,10 +616,11 @@ new Command(): <a href="/journeyman/api/Command">Command</a></pre></div>
 <h3 id="instance-members">Instance Members<a class="headerlink" href="#instance-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>input</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/JourneyMan.js#L60-L60">lib/JourneyMan.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/1d15a5e063281523e3edf7c598748fd27e94988c/lib/JourneyMan.js#L60-L60">lib/JourneyMan.js</a></p>
 <p>Holds the command line input</p>
 <hr />
-<p>input</p>
+<div class="codehilite"><pre>input</pre></div>
+
 <p></details></p>
                 
                   

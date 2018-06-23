@@ -21,7 +21,7 @@ module.exports = function ( comments, config ) {
     comments,
     function ( namespace ) {
       console.log( 'building link for', namespace );
-      return `/${namespace}`;
+      return `../${namespace}`;
     }
   );
 

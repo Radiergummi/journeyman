@@ -1,6 +1,6 @@
 <% members.forEach(member => { %>
 <details class="abstract">
-<summary><code style="background:transparent;font-size:1.2rem"><%= shortNamespaceMemberSignature(member) %></code></summary>
+<summary><code style="background:transparent;font-size:1.2rem"><%= staticSignature(member) %></code></summary>
 <%= renderSection({
       section: member,
       renderSection: renderSection,

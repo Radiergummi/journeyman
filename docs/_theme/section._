@@ -32,7 +32,8 @@
 
 <% section.params.forEach(function(param) { %>
 <code>**<%- param.name%>** <% if (param.type) { %>(<%= formatType(param.type) %><% if (param.default) { %> = <%- param.default %><% } %>)<% } %></code>
-> <%= md(param.description, true) %>
+
+> <%= noBreaks(md(param.description, true)) %>
 
 <% if (param.properties && param.properties.length) { %>
 | Name | Description |

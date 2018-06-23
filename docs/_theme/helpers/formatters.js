@@ -31,7 +31,7 @@ module.exports = function ( getHref ) {
     return prefix + section.name + parameters( section, true );
   };
 
-  const shortNamespaceMemberSignature = function ( section ) {
+  const staticSignature = function ( section ) {
     let prefix = '';
 
     if ( section.kind !== 'class' && !isFunction( section ) ) {
@@ -48,7 +48,7 @@ module.exports = function ( getHref ) {
     if ( section.kind === 'class' ) {
       prefix = '\nnew ';
     } else if ( !isFunction( section ) ) {
-      return section.name;
+      return protectedHighlight( section.name );
     }
 
     if ( section.returns.length ) {
@@ -77,6 +77,7 @@ module.exports = function ( getHref ) {
       return remark()
         .stringify( rerouteLinks( ast ) );
     }
+
     return '';
   };
 
@@ -202,7 +203,7 @@ module.exports = function ( getHref ) {
 
   return {
     shortSignature,
-    shortNamespaceMemberSignature,
+    staticSignature,
     signature,
     md,
     html,

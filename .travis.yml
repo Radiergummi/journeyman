@@ -8,9 +8,9 @@ cache:
   - node_modules
 
 before_install:
-- pip install -U mkdocs
-- pip install -U mkdocs-material
-- pip install -U pygments
+- pip install --user --ignore-installed mkdocs
+- pip install --user --ignore-installed mkdocs-material
+- pip install --user --ignore-installed pygments
 
 before_deploy:
 - npm run docs:build

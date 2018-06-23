@@ -1080,22 +1080,22 @@
 <h3 id="members">Members<a class="headerlink" href="#members" title="Permanent link">&para;</a></h3>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">CommandExecutionError(plugin, handler, error)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/CommandExecutionError.js#L10-L30">lib/Errors/CommandExecutionError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/CommandExecutionError.js#L10-L30">lib/Errors/CommandExecutionError.js</a></p>
 <h4 id="command-execution-error">Command execution error<a class="headerlink" href="#command-execution-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a command throws during execution. It indicates the command
 entered some kind of failed state.</p>
 <hr />
 <div class="codehilite"><pre>
-new CommandExecutionError(plugin: <a href="./Plugin">Plugin</a>, handler: (<a href="./Command">Command</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>), error: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>)</pre></div>
+new CommandExecutionError(plugin: <a href="/journeyman/api/Plugin">Plugin</a>, handler: (<a href="/journeyman/api/Command">Command</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>), error: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>)</pre></div>
 
 <h4 id="extends">Extends<a class="headerlink" href="#extends" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
-<p><code><strong>plugin</strong> (<a href="./Plugin">Plugin</a>)</code></p>
+<p><code><strong>plugin</strong> (<a href="/journeyman/api/Plugin">Plugin</a>)</code></p>
 <blockquote>
 <p>Plugin instance</p>
 </blockquote>
-<p><code><strong>handler</strong> ((<a href="./Command">Command</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>))</code></p>
+<p><code><strong>handler</strong> ((<a href="/journeyman/api/Command">Command</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>))</code></p>
 <blockquote>
 <p>Handler that failed while handling the command</p>
 </blockquote>
@@ -1106,7 +1106,7 @@ new CommandExecutionError(plugin: <a href="./Plugin">Plugin</a>, handler: (<a hr
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigUpdateError(path, error)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/ConfigUpdateError.js#L10-L29">lib/Errors/ConfigUpdateError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/ConfigUpdateError.js#L10-L29">lib/Errors/ConfigUpdateError.js</a></p>
 <h4 id="configuration-update-error">Configuration update error<a class="headerlink" href="#configuration-update-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if an error occurred during writing the configuration to file.
 It indicates the configuration file could not be persisted to disk.</p>
@@ -1128,18 +1128,18 @@ new ConfigUpdateError(path: <a href="https://developer.mozilla.org/docs/Web/Java
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigValidationError(schema, config)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/ConfigValidationError.js#L10-L29">lib/Errors/ConfigValidationError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/ConfigValidationError.js#L10-L29">lib/Errors/ConfigValidationError.js</a></p>
 <h4 id="configuration-validation-error">Configuration validation error<a class="headerlink" href="#configuration-validation-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if an unknown type has been passed to the validation. The Schema class can
 only validate objects.</p>
 <hr />
 <div class="codehilite"><pre>
-new ConfigValidationError(schema: <a href="./Schema">Schema</a>, config: any)</pre></div>
+new ConfigValidationError(schema: <a href="/journeyman/api/Schema">Schema</a>, config: any)</pre></div>
 
 <h4 id="extends_2">Extends<a class="headerlink" href="#extends_2" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
-<p><code><strong>schema</strong> (<a href="./Schema">Schema</a>)</code></p>
+<p><code><strong>schema</strong> (<a href="/journeyman/api/Schema">Schema</a>)</code></p>
 <blockquote>
 <p>Schema instance</p>
 </blockquote>
@@ -1150,18 +1150,18 @@ new ConfigValidationError(schema: <a href="./Schema">Schema</a>, config: any)</p
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigValidationInvalidFieldError(schema, field, value)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/ConfigValidationInvalidFieldError.js#L10-L30">lib/Errors/ConfigValidationInvalidFieldError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/ConfigValidationInvalidFieldError.js#L10-L30">lib/Errors/ConfigValidationInvalidFieldError.js</a></p>
 <h4 id="configuration-validation-invalid-field-error">Configuration validation invalid field error<a class="headerlink" href="#configuration-validation-invalid-field-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if an unknown field has been passed. It indicates the field is missing
 from the schema and therefore can't be validated.</p>
 <hr />
 <div class="codehilite"><pre>
-new ConfigValidationInvalidFieldError(schema: <a href="./Schema">Schema</a>, field: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, value: any)</pre></div>
+new ConfigValidationInvalidFieldError(schema: <a href="/journeyman/api/Schema">Schema</a>, field: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, value: any)</pre></div>
 
 <h4 id="extends_3">Extends<a class="headerlink" href="#extends_3" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
-<p><code><strong>schema</strong> (<a href="./Schema">Schema</a>)</code></p>
+<p><code><strong>schema</strong> (<a href="/journeyman/api/Schema">Schema</a>)</code></p>
 <blockquote>
 <p>Schema instance</p>
 </blockquote>
@@ -1176,18 +1176,18 @@ new ConfigValidationInvalidFieldError(schema: <a href="./Schema">Schema</a>, fie
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigValidationMissingFieldError(schema, config, field)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/ConfigValidationMissingFieldError.js#L10-L30">lib/Errors/ConfigValidationMissingFieldError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/ConfigValidationMissingFieldError.js#L10-L30">lib/Errors/ConfigValidationMissingFieldError.js</a></p>
 <h4 id="configuration-validation-missing-field-error">Configuration validation missing field error<a class="headerlink" href="#configuration-validation-missing-field-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a required schema field is missing. It indicates a certain field must
 be used but isn't there.</p>
 <hr />
 <div class="codehilite"><pre>
-new ConfigValidationMissingFieldError(schema: <a href="./Schema">Schema</a>, config: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, field: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</pre></div>
+new ConfigValidationMissingFieldError(schema: <a href="/journeyman/api/Schema">Schema</a>, config: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, field: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</pre></div>
 
 <h4 id="extends_4">Extends<a class="headerlink" href="#extends_4" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
-<p><code><strong>schema</strong> (<a href="./Schema">Schema</a>)</code></p>
+<p><code><strong>schema</strong> (<a href="/journeyman/api/Schema">Schema</a>)</code></p>
 <blockquote>
 <p>Schema instance</p>
 </blockquote>
@@ -1202,18 +1202,18 @@ new ConfigValidationMissingFieldError(schema: <a href="./Schema">Schema</a>, con
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigValidationTypeError(schema, field, value, rule)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/ConfigValidationTypeError.js#L10-L33">lib/Errors/ConfigValidationTypeError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/ConfigValidationTypeError.js#L10-L33">lib/Errors/ConfigValidationTypeError.js</a></p>
 <h4 id="configuration-validation-type-error">Configuration validation type error<a class="headerlink" href="#configuration-validation-type-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if the schema validation of a field's type fails. It indicates the field
 exists but is of the wrong type.</p>
 <hr />
 <div class="codehilite"><pre>
-new ConfigValidationTypeError(schema: <a href="./Schema">Schema</a>, field: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, value: any, rule)</pre></div>
+new ConfigValidationTypeError(schema: <a href="/journeyman/api/Schema">Schema</a>, field: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, value: any, rule)</pre></div>
 
 <h4 id="extends_5">Extends<a class="headerlink" href="#extends_5" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
-<p><code><strong>schema</strong> (<a href="./Schema">Schema</a>)</code></p>
+<p><code><strong>schema</strong> (<a href="/journeyman/api/Schema">Schema</a>)</code></p>
 <blockquote>
 <p>Schema instance</p>
 </blockquote>
@@ -1230,18 +1230,18 @@ new ConfigValidationTypeError(schema: <a href="./Schema">Schema</a>, field: <a h
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigValidationValidatorError(schema, field, value, rule)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/ConfigValidationValidatorError.js#L10-L31">lib/Errors/ConfigValidationValidatorError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/ConfigValidationValidatorError.js#L10-L31">lib/Errors/ConfigValidationValidatorError.js</a></p>
 <h4 id="configuration-validation-validator-error">Configuration validation validator error<a class="headerlink" href="#configuration-validation-validator-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a field validator throws or returns <code class="codehilite">false</code>. It indicates the field
 either could not be validated (the result was <code class="codehilite">false</code>) or did throw an Error during validation.</p>
 <hr />
 <div class="codehilite"><pre>
-new ConfigValidationValidatorError(schema: <a href="./Schema">Schema</a>, field: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, value: any, rule)</pre></div>
+new ConfigValidationValidatorError(schema: <a href="/journeyman/api/Schema">Schema</a>, field: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, value: any, rule)</pre></div>
 
 <h4 id="extends_6">Extends<a class="headerlink" href="#extends_6" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
-<p><code><strong>schema</strong> (<a href="./Schema">Schema</a>)</code></p>
+<p><code><strong>schema</strong> (<a href="/journeyman/api/Schema">Schema</a>)</code></p>
 <blockquote>
 <p>Schema instance</p>
 </blockquote>
@@ -1258,7 +1258,7 @@ new ConfigValidationValidatorError(schema: <a href="./Schema">Schema</a>, field:
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">InvalidConfigFileError(path, error)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/InvalidConfigFileError.js#L11-L30">lib/Errors/InvalidConfigFileError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/InvalidConfigFileError.js#L11-L30">lib/Errors/InvalidConfigFileError.js</a></p>
 <h4 id="invalid-configuration-file-error">Invalid configuration file error<a class="headerlink" href="#invalid-configuration-file-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if the configuration file cannot be read or parsed. Due to the use
 of <code class="codehilite">require( configFile )</code> inside the configuration constructor, this will implicitly be
@@ -1281,64 +1281,64 @@ new InvalidConfigFileError(path: <a href="https://developer.mozilla.org/docs/Web
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">InvalidInstantiationError(command, plugin)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/InvalidInstantiationError.js#L11-L30">lib/Errors/InvalidInstantiationError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/InvalidInstantiationError.js#L11-L30">lib/Errors/InvalidInstantiationError.js</a></p>
 <h4 id="invalid-instantiation-error-error">Invalid instantiation error error<a class="headerlink" href="#invalid-instantiation-error-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a command is being instantiated with anything but a valid
 Plugin instance. It indicates a command has been constructed manually somewhere which
 is considered unsafe.</p>
 <hr />
 <div class="codehilite"><pre>
-new InvalidInstantiationError(command: <a href="./Command">Command</a>, plugin: <a href="./Plugin">Plugin</a>)</pre></div>
+new InvalidInstantiationError(command: <a href="/journeyman/api/Command">Command</a>, plugin: <a href="/journeyman/api/Plugin">Plugin</a>)</pre></div>
 
 <h4 id="extends_8">Extends<a class="headerlink" href="#extends_8" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
-<p><code><strong>command</strong> (<a href="./Command">Command</a>)</code></p>
+<p><code><strong>command</strong> (<a href="/journeyman/api/Command">Command</a>)</code></p>
 <blockquote>
 <p>Instance of the command that caused the error</p>
 </blockquote>
-<p><code><strong>plugin</strong> (<a href="./Plugin">Plugin</a>)</code></p>
+<p><code><strong>plugin</strong> (<a href="/journeyman/api/Plugin">Plugin</a>)</code></p>
 <blockquote>
 <p>Whatever has been passed as a plugin but is none</p>
 </blockquote>
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">InvalidPluginError(loader, plugin)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/InvalidPluginError.js#L11-L30">lib/Errors/InvalidPluginError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/InvalidPluginError.js#L11-L30">lib/Errors/InvalidPluginError.js</a></p>
 <h4 id="invalid-plugin-error">Invalid plugin error<a class="headerlink" href="#invalid-plugin-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a bad module is encountered by the plugin loader. It
 indicates a module declares itself as a journeyman plugin but doesn't work according to
 the plugin specification.</p>
 <hr />
 <div class="codehilite"><pre>
-new InvalidPluginError(loader: <a href="./Loader">Loader</a>, plugin: <a href="./Plugin">Plugin</a>)</pre></div>
+new InvalidPluginError(loader: <a href="/journeyman/api/Loader">Loader</a>, plugin: <a href="/journeyman/api/Plugin">Plugin</a>)</pre></div>
 
 <h4 id="extends_9">Extends<a class="headerlink" href="#extends_9" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
-<p><code><strong>loader</strong> (<a href="./Loader">Loader</a>)</code></p>
+<p><code><strong>loader</strong> (<a href="/journeyman/api/Loader">Loader</a>)</code></p>
 <blockquote>
 <p>Instance of the plugin loader</p>
 </blockquote>
-<p><code><strong>plugin</strong> (<a href="./Plugin">Plugin</a>)</code></p>
+<p><code><strong>plugin</strong> (<a href="/journeyman/api/Plugin">Plugin</a>)</code></p>
 <blockquote>
 <p>Instance of the invalid Plugin</p>
 </blockquote>
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">PluginDiscoveryError(loader, path, error)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/PluginDiscoveryError.js#L10-L30">lib/Errors/PluginDiscoveryError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/PluginDiscoveryError.js#L10-L30">lib/Errors/PluginDiscoveryError.js</a></p>
 <h4 id="plugin-discovery-error">Plugin discovery error<a class="headerlink" href="#plugin-discovery-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if the plugin discovery failed. It indicates there is a problem
 preventing the plugin loader from discovering plugins, likely at the filesystem level.</p>
 <hr />
 <div class="codehilite"><pre>
-new PluginDiscoveryError(loader: <a href="./Loader">Loader</a>, path: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, error: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>)</pre></div>
+new PluginDiscoveryError(loader: <a href="/journeyman/api/Loader">Loader</a>, path: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, error: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>)</pre></div>
 
 <h4 id="extends_10">Extends<a class="headerlink" href="#extends_10" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
-<p><code><strong>loader</strong> (<a href="./Loader">Loader</a>)</code></p>
+<p><code><strong>loader</strong> (<a href="/journeyman/api/Loader">Loader</a>)</code></p>
 <blockquote>
 <p>Instance of the plugin loader</p>
 </blockquote>
@@ -1353,18 +1353,18 @@ new PluginDiscoveryError(loader: <a href="./Loader">Loader</a>, path: <a href="h
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">PluginLoadError(loader, path, error)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/PluginLoadError.js#L10-L30">lib/Errors/PluginLoadError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/PluginLoadError.js#L10-L30">lib/Errors/PluginLoadError.js</a></p>
 <h4 id="plugin-load-error">Plugin load error<a class="headerlink" href="#plugin-load-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a plugin can't be loaded. It indicates there is a problem when
 calling <code class="codehilite">require( pluginPath )</code> to load the module.</p>
 <hr />
 <div class="codehilite"><pre>
-new PluginLoadError(loader: <a href="./Loader">Loader</a>, path: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, error: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>)</pre></div>
+new PluginLoadError(loader: <a href="/journeyman/api/Loader">Loader</a>, path: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, error: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a>)</pre></div>
 
 <h4 id="extends_11">Extends<a class="headerlink" href="#extends_11" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
-<p><code><strong>loader</strong> (<a href="./Loader">Loader</a>)</code></p>
+<p><code><strong>loader</strong> (<a href="/journeyman/api/Loader">Loader</a>)</code></p>
 <blockquote>
 <p>Instance of the plugin loader</p>
 </blockquote>
@@ -1379,19 +1379,19 @@ new PluginLoadError(loader: <a href="./Loader">Loader</a>, path: <a href="https:
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">UnknownCommandError(plugin, command)</code></summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/43858f430439e4b160c8a5c6339bb361c30341b6/lib/Errors/UnknownCommandError.js#L11-L30">lib/Errors/UnknownCommandError.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/8ba01889168da129785a6b43102cf5de7008f0bf/lib/Errors/UnknownCommandError.js#L11-L30">lib/Errors/UnknownCommandError.js</a></p>
 <h4 id="unknown-command-error">Unknown command error<a class="headerlink" href="#unknown-command-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a call for a plugin command cannot be resolved to a command. It
 indicates the plugin sub-command is valid (the plugin exists and is loaded) but there is no
 handler to handle the specific command called.</p>
 <hr />
 <div class="codehilite"><pre>
-new UnknownCommandError(plugin: <a href="./Plugin">Plugin</a>, command: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</pre></div>
+new UnknownCommandError(plugin: <a href="/journeyman/api/Plugin">Plugin</a>, command: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</pre></div>
 
 <h4 id="extends_12">Extends<a class="headerlink" href="#extends_12" title="Permanent link">&para;</a></h4>
 <p><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error">Error</a></p>
 <h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
-<p><code><strong>plugin</strong> (<a href="./Plugin">Plugin</a>)</code></p>
+<p><code><strong>plugin</strong> (<a href="/journeyman/api/Plugin">Plugin</a>)</code></p>
 <blockquote>
 <p>Instance of the plugin the error was thrown in</p>
 </blockquote>

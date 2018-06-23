@@ -10,7 +10,7 @@ module.exports = function ( comments, config ) {
   const linkerStack = new LinkerStack( config ).namespaceResolver(
     comments,
     function ( namespace ) {
-      return `./${namespace}`;
+      return `/journeyman/api/${namespace}`;
     }
   );
 

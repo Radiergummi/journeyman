@@ -3,6 +3,21 @@ node_js:
   - "8"
   - "9"
   - "10"
+
 cache:
  directories:
    - "node_modules"
+
+before_deploy:
+  - npm run docs:build
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master
+
+secure: "AZXu7ip02yspV108ShTw6ZLunxG/7G809gQfdkctoVYGz1453SuLkw1JU44ZwUnur+2nFMF0/ABZllZj0l4w3ce5KdyVr49hi5STjfrVmxx/hUX2x6qMlBycTpeM8xpkdtgiRlDOqUtvCHOrtgOg+2iCUOjxXQoLn8v2yYG8Q73OVLlPFUAhUrlzO2QI9IS3XdIkNTFct+BvMgztlWYKIxHkkixYqV1dwOJB9JbCjuxujR9Z3ftdxn1eCC3lUCC1oytXuYNgTHMUE0pWWzJQ+m4LYBU8G4fi9MEzEAn9bp21h+MlcP8QkyXtwJ8PAS37Oh/YFMPWxorZ8A8hHzNJyBMSM5DBPfUoNYHom4k/o8JI4sIrtNkLBbRBRX7LbbtvItBvXdwHzp1IBKA2bR/scn5p67bNzuB/XoLsLOhTDztwixZtseYAsj9JCd/S7v6+/BJ6ARbNeys4Dp+yDBsPqKH0KIrBp0VEEedScrqj+9YwF8rmmheUzqvUGUjDUUxQ28kv9E50S3V3UMIDWa7E3ZIbWHjktB8b5pZx6QQxDZtgSfGxNf4YUOG60xunajUL1jqubWhITr/IyDdYq2glzSyE9Eqb/gXaYcvO/dxgpChBKTe1qmwV9o7bYrMmSsDlqjmL7AxJXbVdt7Qc125VaVpSw8szd1f2TGFQ/cmMVF4="

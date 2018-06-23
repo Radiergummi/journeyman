@@ -1,5 +1,10 @@
 'use strict';
 
+/*
+ global describe,
+ it
+ */
+
 const expect = require( 'chai' ).expect;
 
 const Schema                            = require( '../lib/Config/Schema' );
@@ -18,11 +23,11 @@ describe( 'Schema', () => {
       .to.be.an.instanceOf( Schema );
   } );
 
-  it( 'should populate the schema fields', () => {
+  it( 'should populate the schema rules', () => {
     const schema = new Schema( {} );
 
     expect( schema )
-      .to.have.property( 'fields' )
+      .to.have.property( 'rules' )
       .that.is.an( 'object' );
   } );
 
@@ -41,7 +46,7 @@ describe( 'Schema', () => {
 
     it( 'should have all required fields', () => {
 
-      expect( schema.fields )
+      expect( schema.rules )
         .to.have.keys( [
                          'preferred_spelling',
                          'paths'
@@ -50,16 +55,16 @@ describe( 'Schema', () => {
 
     describe( 'preferred_spelling', () => {
       it( 'should indicate a type of string', () => {
-        expect( schema.fields.preferred_spelling )
+        expect( schema.rules.preferred_spelling )
           .to.have.property(
           'type',
           String,
-          `preferred_spelling must be a string (${typeof schema.fields.preferred_spelling.type} given)`
+          `preferred_spelling must be a string (${typeof schema.rules.preferred_spelling.type} given)`
         );
       } );
 
       it( 'should not be required', () => {
-        expect( schema.fields.preferred_spelling )
+        expect( schema.rules.preferred_spelling )
           .to.have.property(
           'required',
           false,
@@ -68,7 +73,7 @@ describe( 'Schema', () => {
       } );
 
       it( 'should have "camel" as default', () => {
-        expect( schema.fields.preferred_spelling )
+        expect( schema.rules.preferred_spelling )
           .to.have.property(
           'default',
           'camel',
@@ -77,36 +82,36 @@ describe( 'Schema', () => {
       } );
 
       it( 'should have a validator that only allows "camel" and "kebab"', () => {
-        expect( schema.fields.preferred_spelling )
+        expect( schema.rules.preferred_spelling )
           .to.have.property( 'validator' )
           .that.is.a( 'function' );
 
-        expect( schema.fields.preferred_spelling.validator( 'camel' ) )
+        expect( schema.rules.preferred_spelling.validator( 'camel' ) )
           .to.be.true;
 
-        expect( schema.fields.preferred_spelling.validator( 'kebab' ) )
+        expect( schema.rules.preferred_spelling.validator( 'kebab' ) )
           .to.be.true;
 
-        expect( schema.fields.preferred_spelling.validator( 'foo' ) )
+        expect( schema.rules.preferred_spelling.validator( 'foo' ) )
           .to.be.false;
 
-        expect( schema.fields.preferred_spelling.validator( 42 ) )
+        expect( schema.rules.preferred_spelling.validator( 42 ) )
           .to.be.false;
       } );
     } );
 
     describe( 'paths', () => {
       it( 'should indicate a type of object', () => {
-        expect( schema.fields.paths )
+        expect( schema.rules.paths )
           .to.have.property(
           'type',
           Object,
-          `paths must be an object (${typeof schema.fields.paths.type} given)`
+          `paths must be an object (${typeof schema.rules.paths.type} given)`
         );
       } );
 
       it( 'should not be required', () => {
-        expect( schema.fields.paths )
+        expect( schema.rules.paths )
           .to.have.property(
           'required',
           false,
@@ -129,18 +134,18 @@ describe( 'Schema', () => {
       ];
 
       it( 'should have all paths as default', () => {
-        expect( schema.fields.paths )
+        expect( schema.rules.paths )
           .to.have.property( 'default' )
           .that.is.a( 'object' )
           .which.includes.all.keys( defaultPaths );
       } );
 
       it( 'should have a validator that checks if all paths are present', () => {
-        expect( schema.fields.paths )
+        expect( schema.rules.paths )
           .to.have.property( 'validator' )
           .that.is.a( 'function' );
 
-        expect( schema.fields.paths.validator(
+        expect( schema.rules.paths.validator(
           {
             plugins:    'a',
             assets:     'b',
@@ -157,7 +162,7 @@ describe( 'Schema', () => {
         ) )
           .to.be.true;
 
-        expect( schema.fields.paths.validator(
+        expect( schema.rules.paths.validator(
           {
             components: 'c',
             static:     'k'
@@ -165,7 +170,7 @@ describe( 'Schema', () => {
         ) )
           .to.be.true;
 
-        expect( schema.fields.paths.validator(
+        expect( schema.rules.paths.validator(
           {
             plugins:             'a',
             assets:              'b',

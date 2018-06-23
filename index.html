@@ -846,7 +846,7 @@ No, not quite. Although journeyman provdes some similar features, it doesn't pri
 
 
 <h3 id="expected-filesystem-structure">Expected filesystem structure<a class="headerlink" href="#expected-filesystem-structure" title="Permanent link">&para;</a></h3>
-<p>Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the <a href="./configuration">configuration section</a>), the default structure is the best practice all <code>vue-cli</code> templates follow, for example.<br />
+<p>Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the <a href="./configuration#paths">configuration section</a>), the default structure is the best practice all <code>vue-cli</code> templates follow, for example.<br />
 The below filesystem tree is the structure journeyman expects:</p>
 <pre>
 .                    <strong><--- Working directory journ is executed in</strong>
@@ -868,7 +868,7 @@ The below filesystem tree is the structure journeyman expects:</p>
 <h3 id="journ-make"><code>journ make</code><a class="headerlink" href="#journ-make" title="Permanent link">&para;</a></h3>
 <p>The <code>make</code> command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use <code>journ list make</code> to view a list of available boots to strap (heh).</p>
 <h4 id="journ-make-component"><code>journ make component</code><a class="headerlink" href="#journ-make-component" title="Permanent link">&para;</a></h4>
-<p>Allows to bootstrap components. The component name passed as the third parameter can be either a filesystem path (<code>/foo/bar/MyNewComponent.vue</code>), a kebab-case (<code>my-new-component</code>) or a CamelCase (<code>MyNewComponent</code>) name. In each case, the name will be parsed and the file will be generated with the correct format (<a href="./configuration#preferred-spelling">Config: <code>preferred_spelling</code></a>) at the right location (<a href="./configuration#paths">Config: <code>paths.components</code></a>)
+<p>Allows to bootstrap components. The component name passed as the third parameter can be either a filesystem path (<code>/foo/bar/MyNewComponent.vue</code>), a kebab-case (<code>my-new-component</code>) or a CamelCase (<code>MyNewComponent</code>) name. In each case, the name will be parsed and the file will be generated with the correct format (<a href="./configuration#preferred_spelling">Config: <code>preferred_spelling</code></a>) at the right location (<a href="./configuration#paths">Config: <code>paths.components</code></a>)
 Generated components are described in detail later on.  </p>
 <div class="codehilite"><pre><span></span><span class="c1"># Bootstrap a new, empty component</span>
 journ make component MyNewComponent

@@ -211,12 +211,16 @@
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Journeyman" class="md-tabs__link">
-        Journeyman
+      <a href="../.." title="Getting started" class="md-tabs__link">
+        Getting started
       </a>
     
   </li>
 
+      
+        
+      
+        
       
         
   
@@ -282,8 +286,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Journeyman" class="md-nav__link">
-      Journeyman
+    <a href="../.." title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../plugins/" title="Plugins" class="md-nav__link">
+      Plugins
     </a>
   </li>
 
@@ -297,13 +325,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-4">
       Api
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-4">
         Api
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -702,7 +730,7 @@
                 
                   <h1>Schema</h1>
                 
-                <p><a href="https://github.com/Radiergummi/journeyman/blob/da0cae39a6cf76a09b0b77338d42c98b72b25afb/lib/Config/Schema.js#L60-L256">lib/Config/Schema.js</a></p>
+                <p><a href="https://github.com/Radiergummi/journeyman/blob/bf8994b9bb58ce0f0c8cc7bfda931dea3d71c695/lib/Config/Schema.js#L60-L256">lib/Config/Schema.js</a></p>
 <h4 id="configuration-schema">Configuration Schema<a class="headerlink" href="#configuration-schema" title="Permanent link">&para;</a></h4>
 <p>The Schema class provides a dynamic validator for object schemas. By passing a set of rules, the
 schema can validate an entire object or single fields against these rules. This enables both
@@ -766,7 +794,7 @@ new Schema(rules: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Ref
 <h3 id="instance-members">Instance Members<a class="headerlink" href="#instance-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>rules</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/da0cae39a6cf76a09b0b77338d42c98b72b25afb/lib/Config/Schema.js#L74-L74">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bf8994b9bb58ce0f0c8cc7bfda931dea3d71c695/lib/Config/Schema.js#L74-L74">lib/Config/Schema.js</a></p>
 <p>Holds the rules the schema describes.</p>
 <hr />
 <p>rules</p>
@@ -775,7 +803,7 @@ new Schema(rules: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Ref
 <p></details></p>
 <p><details class="info">
 <summary>toJSON()</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/da0cae39a6cf76a09b0b77338d42c98b72b25afb/lib/Config/Schema.js#L82-L90">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bf8994b9bb58ce0f0c8cc7bfda931dea3d71c695/lib/Config/Schema.js#L82-L90">lib/Config/Schema.js</a></p>
 <p>Creates an empty, default schema holding all defaults.</p>
 <hr />
 <div class="codehilite"><pre>toJSON(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></pre></div>
@@ -785,7 +813,7 @@ new Schema(rules: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Ref
 <p></details></p>
 <p><details class="info">
 <summary>validate(obj?)</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/da0cae39a6cf76a09b0b77338d42c98b72b25afb/lib/Config/Schema.js#L105-L138">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bf8994b9bb58ce0f0c8cc7bfda931dea3d71c695/lib/Config/Schema.js#L105-L138">lib/Config/Schema.js</a></p>
 <p>Validates a given object against the schema. This works by running each field through
 <code>validateField</code> individually. If a field is missing but defined in the schema,</p>
 <hr />
@@ -819,7 +847,7 @@ new Schema(rules: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Ref
 <p></details></p>
 <p><details class="info">
 <summary>validateField(field, value)</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/da0cae39a6cf76a09b0b77338d42c98b72b25afb/lib/Config/Schema.js#L169-L245">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bf8994b9bb58ce0f0c8cc7bfda931dea3d71c695/lib/Config/Schema.js#L169-L245">lib/Config/Schema.js</a></p>
 <p>Validates a single field.
 The validation process is split into several checks, ordered by probability of them occurring.
 Each check will throw a specific error if it fails.</p>

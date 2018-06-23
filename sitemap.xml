@@ -6,6 +6,16 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://radiergummi.github.io/journeyman/configuration/</loc>
+     <lastmod>2018-06-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://radiergummi.github.io/journeyman/plugins/</loc>
+     <lastmod>2018-06-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://radiergummi.github.io/journeyman/api/Command/</loc>
      <lastmod>2018-06-23</lastmod>
      <changefreq>daily</changefreq>

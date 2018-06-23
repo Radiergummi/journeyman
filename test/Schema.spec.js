@@ -413,7 +413,8 @@ describe( 'Schema', () => {
       } );
 
       it( 'should bail on invalid arbitrary prototype fields', () => {
-        class X {}
+        class X {
+        }
 
         expect( () => schemaD.validateField( 'instance', new X() ) )
           .to.throw( ConfigValidationTypeError );

@@ -1,0 +1,14 @@
+{
+  "external_value": true,
+  "completely":     "unrelated",
+  "journeyman":     {
+    "foo": "abc",
+    "bar": 42,
+    "baz": {
+      "a": 10,
+      "b": 20,
+      "c": 30
+    },
+    "quz": true
+  }
+}

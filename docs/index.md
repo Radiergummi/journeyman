@@ -7,13 +7,13 @@ Similar to [Laravel's Artisan](https://laravel.com/docs/5.6/artisan), *journeyma
 No, not quite. Although journeyman provdes some similar features, it doesn't primarily serve to bootstrap the development pipeline but rather to aid a developer during development work. It doesn't care at all what module bundler or linter you use.
 
 > **Active development:** Journeyman is being developed currently. The process will be as follows:
-> - [ ] Outline most of the API in this README file, identify design problems beforehand  
-> - [ ] Write tests for the base console application, build the application from there (TDD style)
-> - [ ] Write tests for the actual Vue code generation, implement API features from there
-> - [ ] Write tests for the [plugin structure](./plugins), implement it from there
-> - [ ] Refactoring, Optimization, real-world test cases
-> - [ ] ???
-> - [ ] PROFIT
+> * [ ] Outline most of the API in this README file, identify design problems beforehand  
+> * [x] Write tests for the base console application, build the application from there (TDD style)
+> * [ ] Write tests for the actual Vue code generation, implement API features from there
+> * [ ] Write tests for the [plugin structure](./plugins), implement it from there
+> * [ ] Refactoring, Optimization, real-world test cases
+> * [ ] ???
+> * [ ] PROFIT
 
 ## Installation
 Journeyman should be installed as a global npm module, like so:

@@ -2,26 +2,15 @@ const fs                       = require( 'fs' );
 const path                     = require( 'path' );
 const File                     = require( 'vinyl' );
 const _                        = require( 'lodash' );
-const GithubSlugger            = require( 'github-slugger' );
 const createFormatters         = require( 'documentation' ).util.createFormatters;
 const LinkerStack              = require( 'documentation' ).util.LinkerStack;
 const createMarkdownFormatters = require( './helpers/formatters' );
-
-function isFunction ( section ) {
-  return (
-    section.kind === 'function' ||
-    ( section.kind === 'typedef' &&
-      section.type.type === 'NameExpression' &&
-      section.type.name === 'Function' )
-  );
-}
 
 module.exports = function ( comments, config ) {
   const linkerStack = new LinkerStack( config ).namespaceResolver(
     comments,
     function ( namespace ) {
-      console.log( 'building link for', namespace );
-      return `../${namespace}`;
+      return `./${namespace}`;
     }
   );
 
@@ -30,49 +19,13 @@ module.exports = function ( comments, config ) {
 
   const sharedImports = {
     imports: {
-      slug ( str ) {
-        const slugger = new GithubSlugger();
-
-        return slugger.slug( str );
-      },
-
-      shortSignature ( section ) {
-        let prefix = '';
-
-        if ( section.kind === 'class' ) {
-          prefix = 'new ';
-        } else if ( !isFunction( section ) ) {
-          return section.name;
-        }
-
-        return prefix + section.name + formatters.parameters( section, true );
-      },
-
-      signature ( section ) {
-        let returns = '';
-        let prefix  = '';
-
-        if ( section.kind === 'class' ) {
-          prefix = '\nnew ';
-        } else if ( !isFunction( section ) ) {
-          return section.name;
-        }
-
-        if ( section.returns.length ) {
-          returns = ': ' + formatters.type( section.returns[ 0 ].type );
-        }
-
-        return markdownFormatters.protectedHighlight(
-          prefix + section.name + formatters.parameters( section ) + returns
-        );
-      },
-
-      md: markdownFormatters.md,
-
-      formatType: markdownFormatters.type,
-
-      autolink: formatters.autolink,
-
+      shortSignature:     markdownFormatters.shortSignature,
+      shortNamespaceMemberSignature: markdownFormatters.shortNamespaceMemberSignature,
+      signature:          markdownFormatters.signature,
+      md:                 markdownFormatters.md,
+      parameter:          markdownFormatters.parameter,
+      formatType:         markdownFormatters.type,
+      autolink:           markdownFormatters.autolink,
       highlight:          markdownFormatters.highlight,
       protectedHighlight: markdownFormatters.protectedHighlight
     }
@@ -80,6 +33,11 @@ module.exports = function ( comments, config ) {
 
   sharedImports.imports.renderSectionList = _.template(
     fs.readFileSync( path.join( __dirname, 'section_list._' ), 'utf8' ),
+    sharedImports
+  );
+
+  sharedImports.imports.renderNamespaceMemberList = _.template(
+    fs.readFileSync( path.join( __dirname, 'namespace_member_list._' ), 'utf8' ),
     sharedImports
   );
 
@@ -103,8 +61,13 @@ module.exports = function ( comments, config ) {
     sharedImports
   );
 
+  const namespaceTemplate = _.template(
+    fs.readFileSync( path.join( __dirname, 'namespace._' ), 'utf8' ),
+    sharedImports
+  );
+
   // push assets into the pipeline as well.
-  return Promise.resolve(
+  return Promise.resolve( Array.prototype.concat( ...[
     comments
       .filter( comment => comment.kind === 'class' )
       .map( comment => new File(
@@ -118,6 +81,21 @@ module.exports = function ( comments, config ) {
             'utf8'
           )
         } )
+      ),
+
+    comments
+      .filter( comment => comment.kind === 'namespace' )
+      .map( comment => new File(
+        {
+          path:     comment.name + '.md',
+          contents: Buffer.from(
+            namespaceTemplate( {
+                                 section: comment,
+                                 config
+                               } ),
+            'utf8'
+          )
+        } )
       )
-  );
+  ] ) );
 };

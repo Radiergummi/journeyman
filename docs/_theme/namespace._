@@ -1,22 +1,15 @@
 <%= md(section.description) %>
 
--------------
-
-<%= signature(section) %>
-
-<% if (section.type) { %>
-Type:
+<% if (section.type && section.type.length > 0) { %>
+#### Type
 <%= formatType(section.type) %>
-<%= JSON.stringify(section.type) %>
 
 <% } %>
 <% if (section.augments.length) { %>
-<p>
-Extends
+#### Extends
 <% if (section.augments) { %>
 <%= section.augments.map(tag => autolink(tag.name)).join(', ') %>
 <% } %>
-</p>
 <% } %>
 
 <% if (section.deprecated) { %>**Deprecated:** <%= md(section.deprecated, true) %><% } %>
@@ -30,7 +23,7 @@ Extends
 #### Parameters
 
 <% section.params.forEach(function(param) { %>
-<code>**<%- param.name%>** (<%= formatType(param.type) %><% if (param.default) { %> = <%- param.default %><% } %>)</code>
+<code>**<%- param.name%>** <% if (param.type) { %>(<%= formatType(param.type) %><% if (param.default) { %> = <%- param.default %><% } %>)<% } %></code>
 > <%= md(param.description, true) %>
 
 <% if (param.properties && param.properties.length) { %>
@@ -66,46 +59,50 @@ Extends
 <% } %>
 
 <% if (section.returns.length) { %>
-  <% section.returns.forEach(ret => { %>
-    #### Returns
+<% section.returns.forEach(ret => { %>
+### Returns
 
-    `<%= formatType(ret.type) %>`
-    <% if (ret.description) { %>:
-      <%= md(ret.description, true) %>
-    <% }%>
-  <% }) %>
+<code><%= formatType(ret.type) %></code>
+<% if (ret.description && ret.description.length > 1) { %>:
+<%= md(ret.description, true) %>
+<% }%>
+<% }) %>
 <% } %>
 
 <% if (section.throws.length) { %>
-  #### Throws
-  <% section.throws.forEach(function(throws) { %>
-   - <%= formatType(throws.type) %>: <%= md(throws.description, true) %>
-  <% }); %>
+### Throws
+
+<% section.throws.forEach(function(throws) { %>
+ - <%= formatType(throws.type) %>: <%= md(throws.description, true) %>
+<% }); %>
 <% } %>
 
 <% if (section.examples.length) { %>
-#### Example
+### Example
 
-  <% section.examples.forEach(function(example) { %>
-    <% if (example.caption) { %><%= md(example.caption) %><% } %>
-    <%= highlight(example.description) %>
-  <% }) %>
+<% section.examples.forEach(function(example) { %>
+<% if (example.caption) { %><%= md(example.caption) %><% } %>
+<%= highlight(example.description) %>
+<% }) %>
 <% } %>
 
 <% if (section.members.static && section.members.static.length) { %>
-#### Static Members
-
-  <%= renderSectionList({ members: section.members.static, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Static Member' }) %>
-<% } %>
+### Members
+<%= renderNamespaceMemberList({ 
+  members:             section.members.static,
+  renderSection:       renderSection,
+  renderParamProperty: renderParamProperty,
+  noun:                'Member'
+}) %><% } else { %>*No members yet*<% } %>
 
 <% if (section.members.instance && section.members.instance.length) { %>
-#### Instance Members
+### Instance Members
 
-  <%= renderSectionList({ members: section.members.instance, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Instance Member' }) %>
+<%= renderSectionList({ members: section.members.instance, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Instance Member' }) %>
 <% } %>
 
 <% if (section.members.events && section.members.events.length) { %>
-#### Events
+### Events
 
-  <%= renderSectionList({ members: section.members.events, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Event' }) %>
+<%= renderSectionList({ members: section.members.events, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Event' }) %>
 <% } %>

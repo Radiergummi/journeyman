@@ -1,4 +1,4 @@
-| <span class='code bold'>`<%- property.name %>`</span> <code class='quiet'><%= formatType(property.type) %></code>
+| `<%- property.name %>` <code><%= formatType(property.type) %></code>
   <% if (property.default) { %>
     (default <code><%- property.default %></code>)
   <% } %> | <%= md(property.description, true) %> |

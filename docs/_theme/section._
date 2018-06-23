@@ -8,18 +8,16 @@
 
 <%= signature(section) %>
 
-<% if (section.type) { %>
-Type:
+<% if (section.type && section.type.length > 0) { %>
+#### Type
 <%= formatType(section.type) %>
 
 <% } %>
 <% if (section.augments.length) { %>
-<p>
-Extends
+#### Extends
 <% if (section.augments) { %>
 <%= section.augments.map(tag => autolink(tag.name)).join(', ') %>
 <% } %>
-</p>
 <% } %>
 
 <% if (section.deprecated) { %>**Deprecated:** <%= md(section.deprecated, true) %><% } %>
@@ -98,7 +96,6 @@ Extends
 
 <% if (section.members.static && section.members.static.length) { %>
 ### Static Members
-
 <%= renderSectionList({ members: section.members.static, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Static Member' }) %>
 <% } %>
 

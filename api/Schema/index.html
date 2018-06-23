@@ -730,7 +730,7 @@
                 
                   <h1>Schema</h1>
                 
-                <p><a href="https://github.com/Radiergummi/journeyman/blob/1e83e30c413841645bf759b1507a4c375cb027a6/lib/Config/Schema.js#L60-L256">lib/Config/Schema.js</a></p>
+                <p><a href="https://github.com/Radiergummi/journeyman/blob/69d50befc316b4047f5478ddaa796466a7c46eb6/lib/Config/Schema.js#L60-L256">lib/Config/Schema.js</a></p>
 <h4 id="configuration-schema">Configuration Schema<a class="headerlink" href="#configuration-schema" title="Permanent link">&para;</a></h4>
 <p>The Schema class provides a dynamic validator for object schemas. By passing a set of rules, the
 schema can validate an entire object or single fields against these rules. This enables both
@@ -763,21 +763,20 @@ Rule sets must be an object structured like this:</p>
 <span class="p">}</span>
 </pre></div>
 
-
 <p>After setting up the rules, you can use two validation methods:</p>
 <ol>
 <li>
-<p><strong><code>schema.validate( myDataObject: Object ): Object</code></strong>
-    Validates each property of the object, that is: It runs <code>validateField</code> on each of them. If
+<p><strong><code class="codehilite">schema.validate( myDataObject: Object ): Object</code></strong>
+    Validates each property of the object, that is: It runs <code class="codehilite">validateField</code> on each of them. If
     the object is invalid, one of the checks will throw (so remember to try-catch), if it is
     valid, it will return the passed object with any eventually missing fields monkey-patched to
     their defaults, if their rules provide one.</p>
 </li>
 <li>
-<p><strong><code>schema.validateField( key: String, value: Any ): Any</code></strong>
-    Validates a single field by rule name. The <code>key</code> parameter will be used to check the <code>value</code>
+<p><strong><code class="codehilite">schema.validateField( key: String, value: Any ): Any</code></strong>
+    Validates a single field by rule name. The <code class="codehilite">key</code> parameter will be used to check the <code class="codehilite">value</code>
     against the appropriate rule. If the value is invalid, one of the checks will throw (when
-    using the <code>validate</code> method, this is what bubbles up), if it is valid, the value will be
+    using the <code class="codehilite">validate</code> method, this is what bubbles up), if it is valid, the value will be
     returned. If there was no value and the field was optional, the default will be returned if
     it is available.</p>
 </li>
@@ -794,7 +793,7 @@ new Schema(rules: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Ref
 <h3 id="instance-members">Instance Members<a class="headerlink" href="#instance-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>rules</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/1e83e30c413841645bf759b1507a4c375cb027a6/lib/Config/Schema.js#L74-L74">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/69d50befc316b4047f5478ddaa796466a7c46eb6/lib/Config/Schema.js#L74-L74">lib/Config/Schema.js</a></p>
 <p>Holds the rules the schema describes.</p>
 <hr />
 <p>rules</p>
@@ -803,7 +802,7 @@ new Schema(rules: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Ref
 <p></details></p>
 <p><details class="info">
 <summary>toJSON()</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/1e83e30c413841645bf759b1507a4c375cb027a6/lib/Config/Schema.js#L82-L90">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/69d50befc316b4047f5478ddaa796466a7c46eb6/lib/Config/Schema.js#L82-L90">lib/Config/Schema.js</a></p>
 <p>Creates an empty, default schema holding all defaults.</p>
 <hr />
 <div class="codehilite"><pre>toJSON(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></pre></div>
@@ -813,9 +812,9 @@ new Schema(rules: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Ref
 <p></details></p>
 <p><details class="info">
 <summary>validate(obj?)</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/1e83e30c413841645bf759b1507a4c375cb027a6/lib/Config/Schema.js#L105-L138">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/69d50befc316b4047f5478ddaa796466a7c46eb6/lib/Config/Schema.js#L105-L138">lib/Config/Schema.js</a></p>
 <p>Validates a given object against the schema. This works by running each field through
-<code>validateField</code> individually. If a field is missing but defined in the schema,</p>
+<code class="codehilite">validateField</code> individually. If a field is missing but defined in the schema,</p>
 <hr />
 <div class="codehilite"><pre>validate(obj: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></pre></div>
 
@@ -829,25 +828,25 @@ new Schema(rules: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Ref
 <h3 id="throws">Throws<a class="headerlink" href="#throws" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><a href="../ConfigValidationError/">ConfigValidationError</a>: If an invalid (non-object) parameter has been passed</p>
+<p><a href="../../ConfigValidationError">ConfigValidationError</a>: If an invalid (non-object) parameter has been passed</p>
 </li>
 <li>
-<p><a href="../ConfigValidationMissingFieldError/">ConfigValidationMissingFieldError</a>: If a required field is missing</p>
+<p><a href="../../ConfigValidationMissingFieldError">ConfigValidationMissingFieldError</a>: If a required field is missing</p>
 </li>
 <li>
-<p><a href="../ConfigValidationInvalidFieldError/">ConfigValidationInvalidFieldError</a>: If a field is unknown</p>
+<p><a href="../../ConfigValidationInvalidFieldError">ConfigValidationInvalidFieldError</a>: If a field is unknown</p>
 </li>
 <li>
-<p><a href="../ConfigValidationTypeError/">ConfigValidationTypeError</a>: If a values type doesn't match the requirements</p>
+<p><a href="../../ConfigValidationTypeError">ConfigValidationTypeError</a>: If a values type doesn't match the requirements</p>
 </li>
 <li>
-<p><a href="../ConfigValidationValidatorError/">ConfigValidationValidatorError</a>: If a field validator can't validate a field</p>
+<p><a href="../../ConfigValidationValidatorError">ConfigValidationValidatorError</a>: If a field validator can't validate a field</p>
 </li>
 </ul>
 <p></details></p>
 <p><details class="info">
 <summary>validateField(field, value)</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/1e83e30c413841645bf759b1507a4c375cb027a6/lib/Config/Schema.js#L169-L245">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/69d50befc316b4047f5478ddaa796466a7c46eb6/lib/Config/Schema.js#L169-L245">lib/Config/Schema.js</a></p>
 <p>Validates a single field.
 The validation process is split into several checks, ordered by probability of them occurring.
 Each check will throw a specific error if it fails.</p>
@@ -857,18 +856,18 @@ Each check will throw a specific error if it fails.</p>
 <p>Check if the type matches the rule. This is a bit of work since there is a specific
     check for each type:</p>
 <ol>
-<li><strong><code>String</code></strong> - checked using <code>typeof</code></li>
-<li><strong><code>Number</code></strong> - checked using <code>isNaN</code> and a <code>null</code> check</li>
-<li><strong><code>Boolean</code></strong> - checked using <code>typeof</code></li>
-<li><strong><code>Array</code></strong> - checked using <code>Array.isArray</code></li>
-<li><strong><code>Symbol</code></strong> - checked using <code>typeof</code></li>
-<li><strong><code>Object</code></strong> -  checked using <code>typeof</code>, then <code>Array.isArray</code> and a <code>null</code> check.
+<li><strong><code class="codehilite">String</code></strong> - checked using <code class="codehilite">typeof</code></li>
+<li><strong><code class="codehilite">Number</code></strong> - checked using <code class="codehilite">isNaN</code> and a <code class="codehilite">null</code> check</li>
+<li><strong><code class="codehilite">Boolean</code></strong> - checked using <code class="codehilite">typeof</code></li>
+<li><strong><code class="codehilite">Array</code></strong> - checked using <code class="codehilite">Array.isArray</code></li>
+<li><strong><code class="codehilite">Symbol</code></strong> - checked using <code class="codehilite">typeof</code></li>
+<li><strong><code class="codehilite">Object</code></strong> -  checked using <code class="codehilite">typeof</code>, then <code class="codehilite">Array.isArray</code> and a <code class="codehilite">null</code> check.
     The object will then be merged with the rule's default, if any.</li>
-<li><strong>Anything else</strong> - checked using <code>instanceof</code></li>
+<li><strong>Anything else</strong> - checked using <code class="codehilite">instanceof</code></li>
 </ol>
 </li>
 <li>
-<p>Check if the validator callback (if any) can validate the field (returns <code>true</code>)</p>
+<p>Check if the validator callback (if any) can validate the field (returns <code class="codehilite">true</code>)</p>
 </li>
 </ol>
 <p>If all these checks pass, the value will be returned.</p>
@@ -889,13 +888,13 @@ Each check will throw a specific error if it fails.</p>
 <h3 id="throws_1">Throws<a class="headerlink" href="#throws_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><a href="../ConfigValidationInvalidFieldError/">ConfigValidationInvalidFieldError</a>: If the field is unknown</p>
+<p><a href="../../ConfigValidationInvalidFieldError">ConfigValidationInvalidFieldError</a>: If the field is unknown</p>
 </li>
 <li>
-<p><a href="../ConfigValidationTypeError/">ConfigValidationTypeError</a>: If the values type doesn't match the requirements</p>
+<p><a href="../../ConfigValidationTypeError">ConfigValidationTypeError</a>: If the values type doesn't match the requirements</p>
 </li>
 <li>
-<p><a href="../ConfigValidationValidatorError/">ConfigValidationValidatorError</a>: If the field validator can't validate the field</p>
+<p><a href="../../ConfigValidationValidatorError">ConfigValidationValidatorError</a>: If the field validator can't validate the field</p>
 </li>
 </ul>
 <p></details></p>

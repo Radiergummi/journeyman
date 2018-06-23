@@ -817,36 +817,35 @@
 <p>Journeyman is an opinionated CLI tool for Vue.js projects to generate code and automate common tasks.</p>
 </blockquote>
 <p>Similar to <a href="https://laravel.com/docs/5.6/artisan">Laravel's Artisan</a>, <em>journeyman</em> aims to reduce repetitive programming tasks and make working on Vue.js applications a faster and more pleasant experience, while adhering to Vue.js code style standards and best practices.</p>
-<p><strong>Isn't this the same thing as <code>vue-cli</code>?</strong><br />
+<p><strong>Isn't this the same thing as <code class="codehilite">vue-cli</code>?</strong><br />
 No, not quite. Although journeyman provdes some similar features, it doesn't primarily serve to bootstrap the development pipeline but rather to aid a developer during development work. It doesn't care at all what module bundler or linter you use.</p>
 <blockquote>
-<p><strong>Active development:</strong> Journeyman is being developed currently. The process will be as follows:
-<em> [ ] Outline most of the API in this README file, identify design problems beforehand<br />
-</em> [x] Write tests for the base console application, build the application from there (TDD style)
-<em> [ ] Write tests for the actual Vue code generation, implement API features from there
-</em> [ ] Write tests for the <a href="./plugins">plugin structure</a>, implement it from there
-<em> [ ] Refactoring, Optimization, real-world test cases
-</em> [ ] ???
-* [ ] PROFIT</p>
+<p><strong>Active development:</strong> Journeyman is being developed currently. The process will be as follows:</p>
 </blockquote>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Outline most of the API in this README file, identify design problems beforehand  </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Write tests for the base console application, build the application from there (TDD style)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write tests for the actual Vue code generation, implement API features from there</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write tests for the <a href="./plugins">plugin structure</a>, implement it from there</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Refactoring, Optimization, real-world test cases</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> ???</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> PROFIT</li>
+</ul>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Journeyman should be installed as a global npm module, like so:</p>
-<div class="codehilite"><pre><span></span>npm install --global @radiergummi/journeyman
+<p><div class="codehilite"><pre><span></span>npm install --global @radiergummi/journeyman
 </pre></div>
-
-
-<p><strong>Please note: Journeyman isn't actually available yet, so this package isn't published right now.</strong></p>
+<strong>Please note: Journeyman isn't actually available yet, so this package isn't published right now.</strong></p>
 <blockquote>
 <p>Journeyman requires Node.js &gt;= 8 to run.</p>
 </blockquote>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>Journeyman can be invoked on the command line using the <code>journ</code> command. Using the <code>list</code> command, you can view a list of all available sub-commands that will be detailed in the following sections:</p>
+<p>Journeyman can be invoked on the command line using the <code class="codehilite">journ</code> command. Using the <code class="codehilite">list</code> command, you can view a list of all available sub-commands that will be detailed in the following sections:</p>
 <div class="codehilite"><pre><span></span>journ list
 </pre></div>
 
-
 <h3 id="expected-filesystem-structure">Expected filesystem structure<a class="headerlink" href="#expected-filesystem-structure" title="Permanent link">&para;</a></h3>
-<p>Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the <a href="./configuration#paths">configuration section</a>), the default structure is the best practice all <code>vue-cli</code> templates follow, for example.<br />
+<p>Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the <a href="./configuration#paths">configuration section</a>), the default structure is the best practice all <code class="codehilite">vue-cli</code> templates follow, for example.<br />
 The below filesystem tree is the structure journeyman expects:</p>
 <pre>
 .                    <strong><--- Working directory journ is executed in</strong>
@@ -865,10 +864,10 @@ The below filesystem tree is the structure journeyman expects:</p>
 └── package.json
 </pre>
 
-<h3 id="journ-make"><code>journ make</code><a class="headerlink" href="#journ-make" title="Permanent link">&para;</a></h3>
-<p>The <code>make</code> command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use <code>journ list make</code> to view a list of available boots to strap (heh).</p>
-<h4 id="journ-make-component"><code>journ make component</code><a class="headerlink" href="#journ-make-component" title="Permanent link">&para;</a></h4>
-<p>Allows to bootstrap components. The component name passed as the third parameter can be either a filesystem path (<code>/foo/bar/MyNewComponent.vue</code>), a kebab-case (<code>my-new-component</code>) or a CamelCase (<code>MyNewComponent</code>) name. In each case, the name will be parsed and the file will be generated with the correct format (<a href="./configuration#preferred_spelling">Config: <code>preferred_spelling</code></a>) at the right location (<a href="./configuration#paths">Config: <code>paths.components</code></a>)
+<h3 id="journ-make"><code class="codehilite">journ make</code><a class="headerlink" href="#journ-make" title="Permanent link">&para;</a></h3>
+<p>The <code class="codehilite">make</code> command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use <code class="codehilite">journ list make</code> to view a list of available boots to strap (heh).</p>
+<h4 id="journ-make-component"><code class="codehilite">journ make component</code><a class="headerlink" href="#journ-make-component" title="Permanent link">&para;</a></h4>
+<p>Allows to bootstrap components. The component name passed as the third parameter can be either a filesystem path (<code class="codehilite">/foo/bar/MyNewComponent.vue</code>), a kebab-case (<code class="codehilite">my-new-component</code>) or a CamelCase (<code class="codehilite">MyNewComponent</code>) name. In each case, the name will be parsed and the file will be generated with the correct format (<a href="./configuration#preferred_spelling">Config: <code class="codehilite">preferred_spelling</code></a>) at the right location (<a href="./configuration#paths">Config: <code class="codehilite">paths.components</code></a>)
 Generated components are described in detail later on.  </p>
 <div class="codehilite"><pre><span></span><span class="c1"># Bootstrap a new, empty component</span>
 journ make component MyNewComponent
@@ -876,7 +875,6 @@ journ make component MyNewComponent
 <span class="c1"># You can use shorthands, too</span>
 journ m c MyNewComponent
 </pre></div>
-
 
 <p>Journeyman also supports extends and mixins as well as cloning:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># New component extending another</span>
@@ -889,61 +887,57 @@ journ make component MyOtherComponent --with oneMixin --with anotherMixin
 journ make component MyOtherComponent --from MyNewComponent
 </pre></div>
 
-
 <p>Cloned components will have all properties from the source component but with a new name.</p>
-<h4 id="journ-make-mixin"><code>journ make mixin</code><a class="headerlink" href="#journ-make-mixin" title="Permanent link">&para;</a></h4>
+<h4 id="journ-make-mixin"><code class="codehilite">journ make mixin</code><a class="headerlink" href="#journ-make-mixin" title="Permanent link">&para;</a></h4>
 <p>Allows to bootstrap mixins.  </p>
 <blockquote>
 <p>TODO HERE</p>
 </blockquote>
-<h4 id="journ-make-route"><code>journ make route</code><a class="headerlink" href="#journ-make-route" title="Permanent link">&para;</a></h4>
+<h4 id="journ-make-route"><code class="codehilite">journ make route</code><a class="headerlink" href="#journ-make-route" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>TODO HERE</p>
 </blockquote>
-<h4 id="journ-make-module"><code>journ make module</code><a class="headerlink" href="#journ-make-module" title="Permanent link">&para;</a></h4>
+<h4 id="journ-make-module"><code class="codehilite">journ make module</code><a class="headerlink" href="#journ-make-module" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>TODO HERE</p>
 </blockquote>
-<h4 id="journ-make-style"><code>journ make style</code><a class="headerlink" href="#journ-make-style" title="Permanent link">&para;</a></h4>
+<h4 id="journ-make-style"><code class="codehilite">journ make style</code><a class="headerlink" href="#journ-make-style" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>TODO HERE</p>
 </blockquote>
-<h3 id="journ-extract"><code>journ extract</code><a class="headerlink" href="#journ-extract" title="Permanent link">&para;</a></h3>
-<p>The <code>extract</code> command allows extraction of code into mixins, styles into stylesheets and large templates into individual components.</p>
+<h3 id="journ-extract"><code class="codehilite">journ extract</code><a class="headerlink" href="#journ-extract" title="Permanent link">&para;</a></h3>
+<p>The <code class="codehilite">extract</code> command allows extraction of code into mixins, styles into stylesheets and large templates into individual components.</p>
 <blockquote>
 <p>TODO HERE</p>
 </blockquote>
-<h3 id="journ-inline"><code>journ inline</code><a class="headerlink" href="#journ-inline" title="Permanent link">&para;</a></h3>
-<p>The exact opposite of the <code>extract</code> command, <code>inline</code> allows to inline external code into your components.</p>
+<h3 id="journ-inline"><code class="codehilite">journ inline</code><a class="headerlink" href="#journ-inline" title="Permanent link">&para;</a></h3>
+<p>The exact opposite of the <code class="codehilite">extract</code> command, <code class="codehilite">inline</code> allows to inline external code into your components.</p>
 <blockquote>
 <p>TODO HERE</p>
 </blockquote>
-<h3 id="journ-lint"><code>journ lint</code><a class="headerlink" href="#journ-lint" title="Permanent link">&para;</a></h3>
-<p>The <code>lint</code> command performs a Vue.js coding style check on your code-base. This allows you to verify all your components adhere to the same style rules. In contrary to <code>eslint</code> for example, This will not check your JS code (there are a lot of perfectly fine tools for this job), but rather verify all your code is streamlined and follows best practices.<br />
+<h3 id="journ-lint"><code class="codehilite">journ lint</code><a class="headerlink" href="#journ-lint" title="Permanent link">&para;</a></h3>
+<p>The <code class="codehilite">lint</code> command performs a Vue.js coding style check on your code-base. This allows you to verify all your components adhere to the same style rules. In contrary to <code class="codehilite">eslint</code> for example, This will not check your JS code (there are a lot of perfectly fine tools for this job), but rather verify all your code is streamlined and follows best practices.<br />
 There are a bunch of linting rules available in <a href="./configuration#linting-rules">the configuration</a>.</p>
-<p>Additionally, if configured so, <code>lint</code> will check your JSDoc comments to make sure they a) exist, b) are complete and c) are correct. It will also look for repetitions throughout your components which are probably opportunities for mixins.</p>
-<h3 id="journ-config"><code>journ config</code><a class="headerlink" href="#journ-config" title="Permanent link">&para;</a></h3>
-<p>The <code>config</code> command allows to read and write configuration values.</p>
-<h4 id="journ-config-get"><code>journ config get</code><a class="headerlink" href="#journ-config-get" title="Permanent link">&para;</a></h4>
+<p>Additionally, if configured so, <code class="codehilite">lint</code> will check your JSDoc comments to make sure they a) exist, b) are complete and c) are correct. It will also look for repetitions throughout your components which are probably opportunities for mixins.</p>
+<h3 id="journ-config"><code class="codehilite">journ config</code><a class="headerlink" href="#journ-config" title="Permanent link">&para;</a></h3>
+<p>The <code class="codehilite">config</code> command allows to read and write configuration values.</p>
+<h4 id="journ-config-get"><code class="codehilite">journ config get</code><a class="headerlink" href="#journ-config-get" title="Permanent link">&para;</a></h4>
 <p>Use the following command to read the configuration:</p>
 <div class="codehilite"><pre><span></span>journ config get <span class="o">[</span>&lt;value&gt;<span class="o">]</span>
 </pre></div>
 
-
-<h4 id="journ-config-set"><code>journ config set</code><a class="headerlink" href="#journ-config-set" title="Permanent link">&para;</a></h4>
+<h4 id="journ-config-set"><code class="codehilite">journ config set</code><a class="headerlink" href="#journ-config-set" title="Permanent link">&para;</a></h4>
 <p>Use the following command to set a configuration value:</p>
 <div class="codehilite"><pre><span></span>journ config <span class="nb">set</span> &lt;key&gt; &lt;value&gt;
 </pre></div>
 
-
-<h4 id="journ-config-init"><code>journ config init</code><a class="headerlink" href="#journ-config-init" title="Permanent link">&para;</a></h4>
-<p>Use the following command to write the default configuration values to your <code>package.json</code> or <code>.journeyman</code> file. This way, you've got all available configuration values at hand to modify them to your liking:</p>
+<h4 id="journ-config-init"><code class="codehilite">journ config init</code><a class="headerlink" href="#journ-config-init" title="Permanent link">&para;</a></h4>
+<p>Use the following command to write the default configuration values to your <code class="codehilite">package.json</code> or <code class="codehilite"><span class="na">.journeyman</span></code> file. This way, you've got all available configuration values at hand to modify them to your liking:</p>
 <div class="codehilite"><pre><span></span>journ config init <span class="o">[</span>--package,-p<span class="o">]</span> <span class="o">[</span>--dotfile,-d<span class="o">]</span>
 </pre></div>
 
-
-<p>Using the <code>--package</code> or <code>--dotfile</code> parameter, you can optionally specify the target: <code>package.json</code> or <code>.journeyman</code>.<br />
-The default is <code>--package</code>.</p>
+<p>Using the <code class="codehilite">--package</code> or <code class="codehilite">--dotfile</code> parameter, you can optionally specify the target: <code class="codehilite">package.json</code> or <code class="codehilite"><span class="na">.journeyman</span></code>.<br />
+The default is <code class="codehilite">--package</code>.</p>
 <blockquote>
 <p>TODO HERE</p>
 </blockquote>

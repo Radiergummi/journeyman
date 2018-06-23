@@ -581,9 +581,9 @@
                 
                 
                 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
-<p>Journeyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a <code>.journeyman</code> file or directly in the <code>package.json</code> below the key <code>journeyman</code> which is the preferred way (avoids yet <em>another</em> dot file in your project).<br />
+<p>Journeyman allows to set some configuration variables to control its behaviour. This configuration can be stored either in a <code class="codehilite"><span class="na">.journeyman</span></code> file or directly in the <code class="codehilite">package.json</code> below the key <code class="codehilite">journeyman</code> which is the preferred way (avoids yet <em>another</em> dot file in your project).<br />
 In general, it comes with a set of sensible defaults:</p>
-<h2 id="paths"><code>paths</code><a class="headerlink" href="#paths" title="Permanent link">&para;</a></h2>
+<h2 id="paths"><code class="codehilite">paths</code><a class="headerlink" href="#paths" title="Permanent link">&para;</a></h2>
 <p>To set the output paths generated code should be written to, you can set one or more of the following path settings. Each of them will overwrite the default.</p>
 <table>
 <thead>
@@ -595,61 +595,61 @@ In general, it comes with a set of sensible defaults:</p>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>assets</code></td>
-<td align="right"><code>./src/assets</code></td>
+<td align="left"><code class="codehilite">assets</code></td>
+<td align="right"><code class="codehilite">./src/assets</code></td>
 <td align="left">Path where all assets live</td>
 </tr>
 <tr>
-<td align="left"><code>components</code></td>
-<td align="right"><code>./src/components</code></td>
-<td align="left">Path where all components (<code>.vue</code> files) live</td>
+<td align="left"><code class="codehilite">components</code></td>
+<td align="right"><code class="codehilite">./src/components</code></td>
+<td align="left">Path where all components (<code class="codehilite"><span class="na">.vue</span></code> files) live</td>
 </tr>
 <tr>
-<td align="left"><code>mixins</code></td>
-<td align="right"><code>./src/mixins</code></td>
-<td align="left">Path where all mixins (<code>.js</code> files) live</td>
+<td align="left"><code class="codehilite">mixins</code></td>
+<td align="right"><code class="codehilite">./src/mixins</code></td>
+<td align="left">Path where all mixins (<code class="codehilite"><span class="na">.js</span></code> files) live</td>
 </tr>
 <tr>
-<td align="left"><code>modules</code></td>
-<td align="right"><code>./src/modules</code></td>
-<td align="left">Path where all modules (<code>.js</code> files, helpers) live</td>
+<td align="left"><code class="codehilite"><span class="n">modules</span></code></td>
+<td align="right"><code class="codehilite">./src/modules</code></td>
+<td align="left">Path where all modules (<code class="codehilite"><span class="na">.js</span></code> files, helpers) live</td>
 </tr>
 <tr>
-<td align="left"><code>router</code></td>
-<td align="right"><code>./src/router</code></td>
+<td align="left"><code class="codehilite">router</code></td>
+<td align="right"><code class="codehilite">./src/router</code></td>
 <td align="left">Path to the main router file</td>
 </tr>
 <tr>
-<td align="left"><code>styles</code></td>
-<td align="right"><code>./src/styles</code></td>
-<td align="left">Path where all stylesheets (<code>.css</code>/<code>.scss</code> files) live</td>
+<td align="left"><code class="codehilite">styles</code></td>
+<td align="right"><code class="codehilite">./src/styles</code></td>
+<td align="left">Path where all stylesheets (<code class="codehilite"><span class="na">.css</span></code>/<code class="codehilite"><span class="na">.scss</span></code> files) live</td>
 </tr>
 <tr>
-<td align="left"><code>build</code></td>
-<td align="right"><code>./build</code></td>
+<td align="left"><code class="codehilite">build</code></td>
+<td align="right"><code class="codehilite">./build</code></td>
 <td align="left">Path where the build modules live</td>
 </tr>
 <tr>
-<td align="left"><code>config</code></td>
-<td align="right"><code>./config</code></td>
+<td align="left"><code class="codehilite">config</code></td>
+<td align="right"><code class="codehilite">./config</code></td>
 <td align="left">Path where the build configuration lives</td>
 </tr>
 <tr>
-<td align="left"><code>public</code></td>
-<td align="right"><code>./public</code></td>
+<td align="left"><code class="codehilite">public</code></td>
+<td align="right"><code class="codehilite">./public</code></td>
 <td align="left">Path where the build is written to</td>
 </tr>
 <tr>
-<td align="left"><code>static</code></td>
-<td align="right"><code>./static</code></td>
+<td align="left"><code class="codehilite">static</code></td>
+<td align="right"><code class="codehilite">./static</code></td>
 <td align="left">Path where static assets live</td>
 </tr>
 </tbody>
 </table>
-<h2 id="preferred_spelling"><code>preferred_spelling</code><a class="headerlink" href="#preferred_spelling" title="Permanent link">&para;</a></h2>
+<h2 id="preferred_spelling"><code class="codehilite">preferred_spelling</code><a class="headerlink" href="#preferred_spelling" title="Permanent link">&para;</a></h2>
 <p>This setting controls how journeyman generates component names and inserts them, for example. This also applies to file names on the file system. There are two options available:
- - <code>camel</code>: Names are generated in <strong>CamelCase</strong>.
- - <code>kebab</code>: Names are generated in <strong>kebab-case</strong>.</p>
+ - <code class="codehilite">camel</code>: Names are generated in <strong>CamelCase</strong>.
+ - <code class="codehilite">kebab</code>: Names are generated in <strong>kebab-case</strong>.</p>
                 
                   
                 

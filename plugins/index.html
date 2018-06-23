@@ -623,15 +623,15 @@
                 
                 
                 <h1 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h1>
-<p>Journeyman provides a few ways to add new functionality, that is: To add new, first-class citizen, commands to <code>journ</code>. In fact, <em>all</em> integrated commands are actually plugins.<br />
+<p>Journeyman provides a few ways to add new functionality, that is: To add new, first-class citizen, commands to <code class="codehilite">journ</code>. In fact, <em>all</em> integrated commands are actually plugins.<br />
 Plugins are special npm packages that must fulfill a few requirements:</p>
 <ul>
-<li><strong>Their package name starts with <code>journeyman-plugin-</code>:</strong><br />
-   This serves to keep the npm namespace clean and make plugins more obvious. I can't stand packages like <code>body-parser</code> that are secretly <code>express.js</code> plugins.</li>
-<li><strong>Their <code>package.json</code> file includes a <code>journeyman-plugin</code> key:</strong><br />
+<li><strong>Their package name starts with <code class="codehilite">journeyman-plugin-</code>:</strong><br />
+   This serves to keep the npm namespace clean and make plugins more obvious. I can't stand packages like <code class="codehilite">body-parser</code> that are secretly <code class="codehilite">express.js</code> plugins.</li>
+<li><strong>Their <code class="codehilite">package.json</code> file includes a <code class="codehilite">journeyman-plugin</code> key:</strong><br />
    This key provides plugin metadata. The available fields are outlined in <a href="#plugin-metadata-fields">Plugin metadata fields</a></li>
 <li><strong>They export a class (<em>not an instance!</em>) from their main module that extends the base plugin:</strong><br />
-   Journeyman provides a base class at <a href="../lib/Plugins/Plugin.js"><code>lib/plugins/Plugin</code></a> that all plugins need to inherit from. It provides several methods Journeyman uses to initialize the plugin and work with it's input and output. This frees implementations from caring about API compatibility and implementation details.</li>
+   Journeyman provides a base class at <a href="../lib/Plugins/Plugin.js"><code class="codehilite">lib/plugins/Plugin</code></a> that all plugins need to inherit from. It provides several methods Journeyman uses to initialize the plugin and work with it's input and output. This frees implementations from caring about API compatibility and implementation details.</li>
 </ul>
 <p>Basically, a plugin provides a new subcommand to journeyman that all its methods are grouped below. A simple plugin might look like this:</p>
 <div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Plugin</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;journeyman&#39;</span><span class="p">);</span>
@@ -666,9 +666,8 @@ Plugins are special npm packages that must fulfill a few requirements:</p>
 <span class="p">}</span>
 </pre></div>
 
-
 <h2 id="one-shot-plugins">One-Shot plugins<a class="headerlink" href="#one-shot-plugins" title="Permanent link">&para;</a></h2>
-<p>If your plugin only serves a single purpose -- eg. it doesn't need multiple sub-commands -- you can use one-shot plugins. The only difference to ordinary plugins is that they include the special <code>__invoke</code> method: If a plugin provides it, journeyman assumes the plugin doesn't need a namespace and only has a single, public command, callable as <code>journ &lt;plugin name&gt; --params</code>. If journeyman finds the __invoke method  inside your plugin, it will disregard any other public methods. As ordinary command methods, <code>__invoke</code> receives the application instance as its only parameter.</p>
+<p>If your plugin only serves a single purpose -- eg. it doesn't need multiple sub-commands -- you can use one-shot plugins. The only difference to ordinary plugins is that they include the special <code class="codehilite">__invoke</code> method: If a plugin provides it, journeyman assumes the plugin doesn't need a namespace and only has a single, public command, callable as <code class="codehilite">journ &lt;plugin name&gt; --params</code>. If journeyman finds the __invoke method  inside your plugin, it will disregard any other public methods. As ordinary command methods, <code class="codehilite">__invoke</code> receives the application instance as its only parameter.</p>
 <div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Plugin</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;journeyman&#39;</span><span class="p">);</span>
 
 <span class="kr">class</span> <span class="nx">FooPlugin</span> <span class="kr">extends</span> <span class="nx">Plugin</span> <span class="p">{</span>
@@ -687,9 +686,8 @@ Plugins are special npm packages that must fulfill a few requirements:</p>
 <span class="p">}</span>
 </pre></div>
 
-
-<h2 id="the-app-parameter-to-your-command-methods">The <code>app</code> parameter to your command methods<a class="headerlink" href="#the-app-parameter-to-your-command-methods" title="Permanent link">&para;</a></h2>
-<p><code>app</code> is an object with several well-defined properties revolving around the command execution lifecycle. It contains everything the command will need to carry out its purpose:</p>
+<h2 id="the-app-parameter-to-your-command-methods">The <code class="codehilite">app</code> parameter to your command methods<a class="headerlink" href="#the-app-parameter-to-your-command-methods" title="Permanent link">&para;</a></h2>
+<p><code class="codehilite">app</code> is an object with several well-defined properties revolving around the command execution lifecycle. It contains everything the command will need to carry out its purpose:</p>
 <table>
 <thead>
 <tr>
@@ -700,33 +698,33 @@ Plugins are special npm packages that must fulfill a few requirements:</p>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>journeyman</code></td>
-<td><a href="../lib/JourneyMan.js"><code>JourneyMan</code></a></td>
-<td align="left">The current <code>JourneyMan</code> instance.</td>
+<td align="left"><code class="codehilite">journeyman</code></td>
+<td><a href="../lib/JourneyMan.js"><code class="codehilite">JourneyMan</code></a></td>
+<td align="left">The current <code class="codehilite">JourneyMan</code> instance.</td>
 </tr>
 <tr>
-<td align="left"><code>env</code></td>
-<td><code>Map&lt;k: String, v: String&gt;</code></td>
+<td align="left"><code class="codehilite">env</code></td>
+<td><code class="codehilite">Map&lt;k: String, v: String&gt;</code></td>
 <td align="left">Holds all system environment variables.</td>
 </tr>
 <tr>
-<td align="left"><code>input</code></td>
-<td><a href="../lib/Console/Input.js"><code>Input</code></a></td>
+<td align="left"><code class="codehilite">input</code></td>
+<td><a href="../lib/Console/Input.js"><code class="codehilite">Input</code></a></td>
 <td align="left">Holds the command line input object.</td>
 </tr>
 <tr>
-<td align="left"><code>output</code></td>
-<td><a href="../lib/Console/Output.js"><code>Output</code></a></td>
+<td align="left"><code class="codehilite">output</code></td>
+<td><a href="../lib/Console/Output.js"><code class="codehilite">Output</code></a></td>
 <td align="left">Holds the command line output object.</td>
 </tr>
 <tr>
-<td align="left"><code>plugins</code></td>
-<td><code>Array&lt;Plugin&gt;</code></td>
-<td align="left">Holds the list of available plugins. Alias to <a href="../lib/JourneyMan.js"><code>journeyman.plugins</code></a>.</td>
+<td align="left"><code class="codehilite">plugins</code></td>
+<td><code class="codehilite">Array&lt;Plugin&gt;</code></td>
+<td align="left">Holds the list of available plugins. Alias to <a href="../lib/JourneyMan.js"><code class="codehilite">journeyman.plugins</code></a>.</td>
 </tr>
 <tr>
-<td align="left"><code>call(command: String): Promise</code></td>
-<td><code>function</code></td>
+<td align="left"><code class="codehilite">call(command: String): Promise</code></td>
+<td><code class="codehilite">function</code></td>
 <td align="left">Allows to call other commands by their full command input string.</td>
 </tr>
 </tbody>
@@ -735,7 +733,7 @@ Plugins are special npm packages that must fulfill a few requirements:</p>
 <p>More properties and methods will be added as the development continues.</p>
 </blockquote>
 <h2 id="advanced-plugins">Advanced plugins<a class="headerlink" href="#advanced-plugins" title="Permanent link">&para;</a></h2>
-<p>Single-class and one-shot plugins will be fine for most purposes. But what if you've got actual <em>work</em> to do? Fear not, for there's a third structural option: Instead of providing the individual commands as methods on your plugin, you can also provide a list of <a href="../lib/Console/Command.js"><code>Command</code></a> instances.<br />
+<p>Single-class and one-shot plugins will be fine for most purposes. But what if you've got actual <em>work</em> to do? Fear not, for there's a third structural option: Instead of providing the individual commands as methods on your plugin, you can also provide a list of <a href="../lib/Console/Command.js"><code class="codehilite">Command</code></a> instances.<br />
 This provides you with a belly of additional goodies, like automatic help generation, fine-grained parameter and option handling as well as neatly organized code.</p>
 <p>A plugin using Command instances might look like this:</p>
 <div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Plugin</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;journeyman&#39;</span><span class="p">);</span>
@@ -766,8 +764,7 @@ This provides you with a belly of additional goodies, like automatic help genera
 <span class="p">}</span> 
 </pre></div>
 
-
-<p>A command class for our plugin, say <code>FooCommand</code>, should be constructed like this:</p>
+<p>A command class for our plugin, say <code class="codehilite">FooCommand</code>, should be constructed like this:</p>
 <div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">Command</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;journeyman&#39;</span><span class="p">);</span>
 
 <span class="kr">class</span> <span class="nx">FooCommand</span> <span class="kr">extends</span> <span class="nx">Command</span> <span class="p">{</span>
@@ -799,15 +796,14 @@ This provides you with a belly of additional goodies, like automatic help genera
 <span class="p">}</span>
 </pre></div>
 
-
 <p>That's a whole slew of new stuff, so be sure to check out the <a href="#commands">Command documentation</a>.</p>
 <h2 id="providing-new-commands-for-journeymans-existing-sub-commands">Providing new commands for journeyman's existing sub-commands<a class="headerlink" href="#providing-new-commands-for-journeymans-existing-sub-commands" title="Permanent link">&para;</a></h2>
-<p>That's all fine and dandy, but what if you'd like to provide a new <code>make &lt;something&gt;</code>? For these cases, you can extend the special <code>MakePlugin</code> class instead of <code>Plugin</code>. All commands provided in these will be appended to the <code>make</code> subcommand. Beneath <code>MakePlugin</code>, there's also <code>LinkPlugin</code>, <code>ServePlugin</code> and <code>BuildPlugin</code> to extend the respective verbs.</p>
+<p>That's all fine and dandy, but what if you'd like to provide a new <code class="codehilite">make &lt;something&gt;</code>? For these cases, you can extend the special <code class="codehilite">MakePlugin</code> class instead of <code class="codehilite">Plugin</code>. All commands provided in these will be appended to the <code class="codehilite">make</code> subcommand. Beneath <code class="codehilite">MakePlugin</code>, there's also <code class="codehilite">LinkPlugin</code>, <code class="codehilite">ServePlugin</code> and <code class="codehilite">BuildPlugin</code> to extend the respective verbs.</p>
 <blockquote>
 <p>More extend-plugins will be added as the development continues.</p>
 </blockquote>
 <h2 id="plugin-metadata-fields">Plugin metadata fields<a class="headerlink" href="#plugin-metadata-fields" title="Permanent link">&para;</a></h2>
-<p>The following <code>package.json</code> properties of the <code>journeyman-plugin</code> key are recognized:</p>
+<p>The following <code class="codehilite">package.json</code> properties of the <code class="codehilite">journeyman-plugin</code> key are recognized:</p>
 <table>
 <thead>
 <tr>
@@ -819,14 +815,14 @@ This provides you with a belly of additional goodies, like automatic help genera
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>name</code></td>
-<td><code>String</code></td>
+<td align="left"><code class="codehilite">name</code></td>
+<td><code class="codehilite">String</code></td>
 <td align="left">The plugins human-readable name. This will be used in the plugin list, for example. Defaults to the package name.</td>
 <td align="right">No</td>
 </tr>
 <tr>
-<td align="left"><code>defaults</code></td>
-<td><code>Object</code></td>
+<td align="left"><code class="codehilite">defaults</code></td>
+<td><code class="codehilite">Object</code></td>
 <td align="left">Any default configuration you might need for your plugin. Defaults to an empty hash.</td>
 <td align="right">No</td>
 </tr>

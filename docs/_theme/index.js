@@ -1,14 +1,10 @@
 const fs                       = require( 'fs' );
 const path                     = require( 'path' );
 const File                     = require( 'vinyl' );
-const vfs                      = require( 'vinyl-fs' );
 const _                        = require( 'lodash' );
-const concat                   = require( 'concat-stream' );
 const GithubSlugger            = require( 'github-slugger' );
 const createFormatters         = require( 'documentation' ).util.createFormatters;
 const LinkerStack              = require( 'documentation' ).util.LinkerStack;
-const formatType               = require( './helpers/formatType' );
-const universalSyntaxTree      = require( './helpers/universalSyntaxTree' );
 const createMarkdownFormatters = require( './helpers/formatters' );
 
 function isFunction ( section ) {
@@ -24,9 +20,8 @@ module.exports = function ( comments, config ) {
   const linkerStack = new LinkerStack( config ).namespaceResolver(
     comments,
     function ( namespace ) {
-      const slugger = new GithubSlugger();
-
-      return `./${namespace}.md`;
+      console.log( 'building link for', namespace );
+      return `/${namespace}`;
     }
   );
 

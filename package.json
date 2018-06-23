@@ -8,6 +8,7 @@
     },
     "dependencies": {
         "command-line-args": "^5.0.2",
+        "documentation": "^8.0.0",
         "global-npm": "^0.3.0",
         "minimist": "^1.2.0"
     },
@@ -17,7 +18,10 @@
         "mocha": "^5.2.0"
     },
     "scripts": {
-        "test": "./node_modules/.bin/istanbul cover _mocha test/*.js -- --"
+        "test": "./node_modules/.bin/istanbul cover _mocha test/*.js -- --",
+        "docs:build": "./node_modules/.bin/documentation build lib/**/* --format html --output docs --github",
+        "docs:serve": "./node_modules/.bin/documentation serve",
+        "docs:watch": "./node_modules/.bin/documentation serve --watch"
     },
     "repository": {
         "type": "git",

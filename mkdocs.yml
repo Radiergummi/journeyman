@@ -1,0 +1,37 @@
+# Project info
+site_name: 'Journeyman'
+site_description: 'Journeyman is an opinionated CLI tool for Vue.js projects to generate code and automate common tasks.'
+site_author: 'Moritz Friedrich'
+site_url: 'https://radiergummi.github.io/journeyman'
+copyright: 'Copyright &copy; 2018 Moritz Friedrich'
+
+# Repository
+repo_name: 'radiergummi/journeyman'
+repo_url: 'https://github.com/radiergummi/journeyman'
+
+
+# Theme
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'light blue'
+    accent: 'indigo'
+  feature:
+    tabs: true
+use_directory_urls: true
+
+# Social links
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/radiergummi'
+
+# Markdown extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - codehilite:
+      guess_lang: true
+  - toc:
+      permalink: true

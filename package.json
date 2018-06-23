@@ -14,12 +14,18 @@
     },
     "devDependencies": {
         "chai": "^4.1.2",
+        "concat-stream": "^1.6.2",
+        "doctrine-temporary-fork": "^2.0.1",
         "istanbul": "^1.1.0-alpha.1",
-        "mocha": "^5.2.0"
+        "lodash": "^4.17.10",
+        "mocha": "^5.2.0",
+        "remark": "^9.0.0"
     },
     "scripts": {
         "test": "./node_modules/.bin/istanbul cover _mocha test/*.js -- --",
-        "docs:build": "./node_modules/.bin/documentation build lib/**/* --format html --output docs --github",
+        "docs:build": "./node_modules/.bin/documentation build lib/** --format html --output docs/api/ --theme docs/_theme --github; mkdocs build --clean --site-dir documentation",
+        "docs:html": "./node_modules/.bin/documentation build lib/** --format html --output docs/api/ --theme docs/_theme --github",
+        "docs:md": "./node_modules/.bin/documentation build lib/** --format md --output docs/api.md --github",
         "docs:serve": "./node_modules/.bin/documentation serve",
         "docs:watch": "./node_modules/.bin/documentation serve --watch"
     },

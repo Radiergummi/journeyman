@@ -1,4 +1,9 @@
 .idea
 coverage
 node_modules
-docs
+
+# API docs are dynamically generated
+docs/api
+
+# Local docs build folder
+documentation

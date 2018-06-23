@@ -33,7 +33,7 @@ journ list
 ```
 
 ### Expected filesystem structure
-Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the [configuration section](./configuration)), the default structure is the best practice all `vue-cli` templates follow, for example.  
+Journeyman assumes your project is set up a certain way by default. This is important because any generated code must be placed in the appropriate directories. While you can configure each path (see the [configuration section](./configuration#paths)), the default structure is the best practice all `vue-cli` templates follow, for example.  
 The below filesystem tree is the structure journeyman expects:
 
 <pre>
@@ -57,7 +57,7 @@ The below filesystem tree is the structure journeyman expects:
 The `make` command creates new files on the file system. It allows to bootstrap components, mixins and modules, for example. Use `journ list make` to view a list of available boots to strap (heh).
 
 #### `journ make component`
-Allows to bootstrap components. The component name passed as the third parameter can be either a filesystem path (`/foo/bar/MyNewComponent.vue`), a kebab-case (`my-new-component`) or a CamelCase (`MyNewComponent`) name. In each case, the name will be parsed and the file will be generated with the correct format ([Config: `preferred_spelling`](./configuration#preferred-spelling)) at the right location ([Config: `paths.components`](./configuration#paths))
+Allows to bootstrap components. The component name passed as the third parameter can be either a filesystem path (`/foo/bar/MyNewComponent.vue`), a kebab-case (`my-new-component`) or a CamelCase (`MyNewComponent`) name. In each case, the name will be parsed and the file will be generated with the correct format ([Config: `preferred_spelling`](./configuration#preferred_spelling)) at the right location ([Config: `paths.components`](./configuration#paths))
 Generated components are described in detail later on.  
 
 ```sh

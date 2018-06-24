@@ -6,5 +6,5 @@ const journeyMan = new JourneyMan( process, process.env.JOURNEYMAN_CONFIG_PATH )
 
 journeyMan
   .init()
-  .then( () => console.log( journeyMan ) )
+  .then( () => console.log( journeyMan.input ) )
   .catch( error => console.error( error ) );

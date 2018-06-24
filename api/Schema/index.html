@@ -682,7 +682,7 @@
                 
                   <h1>Schema</h1>
                 
-                <p><a href="https://github.com/Radiergummi/journeyman/blob/6fbceeafcda0611735bdcbac96ac9cd13f6ef951/lib/Config/Schema.js#L60-L275">lib/Config/Schema.js</a></p>
+                <p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/Config/Schema.js#L60-L275">lib/Config/Schema.js</a></p>
 <h4 id="configuration-schema">Configuration Schema<a class="headerlink" href="#configuration-schema" title="Permanent link">&para;</a></h4>
 <p>The Schema class provides a dynamic validator for object schemas. By passing a set of rules, the
 schema can validate an entire object or single fields against these rules. This enables both
@@ -745,7 +745,7 @@ new Schema(rules: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Ref
 <h3 id="instance-members">Instance Members<a class="headerlink" href="#instance-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>rules</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/6fbceeafcda0611735bdcbac96ac9cd13f6ef951/lib/Config/Schema.js#L87-L87">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/Config/Schema.js#L87-L87">lib/Config/Schema.js</a></p>
 <p>Holds the rules the schema describes. Each rule consists of the
 following properties:</p>
 <ul>
@@ -768,7 +768,7 @@ following properties:</p>
 <p></details></p>
 <p><details class="info">
 <summary>toJSON()</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/6fbceeafcda0611735bdcbac96ac9cd13f6ef951/lib/Config/Schema.js#L95-L103">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/Config/Schema.js#L95-L103">lib/Config/Schema.js</a></p>
 <p>Creates an empty, default schema holding all defaults.</p>
 <hr />
 <div class="codehilite"><pre>toJSON(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></pre></div>
@@ -778,7 +778,7 @@ following properties:</p>
 <p></details></p>
 <p><details class="info">
 <summary>validate(obj?)</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/6fbceeafcda0611735bdcbac96ac9cd13f6ef951/lib/Config/Schema.js#L124-L157">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/Config/Schema.js#L124-L157">lib/Config/Schema.js</a></p>
 <h4 id="configuration-object-validation">Configuration object validation<a class="headerlink" href="#configuration-object-validation" title="Permanent link">&para;</a></h4>
 <p>Validates a given object against the schema. This works by running each field through
 <code class="codehilite">validateField</code> individually. If a field is missing but defined in the schema, and that
@@ -797,25 +797,25 @@ value and further checking is omitted (since defaults are inherently trusted).</
 <h3 id="throws">Throws<a class="headerlink" href="#throws" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>ConfigValidationError: If an invalid (non-object) parameter has been passed</p>
+<p>Errors.ConfigValidationError: If an invalid (non-object) parameter has been passed</p>
 </li>
 <li>
-<p>ConfigValidationMissingFieldError: If a required field is missing</p>
+<p>Errors.ConfigValidationMissingFieldError: If a required field is missing</p>
 </li>
 <li>
-<p>ConfigValidationInvalidFieldError: If a field is unknown</p>
+<p>Errors.ConfigValidationInvalidFieldError: If a field is unknown</p>
 </li>
 <li>
-<p>ConfigValidationTypeError: If a values type doesn't match the requirements</p>
+<p>Errors.ConfigValidationTypeError: If a values type doesn't match the requirements</p>
 </li>
 <li>
-<p>ConfigValidationValidatorError: If a field validator can't validate a field</p>
+<p>Errors.ConfigValidationValidatorError: If a field validator can't validate a field</p>
 </li>
 </ul>
 <p></details></p>
 <p><details class="info">
 <summary>validateField(field, value)</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/6fbceeafcda0611735bdcbac96ac9cd13f6ef951/lib/Config/Schema.js#L188-L264">lib/Config/Schema.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/Config/Schema.js#L188-L264">lib/Config/Schema.js</a></p>
 <p>Validates a single field.
 The validation process is split into several checks, ordered by probability of them occurring.
 Each check will throw a specific error if it fails.</p>
@@ -857,13 +857,13 @@ Each check will throw a specific error if it fails.</p>
 <h3 id="throws_1">Throws<a class="headerlink" href="#throws_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>ConfigValidationInvalidFieldError: If the field is unknown</p>
+<p>Errors.ConfigValidationInvalidFieldError: If the field is unknown</p>
 </li>
 <li>
-<p>ConfigValidationTypeError: If the values type doesn't match the requirements</p>
+<p>Errors.ConfigValidationTypeError: If the values type doesn't match the requirements</p>
 </li>
 <li>
-<p>ConfigValidationValidatorError: If the field validator can't validate the field</p>
+<p>Errors.ConfigValidationValidatorError: If the field validator can't validate the field</p>
 </li>
 </ul>
 <p></details></p>

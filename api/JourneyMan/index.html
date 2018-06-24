@@ -448,6 +448,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#returns_2" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+      
       
       
       
@@ -553,6 +560,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#returns_2" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+      
       
       
       
@@ -574,7 +588,7 @@
                 
                   <h1>JourneyMan</h1>
                 
-                <p><a href="https://github.com/Radiergummi/journeyman/blob/6fbceeafcda0611735bdcbac96ac9cd13f6ef951/lib/JourneyMan.js#L27-L82">lib/JourneyMan.js</a></p>
+                <p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/JourneyMan.js#L27-L95">lib/JourneyMan.js</a></p>
 <p>Welcome to JourneyMan!
 This is the main class used by the CLI, but it's easy to use it programmatically.</p>
 <hr />
@@ -593,7 +607,7 @@ new JourneyMan(proc: <a href="https://developer.mozilla.org/docs/Web/JavaScript/
 <h3 id="static-members">Static Members<a class="headerlink" href="#static-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>Plugin()</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/6fbceeafcda0611735bdcbac96ac9cd13f6ef951/lib/JourneyMan.js#L34-L36">lib/JourneyMan.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/JourneyMan.js#L34-L36">lib/JourneyMan.js</a></p>
 <p>Static getter for the plugin class</p>
 <hr />
 <div class="codehilite"><pre>
@@ -604,7 +618,7 @@ new Plugin(): <a href="/journeyman/api/Plugin">Plugin</a></pre></div>
 <p></details></p>
 <p><details class="info">
 <summary>Command()</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/6fbceeafcda0611735bdcbac96ac9cd13f6ef951/lib/JourneyMan.js#L43-L45">lib/JourneyMan.js</a></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/JourneyMan.js#L43-L45">lib/JourneyMan.js</a></p>
 <p>Static getter for the command class</p>
 <hr />
 <div class="codehilite"><pre>
@@ -616,11 +630,32 @@ new Command(): <a href="/journeyman/api/Command">Command</a></pre></div>
 <h3 id="instance-members">Instance Members<a class="headerlink" href="#instance-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>input</summary></p>
-<p><a href="https://github.com/Radiergummi/journeyman/blob/6fbceeafcda0611735bdcbac96ac9cd13f6ef951/lib/JourneyMan.js#L64-L64">lib/JourneyMan.js</a></p>
-<p>Holds the command line input</p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/JourneyMan.js#L64-L64">lib/JourneyMan.js</a></p>
+<p>Holds the command line input.</p>
 <hr />
 <div class="codehilite"><pre>input</pre></div>
 
+<p></details></p>
+<p><details class="info">
+<summary>config</summary></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/JourneyMan.js#L75-L77">lib/JourneyMan.js</a></p>
+<p>Holds Config instance for the application. Journeyman will generally first try to load
+a file called <code class="codehilite"><span class="na">.journeyman</span></code>. If it is available, a new Config will be created with no
+sub-key (<code class="codehilite"><span class="na">.journeyman</span></code> files are expected to only contain Journeyman configuration).
+In case there is none, Journeyman will try to find and load a <code class="codehilite">package.json</code> file in
+the current directory.</p>
+<hr />
+<div class="codehilite"><pre>config</pre></div>
+
+<p></details></p>
+<p><details class="info">
+<summary>init()</summary></p>
+<p><a href="https://github.com/Radiergummi/journeyman/blob/bc609cbf814a1377c65c861e82794c021aa75cdc/lib/JourneyMan.js#L86-L94">lib/JourneyMan.js</a></p>
+<hr />
+<div class="codehilite"><pre>init(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;void></pre></div>
+
+<h3 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h3>
+<p><code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;void&gt;</code></p>
 <p></details></p>
                 
                   

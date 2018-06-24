@@ -7,7 +7,6 @@
         "lib": "lib"
     },
     "dependencies": {
-        "command-line-args": "^5.0.2",
         "documentation": "^8.0.0",
         "global-npm": "^0.3.0",
         "minimist": "^1.2.0"

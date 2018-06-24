@@ -2,9 +2,25 @@
 
 const JourneyMan = require( '../lib/JourneyMan' );
 
+/**
+ * Journeyman instance configured for the current working directory
+ *
+ * @type {JourneyMan}
+ */
 const journeyMan = new JourneyMan( process.env.JOURNEYMAN_CONFIG_PATH );
 
 journeyMan
   .run( process )
-  .then( result => console.log( result ) )
-  .catch( error => console.error( error ) );
+  .then( ( result = '' ) => {
+    process.stdout.write( String( result ) );
+    process.exit( 0 );
+  } )
+  .catch( error => {
+    if ( process.env.DEBUG ) {
+      console.error( String( error ), '\n\n', error );
+    } else {
+      process.stderr.write( String( error ) );
+    }
+
+    process.exit( error.exitCode || 1 );
+  } );

@@ -147,7 +147,7 @@
         }, 
         {
             "location": "/api/Command/", 
-            "text": "Source:\n \nlib/Console/Command.js\n\n\nConsole Command\n\n\nCommands represent complete, CLI-callable commands.\n\n\n\n\n\nnew Command(plugin: \nPlugin\n)\n\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nSource:\n \nlib/Console/Command.js (Lines 22-24)\n\n\nHolds the name of the command.\n\n\n\n\n$name\n\n\n\n\n\nInstance Members\n\n\n\n\ngetName()\n\n\nSource:\n \nlib/Console/Command.js (Lines 86-88)\n\n\nRetrieves the command name\n\n\n\n\ngetName(): \nstring\n\n\n\nReturns\n\n\nstring\n\n\n\n\n\n\n__configure()\n\n\nSource:\n \nlib/Console/Command.js (Lines 150-151)\n\n\nConfigures the command.\n\n\n\n\n__configure(): void\n\n\n\nReturns\n\n\nvoid\n\n\n\n\n\n\n__invoke(context)\n\n\nSource:\n \nlib/Console/Command.js (Lines 160-162)\n\n\nExecutes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can \nawait\n non-Promise returning functions too.\n\n\n\n\n__invoke(context): (\nPromise\n(\nString\n | \nNumber\n)> | any)\n\n\n\nParameters\n\n\ncontext\n \n\n\n\n\nReturns\n\n\n(\nPromise\n(\nString\n | \nNumber\n)\n | any)\n\n\n\n\n\n\ngetHelp(input, output)\n\n\nSource:\n \nlib/Console/Command.js (Lines 169-180)\n\n\nRetrieves the help text\n\n\n\n\ngetHelp(input, output)\n\n\n\nParameters\n\n\ninput\n \n\n\n\n\noutput\n \n\n\n\n\n\n\n\n\naddArgument(name, argumentType = CommandArgument.types.value_required, description = '', fallback = null)\n\n\nSource:\n \nlib/Console/Command.js (Lines 190-202)\n\n\nAdds a new argument to the command\n\n\n\n\naddArgument(name: \nstring\n, argumentType: \nstring\n?, description: \nstring\n?, fallback: any?)\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nargument name\n\n\n\n\nargumentType\n (\nstring\n? = CommandArgument.types.value_required)\n\n\n\n\nargument type. must use one of the static types (@see CommandArgument#types)\n\n\n\n\ndescription\n (\nstring\n? = \n)\n\n\n\n\nargument description for the help text\n\n\n\n\nfallback\n (any? = null)\n\n\n\n\nfallback value if missing. Can only be used for optional arguments\n\n\n\n\n\n\n\n\naddOption(longName, shortName, optionType, description, valueLabel)\n\n\nSource:\n \nlib/Console/Command.js (Lines 213-240)\n\n\nAdds a new option to the command\n\n\n\n\naddOption(longName: \nstring\n, shortName: \nstring\n, optionType: \nstring\n, description: \nstring\n, valueLabel: \nstring\n)\n\n\n\nParameters\n\n\nlongName\n (\nstring\n)\n\n\n\n\nshortName\n (\nstring\n = longName.substr(0,1))\n\n\n\n\noptionType\n (\nstring\n = CommandOption.types.value_none)\n\n\n\n\ndescription\n (\nstring\n = \n)\n\n\n\n\nvalueLabel\n (\nstring\n = \n)\n\n\n\n\n\n\n\n\nhasOption(name)\n\n\nSource:\n \nlib/Console/Command.js (Lines 248-250)\n\n\nChecks whether the command has an option\n\n\n\n\nhasOption(name: \nstring\n): \nboolean\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nlong name of the option\n\n\n\n\nReturns\n\n\nboolean", 
+            "text": "Source:\n \nlib/Console/Command.js\n\n\nConsole Command\n\n\nCommands represent complete, CLI-callable commands.\n\n\n\n\n\nnew Command(plugin: \nPlugin\n)\n\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nSource:\n \nlib/Console/Command.js (Lines 22-24)\n\n\nHolds the name of the command.\n\n\n\n\n$name\n\n\n\n\n\nInstance Members\n\n\n\n\ngetName()\n\n\nSource:\n \nlib/Console/Command.js (Lines 86-88)\n\n\nRetrieves the command name\n\n\n\n\ngetName(): \nstring\n\n\n\nReturns\n\n\nstring\n\n\n\n\n\n\n__configure()\n\n\nSource:\n \nlib/Console/Command.js (Lines 155-156)\n\n\nCommand configuration\n\n\nUsing the \n__configure()\n method, you can efficiently define the required syntax for your command.\n\nIf you're familiar with Symfony Console, this will make sense to you immediately. Otherwise,\ncontinue reading.\n\n\n\n\n__configure(): void\n\n\n\nReturns\n\n\nvoid\n\n\n\n\n\n\n__invoke(context)\n\n\nSource:\n \nlib/Console/Command.js (Lines 165-167)\n\n\nExecutes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can \nawait\n non-Promise returning functions too.\n\n\n\n\n__invoke(context): (\nPromise\n(\nString\n | \nNumber\n)> | any)\n\n\n\nParameters\n\n\ncontext\n \n\n\n\n\nReturns\n\n\n(\nPromise\n(\nString\n | \nNumber\n)\n | any)\n\n\n\n\n\n\ngetHelp(input, output)\n\n\nSource:\n \nlib/Console/Command.js (Lines 174-185)\n\n\nRetrieves the help text\n\n\n\n\ngetHelp(input, output)\n\n\n\nParameters\n\n\ninput\n \n\n\n\n\noutput\n \n\n\n\n\n\n\n\n\naddArgument(name, flags = CommandArgument.OPTIONAL, description = '', fallback = null)\n\n\nSource:\n \nlib/Console/Command.js (Lines 198-210)\n\n\nAdds a new argument to the command. Please make sure that you add all your arguments in\nthe desired order - arguments provide no clues aside from their position as to which one\nit is, so Journeyman's input component will silently assign them in the order of\nappearance.\n\n\n\n\naddArgument(name: \nString\n, flags: \nNumber\n?, description: \nString\n?, fallback: any?)\n\n\n\nParameters\n\n\nname\n (\nString\n)\n\n\n\n\nargument name\n\n\n\n\nflags\n (\nNumber\n? = CommandArgument.OPTIONAL)\n\n\n\n\nargument type. must use one of the static types (@see CommandArgument#types)\n\n\n\n\ndescription\n (\nString\n? = \n)\n\n\n\n\nargument description for the help text\n\n\n\n\nfallback\n (any? = null)\n\n\n\n\nfallback value if missing. Can only be used for optional arguments\n\n\n\n\n\n\n\n\naddOption(longName, shortName, flags, description, valueLabel)\n\n\nSource:\n \nlib/Console/Command.js (Lines 221-247)\n\n\nAdds a new option to the command\n\n\n\n\naddOption(longName: \nString\n, shortName: \nString\n, flags: \nNumber\n, description: \nString\n, valueLabel: \nString\n)\n\n\n\nParameters\n\n\nlongName\n (\nString\n)\n\n\n\n\nshortName\n (\nString\n = longName.substr(0,1))\n\n\n\n\nflags\n (\nNumber\n = CommandOption.OPTIONAL)\n\n\n\n\ndescription\n (\nString\n = \n)\n\n\n\n\nvalueLabel\n (\nString\n = \n)\n\n\n\n\n\n\n\n\nhasOption(name)\n\n\nSource:\n \nlib/Console/Command.js (Lines 255-257)\n\n\nChecks whether the command has an option\n\n\n\n\nhasOption(name: \nstring\n): \nboolean\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nlong name of the option\n\n\n\n\nReturns\n\n\nboolean\n\n\n\n\n\n\nhasOptions()\n\n\nSource:\n \nlib/Console/Command.js (Lines 264-266)\n\n\nChecks whether the command defines any options.\n\n\n\n\nhasOptions(): \nBoolean\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\ngetOptions()\n\n\nSource:\n \nlib/Console/Command.js (Lines 273-275)\n\n\nRetrieves all command options for the command.\n\n\n\n\ngetOptions(): \nArray\nCommandOption>\n\n\n\nReturns\n\n\nArray\nCommandOption\n\n\n\n\n\n\nhasArguments()\n\n\nSource:\n \nlib/Console/Command.js (Lines 282-284)\n\n\nChecks whether the command defines any arguments.\n\n\n\n\nhasArguments(): \nBoolean\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\ngetArguments()\n\n\nSource:\n \nlib/Console/Command.js (Lines 291-293)\n\n\nRetrieves all command arguments for the command.\n\n\n\n\ngetArguments(): \nArray\nCommandArgument>\n\n\n\nReturns\n\n\nArray\nCommandArgument\n\n\n\n\n\n\ndefinesInput()\n\n\nSource:\n \nlib/Console/Command.js (Lines 300-302)\n\n\nChecks whether the command defines any input.\n\n\n\n\ndefinesInput(): \nBoolean\n\n\n\nReturns\n\n\nBoolean", 
             "title": "Command"
         }, 
         {
@@ -172,12 +172,17 @@
         }, 
         {
             "location": "/api/Command/#returns", 
-            "text": "string    __configure()  Source:   lib/Console/Command.js (Lines 150-151)  Configures the command.   __configure(): void", 
+            "text": "string    __configure()  Source:   lib/Console/Command.js (Lines 155-156)", 
             "title": "Returns"
         }, 
         {
+            "location": "/api/Command/#command-configuration", 
+            "text": "Using the  __configure()  method, you can efficiently define the required syntax for your command. \nIf you're familiar with Symfony Console, this will make sense to you immediately. Otherwise,\ncontinue reading.   __configure(): void", 
+            "title": "Command configuration"
+        }, 
+        {
             "location": "/api/Command/#returns_1", 
-            "text": "void    __invoke(context)  Source:   lib/Console/Command.js (Lines 160-162)  Executes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can  await  non-Promise returning functions too.   __invoke(context): ( Promise ( String  |  Number )> | any)", 
+            "text": "void    __invoke(context)  Source:   lib/Console/Command.js (Lines 165-167)  Executes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can  await  non-Promise returning functions too.   __invoke(context): ( Promise ( String  |  Number )> | any)", 
             "title": "Returns"
         }, 
         {
@@ -187,22 +192,22 @@
         }, 
         {
             "location": "/api/Command/#returns_2", 
-            "text": "( Promise ( String  |  Number )  | any)    getHelp(input, output)  Source:   lib/Console/Command.js (Lines 169-180)  Retrieves the help text   getHelp(input, output)", 
+            "text": "( Promise ( String  |  Number )  | any)    getHelp(input, output)  Source:   lib/Console/Command.js (Lines 174-185)  Retrieves the help text   getHelp(input, output)", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Command/#parameters_2", 
-            "text": "input     output       addArgument(name, argumentType = CommandArgument.types.value_required, description = '', fallback = null)  Source:   lib/Console/Command.js (Lines 190-202)  Adds a new argument to the command   addArgument(name:  string , argumentType:  string ?, description:  string ?, fallback: any?)", 
+            "text": "input     output       addArgument(name, flags = CommandArgument.OPTIONAL, description = '', fallback = null)  Source:   lib/Console/Command.js (Lines 198-210)  Adds a new argument to the command. Please make sure that you add all your arguments in\nthe desired order - arguments provide no clues aside from their position as to which one\nit is, so Journeyman's input component will silently assign them in the order of\nappearance.   addArgument(name:  String , flags:  Number ?, description:  String ?, fallback: any?)", 
             "title": "Parameters"
         }, 
         {
             "location": "/api/Command/#parameters_3", 
-            "text": "name  ( string )   argument name   argumentType  ( string ? = CommandArgument.types.value_required)   argument type. must use one of the static types (@see CommandArgument#types)   description  ( string ? =  )   argument description for the help text   fallback  (any? = null)   fallback value if missing. Can only be used for optional arguments     addOption(longName, shortName, optionType, description, valueLabel)  Source:   lib/Console/Command.js (Lines 213-240)  Adds a new option to the command   addOption(longName:  string , shortName:  string , optionType:  string , description:  string , valueLabel:  string )", 
+            "text": "name  ( String )   argument name   flags  ( Number ? = CommandArgument.OPTIONAL)   argument type. must use one of the static types (@see CommandArgument#types)   description  ( String ? =  )   argument description for the help text   fallback  (any? = null)   fallback value if missing. Can only be used for optional arguments     addOption(longName, shortName, flags, description, valueLabel)  Source:   lib/Console/Command.js (Lines 221-247)  Adds a new option to the command   addOption(longName:  String , shortName:  String , flags:  Number , description:  String , valueLabel:  String )", 
             "title": "Parameters"
         }, 
         {
             "location": "/api/Command/#parameters_4", 
-            "text": "longName  ( string )   shortName  ( string  = longName.substr(0,1))   optionType  ( string  = CommandOption.types.value_none)   description  ( string  =  )   valueLabel  ( string  =  )     hasOption(name)  Source:   lib/Console/Command.js (Lines 248-250)  Checks whether the command has an option   hasOption(name:  string ):  boolean", 
+            "text": "longName  ( String )   shortName  ( String  = longName.substr(0,1))   flags  ( Number  = CommandOption.OPTIONAL)   description  ( String  =  )   valueLabel  ( String  =  )     hasOption(name)  Source:   lib/Console/Command.js (Lines 255-257)  Checks whether the command has an option   hasOption(name:  string ):  boolean", 
             "title": "Parameters"
         }, 
         {
@@ -212,7 +217,32 @@
         }, 
         {
             "location": "/api/Command/#returns_3", 
-            "text": "boolean", 
+            "text": "boolean    hasOptions()  Source:   lib/Console/Command.js (Lines 264-266)  Checks whether the command defines any options.   hasOptions():  Boolean", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Command/#returns_4", 
+            "text": "Boolean    getOptions()  Source:   lib/Console/Command.js (Lines 273-275)  Retrieves all command options for the command.   getOptions():  Array CommandOption>", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Command/#returns_5", 
+            "text": "Array CommandOption    hasArguments()  Source:   lib/Console/Command.js (Lines 282-284)  Checks whether the command defines any arguments.   hasArguments():  Boolean", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Command/#returns_6", 
+            "text": "Boolean    getArguments()  Source:   lib/Console/Command.js (Lines 291-293)  Retrieves all command arguments for the command.   getArguments():  Array CommandArgument>", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Command/#returns_7", 
+            "text": "Array CommandArgument    definesInput()  Source:   lib/Console/Command.js (Lines 300-302)  Checks whether the command defines any input.   definesInput():  Boolean", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Command/#returns_8", 
+            "text": "Boolean", 
             "title": "Returns"
         }, 
         {
@@ -247,7 +277,7 @@
         }, 
         {
             "location": "/api/Errors/", 
-            "text": "Throughout Journeyman, a wide range of errors are used. Instead of throwing generic \nError\ns\nwith a human-readable message, Journeyman uses scoped errors for different possible errors.\nThis makes it possible to transport a lot of metadata, whilst preserving the original cause.\n\n\nMembers\n\n\n\n\nCommandExecutionError(plugin, handler, error)\n\n\nSource:\n \nlib/Errors/CommandExecutionError.js\n\n\nCommand execution error\n\n\nThis error should be used if a command throws during execution. It indicates the command\nentered some kind of failed state.\n\n\n\n\n\nnew CommandExecutionError(plugin: \nPlugin\n, handler: (\nCommand\n | \nfunction\n), error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nPlugin instance\n\n\n\n\nhandler\n ((\nCommand\n | \nfunction\n))\n\n\n\n\nHandler that failed while handling the command\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nConfigUpdateError(path, error)\n\n\nSource:\n \nlib/Errors/ConfigUpdateError.js\n\n\nConfiguration update error\n\n\nThis error should be used if an error occurred during writing the configuration to file.\nIt indicates the configuration file could not be persisted to disk.\n\n\n\n\n\nnew ConfigUpdateError(path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the configuration file\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nConfigValidationError(schema, config)\n\n\nSource:\n \nlib/Errors/ConfigValidationError.js\n\n\nConfiguration validation error\n\n\nThis error should be used if an unknown type has been passed to the validation. The Schema class can\nonly validate objects.\n\n\n\n\n\nnew ConfigValidationError(schema: \nSchema\n, config: any)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nconfig\n (any)\n\n\n\n\nThe configuration data declared as an object but is none\n\n\n\n\n\n\n\n\nConfigValidationInvalidFieldError(schema, field, value)\n\n\nSource:\n \nlib/Errors/ConfigValidationInvalidFieldError.js\n\n\nConfiguration validation invalid field error\n\n\nThis error should be used if an unknown field has been passed. It indicates the field is missing\nfrom the schema and therefore can't be validated.\n\n\n\n\n\nnew ConfigValidationInvalidFieldError(schema: \nSchema\n, field: \nString\n, value: any)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\nvalue\n (any)\n\n\n\n\nValue that failed validation\n\n\n\n\n\n\n\n\nConfigValidationMissingFieldError(schema, config, field)\n\n\nSource:\n \nlib/Errors/ConfigValidationMissingFieldError.js\n\n\nConfiguration validation missing field error\n\n\nThis error should be used if a required schema field is missing. It indicates a certain field must\nbe used but isn't there.\n\n\n\n\n\nnew ConfigValidationMissingFieldError(schema: \nSchema\n, config: \nObject\n, field: \nString\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nconfig\n (\nObject\n)\n\n\n\n\nConfiguration data which failed validation\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\n\n\n\n\nConfigValidationTypeError(schema, field, value, rule)\n\n\nSource:\n \nlib/Errors/ConfigValidationTypeError.js\n\n\nConfiguration validation type error\n\n\nThis error should be used if the schema validation of a field's type fails. It indicates the field\nexists but is of the wrong type.\n\n\n\n\n\nnew ConfigValidationTypeError(schema: \nSchema\n, field: \nString\n, value: any, rule)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\nvalue\n (any)\n\n\n\n\nValue that failed validation\n\n\n\n\nrule\n \n\n\n\n\n\n\n\n\nConfigValidationValidatorError(schema, field, value, rule)\n\n\nSource:\n \nlib/Errors/ConfigValidationValidatorError.js\n\n\nConfiguration validation validator error\n\n\nThis error should be used if a field validator throws or returns \nfalse\n. It indicates the field\neither could not be validated (the result was \nfalse\n) or did throw an Error during validation.\n\n\n\n\n\nnew ConfigValidationValidatorError(schema: \nSchema\n, field: \nString\n, value: any, rule)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\nvalue\n (any)\n\n\n\n\nValue that failed validation\n\n\n\n\nrule\n \n\n\n\n\n\n\n\n\nInvalidConfigFileError(path, error)\n\n\nSource:\n \nlib/Errors/InvalidConfigFileError.js\n\n\nInvalid configuration file error\n\n\nThis error should be used if the configuration file cannot be read or parsed. Due to the use\nof \nrequire( configFile )\n inside the configuration constructor, this will implicitly be\nthe case if the file path does not exist or points to something apart of \n.js\n or \n.json\n files.\n\n\n\n\n\nnew InvalidConfigFileError(path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the invalid configuration file\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nInvalidInstantiationError(command, plugin)\n\n\nSource:\n \nlib/Errors/InvalidInstantiationError.js\n\n\nInvalid instantiation error error\n\n\nThis error should be used if a command is being instantiated with anything but a valid\nPlugin instance. It indicates a command has been constructed manually somewhere which\nis considered unsafe.\n\n\n\n\n\nnew InvalidInstantiationError(command: \nCommand\n, plugin: \nPlugin\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\ncommand\n (\nCommand\n)\n\n\n\n\nInstance of the command that caused the error\n\n\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nWhatever has been passed as a plugin but is none\n\n\n\n\n\n\n\n\nInvalidPluginError(loader, plugin)\n\n\nSource:\n \nlib/Errors/InvalidPluginError.js\n\n\nInvalid plugin error\n\n\nThis error should be used if a bad module is encountered by the plugin loader. It\nindicates a module declares itself as a journeyman plugin but doesn't work according to\nthe plugin specification.\n\n\n\n\n\nnew InvalidPluginError(loader: \nLoader\n, plugin: \nPlugin\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nloader\n (\nLoader\n)\n\n\n\n\nInstance of the plugin loader\n\n\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nInstance of the invalid Plugin\n\n\n\n\n\n\n\n\nPluginDiscoveryError(loader, path, error)\n\n\nSource:\n \nlib/Errors/PluginDiscoveryError.js\n\n\nPlugin discovery error\n\n\nThis error should be used if the plugin discovery failed. It indicates there is a problem\npreventing the plugin loader from discovering plugins, likely at the filesystem level.\n\n\n\n\n\nnew PluginDiscoveryError(loader: \nLoader\n, path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nloader\n (\nLoader\n)\n\n\n\n\nInstance of the plugin loader\n\n\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the directory that caused the error\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nPluginLoadError(loader, path, error)\n\n\nSource:\n \nlib/Errors/PluginLoadError.js\n\n\nPlugin load error\n\n\nThis error should be used if a plugin can't be loaded. It indicates there is a problem when\ncalling \nrequire( pluginPath )\n to load the module.\n\n\n\n\n\nnew PluginLoadError(loader: \nLoader\n, path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nloader\n (\nLoader\n)\n\n\n\n\nInstance of the plugin loader\n\n\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the plugin that caused the error\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nUnknownCommandError(plugin, command)\n\n\nSource:\n \nlib/Errors/UnknownCommandError.js\n\n\nUnknown command error\n\n\nThis error should be used if a call for a plugin command cannot be resolved to a command. It\nindicates the plugin sub-command is valid (the plugin exists and is loaded) but there is no\nhandler to handle the specific command called.\n\n\n\n\n\nnew UnknownCommandError(plugin: \nPlugin\n, command: \nString\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nInstance of the plugin the error was thrown in\n\n\n\n\ncommand\n (\nString\n)\n\n\n\n\nCommand requested", 
+            "text": "Throughout Journeyman, a wide range of errors are used. Instead of throwing generic \nError\ns\nwith a human-readable message, Journeyman uses scoped errors for different possible errors.\nThis makes it possible to transport a lot of metadata, whilst preserving the original cause.\n\n\nMembers\n\n\n\n\nCommandExecutionError(plugin, handler, error)\n\n\nSource:\n \nlib/Errors/CommandExecutionError.js\n\n\nCommand execution error\n\n\nThis error should be used if a command throws during execution. It indicates the command\nentered some kind of failed state.\n\n\n\n\n\nnew CommandExecutionError(plugin: \nPlugin\n, handler: (\nCommand\n | \nfunction\n), error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nPlugin instance\n\n\n\n\nhandler\n ((\nCommand\n | \nfunction\n))\n\n\n\n\nHandler that failed while handling the command\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nConfigUpdateError(path, error)\n\n\nSource:\n \nlib/Errors/ConfigUpdateError.js\n\n\nConfiguration update error\n\n\nThis error should be used if an error occurred during writing the configuration to file.\nIt indicates the configuration file could not be persisted to disk.\n\n\n\n\n\nnew ConfigUpdateError(path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the configuration file\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nConfigValidationError(schema, config)\n\n\nSource:\n \nlib/Errors/ConfigValidationError.js\n\n\nConfiguration validation error\n\n\nThis error should be used if an unknown type has been passed to the validation. The Schema class can\nonly validate objects.\n\n\n\n\n\nnew ConfigValidationError(schema: \nSchema\n, config: any)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nconfig\n (any)\n\n\n\n\nThe configuration data declared as an object but is none\n\n\n\n\n\n\n\n\nConfigValidationInvalidFieldError(schema, field, value)\n\n\nSource:\n \nlib/Errors/ConfigValidationInvalidFieldError.js\n\n\nConfiguration validation invalid field error\n\n\nThis error should be used if an unknown field has been passed. It indicates the field is missing\nfrom the schema and therefore can't be validated.\n\n\n\n\n\nnew ConfigValidationInvalidFieldError(schema: \nSchema\n, field: \nString\n, value: any)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\nvalue\n (any)\n\n\n\n\nValue that failed validation\n\n\n\n\n\n\n\n\nConfigValidationMissingFieldError(schema, config, field)\n\n\nSource:\n \nlib/Errors/ConfigValidationMissingFieldError.js\n\n\nConfiguration validation missing field error\n\n\nThis error should be used if a required schema field is missing. It indicates a certain field must\nbe used but isn't there.\n\n\n\n\n\nnew ConfigValidationMissingFieldError(schema: \nSchema\n, config: \nObject\n, field: \nString\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nconfig\n (\nObject\n)\n\n\n\n\nConfiguration data which failed validation\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\n\n\n\n\nConfigValidationTypeError(schema, field, value, rule)\n\n\nSource:\n \nlib/Errors/ConfigValidationTypeError.js\n\n\nConfiguration validation type error\n\n\nThis error should be used if the schema validation of a field's type fails. It indicates the field\nexists but is of the wrong type.\n\n\n\n\n\nnew ConfigValidationTypeError(schema: \nSchema\n, field: \nString\n, value: any, rule)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\nvalue\n (any)\n\n\n\n\nValue that failed validation\n\n\n\n\nrule\n \n\n\n\n\n\n\n\n\nConfigValidationValidatorError(schema, field, value, rule)\n\n\nSource:\n \nlib/Errors/ConfigValidationValidatorError.js\n\n\nConfiguration validation validator error\n\n\nThis error should be used if a field validator throws or returns \nfalse\n. It indicates the field\neither could not be validated (the result was \nfalse\n) or did throw an Error during validation.\n\n\n\n\n\nnew ConfigValidationValidatorError(schema: \nSchema\n, field: \nString\n, value: any, rule)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nschema\n (\nSchema\n)\n\n\n\n\nSchema instance\n\n\n\n\nfield\n (\nString\n)\n\n\n\n\nField that failed validation\n\n\n\n\nvalue\n (any)\n\n\n\n\nValue that failed validation\n\n\n\n\nrule\n \n\n\n\n\n\n\n\n\nInvalidConfigFileError(path, error)\n\n\nSource:\n \nlib/Errors/InvalidConfigFileError.js\n\n\nInvalid configuration file error\n\n\nThis error should be used if the configuration file cannot be read or parsed. Due to the use\nof \nrequire( configFile )\n inside the configuration constructor, this will implicitly be\nthe case if the file path does not exist or points to something apart of \n.js\n or \n.json\n files.\n\n\n\n\n\nnew InvalidConfigFileError(path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the invalid configuration file\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nInvalidInstantiationError(command, plugin)\n\n\nSource:\n \nlib/Errors/InvalidInstantiationError.js\n\n\nInvalid instantiation error error\n\n\nThis error should be used if a command is being instantiated with anything but a valid\nPlugin instance. It indicates a command has been constructed manually somewhere which\nis considered unsafe.\n\n\n\n\n\nnew InvalidInstantiationError(command: \nCommand\n, plugin: \nPlugin\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\ncommand\n (\nCommand\n)\n\n\n\n\nInstance of the command that caused the error\n\n\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nWhatever has been passed as a plugin but is none\n\n\n\n\n\n\n\n\nInvalidPluginError(loader, plugin)\n\n\nSource:\n \nlib/Errors/InvalidPluginError.js\n\n\nInvalid plugin error\n\n\nThis error should be used if a bad module is encountered by the plugin loader. It\nindicates a module declares itself as a journeyman plugin but doesn't work according to\nthe plugin specification.\n\n\n\n\n\nnew InvalidPluginError(loader: \nLoader\n, plugin: \nPlugin\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nloader\n (\nLoader\n)\n\n\n\n\nInstance of the plugin loader\n\n\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nInstance of the invalid Plugin\n\n\n\n\n\n\n\n\nPluginDiscoveryError(loader, path, error)\n\n\nSource:\n \nlib/Errors/PluginDiscoveryError.js\n\n\nPlugin discovery error\n\n\nThis error should be used if the plugin discovery failed. It indicates there is a problem\npreventing the plugin loader from discovering plugins, likely at the filesystem level.\n\n\n\n\n\nnew PluginDiscoveryError(loader: \nLoader\n, path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nloader\n (\nLoader\n)\n\n\n\n\nInstance of the plugin loader\n\n\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the directory that caused the error\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nPluginLoadError(loader, path, error)\n\n\nSource:\n \nlib/Errors/PluginLoadError.js\n\n\nPlugin load error\n\n\nThis error should be used if a plugin can't be loaded. It indicates there is a problem when\ncalling \nrequire( pluginPath )\n to load the module.\n\n\n\n\n\nnew PluginLoadError(loader: \nLoader\n, path: \nString\n, error: \nError\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nloader\n (\nLoader\n)\n\n\n\n\nInstance of the plugin loader\n\n\n\n\npath\n (\nString\n)\n\n\n\n\nPath to the plugin that caused the error\n\n\n\n\nerror\n (\nError\n)\n\n\n\n\nError that was thrown\n\n\n\n\n\n\n\n\nRequiredCommandArgumentMissing(command, argument, input)\n\n\nSource:\n \nlib/Errors/RequiredCommandArgumentMissing.js\n\n\nCommand execution error\n\n\nThis error should be used if a command throws during execution. It indicates the command\nentered some kind of failed state.\n\n\n\n\n\nnew RequiredCommandArgumentMissing(command: \nCommand\n, argument: CommandArgument, input: \nInput\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\ncommand\n (\nCommand\n)\n\n\n\n\nCommand instance\n\n\n\n\nargument\n (CommandArgument)\n\n\n\n\nDefinition for command option that is missing\n\n\n\n\ninput\n (\nInput\n)\n\n\n\n\nInput instance for the current process\n\n\n\n\n\n\n\n\nRequiredCommandOptionMissing(command, option, input)\n\n\nSource:\n \nlib/Errors/RequiredCommandOptionMissing.js\n\n\nCommand execution error\n\n\nThis error should be used if a command throws during execution. It indicates the command\nentered some kind of failed state.\n\n\n\n\n\nnew RequiredCommandOptionMissing(command: \nCommand\n, option: CommandOption, input: \nInput\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\ncommand\n (\nCommand\n)\n\n\n\n\nCommand instance\n\n\n\n\noption\n (CommandOption)\n\n\n\n\nDefinition for command option that is missing\n\n\n\n\ninput\n (\nInput\n)\n\n\n\n\nInput instance for the current process\n\n\n\n\n\n\n\n\nRequiredCommandOptionValueMissing(command, option, input)\n\n\nSource:\n \nlib/Errors/RequiredCommandOptionValueMissing.js\n\n\nCommand execution error\n\n\nThis error should be used if a command throws during execution. It indicates the command\nentered some kind of failed state.\n\n\n\n\n\nnew RequiredCommandOptionValueMissing(command: \nCommand\n, option: CommandOption, input: \nInput\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\ncommand\n (\nCommand\n)\n\n\n\n\nCommand instance\n\n\n\n\noption\n (CommandOption)\n\n\n\n\nDefinition for command option that is missing\n\n\n\n\ninput\n (\nInput\n)\n\n\n\n\nInput instance for the current process\n\n\n\n\n\n\n\n\nUnknownCommandError(plugin, command)\n\n\nSource:\n \nlib/Errors/UnknownCommandError.js\n\n\nUnknown command error\n\n\nThis error should be used if a call for a plugin command cannot be resolved to a command. It\nindicates the plugin sub-command is valid (the plugin exists and is loaded) but there is no\nhandler to handle the specific command called.\n\n\n\n\n\nnew UnknownCommandError(plugin: \nPlugin\n, command: \nString\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nInstance of the plugin the error was thrown in\n\n\n\n\ncommand\n (\nString\n)\n\n\n\n\nCommand requested\n\n\n\n\n\n\n\n\nUnknownPluginError(journeyman, plugin)\n\n\nSource:\n \nlib/Errors/UnknownPluginError.js\n\n\nUnknown plugin error\n\n\nThis error should be used if a call for a plugin cannot be resolved to a plugin class. It\nindicates the plugin sub-command is invalid (the plugin does not exist) so there is no\nhandler to handle the plugin call. Likely a typo.\n\n\n\n\n\nnew UnknownPluginError(journeyman: \nJourneyMan\n, plugin: \nString\n)\n\n\n\nExtends\n\n\nError\n\n\nParameters\n\n\njourneyman\n (\nJourneyMan\n)\n\n\n\n\nInstance of the Journeyman application\n\n\n\n\nplugin\n (\nString\n)\n\n\n\n\nPlugin requested", 
             "title": "Errors"
         }, 
         {
@@ -432,13 +462,13 @@
         }, 
         {
             "location": "/api/Errors/#parameters_11", 
-            "text": "loader  ( Loader )   Instance of the plugin loader   path  ( String )   Path to the plugin that caused the error   error  ( Error )   Error that was thrown     UnknownCommandError(plugin, command)  Source:   lib/Errors/UnknownCommandError.js", 
+            "text": "loader  ( Loader )   Instance of the plugin loader   path  ( String )   Path to the plugin that caused the error   error  ( Error )   Error that was thrown     RequiredCommandArgumentMissing(command, argument, input)  Source:   lib/Errors/RequiredCommandArgumentMissing.js", 
             "title": "Parameters"
         }, 
         {
-            "location": "/api/Errors/#unknown-command-error", 
-            "text": "This error should be used if a call for a plugin command cannot be resolved to a command. It\nindicates the plugin sub-command is valid (the plugin exists and is loaded) but there is no\nhandler to handle the specific command called.   \nnew UnknownCommandError(plugin:  Plugin , command:  String )", 
-            "title": "Unknown command error"
+            "location": "/api/Errors/#command-execution-error_1", 
+            "text": "This error should be used if a command throws during execution. It indicates the command\nentered some kind of failed state.   \nnew RequiredCommandArgumentMissing(command:  Command , argument: CommandArgument, input:  Input )", 
+            "title": "Command execution error"
         }, 
         {
             "location": "/api/Errors/#extends_12", 
@@ -447,12 +477,72 @@
         }, 
         {
             "location": "/api/Errors/#parameters_12", 
-            "text": "plugin  ( Plugin )   Instance of the plugin the error was thrown in   command  ( String )   Command requested", 
+            "text": "command  ( Command )   Command instance   argument  (CommandArgument)   Definition for command option that is missing   input  ( Input )   Input instance for the current process     RequiredCommandOptionMissing(command, option, input)  Source:   lib/Errors/RequiredCommandOptionMissing.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#command-execution-error_2", 
+            "text": "This error should be used if a command throws during execution. It indicates the command\nentered some kind of failed state.   \nnew RequiredCommandOptionMissing(command:  Command , option: CommandOption, input:  Input )", 
+            "title": "Command execution error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_13", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_13", 
+            "text": "command  ( Command )   Command instance   option  (CommandOption)   Definition for command option that is missing   input  ( Input )   Input instance for the current process     RequiredCommandOptionValueMissing(command, option, input)  Source:   lib/Errors/RequiredCommandOptionValueMissing.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#command-execution-error_3", 
+            "text": "This error should be used if a command throws during execution. It indicates the command\nentered some kind of failed state.   \nnew RequiredCommandOptionValueMissing(command:  Command , option: CommandOption, input:  Input )", 
+            "title": "Command execution error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_14", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_14", 
+            "text": "command  ( Command )   Command instance   option  (CommandOption)   Definition for command option that is missing   input  ( Input )   Input instance for the current process     UnknownCommandError(plugin, command)  Source:   lib/Errors/UnknownCommandError.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#unknown-command-error", 
+            "text": "This error should be used if a call for a plugin command cannot be resolved to a command. It\nindicates the plugin sub-command is valid (the plugin exists and is loaded) but there is no\nhandler to handle the specific command called.   \nnew UnknownCommandError(plugin:  Plugin , command:  String )", 
+            "title": "Unknown command error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_15", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_15", 
+            "text": "plugin  ( Plugin )   Instance of the plugin the error was thrown in   command  ( String )   Command requested     UnknownPluginError(journeyman, plugin)  Source:   lib/Errors/UnknownPluginError.js", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Errors/#unknown-plugin-error", 
+            "text": "This error should be used if a call for a plugin cannot be resolved to a plugin class. It\nindicates the plugin sub-command is invalid (the plugin does not exist) so there is no\nhandler to handle the plugin call. Likely a typo.   \nnew UnknownPluginError(journeyman:  JourneyMan , plugin:  String )", 
+            "title": "Unknown plugin error"
+        }, 
+        {
+            "location": "/api/Errors/#extends_16", 
+            "text": "Error", 
+            "title": "Extends"
+        }, 
+        {
+            "location": "/api/Errors/#parameters_16", 
+            "text": "journeyman  ( JourneyMan )   Instance of the Journeyman application   plugin  ( String )   Plugin requested", 
             "title": "Parameters"
         }, 
         {
             "location": "/api/Input/", 
-            "text": "Source:\n \nlib/Console/Input.js\n\n\nRepresents the command input for the application\n\n\n\n\n\nnew Input(args: \nString\n)\n\n\n\nParameters\n\n\nargs\n (\nString\n)\n\n\n\n\nConsole arguments\n\n\n\n\nInstance Members\n\n\n\n\nhasArguments()\n\n\nSource:\n \nlib/Console/Input.js (Lines 38-40)\n\n\nChecks whether any arguments have been passed\n\n\n\n\nhasArguments(): \nboolean\n\n\n\nReturns\n\n\nboolean\n\n\n\n\n\n\ngetArgument(position = 0)\n\n\nSource:\n \nlib/Console/Input.js (Lines 48-50)\n\n\nRetrieves an input argument by position\n\n\n\n\ngetArgument(position: \nNumber\n?): any\n\n\n\nParameters\n\n\nposition\n (\nNumber\n? = 0)\n\n\n\n\nPosition of the argument. Defaults to 0\n\n\n\n\nReturns\n\n\nany\n\n\n\n\n\n\nhasOption(name)\n\n\nSource:\n \nlib/Console/Input.js (Lines 58-60)\n\n\nChecks whether a specific option has been passed.\n\n\n\n\nhasOption(name: \nString\n): \nBoolean\n\n\n\nParameters\n\n\nname\n (\nString\n)\n\n\n\n\nName of the option to check for\n\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\ngetOption(name, fallback = null)\n\n\nSource:\n \nlib/Console/Input.js (Lines 69-71)\n\n\nRetrieves an input option\n\n\n\n\ngetOption(name: \nString\n, fallback: any?): any\n\n\n\nParameters\n\n\nname\n (\nString\n)\n\n\n\n\nOption name\n\n\n\n\nfallback\n (any? = null)\n\n\n\n\nOptional fallback value if the requested option is missing\n\n\n\n\nReturns\n\n\nany", 
+            "text": "Source:\n \nlib/Console/Input.js\n\n\nRepresents the command input for the application\n\n\n\n\n\nnew Input(args: \nString\n)\n\n\n\nParameters\n\n\nargs\n (\nString\n)\n\n\n\n\nConsole arguments\n\n\n\n\nInstance Members\n\n\n\n\nraw\n\n\nSource:\n \nlib/Console/Input.js (Lines 28-28)\n\n\nHolds the original input args.\n\n\n\n\nraw\n\n\n\n\n\n\n\nplugin\n\n\nSource:\n \nlib/Console/Input.js (Lines 35-35)\n\n\nHolds the plugin identifier. This will generally be the first sub-command to Journeyman.\n\n\n\n\nplugin\n\n\n\n\n\n\n\ncommand\n\n\nSource:\n \nlib/Console/Input.js (Lines 42-42)\n\n\nHolds the command identifier. This will generally be the second sub-command to Journeyman.\n\n\n\n\ncommand\n\n\n\n\n\n\n\narguments\n\n\nSource:\n \nlib/Console/Input.js (Lines 49-49)\n\n\nHolds the command arguments passed to Journeyman, except the plugin and command identifiers.\n\n\n\n\narguments\n\n\n\n\n\n\n\nhasArguments()\n\n\nSource:\n \nlib/Console/Input.js (Lines 78-80)\n\n\nChecks whether any arguments have been passed.\n\n\n\n\nhasArguments(): \nBoolean\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\nhasArgument(argument)\n\n\nSource:\n \nlib/Console/Input.js (Lines 88-94)\n\n\nChecks whether an argument at a specific position exists.\n\n\n\n\nhasArgument(argument: (\nString\n | \nNumber\n)): \nBoolean\n\n\n\nParameters\n\n\nargument\n ((\nString\n | \nNumber\n))\n\n\n\n\nDefined argument name or position of the argument.\n\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\ngetArgument(argument = 0)\n\n\nSource:\n \nlib/Console/Input.js (Lines 103-109)\n\n\nRetrieves an input argument by position.\n\n\n\n\ngetArgument(argument: (\nString\n | \nNumber\n)?): any\n\n\n\nParameters\n\n\nargument\n ((\nString\n | \nNumber\n)? = 0)\n\n\n\n\nDefined argument name or position of the argument.                                    Defaults to 0.\n\n\n\n\nReturns\n\n\nany\n\n\n\n\n\n\nhasOption(option)\n\n\nSource:\n \nlib/Console/Input.js (Lines 117-126)\n\n\nChecks whether a specific option has been passed.\n\n\n\n\nhasOption(option: (CommandOption | \nString\n)): \nBoolean\n\n\n\nParameters\n\n\noption\n ((CommandOption | \nString\n))\n\n\n\n\nName of the option to check for\n\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\ngetOption(option, fallback = false)\n\n\nSource:\n \nlib/Console/Input.js (Lines 135-149)\n\n\nRetrieves an input option. This method accepts both \nCommandOption\n instances and string identifiers.\n\n\n\n\ngetOption(option: (CommandOption | \nString\n), fallback: any?): any\n\n\n\nParameters\n\n\noption\n ((CommandOption | \nString\n))\n\n\n\n\nOption instance or name\n\n\n\n\nfallback\n (any? = false)\n\n\n\n\nOptional fallback value if the requested option is missing\n\n\n\n\nReturns\n\n\nany\n\n\n\n\n\n\nvalidate(command)\n\n\nSource:\n \nlib/Console/Input.js (Lines 174-224)\n\n\nValidates a command's input definitions.\n\n\n\n\nvalidate(command: \nCommand\n)\n\n\n\nParameters\n\n\ncommand\n (\nCommand\n)\n\n\n\n\nCommand instance to validate definitions for.", 
             "title": "Input"
         }, 
         {
@@ -462,52 +552,67 @@
         }, 
         {
             "location": "/api/Input/#instance-members", 
-            "text": "hasArguments()  Source:   lib/Console/Input.js (Lines 38-40)  Checks whether any arguments have been passed   hasArguments():  boolean", 
+            "text": "raw  Source:   lib/Console/Input.js (Lines 28-28)  Holds the original input args.   raw    plugin  Source:   lib/Console/Input.js (Lines 35-35)  Holds the plugin identifier. This will generally be the first sub-command to Journeyman.   plugin    command  Source:   lib/Console/Input.js (Lines 42-42)  Holds the command identifier. This will generally be the second sub-command to Journeyman.   command    arguments  Source:   lib/Console/Input.js (Lines 49-49)  Holds the command arguments passed to Journeyman, except the plugin and command identifiers.   arguments    hasArguments()  Source:   lib/Console/Input.js (Lines 78-80)  Checks whether any arguments have been passed.   hasArguments():  Boolean", 
             "title": "Instance Members"
         }, 
         {
             "location": "/api/Input/#returns", 
-            "text": "boolean    getArgument(position = 0)  Source:   lib/Console/Input.js (Lines 48-50)  Retrieves an input argument by position   getArgument(position:  Number ?): any", 
+            "text": "Boolean    hasArgument(argument)  Source:   lib/Console/Input.js (Lines 88-94)  Checks whether an argument at a specific position exists.   hasArgument(argument: ( String  |  Number )):  Boolean", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Input/#parameters_1", 
-            "text": "position  ( Number ? = 0)   Position of the argument. Defaults to 0", 
+            "text": "argument  (( String  |  Number ))   Defined argument name or position of the argument.", 
             "title": "Parameters"
         }, 
         {
             "location": "/api/Input/#returns_1", 
-            "text": "any    hasOption(name)  Source:   lib/Console/Input.js (Lines 58-60)  Checks whether a specific option has been passed.   hasOption(name:  String ):  Boolean", 
+            "text": "Boolean    getArgument(argument = 0)  Source:   lib/Console/Input.js (Lines 103-109)  Retrieves an input argument by position.   getArgument(argument: ( String  |  Number )?): any", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Input/#parameters_2", 
-            "text": "name  ( String )   Name of the option to check for", 
+            "text": "argument  (( String  |  Number )? = 0)   Defined argument name or position of the argument.                                    Defaults to 0.", 
             "title": "Parameters"
         }, 
         {
             "location": "/api/Input/#returns_2", 
-            "text": "Boolean    getOption(name, fallback = null)  Source:   lib/Console/Input.js (Lines 69-71)  Retrieves an input option   getOption(name:  String , fallback: any?): any", 
+            "text": "any    hasOption(option)  Source:   lib/Console/Input.js (Lines 117-126)  Checks whether a specific option has been passed.   hasOption(option: (CommandOption |  String )):  Boolean", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Input/#parameters_3", 
-            "text": "name  ( String )   Option name   fallback  (any? = null)   Optional fallback value if the requested option is missing", 
+            "text": "option  ((CommandOption |  String ))   Name of the option to check for", 
             "title": "Parameters"
         }, 
         {
             "location": "/api/Input/#returns_3", 
-            "text": "any", 
+            "text": "Boolean    getOption(option, fallback = false)  Source:   lib/Console/Input.js (Lines 135-149)  Retrieves an input option. This method accepts both  CommandOption  instances and string identifiers.   getOption(option: (CommandOption |  String ), fallback: any?): any", 
             "title": "Returns"
         }, 
         {
+            "location": "/api/Input/#parameters_4", 
+            "text": "option  ((CommandOption |  String ))   Option instance or name   fallback  (any? = false)   Optional fallback value if the requested option is missing", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Input/#returns_4", 
+            "text": "any    validate(command)  Source:   lib/Console/Input.js (Lines 174-224)  Validates a command's input definitions.   validate(command:  Command )", 
+            "title": "Returns"
+        }, 
+        {
+            "location": "/api/Input/#parameters_5", 
+            "text": "command  ( Command )   Command instance to validate definitions for.", 
+            "title": "Parameters"
+        }, 
+        {
             "location": "/api/JourneyMan/", 
-            "text": "Source:\n \nlib/JourneyMan.js\n\n\nWelcome to JourneyMan!\nThis is the main class used by the CLI, but it's easy to use it programmatically.\n\n\n\n\n\nnew JourneyMan(proc: \nObject\n, configFilePath: \nString\n)\n\n\n\nParameters\n\n\nproc\n (\nObject\n)\n\n\n\n\nProcess object. While in node, \nprocess\n is a global, we want                                 JourneyMan to stay as portable as possible. Therefore, process                                 is a freely shimable dependency here.\n\n\n\n\nconfigFilePath\n (\nString\n = proc.cwd())\n\n\n\n\nPath to the configuration file. Defaults to the package.json\n\n\n\n\nStatic Members\n\n\n\n\nPlugin()\n\n\nSource:\n \nlib/JourneyMan.js\n\n\nStatic getter for the plugin class\n\n\n\n\n\nnew Plugin(): \nPlugin\n\n\n\nReturns\n\n\nPlugin\n\n\n\n\n\n\nCommand()\n\n\nSource:\n \nlib/JourneyMan.js\n\n\nStatic getter for the command class\n\n\n\n\n\nnew Command(): \nCommand\n\n\n\nReturns\n\n\nCommand\n\n\n\n\nInstance Members\n\n\n\n\ninput\n\n\nSource:\n \nlib/JourneyMan.js (Lines 64-64)\n\n\nHolds the command line input.\n\n\n\n\ninput\n\n\n\n\n\n\n\nconfig\n\n\nSource:\n \nlib/JourneyMan.js (Lines 75-77)\n\n\nHolds Config instance for the application. Journeyman will generally first try to load\na file called \n.journeyman\n. If it is available, a new Config will be created with no\nsub-key (\n.journeyman\n files are expected to only contain Journeyman configuration).\nIn case there is none, Journeyman will try to find and load a \npackage.json\n file in\nthe current directory.\n\n\n\n\nconfig\n\n\n\n\n\n\n\ninit()\n\n\nSource:\n \nlib/JourneyMan.js (Lines 86-94)\n\n\n\n\ninit(): \nPromise\nvoid>\n\n\n\nReturns\n\n\nPromise\nvoid", 
+            "text": "Source:\n \nlib/JourneyMan.js\n\n\nWelcome to JourneyMan!\nThis is the main class used by the CLI, but it's easy to use it programmatically.\n\n\n\n\n\nnew JourneyMan(configFilePath: \nString\n)\n\n\n\nParameters\n\n\nconfigFilePath\n (\nString\n = process.cwd())\n\n\n\n\nPath to the configuration file.\n\n\n\n\nStatic Members\n\n\n\n\nPlugin()\n\n\nSource:\n \nlib/JourneyMan.js\n\n\nStatic getter for the plugin class\n\n\n\n\n\nnew Plugin(): \nPlugin\n\n\n\nReturns\n\n\nPlugin\n\n\n\n\n\n\nCommand()\n\n\nSource:\n \nlib/JourneyMan.js\n\n\nStatic getter for the command class\n\n\n\n\n\nnew Command(): \nCommand\n\n\n\nReturns\n\n\nCommand\n\n\n\n\nInstance Members\n\n\n\n\nconfig\n\n\nSource:\n \nlib/JourneyMan.js (Lines 64-66)\n\n\nHolds Config instance for the application. Journeyman will generally first try to load\na file called \n.journeyman\n. If it is available, a new Config will be created with no\nsub-key (\n.journeyman\n files are expected to only contain Journeyman configuration).\nIn case there is none, Journeyman will try to find and load a \npackage.json\n file in\nthe current directory.\n\n\n\n\nconfig\n\n\n\n\n\n\n\nrun(proc)\n\n\nSource:\n \nlib/JourneyMan.js (Lines 81-110)\n\n\nRuns the application\n\n\n\n\nrun(proc: \nObject\n): \nPromise\nany>\n\n\n\nParameters\n\n\nproc\n (\nObject\n)\n\n\n\n\nProcess object. While in node, \nprocess\n is a global, we want                                JourneyMan to stay as portable as possible. Therefore, process                                is a freely shimable dependency here.\n\n\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n| \nproc.argv\n \nString\n\n   | Command line arguments\n |\n\n\n| \nproc.cwd\n \nfunction\n\n   | Current working directory\n |\n\n\nReturns\n\n\nPromise\nany\n\n\n\n\n\n\ninput\n\n\nSource:\n \nlib/JourneyMan.js (Lines 88-88)\n\n\nHolds the command line input.\n\n\n\n\ninput", 
             "title": "JourneyMan"
         }, 
         {
             "location": "/api/JourneyMan/#parameters", 
-            "text": "proc  ( Object )   Process object. While in node,  process  is a global, we want                                 JourneyMan to stay as portable as possible. Therefore, process                                 is a freely shimable dependency here.   configFilePath  ( String  = proc.cwd())   Path to the configuration file. Defaults to the package.json", 
+            "text": "configFilePath  ( String  = process.cwd())   Path to the configuration file.", 
             "title": "Parameters"
         }, 
         {
@@ -527,17 +632,22 @@
         }, 
         {
             "location": "/api/JourneyMan/#instance-members", 
-            "text": "input  Source:   lib/JourneyMan.js (Lines 64-64)  Holds the command line input.   input    config  Source:   lib/JourneyMan.js (Lines 75-77)  Holds Config instance for the application. Journeyman will generally first try to load\na file called  .journeyman . If it is available, a new Config will be created with no\nsub-key ( .journeyman  files are expected to only contain Journeyman configuration).\nIn case there is none, Journeyman will try to find and load a  package.json  file in\nthe current directory.   config    init()  Source:   lib/JourneyMan.js (Lines 86-94)   init():  Promise void>", 
+            "text": "config  Source:   lib/JourneyMan.js (Lines 64-66)  Holds Config instance for the application. Journeyman will generally first try to load\na file called  .journeyman . If it is available, a new Config will be created with no\nsub-key ( .journeyman  files are expected to only contain Journeyman configuration).\nIn case there is none, Journeyman will try to find and load a  package.json  file in\nthe current directory.   config    run(proc)  Source:   lib/JourneyMan.js (Lines 81-110)  Runs the application   run(proc:  Object ):  Promise any>", 
             "title": "Instance Members"
         }, 
         {
+            "location": "/api/JourneyMan/#parameters_1", 
+            "text": "proc  ( Object )   Process object. While in node,  process  is a global, we want                                JourneyMan to stay as portable as possible. Therefore, process                                is a freely shimable dependency here.      Name  Description           |  proc.argv   String \n   | Command line arguments\n |  |  proc.cwd   function \n   | Current working directory\n |", 
+            "title": "Parameters"
+        }, 
+        {
             "location": "/api/JourneyMan/#returns_2", 
-            "text": "Promise void", 
+            "text": "Promise any    input  Source:   lib/JourneyMan.js (Lines 88-88)  Holds the command line input.   input", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Loader/", 
-            "text": "Source:\n \nlib/Plugins/Loader.js\n\n\nPlugin loader\n\n\nThe plugin loader iterates over any directories that might contain plugins for journeyman.\n\nThe loader itself, however, doesn't keep a static directory list but rather relies on calls to\nthe \ndiscover()\n method that accepts either single directories as strings or an array of paths.\n\n\nWhen called, the method reads the path's content and checks each entry against a set of rules\nin the static \nrules\n property. If the path passes the rules, the directory is regarded as being\na Journeyman plugin and it will be loaded in the application.\nBy default, both the global node_modules directory and one in the current working directory are\nincluded in the discovery - yes, this contradicts the statement on hardcoded paths, however this\nis standard behavior not up for changes. Additionally, the loader relies on an instance of the\nglobal \nnpm\n module being passed to it's constructor which both paths are inferred from.\n\n\n\n\n\nnew Loader(npm: \nObject\n)\n\n\n\nParameters\n\n\nnpm\n (\nObject\n)\n\n\n\n\nStatic Members\n\n\n\n\nrules\n\n\nSource:\n \nlib/Plugins/Loader.js (Lines 34-53)\n\n\nHolds plugin validation rules\n\n\n\n\nrules\n\n\n\nReturns\n\n\n{name: (function (\nString\n): \nBoolean\n), isPlugin: (function (\nObject\n): \nboolean\n)}\n\n\n\n\nInstance Members\n\n\n\n\ndiscover(searchPaths)\n\n\nSource:\n \nlib/Plugins/Loader.js (Lines 74-94)\n\n\nDiscovers plugins in one or more specific search paths\n\n\n\n\ndiscover(searchPaths: (\nArray\n | \nString\n)): \nPromise\nArray\n>\n\n\n\nParameters\n\n\nsearchPaths\n ((\nArray\n | \nString\n) = [])\n\n\n\n\nReturns\n\n\nPromise\nArray", 
+            "text": "Source:\n \nlib/Plugins/Loader.js\n\n\nPlugin loader\n\n\nThe plugin loader iterates over any directories that might contain plugins for journeyman.\n\nThe loader itself, however, doesn't keep a static directory list but rather relies on calls to\nthe \ndiscover()\n method that accepts either single directories as strings or an array of paths.\n\n\nWhen called, the method reads the path's content and checks each entry against a set of rules\nin the static \nrules\n property. If the path passes the rules, the directory is regarded as being\na Journeyman plugin and it will be loaded in the application.\nBy default, both the global node_modules directory and one in the current working directory are\nincluded in the discovery - yes, this contradicts the statement on hardcoded paths, however this\nis standard behavior not up for changes. Additionally, the loader relies on an instance of the\nglobal \nnpm\n module being passed to it's constructor which both paths are inferred from.\n\n\n\n\n\nnew Loader(npm: \nObject\n)\n\n\n\nParameters\n\n\nnpm\n (\nObject\n)\n\n\n\n\nStatic Members\n\n\n\n\nrules\n\n\nSource:\n \nlib/Plugins/Loader.js (Lines 35-62)\n\n\nHolds plugin validation rules\n\n\n\n\nrules\n\n\n\nReturns\n\n\n{name: (function (\nString\n): \nBoolean\n), isPlugin: (function (\nObject\n): \nboolean\n)}\n\n\n\n\nInstance Members\n\n\n\n\ndiscover(searchPaths)\n\n\nSource:\n \nlib/Plugins/Loader.js (Lines 85-104)\n\n\nDiscovers plugins in one or more specific search paths\n\n\n\n\ndiscover(searchPaths: (\nArray\n | \nString\n)): \nPromise\nArray\n>\n\n\n\nParameters\n\n\nsearchPaths\n ((\nArray\n | \nString\n) = [])\n\n\n\n\nReturns\n\n\nPromise\nArray", 
             "title": "Loader"
         }, 
         {
@@ -552,7 +662,7 @@
         }, 
         {
             "location": "/api/Loader/#static-members", 
-            "text": "rules  Source:   lib/Plugins/Loader.js (Lines 34-53)  Holds plugin validation rules   rules", 
+            "text": "rules  Source:   lib/Plugins/Loader.js (Lines 35-62)  Holds plugin validation rules   rules", 
             "title": "Static Members"
         }, 
         {
@@ -562,7 +672,7 @@
         }, 
         {
             "location": "/api/Loader/#instance-members", 
-            "text": "discover(searchPaths)  Source:   lib/Plugins/Loader.js (Lines 74-94)  Discovers plugins in one or more specific search paths   discover(searchPaths: ( Array  |  String )):  Promise Array >", 
+            "text": "discover(searchPaths)  Source:   lib/Plugins/Loader.js (Lines 85-104)  Discovers plugins in one or more specific search paths   discover(searchPaths: ( Array  |  String )):  Promise Array >", 
             "title": "Instance Members"
         }, 
         {
@@ -577,8 +687,13 @@
         }, 
         {
             "location": "/api/Plugin/", 
-            "text": "Source:\n \nlib/Plugins/Plugin.js\n\n\n\n\n\nnew Plugin()\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 21-23)\n\n\nHolds the plugin's subcommand name.\n\n\n\n\n$name\n\n\n\nReturns\n\n\nString\n\n\n\n\n\n\ncommands\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 30-32)\n\n\nHolds all Command instances the plugin uses.\n\n\n\n\ncommands\n\n\n\nReturns\n\n\nArray\nCommand\n\n\n\n\n\n\n$mount(journeyman)\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 40-42)\n\n\nMounts the journeyman instance on the current plugin\n\n\n\n\n$mount(journeyman: \nJourneyMan\n): void\n\n\n\nParameters\n\n\njourneyman\n (\nJourneyMan\n)\n\n\n\n\nReturns\n\n\nvoid\n\n\n\n\nInstance Members\n\n\n\n\n$run(command, context)\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 52-99)\n\n\nRuns a command on this plugin. Journeyman has figured out that this plugin is\nrequired to carry out the command, so let's find a handler and try to execute it.\n\n\n\n\n$run(command: \nString\n, context: \nObject\n): \nPromise\nString\n>\n\n\n\nParameters\n\n\ncommand\n (\nString\n)\n\n\n\n\nName of the command requested to run\n\n\n\n\ncontext\n (\nObject\n)\n\n\n\n\nApplication context for the command handler\n\n\n\n\nReturns\n\n\nPromise\nString", 
+            "text": "Source:\n \nlib/Plugins/Plugin.js\n\n\n\n\n\nnew Plugin(journeyman: \nJourneyMan\n)\n\n\n\nParameters\n\n\njourneyman\n (\nJourneyMan\n)\n\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 21-23)\n\n\nHolds the plugin's subcommand name.\n\n\n\n\n$name\n\n\n\nReturns\n\n\nString\n\n\n\n\n\n\ncommands\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 30-32)\n\n\nHolds all Command instances the plugin uses.\n\n\n\n\ncommands\n\n\n\nReturns\n\n\nArray\nCommand\n\n\n\n\nInstance Members\n\n\n\n\n$run(command, context)\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 51-103)\n\n\nRuns a command on this plugin. Journeyman has figured out that this plugin is\nrequired to carry out the command, so let's find a handler and try to execute it.\n\n\n\n\n$run(command: \nString\n, context: {input: \nInput\n}): \nPromise\nString\n>\n\n\n\nParameters\n\n\ncommand\n (\nString\n)\n\n\n\n\nName of the command requested to run\n\n\n\n\ncontext\n ({input: \nInput\n})\n\n\n\n\nApplication context for the command handler\n\n\n\n\nReturns\n\n\nPromise\nString", 
             "title": "Plugin"
+        }, 
+        {
+            "location": "/api/Plugin/#parameters", 
+            "text": "journeyman  ( JourneyMan )", 
+            "title": "Parameters"
         }, 
         {
             "location": "/api/Plugin/#static-members", 
@@ -592,31 +707,21 @@
         }, 
         {
             "location": "/api/Plugin/#returns_1", 
-            "text": "Array Command    $mount(journeyman)  Source:   lib/Plugins/Plugin.js (Lines 40-42)  Mounts the journeyman instance on the current plugin   $mount(journeyman:  JourneyMan ): void", 
-            "title": "Returns"
-        }, 
-        {
-            "location": "/api/Plugin/#parameters", 
-            "text": "journeyman  ( JourneyMan )", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/api/Plugin/#returns_2", 
-            "text": "void", 
+            "text": "Array Command", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Plugin/#instance-members", 
-            "text": "$run(command, context)  Source:   lib/Plugins/Plugin.js (Lines 52-99)  Runs a command on this plugin. Journeyman has figured out that this plugin is\nrequired to carry out the command, so let's find a handler and try to execute it.   $run(command:  String , context:  Object ):  Promise String >", 
+            "text": "$run(command, context)  Source:   lib/Plugins/Plugin.js (Lines 51-103)  Runs a command on this plugin. Journeyman has figured out that this plugin is\nrequired to carry out the command, so let's find a handler and try to execute it.   $run(command:  String , context: {input:  Input }):  Promise String >", 
             "title": "Instance Members"
         }, 
         {
             "location": "/api/Plugin/#parameters_1", 
-            "text": "command  ( String )   Name of the command requested to run   context  ( Object )   Application context for the command handler", 
+            "text": "command  ( String )   Name of the command requested to run   context  ({input:  Input })   Application context for the command handler", 
             "title": "Parameters"
         }, 
         {
-            "location": "/api/Plugin/#returns_3", 
+            "location": "/api/Plugin/#returns_2", 
             "text": "Promise String", 
             "title": "Returns"
         }, 

@@ -480,6 +480,39 @@
     Returns
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#returns_4" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -643,6 +676,39 @@
     Returns
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#returns_4" title="Returns" class="md-nav__link">
+    Returns
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -666,7 +732,7 @@
                 
                   <h1>Input</h1>
                 
-                <p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/cbcf59df7d8fddc6ce827baded722443de2f0f63/lib/Console/Input.js#L10-L72">lib/Console/Input.js</a></p>
+                <p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L13-L225">lib/Console/Input.js</a></p>
 <p>Represents the command input for the application</p>
 <hr />
 <div class="codehilite"><pre>
@@ -679,63 +745,123 @@ new Input(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Refer
 </blockquote>
 <h3 id="instance-members">Instance Members<a class="headerlink" href="#instance-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
-<summary>hasArguments()</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/cbcf59df7d8fddc6ce827baded722443de2f0f63/lib/Console/Input.js#L38-L40">lib/Console/Input.js (Lines 38-40)</a></p>
-<p>Checks whether any arguments have been passed</p>
+<summary>raw</summary></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L28-L28">lib/Console/Input.js (Lines 28-28)</a></p>
+<p>Holds the original input args.</p>
 <hr />
-<div class="codehilite"><pre>hasArguments(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></pre></div>
+<div class="codehilite"><pre>raw</pre></div>
+
+<p></details></p>
+<p><details class="info">
+<summary>plugin</summary></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L35-L35">lib/Console/Input.js (Lines 35-35)</a></p>
+<p>Holds the plugin identifier. This will generally be the first sub-command to Journeyman.</p>
+<hr />
+<div class="codehilite"><pre>plugin</pre></div>
+
+<p></details></p>
+<p><details class="info">
+<summary>command</summary></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L42-L42">lib/Console/Input.js (Lines 42-42)</a></p>
+<p>Holds the command identifier. This will generally be the second sub-command to Journeyman.</p>
+<hr />
+<div class="codehilite"><pre>command</pre></div>
+
+<p></details></p>
+<p><details class="info">
+<summary>arguments</summary></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L49-L49">lib/Console/Input.js (Lines 49-49)</a></p>
+<p>Holds the command arguments passed to Journeyman, except the plugin and command identifiers.</p>
+<hr />
+<div class="codehilite"><pre>arguments</pre></div>
+
+<p></details></p>
+<p><details class="info">
+<summary>hasArguments()</summary></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L78-L80">lib/Console/Input.js (Lines 78-80)</a></p>
+<p>Checks whether any arguments have been passed.</p>
+<hr />
+<div class="codehilite"><pre>hasArguments(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></pre></div>
 
 <h3 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h3>
-<p><code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code></p>
-<p></details></p>
-<p><details class="info">
-<summary>getArgument(position = 0)</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/cbcf59df7d8fddc6ce827baded722443de2f0f63/lib/Console/Input.js#L48-L50">lib/Console/Input.js (Lines 48-50)</a></p>
-<p>Retrieves an input argument by position</p>
-<hr />
-<div class="codehilite"><pre>getArgument(position: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>?): any</pre></div>
-
-<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
-<p><code><strong>position</strong> (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>? = 0)</code></p>
-<blockquote>
-<p>Position of the argument. Defaults to 0</p>
-</blockquote>
-<h3 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h3>
-<p><code>any</code></p>
-<p></details></p>
-<p><details class="info">
-<summary>hasOption(name)</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/cbcf59df7d8fddc6ce827baded722443de2f0f63/lib/Console/Input.js#L58-L60">lib/Console/Input.js (Lines 58-60)</a></p>
-<p>Checks whether a specific option has been passed.</p>
-<hr />
-<div class="codehilite"><pre>hasOption(name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></pre></div>
-
-<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
-<p><code><strong>name</strong> (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code></p>
-<blockquote>
-<p>Name of the option to check for</p>
-</blockquote>
-<h3 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h3>
 <p><code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code></p>
 <p></details></p>
 <p><details class="info">
-<summary>getOption(name, fallback = null)</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/cbcf59df7d8fddc6ce827baded722443de2f0f63/lib/Console/Input.js#L69-L71">lib/Console/Input.js (Lines 69-71)</a></p>
-<p>Retrieves an input option</p>
+<summary>hasArgument(argument)</summary></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L88-L94">lib/Console/Input.js (Lines 88-94)</a></p>
+<p>Checks whether an argument at a specific position exists.</p>
 <hr />
-<div class="codehilite"><pre>getOption(name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, fallback: any?): any</pre></div>
+<div class="codehilite"><pre>hasArgument(argument: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></pre></div>
+
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<p><code><strong>argument</strong> ((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>))</code></p>
+<blockquote>
+<p>Defined argument name or position of the argument.</p>
+</blockquote>
+<h3 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h3>
+<p><code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code></p>
+<p></details></p>
+<p><details class="info">
+<summary>getArgument(argument = 0)</summary></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L103-L109">lib/Console/Input.js (Lines 103-109)</a></p>
+<p>Retrieves an input argument by position.</p>
+<hr />
+<div class="codehilite"><pre>getArgument(argument: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)?): any</pre></div>
+
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<p><code><strong>argument</strong> ((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)? = 0)</code></p>
+<blockquote>
+<p>Defined argument name or position of the argument.                                    Defaults to 0.</p>
+</blockquote>
+<h3 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h3>
+<p><code>any</code></p>
+<p></details></p>
+<p><details class="info">
+<summary>hasOption(option)</summary></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L117-L126">lib/Console/Input.js (Lines 117-126)</a></p>
+<p>Checks whether a specific option has been passed.</p>
+<hr />
+<div class="codehilite"><pre>hasOption(option: (CommandOption | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></pre></div>
 
 <h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
-<p><code><strong>name</strong> (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code></p>
+<p><code><strong>option</strong> ((CommandOption | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>))</code></p>
 <blockquote>
-<p>Option name</p>
+<p>Name of the option to check for</p>
 </blockquote>
-<p><code><strong>fallback</strong> (any? = null)</code></p>
+<h3 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h3>
+<p><code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code></p>
+<p></details></p>
+<p><details class="info">
+<summary>getOption(option, fallback = false)</summary></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L135-L149">lib/Console/Input.js (Lines 135-149)</a></p>
+<p>Retrieves an input option. This method accepts both <code class="codehilite">CommandOption</code> instances and string identifiers.</p>
+<hr />
+<div class="codehilite"><pre>getOption(option: (CommandOption | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>), fallback: any?): any</pre></div>
+
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<p><code><strong>option</strong> ((CommandOption | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>))</code></p>
+<blockquote>
+<p>Option instance or name</p>
+</blockquote>
+<p><code><strong>fallback</strong> (any? = false)</code></p>
 <blockquote>
 <p>Optional fallback value if the requested option is missing</p>
 </blockquote>
-<h3 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h3>
+<h3 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h3>
 <p><code>any</code></p>
+<p></details></p>
+<p><details class="info">
+<summary>validate(command)</summary></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/3bb0f00d546b7d2f7e1721e4bf082a9f18e42846/lib/Console/Input.js#L174-L224">lib/Console/Input.js (Lines 174-224)</a></p>
+<p>Validates a command's input definitions.</p>
+<hr />
+<div class="codehilite"><pre>validate(command: <a href="/journeyman/api/Command">Command</a>)</pre></div>
+
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<p><code><strong>command</strong> (<a href="/journeyman/api/Command">Command</a>)</code></p>
+<blockquote>
+<p>Command instance to validate definitions for.</p>
+</blockquote>
 <p></details></p>
                 
                   

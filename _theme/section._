@@ -1,5 +1,9 @@
 <% if (typeof nested === 'undefined' || (section.context && section.context.github)) { %>
-<% if (section.context && section.context.github) { %>[<%= section.context.github.path %>](<%= section.context.github.url %>)<% } %>
+<% if (section.kind !== 'class') { %>
+**Source:** [<%= section.context.github.path + ' (Lines ' + section.context.github.url.replace(/^.+#/, '').replace(/L(\d+)/g, '$1') %>)](<%= section.context.github.url %>)
+<% } else if (section.context && section.context.github) { %>
+**Source:** [<%= section.context.github.path %>](<%= section.context.github.url %>)
+<% } %>
 <% } %>
 
 <%= md(section.description) %>

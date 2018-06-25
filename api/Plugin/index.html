@@ -413,6 +413,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../Output/" title="Output" class="md-nav__link">
+      Output
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -614,7 +626,7 @@
                 
                   <h1>Plugin</h1>
                 
-                <p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Plugins/Plugin.js#L14-L104">lib/Plugins/Plugin.js</a></p>
+                <p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Plugins/Plugin.js#L15-L104">lib/Plugins/Plugin.js</a></p>
 <hr />
 <div class="codehilite"><pre>
 new Plugin(journeyman: <a href="/journeyman/api/JourneyMan">JourneyMan</a>)</pre></div>
@@ -625,7 +637,7 @@ new Plugin(journeyman: <a href="/journeyman/api/JourneyMan">JourneyMan</a>)</pre
 <h3 id="static-members">Static Members<a class="headerlink" href="#static-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>$name</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Plugins/Plugin.js#L21-L23">lib/Plugins/Plugin.js (Lines 21-23)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Plugins/Plugin.js#L22-L24">lib/Plugins/Plugin.js (Lines 22-24)</a></p>
 <p>Holds the plugin's subcommand name.</p>
 <hr />
 <div class="codehilite"><pre>$name</pre></div>
@@ -635,7 +647,7 @@ new Plugin(journeyman: <a href="/journeyman/api/JourneyMan">JourneyMan</a>)</pre
 <p></details></p>
 <p><details class="info">
 <summary>commands</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Plugins/Plugin.js#L30-L32">lib/Plugins/Plugin.js (Lines 30-32)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Plugins/Plugin.js#L31-L33">lib/Plugins/Plugin.js (Lines 31-33)</a></p>
 <p>Holds all Command instances the plugin uses.</p>
 <hr />
 <div class="codehilite"><pre>commands</pre></div>
@@ -646,18 +658,18 @@ new Plugin(journeyman: <a href="/journeyman/api/JourneyMan">JourneyMan</a>)</pre
 <h3 id="instance-members">Instance Members<a class="headerlink" href="#instance-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>$run(command, context)</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Plugins/Plugin.js#L51-L103">lib/Plugins/Plugin.js (Lines 51-103)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Plugins/Plugin.js#L52-L103">lib/Plugins/Plugin.js (Lines 52-103)</a></p>
 <p>Runs a command on this plugin. Journeyman has figured out that this plugin is
 required to carry out the command, so let's find a handler and try to execute it.</p>
 <hr />
-<div class="codehilite"><pre>$run(command: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, context: {input: <a href="/journeyman/api/Input">Input</a>}): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>></pre></div>
+<div class="codehilite"><pre>$run(command: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, context: {input: <a href="/journeyman/api/Input">Input</a>, output: <a href="/journeyman/api/Output">Output</a>}): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>></pre></div>
 
 <h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
 <p><code><strong>command</strong> (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</code></p>
 <blockquote>
 <p>Name of the command requested to run</p>
 </blockquote>
-<p><code><strong>context</strong> ({input: <a href="/journeyman/api/Input">Input</a>})</code></p>
+<p><code><strong>context</strong> ({input: <a href="/journeyman/api/Input">Input</a>, output: <a href="/journeyman/api/Output">Output</a>})</code></p>
 <blockquote>
 <p>Application context for the command handler</p>
 </blockquote>
@@ -684,7 +696,7 @@ required to carry out the command, so let's find a handler and try to execute it
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Loader/" title="Loader" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Output/" title="Output" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -693,7 +705,7 @@ required to carry out the command, so let's find a handler and try to execute it
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Loader
+                Output
               </span>
             </div>
           </a>

@@ -593,6 +593,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../Output/" title="Output" class="md-nav__link">
+      Output
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../Plugin/" title="Plugin" class="md-nav__link">
       Plugin
     </a>
@@ -806,7 +818,7 @@
                 
                   <h1>Command</h1>
                 
-                <p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L17-L303">lib/Console/Command.js</a></p>
+                <p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L17-L299">lib/Console/Command.js</a></p>
 <h4 id="console-command">Console Command<a class="headerlink" href="#console-command" title="Permanent link">&para;</a></h4>
 <p>Commands represent complete, CLI-callable commands.</p>
 <hr />
@@ -819,7 +831,7 @@ new Command(plugin: <a href="/journeyman/api/Plugin">Plugin</a>)</pre></div>
 <h3 id="static-members">Static Members<a class="headerlink" href="#static-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>$name</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L22-L24">lib/Console/Command.js (Lines 22-24)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L22-L24">lib/Console/Command.js (Lines 22-24)</a></p>
 <p>Holds the name of the command.</p>
 <hr />
 <div class="codehilite"><pre>$name</pre></div>
@@ -828,7 +840,7 @@ new Command(plugin: <a href="/journeyman/api/Plugin">Plugin</a>)</pre></div>
 <h3 id="instance-members">Instance Members<a class="headerlink" href="#instance-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>getName()</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L86-L88">lib/Console/Command.js (Lines 86-88)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L82-L84">lib/Console/Command.js (Lines 82-84)</a></p>
 <p>Retrieves the command name</p>
 <hr />
 <div class="codehilite"><pre>getName(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></pre></div>
@@ -838,7 +850,7 @@ new Command(plugin: <a href="/journeyman/api/Plugin">Plugin</a>)</pre></div>
 <p></details></p>
 <p><details class="info">
 <summary>__configure()</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L155-L156">lib/Console/Command.js (Lines 155-156)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L151-L152">lib/Console/Command.js (Lines 151-152)</a></p>
 <h4 id="command-configuration">Command configuration<a class="headerlink" href="#command-configuration" title="Permanent link">&para;</a></h4>
 <p>Using the <code class="codehilite">__configure()</code> method, you can efficiently define the required syntax for your command.<br>
 If you're familiar with Symfony Console, this will make sense to you immediately. Otherwise,
@@ -851,7 +863,7 @@ continue reading.</p>
 <p></details></p>
 <p><details class="info">
 <summary>__invoke(context)</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L165-L167">lib/Console/Command.js (Lines 165-167)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L161-L163">lib/Console/Command.js (Lines 161-163)</a></p>
 <p>Executes the command. All commands should return a Promise, even though it isn't strictly
 necessary since you can <code class="codehilite">await</code> non-Promise returning functions too.</p>
 <hr />
@@ -865,7 +877,7 @@ necessary since you can <code class="codehilite">await</code> non-Promise return
 <p></details></p>
 <p><details class="info">
 <summary>getHelp(input, output)</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L174-L185">lib/Console/Command.js (Lines 174-185)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L170-L181">lib/Console/Command.js (Lines 170-181)</a></p>
 <p>Retrieves the help text</p>
 <hr />
 <div class="codehilite"><pre>getHelp(input, output)</pre></div>
@@ -878,7 +890,7 @@ necessary since you can <code class="codehilite">await</code> non-Promise return
 <p></details></p>
 <p><details class="info">
 <summary>addArgument(name, flags = CommandArgument.OPTIONAL, description = '', fallback = null)</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L198-L210">lib/Console/Command.js (Lines 198-210)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L194-L206">lib/Console/Command.js (Lines 194-206)</a></p>
 <p>Adds a new argument to the command. Please make sure that you add all your arguments in
 the desired order - arguments provide no clues aside from their position as to which one
 it is, so Journeyman's input component will silently assign them in the order of
@@ -906,7 +918,7 @@ appearance.</p>
 <p></details></p>
 <p><details class="info">
 <summary>addOption(longName, shortName, flags, description, valueLabel)</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L221-L247">lib/Console/Command.js (Lines 221-247)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L217-L243">lib/Console/Command.js (Lines 217-243)</a></p>
 <p>Adds a new option to the command</p>
 <hr />
 <div class="codehilite"><pre>addOption(longName: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, shortName: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, flags: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, description: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, valueLabel: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</pre></div>
@@ -925,7 +937,7 @@ appearance.</p>
 <p></details></p>
 <p><details class="info">
 <summary>hasOption(name)</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L255-L257">lib/Console/Command.js (Lines 255-257)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L251-L253">lib/Console/Command.js (Lines 251-253)</a></p>
 <p>Checks whether the command has an option</p>
 <hr />
 <div class="codehilite"><pre>hasOption(name: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></pre></div>
@@ -940,7 +952,7 @@ appearance.</p>
 <p></details></p>
 <p><details class="info">
 <summary>hasOptions()</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L264-L266">lib/Console/Command.js (Lines 264-266)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L260-L262">lib/Console/Command.js (Lines 260-262)</a></p>
 <p>Checks whether the command defines any options.</p>
 <hr />
 <div class="codehilite"><pre>hasOptions(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></pre></div>
@@ -950,7 +962,7 @@ appearance.</p>
 <p></details></p>
 <p><details class="info">
 <summary>getOptions()</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L273-L275">lib/Console/Command.js (Lines 273-275)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L269-L271">lib/Console/Command.js (Lines 269-271)</a></p>
 <p>Retrieves all command options for the command.</p>
 <hr />
 <div class="codehilite"><pre>getOptions(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;CommandOption></pre></div>
@@ -960,7 +972,7 @@ appearance.</p>
 <p></details></p>
 <p><details class="info">
 <summary>hasArguments()</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L282-L284">lib/Console/Command.js (Lines 282-284)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L278-L280">lib/Console/Command.js (Lines 278-280)</a></p>
 <p>Checks whether the command defines any arguments.</p>
 <hr />
 <div class="codehilite"><pre>hasArguments(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></pre></div>
@@ -970,7 +982,7 @@ appearance.</p>
 <p></details></p>
 <p><details class="info">
 <summary>getArguments()</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L291-L293">lib/Console/Command.js (Lines 291-293)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L287-L289">lib/Console/Command.js (Lines 287-289)</a></p>
 <p>Retrieves all command arguments for the command.</p>
 <hr />
 <div class="codehilite"><pre>getArguments(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;CommandArgument></pre></div>
@@ -980,7 +992,7 @@ appearance.</p>
 <p></details></p>
 <p><details class="info">
 <summary>definesInput()</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Console/Command.js#L300-L302">lib/Console/Command.js (Lines 300-302)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Console/Command.js#L296-L298">lib/Console/Command.js (Lines 296-298)</a></p>
 <p>Checks whether the command defines any input.</p>
 <hr />
 <div class="codehilite"><pre>definesInput(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></pre></div>

@@ -147,7 +147,7 @@
         }, 
         {
             "location": "/api/Command/", 
-            "text": "Source:\n \nlib/Console/Command.js\n\n\nConsole Command\n\n\nCommands represent complete, CLI-callable commands.\n\n\n\n\n\nnew Command(plugin: \nPlugin\n)\n\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nSource:\n \nlib/Console/Command.js (Lines 22-24)\n\n\nHolds the name of the command.\n\n\n\n\n$name\n\n\n\n\n\nInstance Members\n\n\n\n\ngetName()\n\n\nSource:\n \nlib/Console/Command.js (Lines 86-88)\n\n\nRetrieves the command name\n\n\n\n\ngetName(): \nstring\n\n\n\nReturns\n\n\nstring\n\n\n\n\n\n\n__configure()\n\n\nSource:\n \nlib/Console/Command.js (Lines 155-156)\n\n\nCommand configuration\n\n\nUsing the \n__configure()\n method, you can efficiently define the required syntax for your command.\n\nIf you're familiar with Symfony Console, this will make sense to you immediately. Otherwise,\ncontinue reading.\n\n\n\n\n__configure(): void\n\n\n\nReturns\n\n\nvoid\n\n\n\n\n\n\n__invoke(context)\n\n\nSource:\n \nlib/Console/Command.js (Lines 165-167)\n\n\nExecutes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can \nawait\n non-Promise returning functions too.\n\n\n\n\n__invoke(context): (\nPromise\n(\nString\n | \nNumber\n)> | any)\n\n\n\nParameters\n\n\ncontext\n \n\n\n\n\nReturns\n\n\n(\nPromise\n(\nString\n | \nNumber\n)\n | any)\n\n\n\n\n\n\ngetHelp(input, output)\n\n\nSource:\n \nlib/Console/Command.js (Lines 174-185)\n\n\nRetrieves the help text\n\n\n\n\ngetHelp(input, output)\n\n\n\nParameters\n\n\ninput\n \n\n\n\n\noutput\n \n\n\n\n\n\n\n\n\naddArgument(name, flags = CommandArgument.OPTIONAL, description = '', fallback = null)\n\n\nSource:\n \nlib/Console/Command.js (Lines 198-210)\n\n\nAdds a new argument to the command. Please make sure that you add all your arguments in\nthe desired order - arguments provide no clues aside from their position as to which one\nit is, so Journeyman's input component will silently assign them in the order of\nappearance.\n\n\n\n\naddArgument(name: \nString\n, flags: \nNumber\n?, description: \nString\n?, fallback: any?)\n\n\n\nParameters\n\n\nname\n (\nString\n)\n\n\n\n\nargument name\n\n\n\n\nflags\n (\nNumber\n? = CommandArgument.OPTIONAL)\n\n\n\n\nargument type. must use one of the static types (@see CommandArgument#types)\n\n\n\n\ndescription\n (\nString\n? = \n)\n\n\n\n\nargument description for the help text\n\n\n\n\nfallback\n (any? = null)\n\n\n\n\nfallback value if missing. Can only be used for optional arguments\n\n\n\n\n\n\n\n\naddOption(longName, shortName, flags, description, valueLabel)\n\n\nSource:\n \nlib/Console/Command.js (Lines 221-247)\n\n\nAdds a new option to the command\n\n\n\n\naddOption(longName: \nString\n, shortName: \nString\n, flags: \nNumber\n, description: \nString\n, valueLabel: \nString\n)\n\n\n\nParameters\n\n\nlongName\n (\nString\n)\n\n\n\n\nshortName\n (\nString\n = longName.substr(0,1))\n\n\n\n\nflags\n (\nNumber\n = CommandOption.OPTIONAL)\n\n\n\n\ndescription\n (\nString\n = \n)\n\n\n\n\nvalueLabel\n (\nString\n = \n)\n\n\n\n\n\n\n\n\nhasOption(name)\n\n\nSource:\n \nlib/Console/Command.js (Lines 255-257)\n\n\nChecks whether the command has an option\n\n\n\n\nhasOption(name: \nstring\n): \nboolean\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nlong name of the option\n\n\n\n\nReturns\n\n\nboolean\n\n\n\n\n\n\nhasOptions()\n\n\nSource:\n \nlib/Console/Command.js (Lines 264-266)\n\n\nChecks whether the command defines any options.\n\n\n\n\nhasOptions(): \nBoolean\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\ngetOptions()\n\n\nSource:\n \nlib/Console/Command.js (Lines 273-275)\n\n\nRetrieves all command options for the command.\n\n\n\n\ngetOptions(): \nArray\nCommandOption>\n\n\n\nReturns\n\n\nArray\nCommandOption\n\n\n\n\n\n\nhasArguments()\n\n\nSource:\n \nlib/Console/Command.js (Lines 282-284)\n\n\nChecks whether the command defines any arguments.\n\n\n\n\nhasArguments(): \nBoolean\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\ngetArguments()\n\n\nSource:\n \nlib/Console/Command.js (Lines 291-293)\n\n\nRetrieves all command arguments for the command.\n\n\n\n\ngetArguments(): \nArray\nCommandArgument>\n\n\n\nReturns\n\n\nArray\nCommandArgument\n\n\n\n\n\n\ndefinesInput()\n\n\nSource:\n \nlib/Console/Command.js (Lines 300-302)\n\n\nChecks whether the command defines any input.\n\n\n\n\ndefinesInput(): \nBoolean\n\n\n\nReturns\n\n\nBoolean", 
+            "text": "Source:\n \nlib/Console/Command.js\n\n\nConsole Command\n\n\nCommands represent complete, CLI-callable commands.\n\n\n\n\n\nnew Command(plugin: \nPlugin\n)\n\n\n\nParameters\n\n\nplugin\n (\nPlugin\n)\n\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nSource:\n \nlib/Console/Command.js (Lines 22-24)\n\n\nHolds the name of the command.\n\n\n\n\n$name\n\n\n\n\n\nInstance Members\n\n\n\n\ngetName()\n\n\nSource:\n \nlib/Console/Command.js (Lines 82-84)\n\n\nRetrieves the command name\n\n\n\n\ngetName(): \nstring\n\n\n\nReturns\n\n\nstring\n\n\n\n\n\n\n__configure()\n\n\nSource:\n \nlib/Console/Command.js (Lines 151-152)\n\n\nCommand configuration\n\n\nUsing the \n__configure()\n method, you can efficiently define the required syntax for your command.\n\nIf you're familiar with Symfony Console, this will make sense to you immediately. Otherwise,\ncontinue reading.\n\n\n\n\n__configure(): void\n\n\n\nReturns\n\n\nvoid\n\n\n\n\n\n\n__invoke(context)\n\n\nSource:\n \nlib/Console/Command.js (Lines 161-163)\n\n\nExecutes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can \nawait\n non-Promise returning functions too.\n\n\n\n\n__invoke(context): (\nPromise\n(\nString\n | \nNumber\n)> | any)\n\n\n\nParameters\n\n\ncontext\n \n\n\n\n\nReturns\n\n\n(\nPromise\n(\nString\n | \nNumber\n)\n | any)\n\n\n\n\n\n\ngetHelp(input, output)\n\n\nSource:\n \nlib/Console/Command.js (Lines 170-181)\n\n\nRetrieves the help text\n\n\n\n\ngetHelp(input, output)\n\n\n\nParameters\n\n\ninput\n \n\n\n\n\noutput\n \n\n\n\n\n\n\n\n\naddArgument(name, flags = CommandArgument.OPTIONAL, description = '', fallback = null)\n\n\nSource:\n \nlib/Console/Command.js (Lines 194-206)\n\n\nAdds a new argument to the command. Please make sure that you add all your arguments in\nthe desired order - arguments provide no clues aside from their position as to which one\nit is, so Journeyman's input component will silently assign them in the order of\nappearance.\n\n\n\n\naddArgument(name: \nString\n, flags: \nNumber\n?, description: \nString\n?, fallback: any?)\n\n\n\nParameters\n\n\nname\n (\nString\n)\n\n\n\n\nargument name\n\n\n\n\nflags\n (\nNumber\n? = CommandArgument.OPTIONAL)\n\n\n\n\nargument type. must use one of the static types (@see CommandArgument#types)\n\n\n\n\ndescription\n (\nString\n? = \n)\n\n\n\n\nargument description for the help text\n\n\n\n\nfallback\n (any? = null)\n\n\n\n\nfallback value if missing. Can only be used for optional arguments\n\n\n\n\n\n\n\n\naddOption(longName, shortName, flags, description, valueLabel)\n\n\nSource:\n \nlib/Console/Command.js (Lines 217-243)\n\n\nAdds a new option to the command\n\n\n\n\naddOption(longName: \nString\n, shortName: \nString\n, flags: \nNumber\n, description: \nString\n, valueLabel: \nString\n)\n\n\n\nParameters\n\n\nlongName\n (\nString\n)\n\n\n\n\nshortName\n (\nString\n = longName.substr(0,1))\n\n\n\n\nflags\n (\nNumber\n = CommandOption.OPTIONAL)\n\n\n\n\ndescription\n (\nString\n = \n)\n\n\n\n\nvalueLabel\n (\nString\n = \n)\n\n\n\n\n\n\n\n\nhasOption(name)\n\n\nSource:\n \nlib/Console/Command.js (Lines 251-253)\n\n\nChecks whether the command has an option\n\n\n\n\nhasOption(name: \nstring\n): \nboolean\n\n\n\nParameters\n\n\nname\n (\nstring\n)\n\n\n\n\nlong name of the option\n\n\n\n\nReturns\n\n\nboolean\n\n\n\n\n\n\nhasOptions()\n\n\nSource:\n \nlib/Console/Command.js (Lines 260-262)\n\n\nChecks whether the command defines any options.\n\n\n\n\nhasOptions(): \nBoolean\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\ngetOptions()\n\n\nSource:\n \nlib/Console/Command.js (Lines 269-271)\n\n\nRetrieves all command options for the command.\n\n\n\n\ngetOptions(): \nArray\nCommandOption>\n\n\n\nReturns\n\n\nArray\nCommandOption\n\n\n\n\n\n\nhasArguments()\n\n\nSource:\n \nlib/Console/Command.js (Lines 278-280)\n\n\nChecks whether the command defines any arguments.\n\n\n\n\nhasArguments(): \nBoolean\n\n\n\nReturns\n\n\nBoolean\n\n\n\n\n\n\ngetArguments()\n\n\nSource:\n \nlib/Console/Command.js (Lines 287-289)\n\n\nRetrieves all command arguments for the command.\n\n\n\n\ngetArguments(): \nArray\nCommandArgument>\n\n\n\nReturns\n\n\nArray\nCommandArgument\n\n\n\n\n\n\ndefinesInput()\n\n\nSource:\n \nlib/Console/Command.js (Lines 296-298)\n\n\nChecks whether the command defines any input.\n\n\n\n\ndefinesInput(): \nBoolean\n\n\n\nReturns\n\n\nBoolean", 
             "title": "Command"
         }, 
         {
@@ -167,12 +167,12 @@
         }, 
         {
             "location": "/api/Command/#instance-members", 
-            "text": "getName()  Source:   lib/Console/Command.js (Lines 86-88)  Retrieves the command name   getName():  string", 
+            "text": "getName()  Source:   lib/Console/Command.js (Lines 82-84)  Retrieves the command name   getName():  string", 
             "title": "Instance Members"
         }, 
         {
             "location": "/api/Command/#returns", 
-            "text": "string    __configure()  Source:   lib/Console/Command.js (Lines 155-156)", 
+            "text": "string    __configure()  Source:   lib/Console/Command.js (Lines 151-152)", 
             "title": "Returns"
         }, 
         {
@@ -182,7 +182,7 @@
         }, 
         {
             "location": "/api/Command/#returns_1", 
-            "text": "void    __invoke(context)  Source:   lib/Console/Command.js (Lines 165-167)  Executes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can  await  non-Promise returning functions too.   __invoke(context): ( Promise ( String  |  Number )> | any)", 
+            "text": "void    __invoke(context)  Source:   lib/Console/Command.js (Lines 161-163)  Executes the command. All commands should return a Promise, even though it isn't strictly\nnecessary since you can  await  non-Promise returning functions too.   __invoke(context): ( Promise ( String  |  Number )> | any)", 
             "title": "Returns"
         }, 
         {
@@ -192,22 +192,22 @@
         }, 
         {
             "location": "/api/Command/#returns_2", 
-            "text": "( Promise ( String  |  Number )  | any)    getHelp(input, output)  Source:   lib/Console/Command.js (Lines 174-185)  Retrieves the help text   getHelp(input, output)", 
+            "text": "( Promise ( String  |  Number )  | any)    getHelp(input, output)  Source:   lib/Console/Command.js (Lines 170-181)  Retrieves the help text   getHelp(input, output)", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Command/#parameters_2", 
-            "text": "input     output       addArgument(name, flags = CommandArgument.OPTIONAL, description = '', fallback = null)  Source:   lib/Console/Command.js (Lines 198-210)  Adds a new argument to the command. Please make sure that you add all your arguments in\nthe desired order - arguments provide no clues aside from their position as to which one\nit is, so Journeyman's input component will silently assign them in the order of\nappearance.   addArgument(name:  String , flags:  Number ?, description:  String ?, fallback: any?)", 
+            "text": "input     output       addArgument(name, flags = CommandArgument.OPTIONAL, description = '', fallback = null)  Source:   lib/Console/Command.js (Lines 194-206)  Adds a new argument to the command. Please make sure that you add all your arguments in\nthe desired order - arguments provide no clues aside from their position as to which one\nit is, so Journeyman's input component will silently assign them in the order of\nappearance.   addArgument(name:  String , flags:  Number ?, description:  String ?, fallback: any?)", 
             "title": "Parameters"
         }, 
         {
             "location": "/api/Command/#parameters_3", 
-            "text": "name  ( String )   argument name   flags  ( Number ? = CommandArgument.OPTIONAL)   argument type. must use one of the static types (@see CommandArgument#types)   description  ( String ? =  )   argument description for the help text   fallback  (any? = null)   fallback value if missing. Can only be used for optional arguments     addOption(longName, shortName, flags, description, valueLabel)  Source:   lib/Console/Command.js (Lines 221-247)  Adds a new option to the command   addOption(longName:  String , shortName:  String , flags:  Number , description:  String , valueLabel:  String )", 
+            "text": "name  ( String )   argument name   flags  ( Number ? = CommandArgument.OPTIONAL)   argument type. must use one of the static types (@see CommandArgument#types)   description  ( String ? =  )   argument description for the help text   fallback  (any? = null)   fallback value if missing. Can only be used for optional arguments     addOption(longName, shortName, flags, description, valueLabel)  Source:   lib/Console/Command.js (Lines 217-243)  Adds a new option to the command   addOption(longName:  String , shortName:  String , flags:  Number , description:  String , valueLabel:  String )", 
             "title": "Parameters"
         }, 
         {
             "location": "/api/Command/#parameters_4", 
-            "text": "longName  ( String )   shortName  ( String  = longName.substr(0,1))   flags  ( Number  = CommandOption.OPTIONAL)   description  ( String  =  )   valueLabel  ( String  =  )     hasOption(name)  Source:   lib/Console/Command.js (Lines 255-257)  Checks whether the command has an option   hasOption(name:  string ):  boolean", 
+            "text": "longName  ( String )   shortName  ( String  = longName.substr(0,1))   flags  ( Number  = CommandOption.OPTIONAL)   description  ( String  =  )   valueLabel  ( String  =  )     hasOption(name)  Source:   lib/Console/Command.js (Lines 251-253)  Checks whether the command has an option   hasOption(name:  string ):  boolean", 
             "title": "Parameters"
         }, 
         {
@@ -217,27 +217,27 @@
         }, 
         {
             "location": "/api/Command/#returns_3", 
-            "text": "boolean    hasOptions()  Source:   lib/Console/Command.js (Lines 264-266)  Checks whether the command defines any options.   hasOptions():  Boolean", 
+            "text": "boolean    hasOptions()  Source:   lib/Console/Command.js (Lines 260-262)  Checks whether the command defines any options.   hasOptions():  Boolean", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Command/#returns_4", 
-            "text": "Boolean    getOptions()  Source:   lib/Console/Command.js (Lines 273-275)  Retrieves all command options for the command.   getOptions():  Array CommandOption>", 
+            "text": "Boolean    getOptions()  Source:   lib/Console/Command.js (Lines 269-271)  Retrieves all command options for the command.   getOptions():  Array CommandOption>", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Command/#returns_5", 
-            "text": "Array CommandOption    hasArguments()  Source:   lib/Console/Command.js (Lines 282-284)  Checks whether the command defines any arguments.   hasArguments():  Boolean", 
+            "text": "Array CommandOption    hasArguments()  Source:   lib/Console/Command.js (Lines 278-280)  Checks whether the command defines any arguments.   hasArguments():  Boolean", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Command/#returns_6", 
-            "text": "Boolean    getArguments()  Source:   lib/Console/Command.js (Lines 291-293)  Retrieves all command arguments for the command.   getArguments():  Array CommandArgument>", 
+            "text": "Boolean    getArguments()  Source:   lib/Console/Command.js (Lines 287-289)  Retrieves all command arguments for the command.   getArguments():  Array CommandArgument>", 
             "title": "Returns"
         }, 
         {
             "location": "/api/Command/#returns_7", 
-            "text": "Array CommandArgument    definesInput()  Source:   lib/Console/Command.js (Lines 300-302)  Checks whether the command defines any input.   definesInput():  Boolean", 
+            "text": "Array CommandArgument    definesInput()  Source:   lib/Console/Command.js (Lines 296-298)  Checks whether the command defines any input.   definesInput():  Boolean", 
             "title": "Returns"
         }, 
         {
@@ -607,7 +607,7 @@
         }, 
         {
             "location": "/api/JourneyMan/", 
-            "text": "Source:\n \nlib/JourneyMan.js\n\n\nWelcome to JourneyMan!\nThis is the main class used by the CLI, but it's easy to use it programmatically.\n\n\n\n\n\nnew JourneyMan(configFilePath: \nString\n)\n\n\n\nParameters\n\n\nconfigFilePath\n (\nString\n = process.cwd())\n\n\n\n\nPath to the configuration file.\n\n\n\n\nStatic Members\n\n\n\n\nPlugin()\n\n\nSource:\n \nlib/JourneyMan.js\n\n\nStatic getter for the plugin class\n\n\n\n\n\nnew Plugin(): \nPlugin\n\n\n\nReturns\n\n\nPlugin\n\n\n\n\n\n\nCommand()\n\n\nSource:\n \nlib/JourneyMan.js\n\n\nStatic getter for the command class\n\n\n\n\n\nnew Command(): \nCommand\n\n\n\nReturns\n\n\nCommand\n\n\n\n\nInstance Members\n\n\n\n\nconfig\n\n\nSource:\n \nlib/JourneyMan.js (Lines 56-58)\n\n\nHolds Config instance for the application. Journeyman will generally first try to load\na file called \n.journeyman\n. If it is available, a new Config will be created with no\nsub-key (\n.journeyman\n files are expected to only contain Journeyman configuration).\nIn case there is none, Journeyman will try to find and load a \npackage.json\n file in\nthe current directory.\n\n\n\n\nconfig\n\n\n\n\n\n\n\nrun(proc)\n\n\nSource:\n \nlib/JourneyMan.js (Lines 73-102)\n\n\nRuns the application\n\n\n\n\nrun(proc: \nObject\n): \nPromise\nany>\n\n\n\nParameters\n\n\nproc\n (\nObject\n)\n\n\n\n\nProcess object. While in node, \nprocess\n is a global, we want                                JourneyMan to stay as portable as possible. Therefore, process                                is a freely shimable dependency here.\n\n\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n| \nproc.argv\n \nString\n\n   | Command line arguments\n |\n\n\n| \nproc.cwd\n \nfunction\n\n   | Current working directory\n |\n\n\nReturns\n\n\nPromise\nany\n\n\n\n\n\n\ninput\n\n\nSource:\n \nlib/JourneyMan.js (Lines 80-80)\n\n\nHolds the command line input.\n\n\n\n\ninput", 
+            "text": "Source:\n \nlib/JourneyMan.js\n\n\nWelcome to JourneyMan!\nThis is the main class used by the CLI, but it's easy to use it programmatically. There are two\nexternal requirements to Journeyman:\n\n\n\n\nA valid, physical configuration file\n\n\nSome kind of \nprocess\n implementation\n\n    It doesn't matter if this will be the actual \nprocess\n global or a replacement object, as\n    long as it provides the properties \nargv\n (the command line input), \ncwd()\n (function that\n    returns the current working directory), \nenv\n (a key-value hash that holds all environment\n    variables).\n\n\n\n\nIn order to work with Journeyman, you'll first need to create a new instance:\n\n\nconst\n \nJourneyMan\n \n=\n \nrequire\n(\njourneyman\n);\n\n\n\n// note that we only need a directory here, the file\n\n\n// resolution is performed by JourneyMan itself\n\n\nconst\n \njourneyman\n \n=\n \nnew\n \nJourneyMan\n(\n/path/to/config/\n);\n\n\n\n\n\nThis will initialize the object. To kick off the actual process, you'll need to call \nrun()\n:\n\n\njourneyman\n.\nrun\n({\n \nargv\n:\n \n[\nfoo\n,\nbar\n,\n--baz\n],\n \nenv\n:\n \n{},\n \ncwd\n()\n \n{\nreturn\n \n/\n}\n \n});\n\n\n\n\n\n\n\n\nnew JourneyMan(configFilePath: \nString\n)\n\n\n\nParameters\n\n\nconfigFilePath\n (\nString\n = process.cwd())\n\n\n\n\nPath to the configuration file.\n\n\n\n\nStatic Members\n\n\n\n\nPlugin()\n\n\nSource:\n \nlib/JourneyMan.js\n\n\nStatic getter for the Plugin class. This provides \nPlugin\n to plugins without having to\nrequire the actual file itself. Plugin authors are advised to use this property since the\npath to the class might change at any time. \nJourneyMan\n \nis\n the stable API.\n\n\n\n\n\nnew Plugin(): \nPlugin\n\n\n\nReturns\n\n\nPlugin\n\n\n\n\n\n\nCommand()\n\n\nSource:\n \nlib/JourneyMan.js\n\n\nStatic getter for the Command class. This provides \nCommand\n to plugins without having to\nrequire the actual file itself. Plugin authors are advised to use this property since the\npath to the class might change at any time. \nJourneyMan\n \nis\n the stable API.\n\n\n\n\n\nnew Command(): \nCommand\n\n\n\nReturns\n\n\nCommand\n\n\n\n\nInstance Members\n\n\n\n\nconfig\n\n\nSource:\n \nlib/JourneyMan.js (Lines 87-89)\n\n\nHolds Config instance for the application. Journeyman will generally first try to load\na file called \n.journeyman\n. If it is available, a new Config will be created with no\nsub-key (\n.journeyman\n files are expected to only contain Journeyman configuration).\nIn case there is none, Journeyman will try to find and load a \npackage.json\n file in\nthe current directory.\n\n\n\n\nconfig\n\n\n\n\n\n\n\nrun(proc)\n\n\nSource:\n \nlib/JourneyMan.js (Lines 111-141)\n\n\nRuns the application. This is kind of the \n\"main\"\n function in Journeyman, kicking off the\nentire process chain. In order, the input is detected, plugins are loaded and the correct\ncommand is routed.\n\nThe output produced by any command than ran will be returned as the result; if anything\nthrows, it will bubble up to this point. Catching these exceptions is up to the final\nimplementation: Either a programmatic consumer or the CLI app \njourn\n.\n\n\n\n\nrun(proc: \nObject\n): \nPromise\nany>\n\n\n\nParameters\n\n\nproc\n (\nObject\n)\n\n\n\n\nProcess object. While in node, \nprocess\n is a global, we want                                JourneyMan to stay as portable as possible. Therefore, process                                is a freely shimable dependency here.\n\n\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n| \nproc.argv\n \nString\n\n   | Command line arguments\n |\n\n\n| \nproc.cwd\n \nfunction\n\n   | Current working directory\n |\n\n\n| \nproc.stdout\n \nWritableStream\n\n   | Standard output\n |\n\n\n| \nproc.stderr\n \nWritableStream\n\n   | Standard error output\n |\n\n\nReturns\n\n\nPromise\nany\n\n\n\n\n\n\ninput\n\n\nSource:\n \nlib/JourneyMan.js (Lines 118-118)\n\n\nHolds the command line input.\n\n\n\n\ninput", 
             "title": "JourneyMan"
         }, 
         {
@@ -617,12 +617,12 @@
         }, 
         {
             "location": "/api/JourneyMan/#static-members", 
-            "text": "Plugin()  Source:   lib/JourneyMan.js  Static getter for the plugin class   \nnew Plugin():  Plugin", 
+            "text": "Plugin()  Source:   lib/JourneyMan.js  Static getter for the Plugin class. This provides  Plugin  to plugins without having to\nrequire the actual file itself. Plugin authors are advised to use this property since the\npath to the class might change at any time.  JourneyMan   is  the stable API.   \nnew Plugin():  Plugin", 
             "title": "Static Members"
         }, 
         {
             "location": "/api/JourneyMan/#returns", 
-            "text": "Plugin    Command()  Source:   lib/JourneyMan.js  Static getter for the command class   \nnew Command():  Command", 
+            "text": "Plugin    Command()  Source:   lib/JourneyMan.js  Static getter for the Command class. This provides  Command  to plugins without having to\nrequire the actual file itself. Plugin authors are advised to use this property since the\npath to the class might change at any time.  JourneyMan   is  the stable API.   \nnew Command():  Command", 
             "title": "Returns"
         }, 
         {
@@ -632,17 +632,17 @@
         }, 
         {
             "location": "/api/JourneyMan/#instance-members", 
-            "text": "config  Source:   lib/JourneyMan.js (Lines 56-58)  Holds Config instance for the application. Journeyman will generally first try to load\na file called  .journeyman . If it is available, a new Config will be created with no\nsub-key ( .journeyman  files are expected to only contain Journeyman configuration).\nIn case there is none, Journeyman will try to find and load a  package.json  file in\nthe current directory.   config    run(proc)  Source:   lib/JourneyMan.js (Lines 73-102)  Runs the application   run(proc:  Object ):  Promise any>", 
+            "text": "config  Source:   lib/JourneyMan.js (Lines 87-89)  Holds Config instance for the application. Journeyman will generally first try to load\na file called  .journeyman . If it is available, a new Config will be created with no\nsub-key ( .journeyman  files are expected to only contain Journeyman configuration).\nIn case there is none, Journeyman will try to find and load a  package.json  file in\nthe current directory.   config    run(proc)  Source:   lib/JourneyMan.js (Lines 111-141)  Runs the application. This is kind of the  \"main\"  function in Journeyman, kicking off the\nentire process chain. In order, the input is detected, plugins are loaded and the correct\ncommand is routed. \nThe output produced by any command than ran will be returned as the result; if anything\nthrows, it will bubble up to this point. Catching these exceptions is up to the final\nimplementation: Either a programmatic consumer or the CLI app  journ .   run(proc:  Object ):  Promise any>", 
             "title": "Instance Members"
         }, 
         {
             "location": "/api/JourneyMan/#parameters_1", 
-            "text": "proc  ( Object )   Process object. While in node,  process  is a global, we want                                JourneyMan to stay as portable as possible. Therefore, process                                is a freely shimable dependency here.      Name  Description           |  proc.argv   String \n   | Command line arguments\n |  |  proc.cwd   function \n   | Current working directory\n |", 
+            "text": "proc  ( Object )   Process object. While in node,  process  is a global, we want                                JourneyMan to stay as portable as possible. Therefore, process                                is a freely shimable dependency here.      Name  Description           |  proc.argv   String \n   | Command line arguments\n |  |  proc.cwd   function \n   | Current working directory\n |  |  proc.stdout   WritableStream \n   | Standard output\n |  |  proc.stderr   WritableStream \n   | Standard error output\n |", 
             "title": "Parameters"
         }, 
         {
             "location": "/api/JourneyMan/#returns_2", 
-            "text": "Promise any    input  Source:   lib/JourneyMan.js (Lines 80-80)  Holds the command line input.   input", 
+            "text": "Promise any    input  Source:   lib/JourneyMan.js (Lines 118-118)  Holds the command line input.   input", 
             "title": "Returns"
         }, 
         {
@@ -686,8 +686,48 @@
             "title": "Returns"
         }, 
         {
+            "location": "/api/Output/", 
+            "text": "Source:\n \nlib/Console/Output.js\n\n\nConsole output\n\n\nThe \nOutput\n class is responsible for buffering the console output.\n\n\n\n\n\nnew Output(outputStream: WritableStream, verbosity: \nNumber\n?, formatter: \nFunction\n?)\n\n\n\nParameters\n\n\noutputStream\n (WritableStream)\n\n\n\n\nverbosity\n (\nNumber\n? = this.constructor.VERBOSITY_DEFAULT)\n\n\n\n\nformatter\n (\nFunction\n? = this.constructor._DEFAULT_FORMATTER)\n\n\n\n\nInstance Members\n\n\n\n\nverbosity\n\n\nSource:\n \nlib/Console/Output.js (Lines 52-52)\n\n\nHolds the output verbosity\n\n\n\n\nverbosity\n\n\n\n\n\n\n\nsetFormatter(callback)\n\n\nSource:\n \nlib/Console/Output.js (Lines 84-86)\n\n\nAllows to set a output message formatter callback.\n\n\n\n\nsetFormatter(callback: \nFunction\n)\n\n\n\nParameters\n\n\ncallback\n (\nFunction\n)\n\n\n\n\n\n\n\n\nwrite(string, verbosity = this.constructor.VERBOSITY_DEFAULT, args?)\n\n\nSource:\n \nlib/Console/Output.js (Lines 99-108)\n\n\nWrites text to the output buffer. Everything passed to \nwrite\n is being appended to the\ncurrent line, until a newline character (\n\\n\n) is encountered which will terminate the\ncurrent line and start a new one. If multiple newline-separated lines are passed, all lines\nwill be appended individually.\n\nTo create individual new lines, use the \nwriteLn\n method.\n\n\n\n\nwrite(string: \nString\n, verbosity: \nNumber\n?, args: any?)\n\n\n\nParameters\n\n\nstring\n (\nString\n = \n)\n\n\n\n\nString to write to the buffer\n\n\n\n\nverbosity\n (\nNumber\n? = this.constructor.VERBOSITY_DEFAULT)\n\n\n\n\nargs\n (any?)\n\n\n\n\nFormatting arguments\n\n\n\n\n\n\n\n\nwriteLn(line, verbosity = this.constructor.VERBOSITY_DEFAULT, args?)\n\n\nSource:\n \nlib/Console/Output.js (Lines 118-120)\n\n\nWrites a line to the output buffer. Lines can be formatted by passing a list of arguments,\neither as a single object (for named replacements) or multiple values (for indexed replacements).\n\n\n\n\nwriteLn(line: \nString\n, verbosity: \nNumber\n?, args: any?)\n\n\n\nParameters\n\n\nline\n (\nString\n)\n\n\n\n\nverbosity\n (\nNumber\n? = this.constructor.VERBOSITY_DEFAULT)\n\n\n\n\nargs\n (any?)\n\n\n\n\n\n\n\n\nflush()\n\n\nSource:\n \nlib/Console/Output.js (Lines 125-130)\n\n\nFlushes the output buffer by writing its content to the transport.\n\n\n\n\nflush()\n\n\n\n\n\n\n\n_writeStream(message, verbosity)\n\n\nSource:\n \nlib/Console/Output.js (Lines 138-152)\n\n\nWrites all messages to the output.\n\n\n\n\n_writeStream(message: \nString\n, verbosity: \nNumber\n)\n\n\n\nParameters\n\n\nmessage\n (\nString\n)\n\n\n\n\nverbosity\n (\nNumber\n = this.constructor.VERBOSITY_DEFAULT)", 
+            "title": "Output"
+        }, 
+        {
+            "location": "/api/Output/#console-output", 
+            "text": "The  Output  class is responsible for buffering the console output.   \nnew Output(outputStream: WritableStream, verbosity:  Number ?, formatter:  Function ?)", 
+            "title": "Console output"
+        }, 
+        {
+            "location": "/api/Output/#parameters", 
+            "text": "outputStream  (WritableStream)   verbosity  ( Number ? = this.constructor.VERBOSITY_DEFAULT)   formatter  ( Function ? = this.constructor._DEFAULT_FORMATTER)", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Output/#instance-members", 
+            "text": "verbosity  Source:   lib/Console/Output.js (Lines 52-52)  Holds the output verbosity   verbosity    setFormatter(callback)  Source:   lib/Console/Output.js (Lines 84-86)  Allows to set a output message formatter callback.   setFormatter(callback:  Function )", 
+            "title": "Instance Members"
+        }, 
+        {
+            "location": "/api/Output/#parameters_1", 
+            "text": "callback  ( Function )     write(string, verbosity = this.constructor.VERBOSITY_DEFAULT, args?)  Source:   lib/Console/Output.js (Lines 99-108)  Writes text to the output buffer. Everything passed to  write  is being appended to the\ncurrent line, until a newline character ( \\n ) is encountered which will terminate the\ncurrent line and start a new one. If multiple newline-separated lines are passed, all lines\nwill be appended individually. \nTo create individual new lines, use the  writeLn  method.   write(string:  String , verbosity:  Number ?, args: any?)", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Output/#parameters_2", 
+            "text": "string  ( String  =  )   String to write to the buffer   verbosity  ( Number ? = this.constructor.VERBOSITY_DEFAULT)   args  (any?)   Formatting arguments     writeLn(line, verbosity = this.constructor.VERBOSITY_DEFAULT, args?)  Source:   lib/Console/Output.js (Lines 118-120)  Writes a line to the output buffer. Lines can be formatted by passing a list of arguments,\neither as a single object (for named replacements) or multiple values (for indexed replacements).   writeLn(line:  String , verbosity:  Number ?, args: any?)", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Output/#parameters_3", 
+            "text": "line  ( String )   verbosity  ( Number ? = this.constructor.VERBOSITY_DEFAULT)   args  (any?)     flush()  Source:   lib/Console/Output.js (Lines 125-130)  Flushes the output buffer by writing its content to the transport.   flush()    _writeStream(message, verbosity)  Source:   lib/Console/Output.js (Lines 138-152)  Writes all messages to the output.   _writeStream(message:  String , verbosity:  Number )", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/Output/#parameters_4", 
+            "text": "message  ( String )   verbosity  ( Number  = this.constructor.VERBOSITY_DEFAULT)", 
+            "title": "Parameters"
+        }, 
+        {
             "location": "/api/Plugin/", 
-            "text": "Source:\n \nlib/Plugins/Plugin.js\n\n\n\n\n\nnew Plugin(journeyman: \nJourneyMan\n)\n\n\n\nParameters\n\n\njourneyman\n (\nJourneyMan\n)\n\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 21-23)\n\n\nHolds the plugin's subcommand name.\n\n\n\n\n$name\n\n\n\nReturns\n\n\nString\n\n\n\n\n\n\ncommands\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 30-32)\n\n\nHolds all Command instances the plugin uses.\n\n\n\n\ncommands\n\n\n\nReturns\n\n\nArray\nCommand\n\n\n\n\nInstance Members\n\n\n\n\n$run(command, context)\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 51-103)\n\n\nRuns a command on this plugin. Journeyman has figured out that this plugin is\nrequired to carry out the command, so let's find a handler and try to execute it.\n\n\n\n\n$run(command: \nString\n, context: {input: \nInput\n}): \nPromise\nString\n>\n\n\n\nParameters\n\n\ncommand\n (\nString\n)\n\n\n\n\nName of the command requested to run\n\n\n\n\ncontext\n ({input: \nInput\n})\n\n\n\n\nApplication context for the command handler\n\n\n\n\nReturns\n\n\nPromise\nString", 
+            "text": "Source:\n \nlib/Plugins/Plugin.js\n\n\n\n\n\nnew Plugin(journeyman: \nJourneyMan\n)\n\n\n\nParameters\n\n\njourneyman\n (\nJourneyMan\n)\n\n\n\n\nStatic Members\n\n\n\n\n$name\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 22-24)\n\n\nHolds the plugin's subcommand name.\n\n\n\n\n$name\n\n\n\nReturns\n\n\nString\n\n\n\n\n\n\ncommands\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 31-33)\n\n\nHolds all Command instances the plugin uses.\n\n\n\n\ncommands\n\n\n\nReturns\n\n\nArray\nCommand\n\n\n\n\nInstance Members\n\n\n\n\n$run(command, context)\n\n\nSource:\n \nlib/Plugins/Plugin.js (Lines 52-103)\n\n\nRuns a command on this plugin. Journeyman has figured out that this plugin is\nrequired to carry out the command, so let's find a handler and try to execute it.\n\n\n\n\n$run(command: \nString\n, context: {input: \nInput\n, output: \nOutput\n}): \nPromise\nString\n>\n\n\n\nParameters\n\n\ncommand\n (\nString\n)\n\n\n\n\nName of the command requested to run\n\n\n\n\ncontext\n ({input: \nInput\n, output: \nOutput\n})\n\n\n\n\nApplication context for the command handler\n\n\n\n\nReturns\n\n\nPromise\nString", 
             "title": "Plugin"
         }, 
         {
@@ -697,12 +737,12 @@
         }, 
         {
             "location": "/api/Plugin/#static-members", 
-            "text": "$name  Source:   lib/Plugins/Plugin.js (Lines 21-23)  Holds the plugin's subcommand name.   $name", 
+            "text": "$name  Source:   lib/Plugins/Plugin.js (Lines 22-24)  Holds the plugin's subcommand name.   $name", 
             "title": "Static Members"
         }, 
         {
             "location": "/api/Plugin/#returns", 
-            "text": "String    commands  Source:   lib/Plugins/Plugin.js (Lines 30-32)  Holds all Command instances the plugin uses.   commands", 
+            "text": "String    commands  Source:   lib/Plugins/Plugin.js (Lines 31-33)  Holds all Command instances the plugin uses.   commands", 
             "title": "Returns"
         }, 
         {
@@ -712,12 +752,12 @@
         }, 
         {
             "location": "/api/Plugin/#instance-members", 
-            "text": "$run(command, context)  Source:   lib/Plugins/Plugin.js (Lines 51-103)  Runs a command on this plugin. Journeyman has figured out that this plugin is\nrequired to carry out the command, so let's find a handler and try to execute it.   $run(command:  String , context: {input:  Input }):  Promise String >", 
+            "text": "$run(command, context)  Source:   lib/Plugins/Plugin.js (Lines 52-103)  Runs a command on this plugin. Journeyman has figured out that this plugin is\nrequired to carry out the command, so let's find a handler and try to execute it.   $run(command:  String , context: {input:  Input , output:  Output }):  Promise String >", 
             "title": "Instance Members"
         }, 
         {
             "location": "/api/Plugin/#parameters_1", 
-            "text": "command  ( String )   Name of the command requested to run   context  ({input:  Input })   Application context for the command handler", 
+            "text": "command  ( String )   Name of the command requested to run   context  ({input:  Input , output:  Output })   Application context for the command handler", 
             "title": "Parameters"
         }, 
         {

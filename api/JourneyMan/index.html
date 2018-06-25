@@ -497,6 +497,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../Output/" title="Output" class="md-nav__link">
+      Output
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../Plugin/" title="Plugin" class="md-nav__link">
       Plugin
     </a>
@@ -614,9 +626,30 @@
                 
                   <h1>JourneyMan</h1>
                 
-                <p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/JourneyMan.js#L20-L121">lib/JourneyMan.js</a></p>
+                <p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/JourneyMan.js#L45-L160">lib/JourneyMan.js</a></p>
 <p>Welcome to JourneyMan!
-This is the main class used by the CLI, but it's easy to use it programmatically.</p>
+This is the main class used by the CLI, but it's easy to use it programmatically. There are two
+external requirements to Journeyman:</p>
+<ol>
+<li><strong>A valid, physical configuration file</strong></li>
+<li><strong>Some kind of <code class="codehilite">process</code> implementation</strong><br>
+    It doesn't matter if this will be the actual <code class="codehilite">process</code> global or a replacement object, as
+    long as it provides the properties <code class="codehilite">argv</code> (the command line input), <code class="codehilite">cwd()</code> (function that
+    returns the current working directory), <code class="codehilite">env</code> (a key-value hash that holds all environment
+    variables).</li>
+</ol>
+<p>In order to work with Journeyman, you'll first need to create a new instance:</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">JourneyMan</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;journeyman&#39;</span><span class="p">);</span>
+
+<span class="c1">// note that we only need a directory here, the file</span>
+<span class="c1">// resolution is performed by JourneyMan itself</span>
+<span class="kr">const</span> <span class="nx">journeyman</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JourneyMan</span><span class="p">(</span><span class="s1">&#39;/path/to/config/&#39;</span><span class="p">);</span>
+</pre></div>
+
+<p>This will initialize the object. To kick off the actual process, you'll need to call <code class="codehilite">run()</code>:</p>
+<div class="codehilite"><pre><span></span><span class="nx">journeyman</span><span class="p">.</span><span class="nx">run</span><span class="p">({</span> <span class="nx">argv</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="s1">&#39;--baz&#39;</span><span class="p">],</span> <span class="nx">env</span><span class="o">:</span> <span class="p">{},</span> <span class="nx">cwd</span><span class="p">()</span> <span class="p">{</span><span class="k">return</span> <span class="s1">&#39;/&#39;</span><span class="p">}</span> <span class="p">});</span>
+</pre></div>
+
 <hr />
 <div class="codehilite"><pre>
 new JourneyMan(configFilePath: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>)</pre></div>
@@ -629,8 +662,10 @@ new JourneyMan(configFilePath: <a href="https://developer.mozilla.org/docs/Web/J
 <h3 id="static-members">Static Members<a class="headerlink" href="#static-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>Plugin()</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/JourneyMan.js#L27-L29">lib/JourneyMan.js</a></p>
-<p>Static getter for the plugin class</p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/JourneyMan.js#L55-L57">lib/JourneyMan.js</a></p>
+<p>Static getter for the Plugin class. This provides <code class="codehilite">Plugin</code> to plugins without having to
+require the actual file itself. Plugin authors are advised to use this property since the
+path to the class might change at any time. <code class="codehilite">JourneyMan</code> <em>is</em> the stable API.</p>
 <hr />
 <div class="codehilite"><pre>
 new Plugin(): <a href="/journeyman/api/Plugin">Plugin</a></pre></div>
@@ -640,8 +675,10 @@ new Plugin(): <a href="/journeyman/api/Plugin">Plugin</a></pre></div>
 <p></details></p>
 <p><details class="info">
 <summary>Command()</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/JourneyMan.js#L36-L38">lib/JourneyMan.js</a></p>
-<p>Static getter for the command class</p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/JourneyMan.js#L67-L69">lib/JourneyMan.js</a></p>
+<p>Static getter for the Command class. This provides <code class="codehilite">Command</code> to plugins without having to
+require the actual file itself. Plugin authors are advised to use this property since the
+path to the class might change at any time. <code class="codehilite">JourneyMan</code> <em>is</em> the stable API.</p>
 <hr />
 <div class="codehilite"><pre>
 new Command(): <a href="/journeyman/api/Command">Command</a></pre></div>
@@ -652,7 +689,7 @@ new Command(): <a href="/journeyman/api/Command">Command</a></pre></div>
 <h3 id="instance-members">Instance Members<a class="headerlink" href="#instance-members" title="Permanent link">&para;</a></h3>
 <p><details class="info">
 <summary>config</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/JourneyMan.js#L56-L58">lib/JourneyMan.js (Lines 56-58)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/JourneyMan.js#L87-L89">lib/JourneyMan.js (Lines 87-89)</a></p>
 <p>Holds Config instance for the application. Journeyman will generally first try to load
 a file called <code class="codehilite"><span class="na">.journeyman</span></code>. If it is available, a new Config will be created with no
 sub-key (<code class="codehilite"><span class="na">.journeyman</span></code> files are expected to only contain Journeyman configuration).
@@ -664,8 +701,13 @@ the current directory.</p>
 <p></details></p>
 <p><details class="info">
 <summary>run(proc)</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/JourneyMan.js#L73-L102">lib/JourneyMan.js (Lines 73-102)</a></p>
-<p>Runs the application</p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/JourneyMan.js#L111-L141">lib/JourneyMan.js (Lines 111-141)</a></p>
+<p>Runs the application. This is kind of the <em>"main"</em> function in Journeyman, kicking off the
+entire process chain. In order, the input is detected, plugins are loaded and the correct
+command is routed.<br>
+The output produced by any command than ran will be returned as the result; if anything
+throws, it will bubble up to this point. Catching these exceptions is up to the final
+implementation: Either a programmatic consumer or the CLI app <code class="codehilite">journ</code>.</p>
 <hr />
 <div class="codehilite"><pre>run(proc: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;any></pre></div>
 
@@ -694,12 +736,18 @@ the current directory.</p>
 <p>| <code class="codehilite">proc.cwd</code> <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a></code>
    | Current working directory
  |</p>
+<p>| <code class="codehilite">proc.stdout</code> <code>WritableStream</code>
+   | Standard output
+ |</p>
+<p>| <code class="codehilite">proc.stderr</code> <code>WritableStream</code>
+   | Standard error output
+ |</p>
 <h3 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h3>
 <p><code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>&#x3C;any&gt;</code></p>
 <p></details></p>
 <p><details class="info">
 <summary>input</summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/JourneyMan.js#L80-L80">lib/JourneyMan.js (Lines 80-80)</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/JourneyMan.js#L118-L118">lib/JourneyMan.js (Lines 118-118)</a></p>
 <p>Holds the command line input.</p>
 <hr />
 <div class="codehilite"><pre>input</pre></div>

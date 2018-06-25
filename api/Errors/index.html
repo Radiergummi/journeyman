@@ -812,6 +812,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../Output/" title="Output" class="md-nav__link">
+      Output
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../Plugin/" title="Plugin" class="md-nav__link">
       Plugin
     </a>
@@ -1251,7 +1263,7 @@ This makes it possible to transport a lot of metadata, whilst preserving the ori
 <h3 id="members">Members<a class="headerlink" href="#members" title="Permanent link">&para;</a></h3>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">CommandExecutionError(plugin, handler, error)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/CommandExecutionError.js#L12-L32">lib/Errors/CommandExecutionError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/CommandExecutionError.js#L12-L32">lib/Errors/CommandExecutionError.js</a></p>
 <h4 id="command-execution-error">Command execution error<a class="headerlink" href="#command-execution-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a command throws during execution. It indicates the command
 entered some kind of failed state.</p>
@@ -1277,7 +1289,7 @@ new CommandExecutionError(plugin: <a href="/journeyman/api/Plugin">Plugin</a>, h
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigUpdateError(path, error)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/ConfigUpdateError.js#L12-L31">lib/Errors/ConfigUpdateError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/ConfigUpdateError.js#L12-L31">lib/Errors/ConfigUpdateError.js</a></p>
 <h4 id="configuration-update-error">Configuration update error<a class="headerlink" href="#configuration-update-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if an error occurred during writing the configuration to file.
 It indicates the configuration file could not be persisted to disk.</p>
@@ -1299,7 +1311,7 @@ new ConfigUpdateError(path: <a href="https://developer.mozilla.org/docs/Web/Java
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigValidationError(schema, config)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/ConfigValidationError.js#L12-L31">lib/Errors/ConfigValidationError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/ConfigValidationError.js#L12-L31">lib/Errors/ConfigValidationError.js</a></p>
 <h4 id="configuration-validation-error">Configuration validation error<a class="headerlink" href="#configuration-validation-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if an unknown type has been passed to the validation. The Schema class can
 only validate objects.</p>
@@ -1321,7 +1333,7 @@ new ConfigValidationError(schema: <a href="/journeyman/api/Schema">Schema</a>, c
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigValidationInvalidFieldError(schema, field, value)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/ConfigValidationInvalidFieldError.js#L12-L32">lib/Errors/ConfigValidationInvalidFieldError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/ConfigValidationInvalidFieldError.js#L12-L32">lib/Errors/ConfigValidationInvalidFieldError.js</a></p>
 <h4 id="configuration-validation-invalid-field-error">Configuration validation invalid field error<a class="headerlink" href="#configuration-validation-invalid-field-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if an unknown field has been passed. It indicates the field is missing
 from the schema and therefore can't be validated.</p>
@@ -1347,7 +1359,7 @@ new ConfigValidationInvalidFieldError(schema: <a href="/journeyman/api/Schema">S
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigValidationMissingFieldError(schema, config, field)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/ConfigValidationMissingFieldError.js#L12-L32">lib/Errors/ConfigValidationMissingFieldError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/ConfigValidationMissingFieldError.js#L12-L32">lib/Errors/ConfigValidationMissingFieldError.js</a></p>
 <h4 id="configuration-validation-missing-field-error">Configuration validation missing field error<a class="headerlink" href="#configuration-validation-missing-field-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a required schema field is missing. It indicates a certain field must
 be used but isn't there.</p>
@@ -1373,7 +1385,7 @@ new ConfigValidationMissingFieldError(schema: <a href="/journeyman/api/Schema">S
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigValidationTypeError(schema, field, value, rule)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/ConfigValidationTypeError.js#L12-L35">lib/Errors/ConfigValidationTypeError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/ConfigValidationTypeError.js#L12-L35">lib/Errors/ConfigValidationTypeError.js</a></p>
 <h4 id="configuration-validation-type-error">Configuration validation type error<a class="headerlink" href="#configuration-validation-type-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if the schema validation of a field's type fails. It indicates the field
 exists but is of the wrong type.</p>
@@ -1401,7 +1413,7 @@ new ConfigValidationTypeError(schema: <a href="/journeyman/api/Schema">Schema</a
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">ConfigValidationValidatorError(schema, field, value, rule)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/ConfigValidationValidatorError.js#L12-L33">lib/Errors/ConfigValidationValidatorError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/ConfigValidationValidatorError.js#L12-L33">lib/Errors/ConfigValidationValidatorError.js</a></p>
 <h4 id="configuration-validation-validator-error">Configuration validation validator error<a class="headerlink" href="#configuration-validation-validator-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a field validator throws or returns <code class="codehilite">false</code>. It indicates the field
 either could not be validated (the result was <code class="codehilite">false</code>) or did throw an Error during validation.</p>
@@ -1429,7 +1441,7 @@ new ConfigValidationValidatorError(schema: <a href="/journeyman/api/Schema">Sche
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">InvalidConfigFileError(path, error)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/InvalidConfigFileError.js#L13-L32">lib/Errors/InvalidConfigFileError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/InvalidConfigFileError.js#L13-L32">lib/Errors/InvalidConfigFileError.js</a></p>
 <h4 id="invalid-configuration-file-error">Invalid configuration file error<a class="headerlink" href="#invalid-configuration-file-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if the configuration file cannot be read or parsed. Due to the use
 of <code class="codehilite">require( configFile )</code> inside the configuration constructor, this will implicitly be
@@ -1452,7 +1464,7 @@ new InvalidConfigFileError(path: <a href="https://developer.mozilla.org/docs/Web
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">InvalidInstantiationError(command, plugin)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/InvalidInstantiationError.js#L13-L32">lib/Errors/InvalidInstantiationError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/InvalidInstantiationError.js#L13-L32">lib/Errors/InvalidInstantiationError.js</a></p>
 <h4 id="invalid-instantiation-error-error">Invalid instantiation error error<a class="headerlink" href="#invalid-instantiation-error-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a command is being instantiated with anything but a valid
 Plugin instance. It indicates a command has been constructed manually somewhere which
@@ -1475,7 +1487,7 @@ new InvalidInstantiationError(command: <a href="/journeyman/api/Command">Command
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">InvalidPluginError(loader, plugin)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/InvalidPluginError.js#L13-L32">lib/Errors/InvalidPluginError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/InvalidPluginError.js#L13-L32">lib/Errors/InvalidPluginError.js</a></p>
 <h4 id="invalid-plugin-error">Invalid plugin error<a class="headerlink" href="#invalid-plugin-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a bad module is encountered by the plugin loader. It
 indicates a module declares itself as a journeyman plugin but doesn't work according to
@@ -1498,7 +1510,7 @@ new InvalidPluginError(loader: <a href="/journeyman/api/Loader">Loader</a>, plug
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">PluginDiscoveryError(loader, path, error)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/PluginDiscoveryError.js#L12-L32">lib/Errors/PluginDiscoveryError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/PluginDiscoveryError.js#L12-L32">lib/Errors/PluginDiscoveryError.js</a></p>
 <h4 id="plugin-discovery-error">Plugin discovery error<a class="headerlink" href="#plugin-discovery-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if the plugin discovery failed. It indicates there is a problem
 preventing the plugin loader from discovering plugins, likely at the filesystem level.</p>
@@ -1524,7 +1536,7 @@ new PluginDiscoveryError(loader: <a href="/journeyman/api/Loader">Loader</a>, pa
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">PluginLoadError(loader, path, error)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/PluginLoadError.js#L12-L32">lib/Errors/PluginLoadError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/PluginLoadError.js#L12-L32">lib/Errors/PluginLoadError.js</a></p>
 <h4 id="plugin-load-error">Plugin load error<a class="headerlink" href="#plugin-load-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a plugin can't be loaded. It indicates there is a problem when
 calling <code class="codehilite">require( pluginPath )</code> to load the module.</p>
@@ -1550,7 +1562,7 @@ new PluginLoadError(loader: <a href="/journeyman/api/Loader">Loader</a>, path: <
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">RequiredCommandArgumentMissingError(command, argument, input)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/RequiredCommandArgumentMissingError.js#L12-L32">lib/Errors/RequiredCommandArgumentMissingError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/RequiredCommandArgumentMissingError.js#L12-L32">lib/Errors/RequiredCommandArgumentMissingError.js</a></p>
 <h4 id="command-execution-error_1">Command execution error<a class="headerlink" href="#command-execution-error_1" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a command throws during execution. It indicates the command
 entered some kind of failed state.</p>
@@ -1576,7 +1588,7 @@ new RequiredCommandArgumentMissingError(command: <a href="/journeyman/api/Comman
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">RequiredCommandOptionMissingError(command, option, input)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/RequiredCommandOptionMissingError.js#L12-L32">lib/Errors/RequiredCommandOptionMissingError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/RequiredCommandOptionMissingError.js#L12-L32">lib/Errors/RequiredCommandOptionMissingError.js</a></p>
 <h4 id="command-execution-error_2">Command execution error<a class="headerlink" href="#command-execution-error_2" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a command throws during execution. It indicates the command
 entered some kind of failed state.</p>
@@ -1602,7 +1614,7 @@ new RequiredCommandOptionMissingError(command: <a href="/journeyman/api/Command"
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">RequiredCommandOptionValueMissingError(command, option, input)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/RequiredCommandOptionValueMissingError.js#L12-L32">lib/Errors/RequiredCommandOptionValueMissingError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/RequiredCommandOptionValueMissingError.js#L12-L32">lib/Errors/RequiredCommandOptionValueMissingError.js</a></p>
 <h4 id="command-execution-error_3">Command execution error<a class="headerlink" href="#command-execution-error_3" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a command throws during execution. It indicates the command
 entered some kind of failed state.</p>
@@ -1628,7 +1640,7 @@ new RequiredCommandOptionValueMissingError(command: <a href="/journeyman/api/Com
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">UnknownCommandError(plugin, command)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/UnknownCommandError.js#L13-L36">lib/Errors/UnknownCommandError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/UnknownCommandError.js#L13-L36">lib/Errors/UnknownCommandError.js</a></p>
 <h4 id="unknown-command-error">Unknown command error<a class="headerlink" href="#unknown-command-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a call for a plugin command cannot be resolved to a command. It
 indicates the plugin sub-command is valid (the plugin exists and is loaded) but there is no
@@ -1651,7 +1663,7 @@ new UnknownCommandError(plugin: <a href="/journeyman/api/Plugin">Plugin</a>, com
 <p></details></p>
 <p><details class="abstract">
 <summary><code style="background:transparent;font-size:1.2rem">UnknownPluginError(journeyman, plugin)</code></summary></p>
-<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/22cdef71ddd7973bc08e6f0403b8a380c212801f/lib/Errors/UnknownPluginError.js#L13-L35">lib/Errors/UnknownPluginError.js</a></p>
+<p><strong>Source:</strong> <a href="https://github.com/Radiergummi/journeyman/blob/969de4caf0a784d5bcbe50dbc248c8187a8cb02a/lib/Errors/UnknownPluginError.js#L13-L35">lib/Errors/UnknownPluginError.js</a></p>
 <h4 id="unknown-plugin-error">Unknown plugin error<a class="headerlink" href="#unknown-plugin-error" title="Permanent link">&para;</a></h4>
 <p>This error should be used if a call for a plugin cannot be resolved to a plugin class. It
 indicates the plugin sub-command is invalid (the plugin does not exist) so there is no

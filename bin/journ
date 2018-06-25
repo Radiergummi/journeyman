@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const JourneyMan = require( '../lib/JourneyMan' );
-
+const util       = require( 'util' );
 /**
  * Journeyman instance configured for the current working directory
  *
@@ -13,11 +13,10 @@ journeyMan
   .run( process )
   .then( ( result = '' ) => {
     process.stdout.write( String( result ) );
-    process.exit( 0 );
   } )
   .catch( error => {
     if ( process.env.DEBUG ) {
-      console.error( String( error ), '\n\n', error );
+      process.stderr.write( util.format( error) + '\n\n' + error );
     } else {
       process.stderr.write( String( error ) );
     }
